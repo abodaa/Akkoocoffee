@@ -1,0 +1,26 @@
+    $light-green: #9ee870;
+    $light-green-transparent: #9ee870c7;
+    $dark-green: #163300;
+    $dark-green-transparent: #163300c3;
+    $primary-text: #000;
+    $white-text:#ffffff;
+    $secondary-text: #2d2d2d;
+    $other-color: #ffa600;
+    
+
+
+
+    $breakpoint-xs: 0;
+    $breakpoint-sm: 576px;
+    $breakpoint-md: 768px;
+    $breakpoint-lg: 992px;
+    $breakpoint-xl: 1200px;
+    $breakpoint-xxl: 1400px;
+
+
+@mixin flex($flexDIrection, $alignItems, $justifyContent) {
+  display: flex;
+  flex-direction: $flexDIrection;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}

@@ -1,0 +1,80 @@
+@import './reset';
+@import './variables';
+
+
+.nav-main-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    z-index: 11;
+    background-color: #e6efe5e0;
+    font-weight: 900;
+    // border-bottom: 1px solid $light-green-transparent;
+    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.nav-logo-items-wrapper{
+    grid-column: span 2;
+    // padding: 0.5rem 0rem;
+    border-top-right-radius: 15px;
+    @include flex(row,center,space-around);
+}
+.nav-logo{
+    color: $dark-green;
+    padding: 1rem;
+    background-color: $light-green-transparent;
+    font-size: 1.5rem;
+}
+.nav-contents-container{
+    @include flex(row,center,space-around);
+    gap: 2rem;
+
+}
+.nav-item{
+    position: relative;
+    list-style: none;
+    text-transform: uppercase;
+    // padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    color: $dark-green;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.3rem;
+        width: 0%;
+        height: 2px;
+        background-color: $dark-green;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover:after{
+      width: 60%;
+    }
+}
+
+.nav-right-container{
+    @include flex(row,center,flex-end);
+    gap: 1rem;
+    padding-right:2rem; 
+}
+.akkoo-menu-btn{
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid $dark-green;
+    color: $dark-green;
+    font-weight: 900;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover{
+        background-color: $light-green;
+        border: 1px solid $light-green;
+    }
+}

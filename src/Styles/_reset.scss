@@ -1,0 +1,22 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // font-family: Gabarito, sans-serif;
+  scroll-behavior: smooth;
+  // outline: 1px solid red !important;
+  font-family: 'Bitter', serif;
+}
+ ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        background-color: transparent;
+    }
+  ::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+body{
+  // background-color: white;
+}
