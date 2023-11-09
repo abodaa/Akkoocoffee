@@ -1,6 +1,5 @@
 import React from "react";
 import "../Styles/home.scss";
-import heroMiddleImg from "../images/MiddlePic2.jpg";
 import sectionTwoImg from "../images/sectionTwo.jpg";
 import sectionThreeImg1 from "../images/jebena.jpg";
 import sectionThreeImg2 from "../images/foods.jpg";
@@ -13,7 +12,6 @@ import serviceImgThree from "../images/cookie.png";
 import menuItemImg from "../images/menuImg.png";
 
 import kidi from "../images/Kidi.jpg";
-import abi from "../images/Abi.jpg";
 import dave from "../images/Dave.jpg";
 import fitsum from "../images/Fitsum.jpg";
 import tigist from "../images/Tigest.jpg";
@@ -22,7 +20,6 @@ import { CiCoffeeBean, CiLocationOn } from "react-icons/ci";
 import { MdFastfood } from "react-icons/md";
 
 import cup from "../images/cup.png";
-import pattern from "../images/pattern-design.png";
 
 import { PiBowlFoodThin } from "react-icons/pi";
 import { BsArrowLeft } from "react-icons/bs";
@@ -57,6 +54,10 @@ export default function Home() {
             {" "}
             <button className="akkoo-menu-btn">Akkoo Menu</button>
           </a>
+          <a href="#menu">
+            {" "}
+            <button className="akkoo-book-table-btn">Book</button>
+          </a>
         </div>
       </section>
       {/* Home HERO Section */}
@@ -65,7 +66,10 @@ export default function Home() {
         <img src={cup} alt="" className="hero-cup-two" />
         {/* <img src={pattern} alt="" className="hero-pattern" /> */}
 
-        <h1 className="hero-title">Akkoo Coffee</h1>
+        <div className="hero-title-wrapper">
+          <h1 className="hero-title">Akkoo </h1>
+          <h3 className="hero-title-two"> Coffee</h3>
+        </div>
         <h3 className="hero-subtitle">
           Exotic premium Ethiopian coffee all the way from the bean to your cup
         </h3>

@@ -1,11 +1,5 @@
 import React from "react";
 import "../Styles/nav.scss";
-import logo from "../images/Akkoo+logo.jpg";
-import facebook from "../images/facebook.png";
-import instagram from "../images/instagram.png";
-import tiktok from "../images/tiktok.png";
-
-import { BiFoodMenu, BiLogoTripAdvisor } from "react-icons/bi";
 
 export default function Nav() {
   return (

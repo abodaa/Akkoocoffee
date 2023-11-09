@@ -7,10 +7,6 @@
 .hero-main-container{
     @include flex(column,center,center);
     background:linear-gradient(0deg,  $white-text,  $white-text 10%, #e6efe5 90%, #e6efe5);
-    // background: url('../images/heroBg.png');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-attachment: fixed;
     height: 100vh;
     padding-top: 10rem;
     font-weight: 900;
@@ -45,11 +41,14 @@
     width: 20%;
     opacity: 0.3;
 }
+.hero-title-wrapper{
+    @include flex(row,center,center);
+}
 .hero-title{
     position: relative;
-    font-size: 8rem;
+    font-size: 12rem;
     color: $dark-green;
-    line-height: 7rem;
+    // line-height: 10rem;
     z-index: 1;
     // &::after{
     //     content: "";
@@ -64,6 +63,11 @@
     //     z-index: -1;
 
     // }
+}
+.hero-title-two{
+    @extend .hero-title;
+    font-size: 6rem;
+    margin-top: 4rem;
 }
 .hero-subtitle{
     margin-top: 2rem;
