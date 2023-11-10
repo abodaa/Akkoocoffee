@@ -31,6 +31,9 @@ import breakfastMenuData from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
 import tiktok from "../images/tiktok.png";
+
+import AboutUsMore from "../Components/AboutUsMore";
+
 export default function Home() {
   // Slider functions
   // SLider Arrows Function
@@ -220,15 +223,21 @@ export default function Home() {
               spoken languages in Ethiopia) meaning ‘Grandmother’
             </h3>
             <p>
-              The connotation of Akkoo goes beyond the mere word 'grandma'. It
-              resonates with deep love, care, hospitality, and proficiency. I
-              believe sharing the story of my mother, Elisabeth Kitessa Guma,
-              who is lovingly called 'Akkoo' by her 23 grandchildren, would put
-              flesh and bone to these attributes.
+              Our commitment is to bring you the ultimate coffee experience, one
+              that is responsibly produced from seed to cup. This is not merely
+              an ideology but our everyday practice. It was on May 2019 AKKOO
+              coffee’s founders Dawit Hailu and his wife Wudassie Enquberhan
+              opened their first coffee shop down the street from Churchill
+              road. Upon its opening, Akkoo was welcomed with encouraging
+              responses from the community. It quickly became the meeting place
+              for coffee lovers ranging from university students to retirees.
+              Besides our fine coffee, customers also enjoy our baked goods as
+              well as our healthy and delicious meals. Many also admire the
+              design and overall atmosphere of the place.
             </p>
           </div>
           <div className="about-btns-wrapper">
-            <button className="about-btn-one">More about us</button>
+            <AboutUsMore />
             <button className="about-btn-two">Our story</button>
           </div>
         </div>
@@ -241,6 +250,7 @@ export default function Home() {
             controls="controls"
             autoplay="false"
           />
+          <img src={cup} alt="" className="about-cup-two" />
         </div>
       </section>
       {/* Home below about akkoo coffe section */}
