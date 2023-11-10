@@ -2,8 +2,7 @@
 @import './reset';
 @import './variables';
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Gabarito&display=swap');
-
-// Hero
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');// Hero
 .hero-main-container{
     @include flex(column,center,center);
     background:linear-gradient(0deg,  $white-text,  $white-text 10%, #e6efe5 90%, #e6efe5);
@@ -22,6 +21,11 @@
     padding: 3rem;
     border-radius: 50%;
     border: 10px solid white;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 .hero-cup-two{
     position: absolute;
@@ -33,6 +37,11 @@
     padding: 3rem;
     border-radius: 50%;
     border: 10px solid white;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 .hero-pattern{
     position: absolute;
@@ -42,13 +51,14 @@
     opacity: 0.3;
 }
 .hero-title-wrapper{
-    @include flex(row,center,center);
+    @include flex(flex,center,center);
+    gap: 0rem;
 }
 .hero-title{
     position: relative;
     font-size: 12rem;
     color: $dark-green;
-    // line-height: 10rem;
+    // line-height: 7rem;
     z-index: 1;
     // &::after{
     //     content: "";
@@ -68,10 +78,10 @@
     @extend .hero-title;
     font-size: 6rem;
     margin-top: 4rem;
+    font-family: 'Dancing Script', cursive;
 }
 .hero-subtitle{
-    margin-top: 2rem;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: rgb(63, 63, 63);
     color: $dark-green;
     width: 50%;
@@ -85,6 +95,7 @@
 }
 .hero-service-items-wrapper{
     @include flex(row,center,flex-start);
+    flex-wrap: wrap;
     margin-top: 2rem;
     gap: 1rem;
 }
@@ -134,6 +145,7 @@
 }
 // Section Two
 .section-two-main-container{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
@@ -156,6 +168,7 @@
     gap: 1rem;
     flex-wrap: nowrap;
     overflow-x: scroll;
+    width: 80%;
     &::-webkit-scrollbar {
         width: 0px;
         height: 0px;
@@ -184,17 +197,34 @@
     transform: rotate(180deg);
 }
 .section-two-right-container{
-    width: 80%;
+    position: relative;
+    width: 100%;
     justify-self: flex-start;
+    z-index: 1;
     h2{
+        position: relative;
         font-size: 4rem;
         font-weight: 900;
-        line-height: 4rem;
-        padding-left: 1rem;
-        border-left: 10px solid $dark-green;
+        // line-height: 4rem;
+        // padding-left: 1rem;
+        // border-left: 10px solid $dark-green;
         color: $dark-green;
         line-height: 4rem;
         margin-bottom: 2rem;
+           z-index: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        height: 30px;
+        border-radius: 50px;
+        background-color: $light-green-transparent;
+        opacity: 0.3;
+        z-index: -1;
+
+    }
     }
     h3{
         font-size: 2rem;
@@ -204,7 +234,7 @@
   
 }
 .section-two-description-wrapper{
-    margin-top: 2rem;
+    // margin-top: 2rem;
     min-width: 100%;
     border-radius: 15px;
 }
@@ -242,17 +272,52 @@
 }
 // Section three Right 
 .section-three-right-container{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2,1fr);
     gap: 1rem;
     width: 60%;
     border-radius: 15px;
-    
+    z-index: 1;
+}
+.unique-cup-one{
+    position: absolute;
+    top: -6rem;
+    left: -6rem;
+    width: 50%;
+    z-index: -1;
+    opacity: 0.2;
+    background-color: $light-green;
+    padding: 3rem;
+    border-radius: 50%;
+    border: 10px solid $light-green;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+    &:hover{
+        transform: scale(1.05);
+    } 
+}
+.unique-cup-two{
+    position: absolute;
+    bottom: -4rem;
+    right: 0;
+    width: 30%;
+    z-index: -1;
+    opacity: 0.2;
+    background-color: $light-green;
+    padding: 3rem;
+    border-radius: 50%;
+    border: 10px solid $light-green;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+    &:hover{
+        transform: scale(1.05);
+    } 
 }
 .section-three-img{
     width: 100%;
-    border-radius: 50px;
+    border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all 0.3s ease-in-out;
     &:hover{
@@ -482,11 +547,26 @@
 }
 .menu-one-items-main-container{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     place-items: center;
     margin-top: 2rem;
-    padding: 1rem 4rem;
+    padding: 1rem 3rem;
+    @media (max-width: 500px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    @media (min-width: 700px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: 1400px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 .menu-items-wrapper{
     @include flex(row,center,flex-start);

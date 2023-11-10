@@ -22,6 +22,8 @@ import { MdFastfood } from "react-icons/md";
 import cup from "../images/cup.png";
 
 import { PiBowlFoodThin } from "react-icons/pi";
+import { CgMenuRight } from "react-icons/cg";
+
 import { BsArrowLeft } from "react-icons/bs";
 import breakfastMenuData from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
@@ -32,24 +34,25 @@ export default function Home() {
     <div className="home-main-container">
       {/* NAVIGATION */}
       <section className="nav-main-container">
-        <div className="nav-logo-items-wrapper">
-          <h1 className="nav-logo">Akkoo Coffee</h1>
-          <ul className="nav-contents-container">
-            <a className="nav-item" href="#hero">
-              <li>home</li>
-            </a>
-            <a className="nav-item" href="#about">
-              <li>about us</li>
-            </a>
-            <a className="nav-item" href="#services">
-              <li>services</li>
-            </a>
-            <a className="nav-item" href="#community">
-              <li>community</li>
-            </a>
-          </ul>
-        </div>
+        {/* <div className="nav-logo-items-wrapper"> */}
+        <h1 className="nav-logo">Akkoo Coffee</h1>
+        <ul className="nav-contents-container">
+          <a className="nav-item" href="#hero">
+            <li>home</li>
+          </a>
+          <a className="nav-item" href="#about">
+            <li>about us</li>
+          </a>
+          <a className="nav-item" href="#services">
+            <li>services</li>
+          </a>
+          <a className="nav-item" href="#community">
+            <li>community</li>
+          </a>
+        </ul>
+        {/* </div> */}
         <div className="nav-right-container">
+          <CgMenuRight className="mobile-menu-humbergur-icon" />
           <a href="#menu">
             {" "}
             <button className="akkoo-menu-btn">Akkoo Menu</button>
@@ -67,7 +70,7 @@ export default function Home() {
         {/* <img src={pattern} alt="" className="hero-pattern" /> */}
 
         <div className="hero-title-wrapper">
-          <h1 className="hero-title">Akkoo </h1>
+          <h1 className="hero-title">Akkoo.</h1>
           <h3 className="hero-title-two"> Coffee</h3>
         </div>
         <h3 className="hero-subtitle">
@@ -81,7 +84,7 @@ export default function Home() {
           <div className="hero-service-one-item-wrapper">
             <CiCoffeeBean className="hero-service-one-item-icon" />
             <div className="hero-service-description">
-              <p className="hero-service-title">Coffee</p>
+              <p className="hero-service-title">Fine Ethiopian Coffee</p>
               <p className="hero-service-sub-text">
                 Lorem ipsum dolor sit amet.
               </p>
@@ -90,7 +93,7 @@ export default function Home() {
           <div className="hero-service-two-item-wrapper">
             <PiBowlFoodThin className="hero-service-two-item-icon" />
             <div className="hero-service-description">
-              <p className="hero-service-title">Food</p>
+              <p className="hero-service-title">Traditional Food</p>
               <p className="hero-service-sub-text">
                 Lorem ipsum dolor sit amet.
               </p>
@@ -99,7 +102,7 @@ export default function Home() {
           <div className="hero-service-three-item-wrapper">
             <MdFastfood className="hero-service-three-item-icon" />
             <div className="hero-service-description">
-              <p className="hero-service-title">Snack</p>
+              <p className="hero-service-title">Buna Kurs</p>
               <p className="hero-service-sub-text">
                 Lorem ipsum dolor sit amet.
               </p>
@@ -111,12 +114,21 @@ export default function Home() {
       {/* Home below home section */}
       <section className="section-two-main-container" id="unique">
         {/* Left */}
-        <div className="section-two-left-container">
+        {/* <div className="section-two-left-container">
           <img src={sectionTwoImg} alt="" className="section-two-img" />
+        </div> */}
+
+        <div className="section-three-right-container">
+          <img src={sectionThreeImg1} alt="" className="section-three-img" />
+          <img src={sectionThreeImg2} alt="" className="section-three-img" />
+          <img src={sectionThreeImg3} alt="" className="section-three-img" />
+          <img src={sectionThreeImg4} alt="" className="section-three-img" />
+          <img src={cup} alt="" className="unique-cup-one" />
         </div>
+
         {/* right */}
         <div className="section-two-right-container">
-          <h2>What makes Akkoo unique?</h2>
+          <h2>What makes us unique?</h2>
           <div className="section-two-descriptions-container">
             {/* First Description */}
             <div className="section-two-description-wrapper">
@@ -195,6 +207,7 @@ export default function Home() {
             <BsArrowLeft className="hero-prev" />
             <BsArrowLeft className="hero-next" />
           </div>
+        <img src={cup} alt="" className="unique-cup-two" />
         </div>
       </section>
       {/* Home below What makes akkoo coffe section */}
