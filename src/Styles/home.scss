@@ -153,125 +153,7 @@
     padding: 5rem 0rem;
     background-color: white;
 }
-.section-two-left-container{
-    width: 70%;
-    border-radius: 15px;
-}
-.section-two-img{
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-}
-.section-two-descriptions-container{
-    display: flex;
-    gap: 1rem;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    width: 80%;
-    &::-webkit-scrollbar {
-        width: 0px;
-        height: 0px;
-        background-color: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: transparent;
-    }
-}
-.hero-arrows-wrapper{
-    @include flex(row,center,flex-start);
-    gap: 0.8rem;
-    margin-top: 1rem;
-}
-.hero-prev{
-    font-size: 2rem;
-    padding: 0rem 0.5rem;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    &:hover{
-        background-color: $light-green-transparent;
-    }
-}
-.hero-next{
-    @extend .hero-prev;
-    transform: rotate(180deg);
-}
-.section-two-right-container{
-    position: relative;
-    width: 100%;
-    justify-self: flex-start;
-    z-index: 1;
-    h2{
-        position: relative;
-        font-size: 4rem;
-        font-weight: 900;
-        // line-height: 4rem;
-        // padding-left: 1rem;
-        // border-left: 10px solid $dark-green;
-        color: $dark-green;
-        line-height: 4rem;
-        margin-bottom: 2rem;
-           z-index: 1;
-    &::after{
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 50%;
-        height: 30px;
-        border-radius: 50px;
-        background-color: $light-green-transparent;
-        opacity: 0.3;
-        z-index: -1;
-
-    }
-    }
-    h3{
-        font-size: 2rem;
-        padding-bottom: 1rem;
-        font-weight: 900;
-    }
-  
-}
-.section-two-description-wrapper{
-    // margin-top: 2rem;
-    min-width: 100%;
-    border-radius: 15px;
-}
-
-// SECTION THREE
-.section-three-main-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-    padding: 6rem 0rem;
-    background-color: whitesmoke;
-    background:linear-gradient(19deg,  #e6efe5, #e6efe5 20%, white,  #e6efe5 20%, white 65%, white);
-}
-// Section three Left
-.section-three-left-container{
-    width: 80%;
-    justify-self: center;
-    color: $dark-green;
-    h2{
-        font-size: 4rem;
-        padding-left: 1rem;
-        border-left: 10px solid $dark-green;
-        color: $dark-green;
-        line-height: 4rem;
-        margin-bottom: 2rem;
-    }
-    h3{
-        font-size: 2rem;
-        padding-bottom: 1rem;
-        font-weight: 900;
-    }
-    p{
-        color: $primary-text;
-    }
-}
-// Section three Right 
-.section-three-right-container{
+.unique-left-container{
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -315,7 +197,24 @@
         transform: scale(1.05);
     } 
 }
-.section-three-img{
+.unique-cup-three{
+    position: absolute;
+    top: 3rem;
+    left: -5rem;
+    width: 20%;
+    z-index: -1;
+    opacity: 0.2;
+    background-color: $light-green;
+    padding: 3rem;
+    border-radius: 50%;
+    border: 10px solid $light-green;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+    &:hover{
+        transform: scale(1.05);
+    } 
+}
+.unique-img{
     width: 100%;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -324,6 +223,117 @@
         transform: scale(1.07);
     }
 }
+.section-two-descriptions-container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    width: 80%;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+}
+.hero-arrows-wrapper{
+    @include flex(row,center,flex-start);
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+.hero-prev{
+    font-size: 2rem;
+    padding: 0rem 0.5rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover{
+        background-color: $light-green-transparent;
+    }
+}
+.hero-next{
+    @extend .hero-prev;
+    transform: rotate(180deg);
+}
+.section-two-right-container{
+    position: relative;
+    width: 100%;
+    justify-self: flex-start;
+    z-index: 1;
+    h2{
+        position: relative;
+        font-size: 4rem;
+        font-weight: 900;
+        // line-height: 4rem;
+        // padding-left: 1rem;
+        // border-left: 10px solid $dark-green;
+        color: $dark-green;
+        // line-height: 4rem;
+        margin-bottom: 2rem;
+        z-index: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        height: 30px;
+        border-radius: 50px;
+        background-color: $light-green-transparent;
+        opacity: 0.3;
+        z-index: -1;
+
+    }
+    }
+    h3{
+        font-size: 2rem;
+        padding-bottom: 1rem;
+        font-weight: 900;
+    }
+  
+}
+.section-two-description-wrapper{
+    min-width: 100%;
+    color: $dark-green;
+    scroll-snap-align: center;
+}
+
+// SECTION THREE
+.section-three-main-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    padding: 6rem 0rem;
+    background-color: whitesmoke;
+    background:linear-gradient(19deg,  #e6efe5, #e6efe5 20%, white,  #e6efe5 20%, white 65%, white);
+}
+// Section three Left
+.section-three-left-container{
+    width: 80%;
+    justify-self: center;
+    color: $dark-green;
+    h2{
+        font-size: 4rem;
+        padding-left: 1rem;
+        border-left: 10px solid $dark-green;
+        color: $dark-green;
+        line-height: 4rem;
+        margin-bottom: 2rem;
+    }
+    h3{
+        font-size: 2rem;
+        padding-bottom: 1rem;
+        font-weight: 900;
+    }
+    p{
+        color: $primary-text;
+    }
+}
+// Section three Right 
+
 .about-btns-wrapper{
     @include flex(row,center,flex-start);
     gap: 1rem;
@@ -341,8 +351,16 @@
     background-color: transparent;
     border: 1px solid $dark-green;
     color: $dark-green;
+    object-fit: contain;
 }
-
+.about-right-container{
+    width: 80%;
+}
+.about-us-video{
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+}
 // SECTION FOUR
 .our-services-main-container{
     padding: 6rem 0rem;

@@ -10,6 +10,8 @@ import serviceImgOne from "../images/coffee-beans.png";
 import serviceImgTwo from "../images/food.png";
 import serviceImgThree from "../images/cookie.png";
 import menuItemImg from "../images/menuImg.png";
+import aboutVideo from "../images/about.mp4";
+
 
 import kidi from "../images/Kidi.jpg";
 import dave from "../images/Dave.jpg";
@@ -30,6 +32,20 @@ import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
 import tiktok from "../images/tiktok.png";
 export default function Home() {
+  // Slider functions
+  // SLider Arrows Function
+  const uniqueSlideLeft = () => {
+    let slider = document.getElementById("unique-container");
+    let sliderItem = document.getElementById("unique");
+    slider.scrollLeft = slider.scrollLeft - slider.offsetWidth - 10;
+    console.log(slider.offsetWidth);
+  };
+  const uniqueSlideRight = () => {
+    let slider = document.getElementById("unique-container");
+    let sliderItem = document.getElementById("unique");
+    slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 10;
+  };
+
   return (
     <div className="home-main-container">
       {/* NAVIGATION */}
@@ -114,24 +130,24 @@ export default function Home() {
       {/* Home below home section */}
       <section className="section-two-main-container" id="unique">
         {/* Left */}
-        {/* <div className="section-two-left-container">
-          <img src={sectionTwoImg} alt="" className="section-two-img" />
-        </div> */}
 
-        <div className="section-three-right-container">
-          <img src={sectionThreeImg1} alt="" className="section-three-img" />
-          <img src={sectionThreeImg2} alt="" className="section-three-img" />
-          <img src={sectionThreeImg3} alt="" className="section-three-img" />
-          <img src={sectionThreeImg4} alt="" className="section-three-img" />
+        <div className="unique-left-container">
+          <img src={sectionThreeImg1} alt="" className="unique-img" />
+          <img src={sectionThreeImg2} alt="" className="unique-img" />
+          <img src={sectionThreeImg3} alt="" className="unique-img" />
+          <img src={sectionThreeImg4} alt="" className="unique-img" />
           <img src={cup} alt="" className="unique-cup-one" />
         </div>
 
         {/* right */}
         <div className="section-two-right-container">
           <h2>What makes us unique?</h2>
-          <div className="section-two-descriptions-container">
+          <div
+            className="section-two-descriptions-container"
+            id="unique-container"
+          >
             {/* First Description */}
-            <div className="section-two-description-wrapper">
+            <div className="section-two-description-wrapper" id="unique">
               <h3>We make you feel at home.</h3>
               <p>
                 After tasting our fine coffee and eating our selection of
@@ -149,65 +165,48 @@ export default function Home() {
               </p>
             </div>
             {/* Second description */}
-            <div className="section-two-description-wrapper">
-              <h3>We make you feel at home.</h3>
+            <div className="section-two-description-wrapper" id="unique">
+              <h3>Our space speaks volumes.</h3>
               <p>
-                After tasting our fine coffee and eating our selection of
-                delicious traditional foods, we don’t doubt you’ll come again to
-                become a loyal customer. Whether you order Coffee, Macchiato,
-                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied. Not only will you enjoy our
-                products, but our crew does a great job in giving an excellent
-                service to those who walk through our door. We are also the
-                first restaurant in the country to offer an elderly discount. In
-                such ways and more, we are committed to honoring our culture and
-                your appetite. By providing a warm and inviting atmosphere we
-                live to serve you just as you’d be served at your grandmother’s
-                (AKKOO) home.
+                Set up in an elegant fashion, our high-end coffee shop intends
+                to tell the story of the birthplace and origins of the original
+                AKKOO COFFEE’s culture. Our shops are intended for locations
+                with a more conservative and low-average-higher-income customer
+                base.
               </p>
             </div>
             {/* Third description */}
-            <div className="section-two-description-wrapper">
-              <h3>We make you feel at home.</h3>
+            <div className="section-two-description-wrapper" id="unique">
+              <h3>We keep things interesting.</h3>
               <p>
-                After tasting our fine coffee and eating our selection of
-                delicious traditional foods, we don’t doubt you’ll come again to
-                become a loyal customer. Whether you order Coffee, Macchiato,
-                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied. Not only will you enjoy our
-                products, but our crew does a great job in giving an excellent
-                service to those who walk through our door. We are also the
-                first restaurant in the country to offer an elderly discount. In
-                such ways and more, we are committed to honoring our culture and
-                your appetite. By providing a warm and inviting atmosphere we
-                live to serve you just as you’d be served at your grandmother’s
-                (AKKOO) home.
+                Our menu isn’t prepared to serve for months to come. Our
+                roasters hand pick one single origin and one blend to bring you
+                an exceptional coffee experience each month. We are committed to
+                improving the quality of our drinks and food in alignment with
+                our customer needs. We value feedback to stay attentive and
+                in-tune.
               </p>
             </div>
             {/* Fourth description */}
-            <div className="section-two-description-wrapper">
-              <h3>We make you feel at home.</h3>
+            <div className="section-two-description-wrapper" id="unique">
+              <h3>Our Coffee.</h3>
               <p>
-                After tasting our fine coffee and eating our selection of
-                delicious traditional foods, we don’t doubt you’ll come again to
-                become a loyal customer. Whether you order Coffee, Macchiato,
-                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied. Not only will you enjoy our
-                products, but our crew does a great job in giving an excellent
-                service to those who walk through our door. We are also the
-                first restaurant in the country to offer an elderly discount. In
-                such ways and more, we are committed to honoring our culture and
-                your appetite. By providing a warm and inviting atmosphere we
-                live to serve you just as you’d be served at your grandmother’s
-                (AKKOO) home.
+                Exotic premium Ethiopian coffee all the way from the bean to
+                your cup Whether you enjoy making your coffee by grinding coffee
+                beans or you prefer having it brewed all the way, AKKOO is here
+                to serve. Try our selection of roasted coffee; the fruity
+                flavored Arabica and the AAA graded robust flavor from Oromia
+                region Gedame wereda. We are a proud member of the Ethiopian
+                Chamber of commerce.
               </p>
             </div>
           </div>
           <div className="hero-arrows-wrapper">
-            <BsArrowLeft className="hero-prev" />
-            <BsArrowLeft className="hero-next" />
+            <BsArrowLeft className="hero-prev" onClick={uniqueSlideLeft} />
+            <BsArrowLeft className="hero-next" onClick={uniqueSlideRight} />
           </div>
-        <img src={cup} alt="" className="unique-cup-two" />
+          <img src={cup} alt="" className="unique-cup-two" />
+          {/* <img src={cup} alt="" className="unique-cup-three" /> */}
         </div>
       </section>
       {/* Home below What makes akkoo coffe section */}
@@ -235,11 +234,13 @@ export default function Home() {
         </div>
 
         {/* right */}
-        <div className="section-three-right-container">
-          <img src={sectionThreeImg1} alt="" className="section-three-img" />
-          <img src={sectionThreeImg2} alt="" className="section-three-img" />
-          <img src={sectionThreeImg3} alt="" className="section-three-img" />
-          <img src={sectionThreeImg4} alt="" className="section-three-img" />
+        <div className="about-right-container">
+          <video
+            className="about-us-video"
+            src={aboutVideo}
+            controls="controls"
+            autoplay="false"
+          />
         </div>
       </section>
       {/* Home below about akkoo coffe section */}
