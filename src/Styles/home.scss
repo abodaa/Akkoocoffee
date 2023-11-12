@@ -15,12 +15,13 @@
     position: absolute;
     top: 12%;
     left: 13%;
-    width: 20%;
-    opacity: 0.15;
+    width: 300px;
+    height: 300px;
+    opacity: 0.2;
     background-color: $light-green;
     padding: 3rem;
     border-radius: 50%;
-    border: 10px solid white;
+    // border: 10px solid white;
     transition: all 0.3s ease-in-out;
     cursor: default;
     &:hover{
@@ -31,12 +32,13 @@
     position: absolute;
     bottom:0%;
     right: 1%;
-    width: 10%;
+    width: 150px;
+    height: 150px;
     opacity: 0.3;
     background-color: $light-green-transparent;
     padding: 3rem;
     border-radius: 50%;
-    border: 10px solid white;
+    // border: 10px solid white;
     transition: all 0.3s ease-in-out;
     cursor: default;
     &:hover{
@@ -156,24 +158,47 @@
 .unique-left-container{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2,1fr);
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(2,1fr);
     gap: 1rem;
-    width: 60%;
-    border-radius: 15px;
+    width: 70%;
+    // border-radius: 15px;
     z-index: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-color: #e6efe5;
+        // opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        bottom: -4rem;
+        right: -4rem;
+        border-radius: 100px;
+        // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+.unique-img{
+    width: 100%;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid $white-text;
+    &:hover{
+        transform: scale(1.07);
+    }
 }
 .unique-cup-one{
     position: absolute;
     top: -6rem;
     left: -6rem;
-    width: 50%;
+    width: 250px;
+    height: 250px;
     z-index: -1;
-    opacity: 0.2;
-    background-color: $light-green;
+    opacity: 0.5;
+    background-color: $other-color;
     padding: 3rem;
     border-radius: 50%;
-    border: 10px solid $light-green;
     transition: all 0.3s ease-in-out;
     cursor: default;
     &:hover{
@@ -184,13 +209,14 @@
     position: absolute;
     bottom: -4rem;
     right: 0;
-    width: 30%;
+    width: 200px;
+    height: 200px;
     z-index: -1;
-    opacity: 0.2;
-    background-color: $light-green;
+    opacity: 0.5;
+    background-color: $other-color;
     padding: 3rem;
     border-radius: 50%;
-    border: 10px solid $light-green;
+    // border: 1px solid $light-green-transparent;
     transition: all 0.3s ease-in-out;
     cursor: default;
     &:hover{
@@ -214,15 +240,7 @@
         transform: scale(1.05);
     } 
 }
-.unique-img{
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    transition: all 0.3s ease-in-out;
-    &:hover{
-        transform: scale(1.07);
-    }
-}
+
 .section-two-descriptions-container{
     display: flex;
     gap: 10px;
@@ -250,8 +268,10 @@
     padding: 0rem 0.5rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    background-color: #e6efe5;
+    border-radius: 50%;
     &:hover{
-        background-color: $light-green-transparent;
+        background-color: $light-green;
     }
 }
 .hero-next{
@@ -267,23 +287,23 @@
         position: relative;
         font-size: 4rem;
         font-weight: 900;
-        // line-height: 4rem;
-        // padding-left: 1rem;
-        // border-left: 10px solid $dark-green;
         color: $dark-green;
-        // line-height: 4rem;
         margin-bottom: 2rem;
         z-index: 1;
         &::after{
-            content: "";
+            content: "Unique";
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50%;
-            height: 30px;
-            border-radius: 50px;
-            background-color: $light-green-transparent;
-            opacity: 0.3;
+            font-size: 10rem;
+            left:38%;
+            top: 5%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            // width: 50%;
+            // height: 30px;
+            // border-radius: 50px;
+            // background-color: $light-green-transparent;
+            color: #e6efe5;
+            // opacity: 0.5;
             z-index: -1;
 
         }
@@ -301,25 +321,25 @@
     scroll-snap-align: center;
 }
 
-// SECTION THREE
+// SECTION THREE ABOUT AKKOO
 .section-three-main-container{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     place-items: center;
+    align-items: center;
     padding: 6rem 0rem;
-    background-color: whitesmoke;
     background:linear-gradient(19deg,  #e6efe5, #e6efe5 20%, white,  #e6efe5 20%, white 65%, white);
 }
 // Section three Left
 .section-three-left-container{
-    width: 80%;
-    justify-self: center;
-    color: $dark-green;
-}
-.section-three-left-container{
+    width: 100%;
+    height: 90vh;
+    padding: 12rem 6rem;
+    background-color: $light-green;
+    grid-column: span 3;
     h2{
         position: relative;
-        font-size: 4rem;
+        font-size: 6rem;
         // padding-left: 1rem;
         // border-left: 10px solid $dark-green;
         color: $dark-green;
@@ -327,17 +347,20 @@
         margin-bottom: 2rem;
         z-index: 1;
             &::after{
-            content: "";
+            content: "about";
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50%;
-            height: 30px;
-            border-radius: 50px;
-            background-color: $light-green-transparent;
-            opacity: 0.4;
+            font-size: 10rem;
+            left:0;
+            top: -35%;
+            // transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            // width: 50%;
+            // height: 30px;
+            // border-radius: 50px;
+            // background-color: $light-green-transparent;
+            color: $dark-green-transparent;
+            opacity: 0.1;
             z-index: -1;
-
         }
 
     }
@@ -361,26 +384,32 @@
 .about-btn-one{
     border: none;
     background-color: $dark-green;
-    color: $light-green-transparent;
+    color: $light-green;
     border-radius: 50px;
     padding: 1rem 2rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     &:hover{
-        background-color: $dark-green-transparent;
-        color: white;
+        color: $light-green;
+        background-color: $dark-green;
     }
 }
 .about-btn-two{
     @extend .about-btn-one;
     background-color: transparent;
-    border: 1px solid $dark-green;
+    border: 1px solid $dark-green-transparent;
     color: $dark-green;
-    object-fit: contain;
 }
 .about-right-container{
     position: relative;
-    width: 80%;
+    width: 100%;
+    height: 90vh;
+    grid-column: span 2;
+    // padding: 2rem 6rem;
+    // background-color: $light-green;
+    background: url('../images/aboutSectionPic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
 }
 .about-us-video{
@@ -497,7 +526,7 @@
 .our-community-left-section-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     width: 65%;
     border-radius: 15px;
 }
@@ -510,55 +539,60 @@
 }
 .member-one-name{
     position: absolute;
-    bottom: -1rem;
-    left: 23%;
+    top: -1rem;
+    left: 15%;
     background-color: #e6efe5;
     text-transform: uppercase;
-    font-weight: 900;
+    // font-weight: 900;
+    font-size: 0.8rem;
     padding: 0.5rem 3rem;
     border-radius: 50px;
 }
 .member-two-name{
     position: absolute;
     top: -1rem;
-    left: 18%;
+    left: 13%;
     background-color: #e6efe5;
     text-transform: uppercase;
-    font-weight: 900;
+    // font-weight: 900;
+    font-size: 0.8rem;
+
     padding: 0.5rem 3rem;
     border-radius: 50px;
 }
 .member-three-name{
     position: absolute;
-    bottom: -0.5rem;
-    left: 20%;
+    top: -1rem;
+    left: 15%;
     background-color: #e6efe5;
     text-transform: uppercase;
-    font-weight: 900;
+    // font-weight: 900;
+    font-size: 0.8rem;
     padding: 0.5rem 3rem;
     border-radius: 50px;
 }
 .member-four-name{
     position: absolute;
     top: -1rem;
-    left: 20%;
+    left: 15%;
     background-color: #e6efe5;
     text-transform: uppercase;
-    font-weight: 900;
+    // font-weight: 900;
+    font-size: 0.8rem;
     padding: 0.5rem 3rem;
     border-radius: 50px;
 }
 .our-community-img{
     width: 100%;
     border-radius: 50px;
-    // border: 2px solid $white-text;
+    border: 2px solid $white-text;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
 }
 
 // Our Community Right
 .our-community-right-container{
-    width: 90%;
+    width: 100%;
     justify-self: flex-start;
     h2{
         font-size: 4rem;
@@ -578,8 +612,56 @@
     }
     p{
         color: $dark-green;
+        padding-right: 5rem
     }
   
+}
+.community-descriptions-container{
+    display: flex;
+    margin-top: 1rem;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    width: 90%;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+}
+.community-description-wrapper{
+    min-width: 100%;
+    color: $dark-green;
+    scroll-snap-align: center;
+    background-color: $light-green-transparent;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.community-arrows-wrapper{
+    @include flex(row,center,flex-start);
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+.community-prev{
+    font-size: 2rem;
+    padding: 0rem 0.5rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    &:hover{
+        background-color: $light-green;
+    }
+}
+.community-next{
+    @extend .community-prev;
+    transform: rotate(180deg);
 }
 
 // Akkoo Menu Section

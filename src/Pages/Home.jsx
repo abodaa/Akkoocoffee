@@ -1,16 +1,16 @@
 import React from "react";
 import "../Styles/home.scss";
 import sectionTwoImg from "../images/sectionTwo.jpg";
-import sectionThreeImg1 from "../images/jebena.jpg";
-import sectionThreeImg2 from "../images/foods.jpg";
-import sectionThreeImg3 from "../images/place.jpg";
-import sectionThreeImg4 from "../images/MiddlePic.jpg";
+import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
+// import sectionThreeImg2 from "../images/foods.jpg";
+// import sectionThreeImg3 from "../images/place.jpg";
+// import sectionThreeImg4 from "../images/MiddlePic.jpg";
 
 import serviceImgOne from "../images/coffee-beans.png";
 import serviceImgTwo from "../images/food.png";
 import serviceImgThree from "../images/cookie.png";
 import menuItemImg from "../images/menuImg.png";
-import aboutVideo from "../images/about.mp4";
+import aboutUsSectionPic from "../images/aboutSectionPic.jpg";
 
 
 import kidi from "../images/Kidi.jpg";
@@ -36,7 +36,8 @@ import AboutUsMore from "../Components/AboutUsMore";
 
 export default function Home() {
   // Slider functions
-  // SLider Arrows Function
+  // What make akkoo unique slider Function
+
   const uniqueSlideLeft = () => {
     let slider = document.getElementById("unique-container");
     let sliderItem = document.getElementById("unique");
@@ -46,6 +47,20 @@ export default function Home() {
   const uniqueSlideRight = () => {
     let slider = document.getElementById("unique-container");
     let sliderItem = document.getElementById("unique");
+    slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 10;
+  };
+
+  // community slider Function
+
+  const communitySlideLeft = () => {
+    let slider = document.getElementById("community-container");
+    let sliderItem = document.getElementById("community");
+    slider.scrollLeft = slider.scrollLeft - slider.offsetWidth - 10;
+    console.log(slider.offsetWidth);
+  };
+  const communitySlideRight = () => {
+    let slider = document.getElementById("community-container");
+    let sliderItem = document.getElementById("community");
     slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 10;
   };
 
@@ -84,8 +99,8 @@ export default function Home() {
       </section>
       {/* Home HERO Section */}
       <section className="hero-main-container" id="hero">
-        <img src={cup} alt="" className="hero-cup-one" />
-        <img src={cup} alt="" className="hero-cup-two" />
+        <div className="hero-cup-one"></div>
+        {/* <div className="hero-cup-two"></div> */}
         {/* <img src={pattern} alt="" className="hero-pattern" /> */}
 
         <div className="hero-title-wrapper">
@@ -95,10 +110,6 @@ export default function Home() {
         <h3 className="hero-subtitle">
           Exotic premium Ethiopian coffee all the way from the bean to your cup
         </h3>
-        {/* <div className="hero-btns-wrapper">
-          <button className="hero-btn-one">Learn More</button>
-          <button className="hero-btn-two">Menu</button>
-        </div> */}
         <div className="hero-service-items-wrapper">
           <div className="hero-service-one-item-wrapper">
             <CiCoffeeBean className="hero-service-one-item-icon" />
@@ -130,16 +141,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Home below home section */}
+      {/* What makes Akkoo Unique section */}
       <section className="section-two-main-container" id="unique">
         {/* Left */}
 
         <div className="unique-left-container">
-          <img src={sectionThreeImg1} alt="" className="unique-img" />
-          <img src={sectionThreeImg2} alt="" className="unique-img" />
-          <img src={sectionThreeImg3} alt="" className="unique-img" />
-          <img src={sectionThreeImg4} alt="" className="unique-img" />
-          <img src={cup} alt="" className="unique-cup-one" />
+          <img src={uniqueSectionPic} alt="" className="unique-img" />
+          <div className="unique-cup-one"></div>
         </div>
 
         {/* right */}
@@ -208,11 +216,10 @@ export default function Home() {
             <BsArrowLeft className="hero-prev" onClick={uniqueSlideLeft} />
             <BsArrowLeft className="hero-next" onClick={uniqueSlideRight} />
           </div>
-          <img src={cup} alt="" className="unique-cup-two" />
-          {/* <img src={cup} alt="" className="unique-cup-three" /> */}
+          <div className="unique-cup-two"></div>
         </div>
       </section>
-      {/* Home below What makes akkoo coffe section */}
+      {/*About akkoo coffe section */}
       <section className="section-three-main-container" id="about">
         {/* left */}
         <div className="section-three-left-container">
@@ -244,13 +251,8 @@ export default function Home() {
 
         {/* right */}
         <div className="about-right-container">
-          <video
-            className="about-us-video"
-            src={aboutVideo}
-            controls="controls"
-            autoplay="false"
-          />
-          <img src={cup} alt="" className="about-cup-two" />
+          {/* <img src={aboutUsSectionPic} alt="" />
+          <img src={cup} alt="" className="about-cup-two" /> */}
         </div>
       </section>
       {/* Home below about akkoo coffe section */}
@@ -302,19 +304,19 @@ export default function Home() {
           {/* <img src={abi} alt="" className="our-community-img" /> */}
           <div className="community-img-wrapper">
             <img src={kidi} alt="" className="our-community-img" />
-            <p className="member-one-name">Kidi</p>
+            {/* <p className="member-one-name">Kidi</p> */}
           </div>
           <div className="community-img-wrapper">
             <img src={fitsum} alt="" className="our-community-img" />
-            <p className="member-two-name">fitsum</p>
+            {/* <p className="member-two-name">fitsum</p> */}
           </div>
           <div className="community-img-wrapper">
             <img src={dave} alt="" className="our-community-img" />
-            <p className="member-three-name">dave</p>
+            {/* <p className="member-three-name">dave</p> */}
           </div>
           <div className="community-img-wrapper">
             <img src={tigist} alt="" className="our-community-img" />
-            <p className="member-four-name">tigist</p>
+            {/* <p className="member-four-name">tigist</p> */}
           </div>
         </div>
         {/* right */}
@@ -333,9 +335,12 @@ export default function Home() {
             part of our social entrepreneurship program via projects that range
             from education, training, financial support and community building.
           </p>
-          <div className="section-two-descriptions-container">
+          <div
+            className="community-descriptions-container"
+            id="community-container"
+          >
             {/* First Description */}
-            <div className="section-two-description-wrapper">
+            <div className="community-description-wrapper" id="community">
               <h3>
                 Tigist | <em>Operations Manager</em>
               </h3>
@@ -354,7 +359,7 @@ export default function Home() {
               </p>
             </div>
             {/* Second description */}
-            <div className="section-two-description-wrapper">
+            <div className="community-description-wrapper" id="community">
               <h3>
                 Fitsum | <em>Administrative and Finance Head</em>{" "}
               </h3>
@@ -370,7 +375,7 @@ export default function Home() {
               </p>
             </div>
             {/* Third description */}
-            <div className="section-two-description-wrapper">
+            <div className="community-description-wrapper" id="community">
               <h3>
                 Kidi | <em>Purchasing</em>
               </h3>
@@ -381,7 +386,7 @@ export default function Home() {
               </p>
             </div>
             {/* Fourth description */}
-            <div className="section-two-description-wrapper">
+            <div className="community-description-wrapper" id="community">
               <h3>Dave</h3>
               <p>
                 If you’re a coffee lover, I highly recommend you try our
@@ -389,9 +394,15 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="hero-arrows-wrapper">
-            <BsArrowLeft className="hero-prev" />
-            <BsArrowLeft className="hero-next" />
+          <div className="community-arrows-wrapper">
+            <BsArrowLeft
+              className="community-prev"
+              onClick={communitySlideLeft}
+            />
+            <BsArrowLeft
+              className="community-next"
+              onClick={communitySlideRight}
+            />
           </div>
         </div>
       </section>
@@ -472,10 +483,10 @@ export default function Home() {
             <h1 className="footer-section-title">Gallery</h1>
             <div>
               <div className="footer-right-items-container">
-                <img src={sectionThreeImg1} alt="" className="footer-img" />
+                {/* <img src={sectionThreeImg1} alt="" className="footer-img" />
                 <img src={sectionThreeImg2} alt="" className="footer-img" />
                 <img src={sectionThreeImg3} alt="" className="footer-img" />
-                <img src={sectionThreeImg4} alt="" className="footer-img" />
+                <img src={sectionThreeImg4} alt="" className="footer-img" /> */}
                 <img src={kidi} alt="" className="footer-img" />
                 <img src={fitsum} alt="" className="footer-img" />
               </div>
