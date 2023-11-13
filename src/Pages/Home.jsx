@@ -69,7 +69,7 @@ export default function Home() {
       {/* NAVIGATION */}
       <section className="nav-main-container">
         {/* <div className="nav-logo-items-wrapper"> */}
-        <h1 className="nav-logo">Akkoo Coffee</h1>
+        <h1 className="nav-logo">LOGO</h1>
         <ul className="nav-contents-container">
           <a className="nav-item" href="#hero">
             <li>home</li>
@@ -250,12 +250,10 @@ export default function Home() {
         </div>
 
         {/* right */}
-        <div className="about-right-container">
-          {/* <img src={aboutUsSectionPic} alt="" />
-          <img src={cup} alt="" className="about-cup-two" /> */}
-        </div>
+        <div className="about-right-container"></div>
       </section>
-      {/* Home below about akkoo coffe section */}
+
+      {/* Services section */}
 
       <section className="our-services-main-container" id="services">
         <div className="our-services-title-subtitle-wrapper">
@@ -268,8 +266,7 @@ export default function Home() {
 
         <div className="our-services-items-wrapper">
           <div className="service-item-wrapper">
-            <img src={serviceImgOne} alt="" className="services-img" />
-            <p className="service-item-title">Fine Ethiopian Coffee</p>
+            <p className="service-item-title">Ethiopian Coffee</p>
             <p className="service-item-description">
               Our ‘Agelgil’ is the most famous order and customers have enjoyed
               both our fasting and non-fasting orders. Delivered to you in a
@@ -277,9 +274,8 @@ export default function Home() {
               starting from 10 people.
             </p>
           </div>
-          <div className="service-item-wrapper">
-            <img src={serviceImgTwo} alt="" className="services-img" />
-            <p className="service-item-title">traditional foods</p>
+          <div className="service-item-wrapper-middle">
+            <p className="service-item-title">traditional cuisine</p>
             <p className="service-item-description">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
               enim facilis ullam praesentium voluptatibus. Id labore error aut
@@ -287,7 +283,6 @@ export default function Home() {
             </p>
           </div>{" "}
           <div className="service-item-wrapper">
-            <img src={serviceImgThree} alt="" className="services-img" />
             <p className="service-item-title">buna kurs</p>
             <p className="service-item-description">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
@@ -300,27 +295,7 @@ export default function Home() {
       {/* Communities Section */}
       <section className="our-community-main-container" id="community">
         {/* Left */}
-        <div className="our-community-left-section-container">
-          {/* <img src={abi} alt="" className="our-community-img" /> */}
-          <div className="community-img-wrapper">
-            <img src={kidi} alt="" className="our-community-img" />
-            {/* <p className="member-one-name">Kidi</p> */}
-          </div>
-          <div className="community-img-wrapper">
-            <img src={fitsum} alt="" className="our-community-img" />
-            {/* <p className="member-two-name">fitsum</p> */}
-          </div>
-          <div className="community-img-wrapper">
-            <img src={dave} alt="" className="our-community-img" />
-            {/* <p className="member-three-name">dave</p> */}
-          </div>
-          <div className="community-img-wrapper">
-            <img src={tigist} alt="" className="our-community-img" />
-            {/* <p className="member-four-name">tigist</p> */}
-          </div>
-        </div>
-        {/* right */}
-        <div className="our-community-right-container">
+        <div className="our-community-left-container">
           <h2>Our Community</h2>
           <h3>
             Every purchase of coffee at AKKOO positively impacts social and
@@ -404,6 +379,11 @@ export default function Home() {
               onClick={communitySlideRight}
             />
           </div>
+        </div>
+        {/* right */}
+        <div className="our-community-right-container">
+          <img src={uniqueSectionPic} alt="" className="our-community-img" />
+          <div className="our-community-cup-one"></div>
         </div>
       </section>
       {/* AKKOO MENU SECTION */}
