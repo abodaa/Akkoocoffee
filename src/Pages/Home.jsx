@@ -15,7 +15,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import breakfastMenuData from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
-import tiktok from "../images/tiktok.png";
+import twitter from "../images/twitter.png";
 
 import AboutUsMore from "../Components/AboutUsMore";
 
@@ -58,7 +58,6 @@ export default function Home() {
     let sliderItem = document.getElementById("menu-item");
     slider.scrollLeft = slider.scrollLeft + sliderItem.offsetWidth + 15;
     console.log(sliderItem.offsetWidth);
-
   };
 
   return (
@@ -418,7 +417,10 @@ export default function Home() {
                 onClick={menuSlideLeft}
               />
             </div>
-            <div className="menu-one-items-main-container" id="menu-item-container">
+            <div
+              className="menu-one-items-main-container"
+              id="menu-item-container"
+            >
               {breakfastMenuData.map((item) => {
                 return (
                   <div className="menu-items-wrapper" id="menu-item">
@@ -445,6 +447,112 @@ export default function Home() {
           </div>
         </div>
         <div className="akkoo-menu-cup-one"></div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="gallery-section-main-container">
+        <div class="gallery">
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/1" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/2" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/3" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--v-2">
+            <div class="embed embed--1-2">
+              <img src="https://source.unsplash.com/collection/582659/4" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/5" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--h-2">
+            <div class="embed embed--2-1">
+              <img src="https://source.unsplash.com/collection/582659/6" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--v-2">
+            <div class="embed embed--1-2">
+              <img src="https://source.unsplash.com/collection/582659/7" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--h-2">
+            <div class="embed embed--2-1">
+              <img src="https://source.unsplash.com/collection/582659/8" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--v-2">
+            <div class="embed embed--1-2">
+              <img src="https://source.unsplash.com/collection/582659/9" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--h-2 gallery__item--v-2">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/10" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/11" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--h-2 gallery__item--v-2">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/12" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/13" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--h-2 gallery__item--v-3">
+            <div class="embed embed--2-3">
+              <img src="https://source.unsplash.com/collection/582659/14" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--h-2 gallery__item--v-2">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/15" />
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--v-2">
+            <div class="embed embed--1-2">
+              <img src="https://source.unsplash.com/collection/582659/16" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/17" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/18" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/19" />
+            </div>
+          </div>
+          <div class="gallery__item">
+            <div class="embed">
+              <img src="https://source.unsplash.com/collection/582659/20" />
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FOOTER SECTION */}
@@ -480,35 +588,8 @@ export default function Home() {
             </div>
           </div>
           {/* RIGHT */}
-          <div className="footer-right-container">
-            <h1 className="footer-section-title">Gallery</h1>
-            <div>
-              <div className="footer-right-items-container">
-                {/* <img src={sectionThreeImg1} alt="" className="footer-img" />
-                <img src={sectionThreeImg2} alt="" className="footer-img" />
-                <img src={sectionThreeImg3} alt="" className="footer-img" />
-                <img src={sectionThreeImg4} alt="" className="footer-img" /> */}
-                <img src={communityPic} alt="" className="footer-img" />
-                <img src={communityPic} alt="" className="footer-img" />
-              </div>
-              <div className="footer-arrows-wrapper">
-                <BsArrowLeft className="footer-prev" />
-                <BsArrowLeft className="footer-next" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bottom-footer-container">
-          {/* BOTTOM FOOTER LEFT */}
-          <div className="bottom-footer-left-wrapper">
-            <span>Akkoo Coffee</span> {" | "}
-            <span>&copy; All Rights Reserved</span>
-            {/* <p>
-              <a href="">Created by Abraham</a>
-            </p> */}
-          </div>
-          {/* BOTTOM FOOTER LEFT */}
           <div className="bottom-footer-middle-wrapper">
+            <h1 className="footer-section-title">Quick Menu</h1>
             <ul className="bottom-footer-menu-wrapper">
               <a href="#hero" className="bottom-footer-menu-item">
                 <li>home</li>
@@ -524,13 +605,37 @@ export default function Home() {
               </a>
             </ul>
           </div>
+        </div>
+        <div className="bottom-footer-container">
+          {/* BOTTOM FOOTER LEFT */}
+          <div className="bottom-footer-left-wrapper">
+            <p>&#9426;</p>
+            <p>Akkoo Coffee.</p>
+            <p> All Rights Reserved</p> {" | "}
+            <p>
+              Created by
+              <a
+                href="https://abraham-b.netlify.app/"
+                target="blank"
+                className="creator"
+              >
+                {" "}
+                Abraham
+              </a>
+            </p>
+          </div>
+
           {/* BOTTOM FOOTER LEFT */}
           <div className="bottom-footer-right-wrapper">
             <img src={facebook} className="footer-social-icon" />
             <img src={instagram} className="footer-social-icon" />
-            <img src={tiktok} className="footer-social-icon" />
+            <img src={twitter} className="footer-social-icon" />
           </div>
         </div>
+        {/* Back to top */}
+        <a href="#hero">
+          <BsArrowLeft className="scroll-to-top" />
+        </a>
       </section>
     </div>
   );
