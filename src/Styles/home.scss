@@ -60,21 +60,7 @@
     position: relative;
     font-size: 12rem;
     color: $dark-green;
-    // line-height: 7rem;
     z-index: 1;
-    // &::after{
-    //     content: "";
-    //     position: absolute;
-    //     left: 0;
-    //     bottom: 0;
-    //     width: 100%;
-    //     height: 30px;
-    //     border-radius: 50px;
-    //     background-color: $light-green-transparent;
-    //     opacity: 0.3;
-    //     z-index: -1;
-
-    // }
 }
 .hero-title-two{
     @extend .hero-title;
@@ -145,6 +131,25 @@
     font-size: 2rem;
     color: $dark-green;
 }
+
+.scroll-to-unique-section{
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    transform: rotate(-90deg);
+    font-size: 4rem;
+    font-weight: 900;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    background-color: $other-color;
+    color: $dark-green;
+    cursor: pointer;
+    &:hover{
+        background-color: $light-green;
+    }
+}
+
 // Section Two
 .section-two-main-container{
     position: relative;
@@ -152,7 +157,7 @@
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
     padding: 0;
-    padding: 5rem 0rem;
+    padding: 13rem 0rem;
     background-color: white;
 }
 .unique-left-container{
@@ -291,14 +296,8 @@
             top: 5%;
             transform: translate(-50%, -50%);
             text-transform: uppercase;
-            // width: 50%;
-            // height: 30px;
-            // border-radius: 50px;
-            // background-color: $light-green-transparent;
             color: #e6efe5;
-            // opacity: 0.5;
             z-index: -1;
-
         }
     }
     h3{
@@ -629,11 +628,12 @@
         content: "";
         position: absolute;
         z-index: -1;
-        background-color: $white-text;
+        background-color: $light-green-transparent;
+        opacity: 0.4;
         width: 100%;
         height: 100%;
         bottom: -4rem;
-        left: -4rem;
+        left: -6rem;
         border-radius: 100px;
     }
     }
@@ -655,8 +655,8 @@
     width: 300px;
     height: 300px;
     z-index: -1;
-    opacity: 0.6;
-    background-color: $white-text;
+    opacity: 0.3;
+    background-color: $light-green-transparent;
     padding: 3rem;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
@@ -668,38 +668,54 @@
 
 
 // Akkoo Menu Section
-
 .menu-main-container{
-    padding: 5rem 0rem;
+    position: relative;
+    padding: 8rem 0rem;
+    color: $dark-green;
+}
+.akkoo-menu-the-main-menu-container{
+    // background-color: $light-green;
+    // padding: 4rem 1rem;
+    // border-radius: 30px;
+    width: 100%;
+    margin: auto;
 }
 .akkoo-menu-title-subtitle-wrapper{
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-bottom: 3rem;
 }
 .akkoo-menu-title{
-    font-size: 4rem;
+    position: relative;
+    font-size: 5rem;
     font-weight: 900;
-    padding-left: 1rem;
-    border-left: 10px solid $dark-green;
     color: $dark-green;
-    margin-bottom: 1rem;
+    z-index: 1;
+        &::after{
+            content: "menu";
+            position: absolute;
+            font-size: 10rem;
+            left:0;
+            top: -80%;
+            text-transform: uppercase;
+            color: $other-color;
+            z-index: -1;
+        }
+
 }
 .akkoo-menu-subtitle{
     font-size: 1rem;
     width: 60%;
-    padding-left: 2rem;
     color: $dark-green-transparent;
 }
 
 .menu-selection-wrapper{
     @include flex(row,center,center);
     gap: 2rem;
-    width: 80%;
+    width: 60%;
     margin: auto;
-    background-color: $dark-green;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: $white-text;
+    background-color: $other-color;
+    color: $dark-green;
     border-radius: 50px;
     li{
         padding: 1rem;
@@ -713,51 +729,107 @@
         }
     }
 }
+.menu-items-main-container{
+    @include flex(row,center,center);
+    width: 90%;
+    margin: auto;
+    
+}
+.akkoo-menu-arrows-wrapper{
+    @include flex(row,center,flex-start);
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding: 0rem 1rem;
+}
+.akkoo-menu-prev{
+    font-size: 2rem;
+    padding: 0rem 0.5rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: $other-color;
+    border-radius: 50%;
+    &:hover{
+        background-color: $light-green;
+    }
+}
+.akkoo-menu-next{
+    @extend .akkoo-menu-prev;
+    transform: rotate(180deg);
+}
+
 .menu-one-items-main-container{
-    display: grid;
-    gap: 1rem;
-    place-items: center;
+    @include flex(row,center,flex-start);
+    width: 100%;
+    padding: 1rem;
+    gap: 15px;
+    overflow-x: scroll;
     margin-top: 2rem;
-    padding: 1rem 3rem;
     @media (max-width: 500px) {
-        grid-template-columns: repeat(1, 1fr);
     }
     @media (min-width: 500px) {
-        grid-template-columns: repeat(2, 1fr);
-
     }
     @media (min-width: 700px) {
-        grid-template-columns: repeat(2, 1fr);
     }
     @media (min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
     }
     @media (min-width: 1400px) {
-        grid-template-columns: repeat(4, 1fr);
     }
 }
 .menu-items-wrapper{
+    position: relative;
     @include flex(row,center,flex-start);
     border-radius: 15px;
-    padding: 1rem;
-    gap: 2rem;
+    min-width: 30%;
+    padding: 2rem;
+    background-color: $other-color;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        transform: scale(1.05);
+        background-color: $light-green;
+        cursor: default;
+    }
 }
-.menu-item-img{
-    width: 5rem;
-    opacity: 0.8;
-}
+
 .menu-item-name-description{
     @include flex(column,flex-start,flex-start);
     gap: 0.3rem;
 }
 .menu-item-name{
+    font-size: 1.5rem;
     font-weight: 900;
     
 }
 .menu-item-description{
     font-size: 0.9rem;
 }
-
+.menu-price-tag{
+    position: absolute;
+    top: -2rem;
+    right: 1rem;
+    padding: 1rem;
+    background-color: $white-text;
+    border-radius: 15px;
+    b{
+        font-size: 1.5rem;
+    }
+}
+.akkoo-menu-cup-one{
+    position: absolute;
+    top: 0rem;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    z-index: -1;
+    opacity: 0.3;
+    background-color: $other-color;
+    padding: 3rem;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+    &:hover{
+        transform: scale(1.05);
+    } 
+}
 // FOOTER
 .footer-main-container{
     background-color: $dark-green;

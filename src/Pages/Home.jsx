@@ -1,27 +1,12 @@
 import React from "react";
 import "../Styles/home.scss";
-import sectionTwoImg from "../images/sectionTwo.jpg";
 import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
-// import sectionThreeImg2 from "../images/foods.jpg";
-// import sectionThreeImg3 from "../images/place.jpg";
-// import sectionThreeImg4 from "../images/MiddlePic.jpg";
 
-import serviceImgOne from "../images/coffee-beans.png";
-import serviceImgTwo from "../images/food.png";
-import serviceImgThree from "../images/cookie.png";
 import menuItemImg from "../images/menuImg.png";
-import aboutUsSectionPic from "../images/aboutSectionPic.jpg";
-
-
-import kidi from "../images/Kidi.jpg";
-import dave from "../images/Dave.jpg";
-import fitsum from "../images/Fitsum.jpg";
-import tigist from "../images/Tigest.jpg";
+import communityPic from "../images/community.jpg";
 
 import { CiCoffeeBean, CiLocationOn } from "react-icons/ci";
 import { MdFastfood } from "react-icons/md";
-
-import cup from "../images/cup.png";
 
 import { PiBowlFoodThin } from "react-icons/pi";
 import { CgMenuRight } from "react-icons/cg";
@@ -42,7 +27,6 @@ export default function Home() {
     let slider = document.getElementById("unique-container");
     let sliderItem = document.getElementById("unique");
     slider.scrollLeft = slider.scrollLeft - slider.offsetWidth - 10;
-    console.log(slider.offsetWidth);
   };
   const uniqueSlideRight = () => {
     let slider = document.getElementById("unique-container");
@@ -51,17 +35,30 @@ export default function Home() {
   };
 
   // community slider Function
-
   const communitySlideLeft = () => {
     let slider = document.getElementById("community-container");
     let sliderItem = document.getElementById("community");
     slider.scrollLeft = slider.scrollLeft - slider.offsetWidth - 10;
-    console.log(slider.offsetWidth);
   };
   const communitySlideRight = () => {
     let slider = document.getElementById("community-container");
     let sliderItem = document.getElementById("community");
     slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 10;
+  };
+
+  // Akkoo Menu slider Function
+  const menuSlideLeft = () => {
+    let slider = document.getElementById("menu-item-container");
+    let sliderItem = document.getElementById("menu-item");
+    slider.scrollLeft = slider.scrollLeft - sliderItem.offsetWidth - 15;
+    console.log(slider.offsetWidth);
+  };
+  const menuSlideRight = () => {
+    let slider = document.getElementById("menu-item-container");
+    let sliderItem = document.getElementById("menu-item");
+    slider.scrollLeft = slider.scrollLeft + sliderItem.offsetWidth + 15;
+    console.log(sliderItem.offsetWidth);
+
   };
 
   return (
@@ -139,6 +136,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <a href="#unique">
+          <BsArrowLeft className="scroll-to-unique-section" />
+        </a>
       </section>
 
       {/* What makes Akkoo Unique section */}
@@ -382,7 +382,7 @@ export default function Home() {
         </div>
         {/* right */}
         <div className="our-community-right-container">
-          <img src={uniqueSectionPic} alt="" className="our-community-img" />
+          <img src={communityPic} alt="" className="our-community-img" />
           <div className="our-community-cup-one"></div>
         </div>
       </section>
@@ -399,31 +399,52 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Menu selection items */}
+        <div className="akkoo-menu-the-main-menu-container">
+          {/* Menu selection items */}
 
-        <ul className="menu-selection-wrapper">
-          <li>Break Fast</li>
-          <li>Lunch</li>
-          <li>Cake</li>
-          <li>Hot Drinks</li>
-          <li>Soft Drinks</li>
-          <li>Special Order</li>
-        </ul>
-
-        {/* Menu Items */}
-        <div className="menu-one-items-main-container">
-          {breakfastMenuData.map((item) => {
-            return (
-              <div className="menu-items-wrapper">
-                <img src={menuItemImg} alt="" className="menu-item-img" />
-                <div className="menu-item-name-description">
-                  <p className="menu-item-name">{item.name}</p>
-                  <p className="menu-item-description">{item.description}</p>
-                </div>
-              </div>
-            );
-          })}
+          <ul className="menu-selection-wrapper">
+            <li>Break Fast</li>
+            <li>Lunch</li>
+            <li>Cake</li>
+            <li>Hot Drinks</li>
+            <li>Soft Drinks</li>
+            <li>Special Order</li>
+          </ul>
+          {/* Menu Items */}
+          <div className="menu-items-main-container">
+            <div className="akkoo-menu-arrows-wrapper">
+              <BsArrowLeft
+                className="akkoo-menu-prev"
+                onClick={menuSlideLeft}
+              />
+            </div>
+            <div className="menu-one-items-main-container" id="menu-item-container">
+              {breakfastMenuData.map((item) => {
+                return (
+                  <div className="menu-items-wrapper" id="menu-item">
+                    {/* <img src={menuItemImg} alt="" className="menu-item-img" /> */}
+                    <div className="menu-item-name-description">
+                      <p className="menu-item-name">{item.name}</p>
+                      <p className="menu-item-description">
+                        {item.description}
+                      </p>
+                      <p className="menu-price-tag">
+                        <b>120</b> ETB
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="akkoo-menu-arrows-wrapper">
+              <BsArrowLeft
+                className="akkoo-menu-next"
+                onClick={menuSlideRight}
+              />
+            </div>
+          </div>
         </div>
+        <div className="akkoo-menu-cup-one"></div>
       </section>
 
       {/* FOOTER SECTION */}
@@ -467,8 +488,8 @@ export default function Home() {
                 <img src={sectionThreeImg2} alt="" className="footer-img" />
                 <img src={sectionThreeImg3} alt="" className="footer-img" />
                 <img src={sectionThreeImg4} alt="" className="footer-img" /> */}
-                <img src={kidi} alt="" className="footer-img" />
-                <img src={fitsum} alt="" className="footer-img" />
+                <img src={communityPic} alt="" className="footer-img" />
+                <img src={communityPic} alt="" className="footer-img" />
               </div>
               <div className="footer-arrows-wrapper">
                 <BsArrowLeft className="footer-prev" />
