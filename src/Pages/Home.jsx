@@ -52,13 +52,13 @@ export default function Home() {
   const menuSlideLeft = () => {
     let slider = document.getElementById("menu-item-container");
     let sliderItem = document.getElementById("menu-item");
-    slider.scrollLeft = slider.scrollLeft - sliderItem.offsetWidth - 15;
+    slider.scrollLeft = slider.scrollLeft - sliderItem.offsetWidth - 16;
     console.log(slider.offsetWidth);
   };
   const menuSlideRight = () => {
     let slider = document.getElementById("menu-item-container");
     let sliderItem = document.getElementById("menu-item");
-    slider.scrollLeft = slider.scrollLeft + sliderItem.offsetWidth + 15;
+    slider.scrollLeft = slider.scrollLeft + sliderItem.offsetWidth + 16;
     console.log(sliderItem.offsetWidth);
   };
 
@@ -430,11 +430,13 @@ export default function Home() {
       </section>
 
       {/* AKKOO MENU SECTION */}
-      <section id="menu">
+      <section class="w-11/12 m-auto py-32 text-darkGreen" id="menu">
         {/* Title */}
         <div>
-          <h2>Akkoo Menu</h2>
-          <p>
+          <h2 class="menu-title text-4xl font-extrabold md:text-6xl">
+            Akkoo Menu
+          </h2>
+          <p class="w-full text-sm md:w-3/5 sm:text-base ">
             Most people visit us expecting only good coffee and are fairly
             impressed with our ‘Buna Kurs’ (barley flour with butter)
             accompanying it. We’re known for our excellent coffee in all its
@@ -443,46 +445,55 @@ export default function Home() {
         </div>
 
         <div>
-          {/* Menu selection items */}
-
-          <ul>
-            <li>Break Fast</li>
-            <li>Lunch</li>
-            <li>Cake</li>
-            <li>Hot Drinks</li>
-            <li>Soft Drinks</li>
-            <li>Special Order</li>
+          {/* Menu selection container*/}
+          <ul class=" flex items-center flex-wrap gap-2 justify-start m-auto my-5 w-full text-sm md:text-base sm:justify-center">
+            <li class="bg-otherColor p-2 rounded-md md:p-4">Break Fast</li>
+            <li class="bg-otherColor p-2 rounded-md md:p-4">Lunch</li>
+            <li class="bg-otherColor p-2 rounded-md md:p-4">Cake</li>
+            <li class="bg-otherColor p-2 rounded-md md:p-4"> Hot Drinks</li>
+            <li class="bg-otherColor p-2 rounded-md md:p-4">Soft Drinks</li>
+            <li class="bg-otherColor p-2 rounded-md md:p-4">Special Order</li>
           </ul>
+
           {/* Menu Items */}
-          <div>
+          <div class="flex items-center gap-4">
             <div>
-              <BsArrowLeft onClick={menuSlideLeft} />
+              <BsArrowLeft class="p-3 text-4xl bg-otherColor rounded-full" onClick={menuSlideLeft} />
             </div>
-            <div id="menu-item-container">
+            <div
+              class="flex items-center overflow-scroll py-6 justify-start space-x-4 w-full"
+              id="menu-item-container"
+            >
               {breakfastMenuData.map((item) => {
                 return (
-                  <div id="menu-item">
+                  <div
+                    class="relative min-w-full sm:min-w-fit p-6 bg-otherColor rounded-lg"
+                    id="menu-item"
+                  >
                     {/* <img src={menuItemImg} alt="" className="menu-item-img" /> */}
-                    <div>
-                      <p>{item.name}</p>
-                      <p>{item.description}</p>
-                      <p>
-                        <b>120</b> ETB
-                      </p>
-                    </div>
+                    {/* <div> */}
+                    <p class="text-base pb-2  sm:text-lg">{item.name}</p>
+                    <p class="text-sm sm:text-base">{item.description}</p>
+                    <p class="absolute -top-5 rounded-md p-2 bg-whiteText right-2">
+                      <b>120</b> ETB
+                    </p>
+                    {/* </div> */}
                   </div>
                 );
               })}
             </div>
             <div>
-              <BsArrowLeft onClick={menuSlideRight} />
+              <BsArrowLeft
+                class="p-3 text-4xl bg-otherColor rounded-full -rotate-180"
+                onClick={menuSlideRight}
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section className="gallery-section-main-container">
+      {/* <section className="gallery-section-main-container">
         <div class="gallery">
           <div class="gallery__item">
             <div class="embed">
@@ -585,15 +596,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FOOTER SECTION */}
-      <section className="footer-main-container">
+      <section class="bg-lightGreen">
         {/* TOP OF FOOTER */}
-        <div className="footer-top-container">
+        <div>
           {/* LEFT */}
-          <div className="footer-left-container">
-            <h2 className="footer-section-title">About Us</h2>
+          <div >
+            <h2>About Us</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
               corrupti, culpa aspernatur eos expedita omnis, saepe optio
@@ -602,17 +613,17 @@ export default function Home() {
             <h3>We are open 24 hours a day 7 days a week.</h3>
           </div>
           {/* MIDDLE */}
-          <div className="footer-middle-container">
-            <h1 className="footer-section-title">Where we are</h1>
-            <div className="footer-middle-item-container">
+          <div>
+            <h1 >Where we are</h1>
+            <div >
               {/* <CiLocationOn className="footer-middle-location-icon" /> */}
-              <p className="footer-middle-item-description">
+              <p >
                 Addis Ababa, Ethiopia Churchill Road, Pass Tedros Square, Hibret
                 Insurance Building, Ground Floor, Addis Ababa.{" "}
               </p>
             </div>
-            <div className="footer-middle-item-container">
-              <CiLocationOn className="footer-middle-phone-icon" />
+            <div >
+              <CiLocationOn  />
               <div>
                 <p>+251 -905-828282</p>
                 <p>+251 -905-828282</p>
@@ -620,27 +631,27 @@ export default function Home() {
             </div>
           </div>
           {/* RIGHT */}
-          <div className="bottom-footer-middle-wrapper">
-            <h1 className="footer-section-title">Quick Menu</h1>
-            <ul className="bottom-footer-menu-wrapper">
-              <a href="#hero" className="bottom-footer-menu-item">
+          <div >
+            <h1 >Quick Menu</h1>
+            <ul >
+              <a href="#hero" >
                 <li>home</li>
               </a>
-              <a href="#about" className="bottom-footer-menu-item">
+              <a href="#about" >
                 <li>about akkoo</li>
               </a>
-              <a href="#services" className="bottom-footer-menu-item">
+              <a href="#services" >
                 <li>services</li>
               </a>
-              <a href="#community" className="bottom-footer-menu-item">
+              <a href="#community">
                 <li>community</li>
               </a>
             </ul>
           </div>
         </div>
-        <div className="bottom-footer-container">
+        <div >
           {/* BOTTOM FOOTER LEFT */}
-          <div className="bottom-footer-left-wrapper">
+          <div >
             <p>&#9426;</p>
             <p>Akkoo Coffee.</p>
             <p> All Rights Reserved</p> {" | "}
@@ -649,7 +660,7 @@ export default function Home() {
               <a
                 href="https://abraham-b.netlify.app/"
                 target="blank"
-                className="creator"
+                
               >
                 {" "}
                 Abraham
@@ -658,15 +669,15 @@ export default function Home() {
           </div>
 
           {/* BOTTOM FOOTER LEFT */}
-          <div className="bottom-footer-right-wrapper">
-            <img src={facebook} className="footer-social-icon" />
-            <img src={instagram} className="footer-social-icon" />
-            <img src={twitter} className="footer-social-icon" />
+          <div >
+            <img src={facebook}  />
+            <img src={instagram}  />
+            <img src={twitter} />
           </div>
         </div>
         {/* Back to top */}
         <a href="#home">
-          <BsArrowLeft className="scroll-to-top" />
+          <BsArrowLeft  />
         </a>
       </section>
     </div>
