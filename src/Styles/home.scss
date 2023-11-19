@@ -28,46 +28,68 @@
         transform: scale(1.05);
     }
 }
-.hero-cup-two{
-    position: absolute;
-    bottom:0%;
-    right: 1%;
-    width: 150px;
-    height: 150px;
-    opacity: 0.3;
-    background-color: $light-green-transparent;
-    padding: 3rem;
-    border-radius: 50%;
-    // border: 10px solid white;
-    transition: all 0.3s ease-in-out;
-    cursor: default;
-    &:hover{
-        transform: scale(1.05);
-    }
-}
-.hero-pattern{
-    position: absolute;
-    top: 10%;
-    left: 0;
-    width: 20%;
-    opacity: 0.3;
-}
+
 .hero-title-wrapper{
     @include flex(flex,center,center);
     gap: 0rem;
 }
 .hero-title{
     position: relative;
-    font-size: 12rem;
     color: $dark-green;
     z-index: 1;
-}
-.hero-title-two{
-    @extend .hero-title;
-    font-size: 6rem;
-    margin-top: 4rem;
+    @media (max-width: 500px) {
+        font-size: 4rem;
+    }
+    @media (min-width: 500px) {
+        font-size: 6rem;
+    }
+    @media (min-width: 700px) {
+        font-size: 6rem;
+    }
+    @media (min-width: 1024px) {
+        font-size: 8rem;
+    }
+    @media (min-width: 1400px) {
+        font-size: 12rem;
+    }
+    em{
     font-family: 'Dancing Script', cursive;
+    @media (max-width: 500px) {
+        font-size: 2rem;
+    }
+    @media (min-width: 500px) {
+        font-size: 2rem;
+    }
+    @media (min-width: 700px) {
+        font-size: 3rem;
+    }
+    @media (min-width: 1024px) {
+        font-size: 4rem;
+    }
+    @media (min-width: 1400px) {
+        font-size: 6rem;
+    }
+    }
 }
+// .hero-title-two{
+//     @extend .hero-title;
+//     // margin-top: 4rem;
+//     @media (max-width: 500px) {
+//         font-size: 2rem;
+//     }
+//     @media (min-width: 500px) {
+//         font-size: 2rem;
+//     }
+//     @media (min-width: 700px) {
+//         font-size: 3rem;
+//     }
+//     @media (min-width: 1024px) {
+//         font-size: 3rem;
+//     }
+//     @media (min-width: 1400px) {
+//         font-size: 6rem;
+//     }
+// }
 .hero-subtitle{
     font-size: 1.3rem;
     color: rgb(63, 63, 63);
@@ -162,7 +184,7 @@
 }
 .unique-left-container{
     position: relative;
-    width: 70%;
+    width: 75%;
     z-index: 1;
     &::after{
         content: "";
@@ -189,13 +211,12 @@
 .unique-cup-one{
     position: absolute;
     top: -6rem;
-    left: -6rem;
-    width: 250px;
-    height: 250px;
+    left: -4rem;
+    width: 50%;
+    aspect-ratio: 3/3;
     z-index: -1;
     opacity: 0.5;
     background-color: $other-color;
-    padding: 3rem;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
     cursor: default;
@@ -207,37 +228,19 @@
     position: absolute;
     bottom: -4rem;
     right: 0;
-    width: 200px;
-    height: 200px;
+    width: 50%;
+    aspect-ratio: 3/3;
     z-index: -1;
     opacity: 0.5;
     background-color: $other-color;
-    padding: 3rem;
     border-radius: 50%;
-    // border: 1px solid $light-green-transparent;
     transition: all 0.3s ease-in-out;
     cursor: default;
     &:hover{
         transform: scale(1.05);
     } 
 }
-.unique-cup-three{
-    position: absolute;
-    top: 3rem;
-    left: -5rem;
-    width: 20%;
-    z-index: -1;
-    opacity: 0.2;
-    background-color: $light-green;
-    padding: 3rem;
-    border-radius: 50%;
-    border: 10px solid $light-green;
-    transition: all 0.3s ease-in-out;
-    cursor: default;
-    &:hover{
-        transform: scale(1.05);
-    } 
-}
+
 
 .section-two-descriptions-container{
     display: flex;
@@ -279,7 +282,6 @@
 .section-two-right-container{
     position: relative;
     width: 100%;
-    justify-self: flex-start;
     z-index: 1;
     h2{
         position: relative;
@@ -404,23 +406,7 @@
     border-radius: 50px;
     border: none;
 }
-.about-cup-two{
-    position: absolute;
-    top: -4rem;
-    left: -4rem;
-    width: 30%;
-    z-index: -1;
-    opacity: 0.2;
-    background-color: $light-green;
-    padding: 3rem;
-    border-radius: 50%;
-    border: 10px solid $light-green;
-    transition: all 0.3s ease-in-out;
-    cursor: default;
-    &:hover{
-        transform: scale(1.05);
-    } 
-}
+
 .more-about-us-title{
     font-size: 3rem;
     position: relative;
@@ -530,18 +516,18 @@
     padding: 5rem 0rem;
     background-color:#e6efe5;
     border-top-right-radius: 70px;
+    
 }
 .our-community-left-container{
     padding: 4rem 0rem;
-    width: 80%;
+    max-width: 80%;
     margin: auto;
-    justify-self: flex-start;
     h2{
+        max-width: 100%;
         position: relative;
         font-size: 4rem;
         font-weight: 900;
         color: $dark-green;
-        line-height: 4rem;
         margin-bottom: 2rem;
         z-index: 1;
             &::after{
@@ -549,7 +535,7 @@
             position: absolute;
             font-size: 8rem;
             left:0;
-            top: -33%;
+            top: -80%;
             text-transform: uppercase;
             color: $dark-green-transparent;
             opacity: 0.15;
@@ -558,6 +544,7 @@
 
     }
     h3{
+        max-width: 100%;
         font-size: 1.5rem;
         padding-bottom: 1rem;
         font-weight: 900;
@@ -565,17 +552,18 @@
     }
     p{
         color: $dark-green-transparent;
-        padding-right: 5rem
+        padding-right: 5rem;
+        max-width: 100%;
     }
   
 }
 .community-descriptions-container{
     display: flex;
     margin-top: 1rem;
+    max-width: 100%;
     gap: 10px;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    width: 90%;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     &::-webkit-scrollbar {
@@ -621,8 +609,8 @@
 // Our Community Right
 .our-community-right-container{
     position: relative;
-    width: 100%;
-    padding-right: 3rem;
+    max-width: 100%;
+    // padding-right: 3rem;
     z-index: 1;
     &::after{
         content: "";
@@ -652,12 +640,11 @@
     position: absolute;
     top: -7rem;
     right: 0;
-    width: 300px;
-    height: 300px;
+    width: 50%;
+    aspect-ratio: 5/5;
     z-index: -1;
     opacity: 0.3;
     background-color: $light-green-transparent;
-    padding: 3rem;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
     cursor: default;
@@ -817,12 +804,11 @@
     position: absolute;
     top: 0rem;
     right: 0;
-    width: 300px;
-    height: 300px;
+    width: 50%;
+    aspect-ratio: 5/5;
     z-index: -1;
     opacity: 0.3;
     background-color: $other-color;
-    padding: 3rem;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
     cursor: default;

@@ -1,10 +1,13 @@
 @import './variables';
 @import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Gabarito, sans-serif;
+  // font-family: 'Josefin Slab', serif;
+  // font-weight: 900;
   scroll-behavior: smooth;
   // outline: 1px solid red !important;
   // font-family: 'Bitter', serif;
@@ -20,3 +23,238 @@
 body{
   // background-color: white;
 }
+.nav-item{
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.3rem;
+        width: 0%;
+        height: 2px;
+        background-color: $dark-green;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover:after{
+      width: 60%;
+    }
+}
+// Unique Title
+.unique-title{
+        position: relative;
+        z-index: 1;
+            &::after{
+            content: "unique";
+            position: absolute;
+            left:0;
+            text-transform: uppercase;
+            color: $dark-green-transparent;
+            opacity: 0.1;
+            z-index: -1;
+                @media (max-width: 352px) {
+                 display: none;
+                }
+                @media (min-width: 352px) {
+                  font-size: 5rem;
+                  top: -80%;
+                }
+                @media (min-width: 780px) {
+                  font-size: 5rem;
+                  top: -80%;
+                }
+                @media (min-width: 1224px) {
+                  font-size: 6rem;
+                  top: -45%;
+                }
+                @media (min-width: 1440px) {
+                  font-size: 6rem;
+                  top: -45%;
+                }
+            }
+
+    }
+// About Title
+.about-title{
+        position: relative;
+        z-index: 1;
+            &::after{
+            content: "about";
+            position: absolute;
+            left:0;
+            text-transform: uppercase;
+            color: $dark-green-transparent;
+            opacity: 0.1;
+            z-index: -1;
+                @media (max-width: 352px) {
+                  font-size: 4rem;
+                  top: -30%;
+                }
+                @media (min-width: 352px) {
+                  font-size: 5rem;
+                  top: -50%;
+                }
+                @media (min-width: 780px) {
+                  font-size: 7rem;
+                  top: -35%;
+                }
+                @media (min-width: 1224px) {
+                  font-size: 7rem;
+                  top: -35%;
+                }
+                @media (min-width: 1440px) {
+                  font-size: 7rem;
+                  top: -35%;
+                }
+            }
+
+    }
+
+  // Services Title
+  .services-title{
+        position: relative;
+        z-index: 1;
+            &::after{
+            content: "service";
+            position: absolute;
+            left:0;
+            text-transform: uppercase;
+            color: $dark-green-transparent;
+            opacity: 0.1;
+            z-index: -1;
+                @media (max-width: 352px) {
+                  font-size: 4rem;
+                  top: -30%;
+                }
+                @media (min-width: 352px) {
+                  font-size: 5rem;
+                  top: -50%;
+                }
+                @media (min-width: 780px) {
+                  font-size: 7rem;
+                  top: -35%;
+                }
+                @media (min-width: 1224px) {
+                  font-size: 7rem;
+                  top: -35%;
+                }
+                @media (min-width: 1440px) {
+                  font-size: 7rem;
+                  top: -35%;
+                }
+            }
+
+    }
+    // Community Section title
+      // Services Title
+  .community-title{
+        position: relative;
+        z-index: 1;
+            &::after{
+            content: "Community";
+            position: absolute;
+            left:0;
+            text-transform: uppercase;
+            color: $white-text;
+            opacity: 0.6;
+            z-index: -1;
+                @media (max-width: 352px) {
+                  font-size: 2.5rem;
+                  top: -10%;
+                }
+                @media (min-width: 352px) {
+                  font-size: 3.5rem;
+                  top: -19%;
+                }
+                @media (min-width: 780px) {
+                  font-size: 4rem;
+                  top: -30%;
+                }
+                @media (min-width: 1224px) {
+                  font-size: 6rem;
+                  top: -25%;
+                }
+                @media (min-width: 1440px) {
+                  font-size: 6rem;
+                  top: -25%;
+                }
+            }
+
+    }
+.unique-left-container{
+    position: relative;
+    z-index: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-color: #e6efe5;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+          @media (max-width: 352px) {
+            bottom: -1rem;
+            left: -1rem;
+          } 
+          @media (min-width: 352px) {
+            bottom: -2rem;
+            left: -2rem;
+          }
+          @media (min-width: 780px) {
+            bottom: -3rem;
+            left: 3rem;
+
+          }
+          @media (min-width: 1224px) {
+            bottom: -3rem;
+            left: 3rem;
+
+          }
+          @media (min-width: 1440px) {
+           bottom: -3rem;
+           left: 3rem;
+
+          }
+    }
+}
+
+.community-right-container{
+  position: relative;
+    z-index: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+          @media (max-width: 352px) {
+            bottom: -1rem;
+            right: -1rem;
+          } 
+          @media (min-width: 352px) {
+            bottom: -2rem;
+            right: -2rem;
+          }
+          @media (min-width: 780px) {
+            bottom: -3rem;
+            right: 3rem;
+
+          }
+          @media (min-width: 1224px) {
+            bottom: -3rem;
+            right: 3rem;
+
+          }
+          @media (min-width: 1440px) {
+           bottom: -3rem;
+           right: 3rem;
+
+          }
+    }
+}
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

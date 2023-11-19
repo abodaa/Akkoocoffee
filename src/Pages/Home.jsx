@@ -4,6 +4,7 @@ import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
 
 import menuItemImg from "../images/menuImg.png";
 import communityPic from "../images/community.jpg";
+import heroImage from "../images/aboutSectionPic.jpg";
 
 import { CiCoffeeBean, CiLocationOn } from "react-icons/ci";
 import { MdFastfood } from "react-icons/md";
@@ -18,6 +19,7 @@ import instagram from "../images/instagram.png";
 import twitter from "../images/twitter.png";
 
 import AboutUsMore from "../Components/AboutUsMore";
+import OurStory from "../Components/OurStory";
 
 export default function Home() {
   // Slider functions
@@ -61,174 +63,210 @@ export default function Home() {
   };
 
   return (
-    <div className="home-main-container">
+    <div class="home-main-container">
       {/* NAVIGATION */}
-      <section className="nav-main-container">
-        {/* <div className="nav-logo-items-wrapper"> */}
-        <h1 className="nav-logo">LOGO</h1>
-        <ul className="nav-contents-container">
-          <a className="nav-item" href="#hero">
-            <li>home</li>
-          </a>
-          <a className="nav-item" href="#about">
-            <li>about us</li>
-          </a>
-          <a className="nav-item" href="#services">
-            <li>services</li>
-          </a>
-          <a className="nav-item" href="#community">
-            <li>community</li>
-          </a>
+      <section className="fixed  top-0 right-0 left-0 flex items-center justify-between px-3 z-20  ">
+        <h1 className="p-4 bg-lightGreen text-xl text-darkGreen font-extrabold">
+          LOGO
+        </h1>
+        {/* Menu Items */}
+        <CgMenuRight class="flex fixed text-4xl top-4 right-5 z-30 md:hidden" />
+        <ul class="hidden md:flex space-x-6 items-center uppercase">
+          {[
+            { val: "home", link: "#home" },
+            { val: "about", link: "#about" },
+            { val: "services", link: "#services" },
+            { val: "community", link: "#community" },
+            { val: "gallery", link: "#gallery" },
+          ].map((nav) => {
+            return (
+              <a href={nav.link} class="nav-item ">
+                <li>{nav.val}</li>
+              </a>
+            );
+          })}
+          <div class="flex items-center justify-center gap-2">
+            <a
+              href="#menu"
+              class="p-2 px-5 bg-darkGreen text-lightGreen rounded-md"
+            >
+              {" "}
+              <button>Akkoo Menu</button>
+            </a>
+            <a
+              href="#menu"
+              class="p-2 px-5 bg-whiteText text-darkGreen rounded-md"
+            >
+              {" "}
+              <button>Book</button>
+            </a>
+          </div>
         </ul>
-        {/* </div> */}
-        <div className="nav-right-container">
-          <CgMenuRight className="mobile-menu-humbergur-icon" />
-          <a href="#menu">
-            {" "}
-            <button className="akkoo-menu-btn">Akkoo Menu</button>
-          </a>
-          <a href="#menu">
-            {" "}
-            <button className="akkoo-book-table-btn">Book</button>
-          </a>
-        </div>
       </section>
-      {/* Home HERO Section */}
-      <section className="hero-main-container" id="hero">
-        <div className="hero-cup-one"></div>
-        {/* <div className="hero-cup-two"></div> */}
-        {/* <img src={pattern} alt="" className="hero-pattern" /> */}
-
-        <div className="hero-title-wrapper">
-          <h1 className="hero-title">Akkoo.</h1>
-          <h3 className="hero-title-two"> Coffee</h3>
+      {/* HERO Section */}
+      <section
+        id="home"
+        class="h-screen grid grid-cols-1 md:grid-cols-3 blgxl:grid-cols-5 "
+      >
+        {/* Hero Image */}
+        <img
+          src={heroImage}
+          class="h-screen w-full object-cover rounded-none hidden md:block md:col-span-1 blgxl:col-span-2"
+        />
+        {/* Hero Right Section */}
+        <div class="bg-otherColor flex flex-col items-center justify-center h-screen p-5 relative col-span-1 md:col-span-2 blgxl:col-span-3">
+          <div class="hidden md:flex absolute -left-10 bottom-6 bg-otherColor z-10 rounded-full ">
+            <div class="w-28 h-28 relative">
+              <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex w-20 h-20 bg-darkGreen text-lightGreen  p-5 font-bold items-center justify-center rounded-full">
+                {/* Open 24 / 7 */}
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-end items-start -space-y-9 sm:-space-y-16 text-6xl sm:text-8xl blgxl:text-9xl blgxl:-space-y-24 text-darkGreen font-extrabold px-3">
+            <p>Akkoo</p>
+            <p class="text-4xl sm:text-6xl blgxl:text-7xl ">coffee</p>
+          </div>
+          {/* <div class="text-xl bg-darkGreen p-0.5 w-1/6 px-9 text-darkGreenTransparent rounded-full"></div> */}
+          <div class="flex flex-col mt-9 items-center justify-center space-x-0 space-y-5 sm:flex-row sm:space-x-3 sm:space-y-0">
+            <div class="flex w-full h-full items-start space-x-2 text-darkGreen p-3 bg-lightGreen shadow-lg rounded-lg ">
+              <CiCoffeeBean class="text-3xl md:text-4xl" />
+              <div>
+                <p class="text-xl font-extrabold blgxl:text-2xl ">Coffee</p>
+                <p class="text-sm blgxl:text-base ">Fine Ethiopian Coffee</p>
+              </div>
+            </div>
+            <div class="flex w-full h-full items-start space-x-2 text-lightGreen p-3 bg-darkGreen shadow-lg rounded-lg ">
+              <PiBowlFoodThin class="text-3xl md:text-4xl" />
+              <div>
+                <p class="text-xl font-extrabold blgxl:text-2xl">Food</p>
+                <p class="text-sm blgxl:text-base ">
+                  Traditional Ethiopian Cusine
+                </p>
+              </div>
+            </div>
+            <div class="flex w-full h-full items-start space-x-2 text-darkGreen  p-3 bg-whiteText shadow-lg rounded-lg">
+              <MdFastfood class="text-3xl md:text-4xl" />
+              <div>
+                <p class="text-xl font-extrabold blgxl:text-2xl">Buna Kurs</p>
+                <p class="text-sm blgxl:text-base ">
+                  Snacks Served With Coffee
+                </p>
+              </div>
+            </div>
+          </div>
+          <a
+            class="absolute bottom-9 right-6 p-4 rounded-full bg-whiteText"
+            href="#unique"
+          >
+            <BsArrowLeft class="-rotate-90 font-extrabold" />
+          </a>
         </div>
-        <h3 className="hero-subtitle">
-          Exotic premium Ethiopian coffee all the way from the bean to your cup
-        </h3>
-        <div className="hero-service-items-wrapper">
-          <div className="hero-service-one-item-wrapper">
-            <CiCoffeeBean className="hero-service-one-item-icon" />
-            <div className="hero-service-description">
-              <p className="hero-service-title">Fine Ethiopian Coffee</p>
-              <p className="hero-service-sub-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-          </div>
-          <div className="hero-service-two-item-wrapper">
-            <PiBowlFoodThin className="hero-service-two-item-icon" />
-            <div className="hero-service-description">
-              <p className="hero-service-title">Traditional Food</p>
-              <p className="hero-service-sub-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-          </div>
-          <div className="hero-service-three-item-wrapper">
-            <MdFastfood className="hero-service-three-item-icon" />
-            <div className="hero-service-description">
-              <p className="hero-service-title">Buna Kurs</p>
-              <p className="hero-service-sub-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-          </div>
-        </div>
-        <a href="#unique">
-          <BsArrowLeft className="scroll-to-unique-section" />
-        </a>
       </section>
 
       {/* What makes Akkoo Unique section */}
-      <section className="section-two-main-container" id="unique">
+      <section
+        class="flex flex-col space-x-0 space-y-20   w-11/12 m-auto items-center justify-center pt-32 md:flex-row md:space-x-20 md:space-y-0"
+        id="unique"
+      >
         {/* Left */}
-
-        <div className="unique-left-container">
-          <img src={uniqueSectionPic} alt="" className="unique-img" />
-          <div className="unique-cup-one"></div>
+        <div class="unique-left-container w-5/6 md:w-1/2 ">
+          <img
+            class="w-full rounded-2xl shadow-xl border-4 border-solid border-whiteText md:w-full"
+            src={uniqueSectionPic}
+            alt=""
+          />
         </div>
 
         {/* right */}
-        <div className="section-two-right-container">
-          <h2>What makes us unique?</h2>
-          <div
-            className="section-two-descriptions-container"
-            id="unique-container"
-          >
+        <div class="w-full md:w-1/2 z-10">
+          {/* Unique section Title */}
+          <h2 class="unique-title text-3xl text-darkGreen font-bold blgxl:text-5xl">
+            What makes us unique?
+          </h2>
+          {/* Unique section slider container */}
+          <div class="flex overflow-scroll space-x-2.5" id="unique-container">
             {/* First Description */}
-            <div className="section-two-description-wrapper" id="unique">
-              <h3>We make you feel at home.</h3>
-              <p>
+            <div class="min-w-full" id="unique">
+              <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
+                We make you feel at home.
+              </h3>
+              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
                 After tasting our fine coffee and eating our selection of
                 delicious traditional foods, we don’t doubt you’ll come again to
                 become a loyal customer. Whether you order Coffee, Macchiato,
                 the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied. Not only will you enjoy our
-                products, but our crew does a great job in giving an excellent
-                service to those who walk through our door. We are also the
-                first restaurant in the country to offer an elderly discount. In
-                such ways and more, we are committed to honoring our culture and
-                your appetite. By providing a warm and inviting atmosphere we
-                live to serve you just as you’d be served at your grandmother’s
-                (AKKOO) home.
+                you'll be completely satisfied.
               </p>
             </div>
             {/* Second description */}
-            <div className="section-two-description-wrapper" id="unique">
-              <h3>Our space speaks volumes.</h3>
-              <p>
-                Set up in an elegant fashion, our high-end coffee shop intends
-                to tell the story of the birthplace and origins of the original
-                AKKOO COFFEE’s culture. Our shops are intended for locations
-                with a more conservative and low-average-higher-income customer
-                base.
+            <div class="min-w-full" id="unique">
+              <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
+                Our space speaks volumes.
+              </h3>
+              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
+                After tasting our fine coffee and eating our selection of
+                delicious traditional foods, we don’t doubt you’ll come again to
+                become a loyal customer. Whether you order Coffee, Macchiato,
+                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
+                you'll be completely satisfied.
               </p>
             </div>
             {/* Third description */}
-            <div className="section-two-description-wrapper" id="unique">
-              <h3>We keep things interesting.</h3>
-              <p>
-                Our menu isn’t prepared to serve for months to come. Our
-                roasters hand pick one single origin and one blend to bring you
-                an exceptional coffee experience each month. We are committed to
-                improving the quality of our drinks and food in alignment with
-                our customer needs. We value feedback to stay attentive and
-                in-tune.
+            <div class="min-w-full" id="unique">
+              <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
+                We keep things interesting.
+              </h3>
+              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
+                After tasting our fine coffee and eating our selection of
+                delicious traditional foods, we don’t doubt you’ll come again to
+                become a loyal customer. Whether you order Coffee, Macchiato,
+                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
+                you'll be completely satisfied.
               </p>
             </div>
             {/* Fourth description */}
-            <div className="section-two-description-wrapper" id="unique">
-              <h3>Our Coffee.</h3>
-              <p>
-                Exotic premium Ethiopian coffee all the way from the bean to
-                your cup Whether you enjoy making your coffee by grinding coffee
-                beans or you prefer having it brewed all the way, AKKOO is here
-                to serve. Try our selection of roasted coffee; the fruity
-                flavored Arabica and the AAA graded robust flavor from Oromia
-                region Gedame wereda. We are a proud member of the Ethiopian
-                Chamber of commerce.
+            <div class="min-w-full" id="unique">
+              <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
+                Our Coffee.
+              </h3>
+              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
+                After tasting our fine coffee and eating our selection of
+                delicious traditional foods, we don’t doubt you’ll come again to
+                become a loyal customer. Whether you order Coffee, Macchiato,
+                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
+                you'll be completely satisfied.
               </p>
             </div>
           </div>
-          <div className="hero-arrows-wrapper">
-            <BsArrowLeft className="hero-prev" onClick={uniqueSlideLeft} />
-            <BsArrowLeft className="hero-next" onClick={uniqueSlideRight} />
+          {/* Unique section slider arrows container */}
+          <div class="flex items-center mt-8 space-x-6">
+            {/* Arrow left */}
+            <BsArrowLeft
+              class="p-3 text-4xl bg-otherColor rounded-full"
+              onClick={uniqueSlideLeft}
+            />
+            {/* Arrow right */}
+            <BsArrowLeft
+              class="p-3 text-4xl bg-otherColor rounded-full -rotate-180"
+              onClick={uniqueSlideRight}
+            />
           </div>
-          <div className="unique-cup-two"></div>
         </div>
       </section>
+
       {/*About akkoo coffe section */}
-      <section className="section-three-main-container" id="about">
-        {/* left */}
-        <div className="section-three-left-container">
-          <h2>About Akkoo</h2>
-          <div className="section-three-descriptions-container">
-            <h3>
+      <section class="grid md:grid-cols-3 mt-28 blgxl:grid-cols-5 " id="about">
+        {/*About Akkoo left */}
+        <div class="py-10 px-6 flex flex-col items-start justify-center  bg-lightGreen md:p-20 md:col-span-2 blgxl:col-span-3">
+          <h2 class="about-title text-4xl font-extrabold text-darkGreen md:text-6xl">
+            About Akkoo
+          </h2>
+          <div>
+            <h3 class="text-lg font-bold text-darkGreen blgxl:text-2xl ">
               ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
               spoken languages in Ethiopia) meaning ‘Grandmother’
             </h3>
-            <p>
+            <p class="text-sm text-darkGreenTransparent pt-6 blgxl:text-base">
               Our commitment is to bring you the ultimate coffee experience, one
               that is responsibly produced from seed to cup. This is not merely
               an ideology but our everyday practice. It was on May 2019 AKKOO
@@ -237,53 +275,65 @@ export default function Home() {
               road. Upon its opening, Akkoo was welcomed with encouraging
               responses from the community. It quickly became the meeting place
               for coffee lovers ranging from university students to retirees.
-              Besides our fine coffee, customers also enjoy our baked goods as
-              well as our healthy and delicious meals. Many also admire the
-              design and overall atmosphere of the place.
             </p>
           </div>
-          <div className="about-btns-wrapper">
+          <div class="space-y-4 space-x-0 mt-20 flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0">
             <AboutUsMore />
-            <button className="about-btn-two">Our story</button>
+            <OurStory />
           </div>
         </div>
 
-        {/* right */}
-        <div className="about-right-container"></div>
+        {/* About Akkoo right */}
+        <img
+          src={heroImage}
+          class="hidden h-screen w-full object-cover rounded-none md:block col-span-1 blgxl:col-span-2"
+        />
       </section>
 
       {/* Services section */}
-
-      <section className="our-services-main-container" id="services">
-        <div className="our-services-title-subtitle-wrapper">
-          <h2 className="our-services-title">Our Services</h2>
-          <p className="our-services-subtitle">
+      <section
+        class="flex flex-col items-start justify-center text-darkGreen w-11/12 m-auto py-32"
+        id="services"
+      >
+        <div>
+          <h2 class="services-title text-4xl font-extrabold md:text-6xl">
+            Akkoo services
+          </h2>
+          <p class="text-darkGreenTransparent w-full sm:w-2/3">
             Akkoo has the best catering service should you choose to have
             delicious local cusine and Ethiopian coffee at your event.
           </p>
         </div>
 
-        <div className="our-services-items-wrapper">
-          <div className="service-item-wrapper">
-            <p className="service-item-title">Ethiopian Coffee</p>
-            <p className="service-item-description">
+        <div class="flex flex-col space-x-0 space-y-20 mt-14 md:flex-row md:space-x-6 md:space-y-0">
+          <div class="relative bg-otherColor p-8 shadow-lg rounded-2xl blgxl:p-12 md:p-6 md:w-1/3">
+            <div class="w-16 h-16 bg-otherColor rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"></div>
+            <p class="text-2xl capitalize mb-2 lg:text-3xl ">
+              Ethiopian Coffee
+            </p>
+            <p class="text-sm lg:text-base">
+              {" "}
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
+              enim facilis ullam praesentium voluptatibus. Id labore error aut
+              corrupti repellat.{" "}
+            </p>
+          </div>
+          <div class="relative bg-lightGreen shadow-lg rounded-2xl p-8 md:scale-105 blgxl:p-12 md:p-6 md:w-1/3">
+            <div class="w-16 h-16 bg-lightGreen rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"></div>
+            <p class="text-2xl capitalize mb-2 lg:text-3xl">
+              traditional cuisine
+            </p>
+            <p class="text-sm lg:text-base">
               Our ‘Agelgil’ is the most famous order and customers have enjoyed
               both our fasting and non-fasting orders. Delivered to you in a
               beautiful Mesob, we have options suitable for your guest size
               starting from 10 people.
             </p>
-          </div>
-          <div className="service-item-wrapper-middle">
-            <p className="service-item-title">traditional cuisine</p>
-            <p className="service-item-description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
-              enim facilis ullam praesentium voluptatibus. Id labore error aut
-              corrupti repellat.
-            </p>
           </div>{" "}
-          <div className="service-item-wrapper">
-            <p className="service-item-title">buna kurs</p>
-            <p className="service-item-description">
+          <div class="relative bg-otherColor p-8 shadow-lg rounded-2xl blgxl:p-12 md:p-6 md:w-1/3">
+            <div class="w-16 h-16 bg-otherColor rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"></div>
+            <p class="text-2xl capitalize mb-2 lg:text-3xl">buna kurs</p>
+            <p class="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
               enim facilis ullam praesentium voluptatibus. Id labore error aut
               corrupti repellat.
@@ -291,106 +341,100 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Communities Section */}
-      <section className="our-community-main-container" id="community">
-        {/* Left */}
-        <div className="our-community-left-container">
-          <h2>Our Community</h2>
-          <h3>
-            Every purchase of coffee at AKKOO positively impacts social and
-            environmental conditions at the source.
-          </h3>
-          <p>
-            AKKOO sources its coffee from west Ethiopia, specifically from
-            Wellega zone Gedame wereda in Oromia region. It’s through the
-            relationships we build with the local community that some of the
-            finest coffee in the world has been brought to AKKOO. We are proud
-            to say that we give back to the community that grows our coffee as
-            part of our social entrepreneurship program via projects that range
-            from education, training, financial support and community building.
-          </p>
-          <div
-            className="community-descriptions-container"
-            id="community-container"
-          >
-            {/* First Description */}
-            <div className="community-description-wrapper" id="community">
-              <h3>
-                Tigist | <em>Operations Manager</em>
-              </h3>
-              <p>
-                ‘My relationship with Dawit and Wudassie dates back to 2004
-                while I was working for Wudassie Souvenirs’ shop. I was the
-                first employee at the shop. Since then, I have been working with
-                them at their different companies in different departments and
-                positions. Now, I am the Operation Manager for AKKOO. I have the
-                wonderful opportunity of learning the details of the retail side
-                of coffee while working at the busy coffee shop managing the
-                café. Essentially my job is to keep AKKOO running like a
-                well-oiled machine and I pour my heart and soul into doing just
-                that. I have a shirt that says, “Keep calm and let TG handle
-                it!” At AKKOO, those are words to live by!
-              </p>
-            </div>
-            {/* Second description */}
-            <div className="community-description-wrapper" id="community">
-              <h3>
-                Fitsum | <em>Administrative and Finance Head</em>{" "}
-              </h3>
-              <p>
-                ‘Before AKKOO, the coffee that I used to drink in other shops
-                was pre-ground, over-roasted coffee that has been sitting on the
-                shelf for…well. Who knows how long?! I love black coffee, but I
-                had to give it up since most coffee shops don’t brew it well.
-                Ever since AKKOO Coffee opened, I went back to drinking coffee
-                and occasionally Macchiato. I was taken aback, almost left
-                speechless, by how wonderful the coffee is! I am happy to be
-                enjoying black coffee again.
-              </p>
-            </div>
-            {/* Third description */}
-            <div className="community-description-wrapper" id="community">
-              <h3>
-                Kidi | <em>Purchasing</em>
-              </h3>
-              <p>
-                I love tea – especially with cinnamon. Here at Akkoo we know how
+      <section
+        class=" bg-otherColor text-darkGreen rounded-tr-3xl rounded-bl-3xl"
+        id="community"
+      >
+        <div class="flex flex-col-reverse items-center justify-center w-11/12 m-auto gap-20 py-12 md:py-32 md:flex-row">
+          {/* Community Section Left */}
+          <div class="w-full md:w-1/2">
+            <h2 class="community-title text-4xl text-darkGreen font-bold blgxl:text-6xl">
+              Our Community
+            </h2>
+            <h3 class="text-sm lg:text-base">
+              Every purchase of coffee at AKKOO positively impacts social and
+              environmental conditions at the source.AKKOO sources its coffee
+              from west Ethiopia, specifically from Wellega zone Gedame wereda
+              in Oromia region.
+            </h3>
+            <div
+              class="flex flex-nowrap overflow-scroll space-x-2.5 max-w-full mt-3"
+              id="community-container"
+            >
+              {[
+                {
+                  name: "Tigist",
+                  title: "Operations Manager",
+                  description: `Essentially my job is to keep AKKOO running like a well-oiled
+                machine and I pour my heart and soul into doing just that. I
+                have a shirt that says, “Keep calm and let TG handle it!” At
+                AKKOO, those are words to live by!`,
+                },
+                {
+                  name: "Fitsum",
+                  title: "Administrative and Finance Head",
+                  description: `I was taken aback, almost left speechless, by how wonderful the
+                coffee is! I am happy to be enjoying black coffee again.`,
+                },
+                {
+                  name: "Kidi",
+                  title: "Purchasing",
+                  description: `I love tea – especially with cinnamon. Here at Akkoo we know how
                 to make great tea, cinnamon spiced, lemon squeezed or a simple
-                black tea, I have no doubt you’ll enjoy it.
-              </p>
+                black tea, I have no doubt you’ll enjoy it.`,
+                },
+                {
+                  name: "Dave",
+                  title: "Customer",
+                  description: `If you’re a coffee lover, I highly recommend you try our
+                Espresso. It’s the best one in the city!`,
+                },
+              ].map((eachPerson) => {
+                return (
+                  <div className="min-w-full" id="community">
+                    <h3 class="font-bold mb-2">
+                      {eachPerson.name} | <em>{eachPerson.title}</em>
+                    </h3>
+                    <p class="text-sm text-darkGreenTransparent blgxl:text-base">
+                      {eachPerson.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
-            {/* Fourth description */}
-            <div className="community-description-wrapper" id="community">
-              <h3>Dave</h3>
-              <p>
-                If you’re a coffee lover, I highly recommend you try our
-                Espresso. It’s the best one in the city!
-              </p>
+            {/* Community slider arrows container */}
+            <div class="flex items-center mt-8 space-x-6">
+              {/* Arrow left */}
+              <BsArrowLeft
+                class="p-3 text-4xl bg-whiteText rounded-full"
+                onClick={communitySlideLeft}
+              />
+              {/* Arrow right */}
+              <BsArrowLeft
+                class="p-3 text-4xl bg-whiteText rounded-full -rotate-180"
+                onClick={communitySlideRight}
+              />
             </div>
           </div>
-          <div className="community-arrows-wrapper">
-            <BsArrowLeft
-              className="community-prev"
-              onClick={communitySlideLeft}
-            />
-            <BsArrowLeft
-              className="community-next"
-              onClick={communitySlideRight}
+          {/* right */}
+          <div class="community-right-container w-5/6 md:w-1/2 ">
+            <img
+              src={communityPic}
+              alt=""
+              class="w-full rounded-2xl shadow-xl border-4 border-solid border-whiteText md:w-full"
             />
           </div>
-        </div>
-        {/* right */}
-        <div className="our-community-right-container">
-          <img src={communityPic} alt="" className="our-community-img" />
-          <div className="our-community-cup-one"></div>
         </div>
       </section>
+
       {/* AKKOO MENU SECTION */}
-      <section className="menu-main-container" id="menu">
+      <section id="menu">
         {/* Title */}
-        <div className="akkoo-menu-title-subtitle-wrapper">
-          <h2 className="akkoo-menu-title">Akkoo Menu</h2>
-          <p className="akkoo-menu-subtitle">
+        <div>
+          <h2>Akkoo Menu</h2>
+          <p>
             Most people visit us expecting only good coffee and are fairly
             impressed with our ‘Buna Kurs’ (barley flour with butter)
             accompanying it. We’re known for our excellent coffee in all its
@@ -398,10 +442,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="akkoo-menu-the-main-menu-container">
+        <div>
           {/* Menu selection items */}
 
-          <ul className="menu-selection-wrapper">
+          <ul>
             <li>Break Fast</li>
             <li>Lunch</li>
             <li>Cake</li>
@@ -410,27 +454,19 @@ export default function Home() {
             <li>Special Order</li>
           </ul>
           {/* Menu Items */}
-          <div className="menu-items-main-container">
-            <div className="akkoo-menu-arrows-wrapper">
-              <BsArrowLeft
-                className="akkoo-menu-prev"
-                onClick={menuSlideLeft}
-              />
+          <div>
+            <div>
+              <BsArrowLeft onClick={menuSlideLeft} />
             </div>
-            <div
-              className="menu-one-items-main-container"
-              id="menu-item-container"
-            >
+            <div id="menu-item-container">
               {breakfastMenuData.map((item) => {
                 return (
-                  <div className="menu-items-wrapper" id="menu-item">
+                  <div id="menu-item">
                     {/* <img src={menuItemImg} alt="" className="menu-item-img" /> */}
-                    <div className="menu-item-name-description">
-                      <p className="menu-item-name">{item.name}</p>
-                      <p className="menu-item-description">
-                        {item.description}
-                      </p>
-                      <p className="menu-price-tag">
+                    <div>
+                      <p>{item.name}</p>
+                      <p>{item.description}</p>
+                      <p>
                         <b>120</b> ETB
                       </p>
                     </div>
@@ -438,15 +474,11 @@ export default function Home() {
                 );
               })}
             </div>
-            <div className="akkoo-menu-arrows-wrapper">
-              <BsArrowLeft
-                className="akkoo-menu-next"
-                onClick={menuSlideRight}
-              />
+            <div>
+              <BsArrowLeft onClick={menuSlideRight} />
             </div>
           </div>
         </div>
-        <div className="akkoo-menu-cup-one"></div>
       </section>
 
       {/* Gallery Section */}
@@ -633,7 +665,7 @@ export default function Home() {
           </div>
         </div>
         {/* Back to top */}
-        <a href="#hero">
+        <a href="#home">
           <BsArrowLeft className="scroll-to-top" />
         </a>
       </section>

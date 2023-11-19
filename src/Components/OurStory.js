@@ -13,9 +13,9 @@ export default function BasicModal() {
       </Button> */}
       <button
         onClick={() => setOpen(true)}
-        class="py-2 border-solid border-2 px-6 rounded-full bg-darkGreen text-whiteText border-darkGreen"
+        class="py-2 border-solid border-2 px-6 rounded-full border-darkGreen"
       >
-        More about us
+        Our Story
       </button>
       <Modal
         aria-labelledby="modal-title"
