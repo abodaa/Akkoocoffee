@@ -13,7 +13,7 @@ export default function BasicModal() {
       </Button> */}
       <button
         onClick={() => setOpen(true)}
-        class="py-2 border-solid border-2 px-6 rounded-full border-darkGreen"
+        class="py-2 border-solid border-2 px-6 rounded-full border-whiteText text-whiteText"
       >
         Our Story
       </button>

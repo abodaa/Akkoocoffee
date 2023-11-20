@@ -135,7 +135,7 @@ export default function Home() {
                 <p class="text-sm blgxl:text-base ">Fine Ethiopian Coffee</p>
               </div>
             </div>
-            <div class="flex w-full h-full items-start space-x-2 text-lightGreen p-3 bg-darkGreen shadow-lg rounded-lg ">
+            <div class="flex w-full h-full items-start space-x-2 text-whiteText p-3 bg-darkGreen shadow-lg rounded-lg ">
               <PiBowlFoodThin class="text-3xl md:text-4xl" />
               <div>
                 <p class="text-xl font-extrabold blgxl:text-2xl">Food</p>
@@ -257,16 +257,16 @@ export default function Home() {
       {/*About akkoo coffe section */}
       <section class="grid md:grid-cols-3 mt-28 blgxl:grid-cols-5 " id="about">
         {/*About Akkoo left */}
-        <div class="py-10 px-6 flex flex-col items-start justify-center  bg-lightGreen md:p-20 md:col-span-2 blgxl:col-span-3">
-          <h2 class="about-title text-4xl font-extrabold text-darkGreen md:text-6xl">
+        <div class="py-10 px-6 flex flex-col items-start justify-center  bg-darkGreen md:p-20 md:col-span-2 blgxl:col-span-3">
+          <h2 class="about-title text-4xl font-extrabold text-whiteText md:text-6xl">
             About Akkoo
           </h2>
           <div>
-            <h3 class="text-lg font-bold text-darkGreen blgxl:text-2xl ">
+            <h3 class="text-lg font-bold text-lightGreen blgxl:text-2xl ">
               ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
               spoken languages in Ethiopia) meaning ‘Grandmother’
             </h3>
-            <p class="text-sm text-darkGreenTransparent pt-6 blgxl:text-base">
+            <p class="text-sm text-whiteText pt-6 blgxl:text-base">
               Our commitment is to bring you the ultimate coffee experience, one
               that is responsibly produced from seed to cup. This is not merely
               an ideology but our everyday practice. It was on May 2019 AKKOO
@@ -458,7 +458,10 @@ export default function Home() {
           {/* Menu Items */}
           <div class="flex items-center gap-4">
             <div>
-              <BsArrowLeft class="p-3 text-4xl bg-otherColor rounded-full" onClick={menuSlideLeft} />
+              <BsArrowLeft
+                class="p-3 text-4xl bg-otherColor rounded-full"
+                onClick={menuSlideLeft}
+              />
             </div>
             <div
               class="flex items-center overflow-scroll py-6 justify-start space-x-4 w-full"
@@ -599,13 +602,15 @@ export default function Home() {
       </section> */}
 
       {/* FOOTER SECTION */}
-      <section class="bg-lightGreen">
+      <section class="relative bg-darkGreen text-whiteText py-10">
         {/* TOP OF FOOTER */}
-        <div>
+        <div class="flex flex-col items-start justify-between w-11/12 gap-6 m-auto md:flex-row ">
           {/* LEFT */}
-          <div >
-            <h2>About Us</h2>
-            <p>
+          <div class="p-0 w-full md:w-1/3 lg:p-6">
+            <h2 class="footer-titles text-xl text-lightGreen mb-5 md:text-2xl">
+              About Us
+            </h2>
+            <p class="text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
               corrupti, culpa aspernatur eos expedita omnis, saepe optio
               dignissimos harum facilis sequi ipsam! Dignissimos, in nesciunt?
@@ -613,34 +618,38 @@ export default function Home() {
             <h3>We are open 24 hours a day 7 days a week.</h3>
           </div>
           {/* MIDDLE */}
-          <div>
-            <h1 >Where we are</h1>
-            <div >
+          <div class="p-0 w-full md:w-1/3 lg:p-6 ">
+            <h1 class="footer-titles text-xl text-lightGreen mb-5 md:text-2xl">
+              Where we are
+            </h1>
+            <div>
               {/* <CiLocationOn className="footer-middle-location-icon" /> */}
-              <p >
+              <p class="text-sm pl-4 border-l-4 border-lightGreen lg:text-base">
                 Addis Ababa, Ethiopia Churchill Road, Pass Tedros Square, Hibret
                 Insurance Building, Ground Floor, Addis Ababa.{" "}
               </p>
             </div>
-            <div >
-              <CiLocationOn  />
-              <div>
+            <div class="flex items-center gap-5 mt-5">
+              <CiLocationOn class="text-3xl lg:text-5xl" />
+              <div class="text-sm lg:text-base">
                 <p>+251 -905-828282</p>
                 <p>+251 -905-828282</p>
               </div>
             </div>
           </div>
           {/* RIGHT */}
-          <div >
-            <h1 >Quick Menu</h1>
-            <ul >
-              <a href="#hero" >
+          <div class="p-0 w-full md:w-1/3 lg:p-6">
+            <h1 class="footer-titles text-xl text-lightGreen md:text-2xl mb-5">
+              Quick Menu
+            </h1>
+            <ul class="uppercase flex flex-col space-y-4 text-sm lg:text-base">
+              <a href="#hero">
                 <li>home</li>
               </a>
-              <a href="#about" >
+              <a href="#about">
                 <li>about akkoo</li>
               </a>
-              <a href="#services" >
+              <a href="#services">
                 <li>services</li>
               </a>
               <a href="#community">
@@ -649,35 +658,27 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div >
+        <div class="flex flex-col items-start md:items-center border-t-2 px-3 pt-5  mt-5 justify-between m-auto md:flex-row ">
           {/* BOTTOM FOOTER LEFT */}
-          <div >
-            <p>&#9426;</p>
-            <p>Akkoo Coffee.</p>
-            <p> All Rights Reserved</p> {" | "}
-            <p>
-              Created by
-              <a
-                href="https://abraham-b.netlify.app/"
-                target="blank"
-                
-              >
-                {" "}
-                Abraham
-              </a>
-            </p>
+          <div class="flex flex-col text-sm md:text-base md:flex-row">
+            Akkoo Coffee. All Rights Reserved
+            {/* Created by */}
+            {/* <a href="https://abraham-b.netlify.app/" target="blank">
+              {" "}
+              Abraham
+            </a> */}
           </div>
 
           {/* BOTTOM FOOTER LEFT */}
-          <div >
-            <img src={facebook}  />
-            <img src={instagram}  />
-            <img src={twitter} />
+          <div class="flex items-center justify-center">
+            <img src={facebook} class="w-6" />
+            <img src={instagram} class="w-6" />
+            <img src={twitter} class="w-6" />
           </div>
         </div>
         {/* Back to top */}
         <a href="#home">
-          <BsArrowLeft  />
+          <BsArrowLeft class="absolute -top-6 left-1/2 -translate-x-1/2 text-4xl rounded-full bg-darkGreen w-12 h-12 p-4 rotate-90" />
         </a>
       </section>
     </div>
