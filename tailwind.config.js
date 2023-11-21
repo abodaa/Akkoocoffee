@@ -21,7 +21,7 @@ module.exports = {
         otherColor: "#e6efe5",
       },
       fontFamily: {
-        Dancing_Script: ["Dancing Script"],
+        AlfaSlabOne: ["Alfa Slab One"],
       },
       fontSize: {
         sm: "0.8rem",

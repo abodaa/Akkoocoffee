@@ -1,8 +1,7 @@
-import React from "react";
+import {React, useState} from "react";
 import "../Styles/home.scss";
 import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
 
-import menuItemImg from "../images/menuImg.png";
 import communityPic from "../images/community.jpg";
 import heroImage from "../images/aboutSectionPic.jpg";
 
@@ -17,6 +16,7 @@ import breakfastMenuData from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
 import twitter from "../images/twitter.png";
+import tripadvisor from "../images/tripadvisor.png";
 
 import AboutUsMore from "../Components/AboutUsMore";
 import OurStory from "../Components/OurStory";
@@ -62,10 +62,26 @@ export default function Home() {
     console.log(sliderItem.offsetWidth);
   };
 
+
+  // Scroll nav background color change
+  
+  const [changeColor, setChangeColor] = useState(false);
+  window.addEventListener('scroll', ()=>{
+      if(window.scrollY >= 90){
+        setChangeColor(true)
+      }else{
+        setChangeColor(false)
+      }
+  })
+
   return (
     <div class="home-main-container">
       {/* NAVIGATION */}
-      <section className="fixed  top-0 right-0 left-0 flex items-center justify-between px-3 z-20  ">
+      <section
+        class={`fixed  top-0 right-0 left-0 flex items-center justify-between px-3 z-20 ${
+          changeColor ? " bg-otherColor shadow-lg" : "transparent"
+        } transition`}
+      >
         <h1 className="p-4 bg-lightGreen text-xl text-darkGreen font-extrabold">
           LOGO
         </h1>
@@ -80,7 +96,7 @@ export default function Home() {
             { val: "gallery", link: "#gallery" },
           ].map((nav) => {
             return (
-              <a href={nav.link} class="nav-item ">
+              <a href={nav.link} class="nav-item font-bold">
                 <li>{nav.val}</li>
               </a>
             );
@@ -88,14 +104,14 @@ export default function Home() {
           <div class="flex items-center justify-center gap-2">
             <a
               href="#menu"
-              class="p-2 px-5 bg-darkGreen text-lightGreen rounded-md"
+              class="p-2 px-5 bg-darkGreen text-lightGreen font-bold rounded-md"
             >
               {" "}
               <button>Akkoo Menu</button>
             </a>
             <a
               href="#menu"
-              class="p-2 px-5 bg-whiteText text-darkGreen rounded-md"
+              class="p-2 px-5 bg-whiteText text-darkGreen font-bold rounded-md"
             >
               {" "}
               <button>Book</button>
@@ -122,9 +138,9 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div class="flex flex-col justify-end items-start -space-y-9 sm:-space-y-16 text-6xl sm:text-8xl blgxl:text-9xl blgxl:-space-y-24 text-darkGreen font-extrabold px-3">
-            <p>Akkoo</p>
-            <p class="text-4xl sm:text-6xl blgxl:text-7xl ">coffee</p>
+          <div class="flex flex-col justify-end items-start -space-y-9  text-6xl text-darkGreen font-extrabold px-3 sm:-space-y-16 sm:text-8xl blgxl:text-9xl blgxl:-space-y-24 ">
+            <p class="font-AlfaSlabOne tracking-widest">Akkoo</p>
+            <p class="text-4xl sm:text-6xl  blgxl:text-7xl ">coffee</p>
           </div>
           {/* <div class="text-xl bg-darkGreen p-0.5 w-1/6 px-9 text-darkGreenTransparent rounded-full"></div> */}
           <div class="flex flex-col mt-9 items-center justify-center space-x-0 space-y-5 sm:flex-row sm:space-x-3 sm:space-y-0">
@@ -165,7 +181,7 @@ export default function Home() {
 
       {/* What makes Akkoo Unique section */}
       <section
-        class="flex flex-col space-x-0 space-y-20   w-11/12 m-auto items-center justify-center pt-32 md:flex-row md:space-x-20 md:space-y-0"
+        class="flex flex-col space-x-0 space-y-20 font-extrabold  w-11/12 m-auto items-center justify-center pt-32 md:flex-row md:space-x-20 md:space-y-0"
         id="unique"
       >
         {/* Left */}
@@ -190,7 +206,7 @@ export default function Home() {
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 We make you feel at home.
               </h3>
-              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
+              <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
                 After tasting our fine coffee and eating our selection of
                 delicious traditional foods, we don’t doubt you’ll come again to
                 become a loyal customer. Whether you order Coffee, Macchiato,
@@ -203,7 +219,7 @@ export default function Home() {
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 Our space speaks volumes.
               </h3>
-              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
+              <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
                 After tasting our fine coffee and eating our selection of
                 delicious traditional foods, we don’t doubt you’ll come again to
                 become a loyal customer. Whether you order Coffee, Macchiato,
@@ -216,7 +232,7 @@ export default function Home() {
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 We keep things interesting.
               </h3>
-              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
+              <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
                 After tasting our fine coffee and eating our selection of
                 delicious traditional foods, we don’t doubt you’ll come again to
                 become a loyal customer. Whether you order Coffee, Macchiato,
@@ -229,7 +245,7 @@ export default function Home() {
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 Our Coffee.
               </h3>
-              <p class="text-sm text-darkGreenTransparent w-11/12 blgxl:text-base">
+              <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
                 After tasting our fine coffee and eating our selection of
                 delicious traditional foods, we don’t doubt you’ll come again to
                 become a loyal customer. Whether you order Coffee, Macchiato,
@@ -292,14 +308,14 @@ export default function Home() {
 
       {/* Services section */}
       <section
-        class="flex flex-col items-start justify-center text-darkGreen w-11/12 m-auto py-32"
+        class="flex flex-col items-start justify-center text-darkGreen font-extrabold w-11/12 m-auto py-32"
         id="services"
       >
         <div>
           <h2 class="services-title text-4xl font-extrabold md:text-6xl">
             Akkoo services
           </h2>
-          <p class="text-darkGreenTransparent w-full sm:w-2/3">
+          <p class="text-darkGreen w-full sm:w-2/3">
             Akkoo has the best catering service should you choose to have
             delicious local cusine and Ethiopian coffee at your event.
           </p>
@@ -344,7 +360,7 @@ export default function Home() {
 
       {/* Communities Section */}
       <section
-        class=" bg-otherColor text-darkGreen rounded-tr-3xl rounded-bl-3xl"
+        class=" bg-otherColor text-darkGreen font-extrabold rounded-tr-3xl rounded-bl-3xl"
         id="community"
       >
         <div class="flex flex-col-reverse items-center justify-center w-11/12 m-auto gap-20 py-12 md:py-32 md:flex-row">
@@ -397,7 +413,7 @@ export default function Home() {
                     <h3 class="font-bold mb-2">
                       {eachPerson.name} | <em>{eachPerson.title}</em>
                     </h3>
-                    <p class="text-sm text-darkGreenTransparent blgxl:text-base">
+                    <p class="text-sm text-darkGreen blgxl:text-base">
                       {eachPerson.description}
                     </p>
                   </div>
@@ -430,7 +446,10 @@ export default function Home() {
       </section>
 
       {/* AKKOO MENU SECTION */}
-      <section class="w-11/12 m-auto py-32 text-darkGreen" id="menu">
+      <section
+        class="w-11/12 font-extrabold m-auto py-32 text-darkGreen"
+        id="menu"
+      >
         {/* Title */}
         <div>
           <h2 class="menu-title text-4xl font-extrabold md:text-6xl">
@@ -496,113 +515,80 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      {/* <section className="gallery-section-main-container">
-        <div class="gallery">
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/1" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/2" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/3" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--v-2">
-            <div class="embed embed--1-2">
-              <img src="https://source.unsplash.com/collection/582659/4" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/5" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--h-2">
-            <div class="embed embed--2-1">
-              <img src="https://source.unsplash.com/collection/582659/6" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--v-2">
-            <div class="embed embed--1-2">
-              <img src="https://source.unsplash.com/collection/582659/7" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--h-2">
-            <div class="embed embed--2-1">
-              <img src="https://source.unsplash.com/collection/582659/8" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--v-2">
-            <div class="embed embed--1-2">
-              <img src="https://source.unsplash.com/collection/582659/9" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--h-2 gallery__item--v-2">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/10" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/11" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--h-2 gallery__item--v-2">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/12" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/13" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--h-2 gallery__item--v-3">
-            <div class="embed embed--2-3">
-              <img src="https://source.unsplash.com/collection/582659/14" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--h-2 gallery__item--v-2">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/15" />
-            </div>
-          </div>
-          <div class="gallery__item gallery__item--v-2">
-            <div class="embed embed--1-2">
-              <img src="https://source.unsplash.com/collection/582659/16" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/17" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/18" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/19" />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="embed">
-              <img src="https://source.unsplash.com/collection/582659/20" />
-            </div>
-          </div>
+      <section
+        id="gallery"
+        class="gallery-section-main-container w-11/12 m-auto border-t-4 border-otherColor"
+      >
+        <div class="grid grid-cols-3 md:grid-cols-6">
+          {[
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/2",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/3",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/4",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/5",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/6",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/7",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/8",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/9",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/10",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/11",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/12",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/13",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/14",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/15",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/16",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/17",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/18",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/19",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/20",
+            },
+          ].map((img) => {
+            return <img src={img.src} class="w-full" />;
+          })}
         </div>
-      </section> */}
+      </section>
 
       {/* FOOTER SECTION */}
-      <section class="relative bg-darkGreen text-whiteText py-10">
+      <section class="relative bg-darkGreen  text-whiteText pt-10 rounded-t-3xl">
         {/* TOP OF FOOTER */}
         <div class="flex flex-col items-start justify-between w-11/12 gap-6 m-auto md:flex-row ">
           {/* LEFT */}
@@ -643,37 +629,35 @@ export default function Home() {
               Quick Menu
             </h1>
             <ul class="uppercase flex flex-col space-y-4 text-sm lg:text-base">
-              <a href="#hero">
+              <a href="#home" class="footer-nav-item">
                 <li>home</li>
               </a>
-              <a href="#about">
+              <a href="#about" class="footer-nav-item">
                 <li>about akkoo</li>
               </a>
-              <a href="#services">
+              <a href="#services" class="footer-nav-item">
                 <li>services</li>
               </a>
-              <a href="#community">
+              <a href="#community" class="footer-nav-item">
                 <li>community</li>
               </a>
             </ul>
           </div>
         </div>
-        <div class="flex flex-col items-start md:items-center border-t-2 px-3 pt-5  mt-5 justify-between m-auto md:flex-row ">
-          {/* BOTTOM FOOTER LEFT */}
-          <div class="flex flex-col text-sm md:text-base md:flex-row">
-            Akkoo Coffee. All Rights Reserved
-            {/* Created by */}
-            {/* <a href="https://abraham-b.netlify.app/" target="blank">
-              {" "}
-              Abraham
-            </a> */}
-          </div>
+        <div class=" border-t-2  py-2  mt-5 ">
+          <div class="flex flex-col gap-5 items-start justify-between md:items-center w-11/12 m-auto  md:flex-row">
+            {/* BOTTOM FOOTER LEFT */}
+            <div class=" text-sm md:text-base">
+              &#169; Akkoo Coffee. All Rights Reserved
+            </div>
 
-          {/* BOTTOM FOOTER LEFT */}
-          <div class="flex items-center justify-center">
-            <img src={facebook} class="w-6" />
-            <img src={instagram} class="w-6" />
-            <img src={twitter} class="w-6" />
+            {/* BOTTOM FOOTER LEFT */}
+            <div class="flex items-center gap-3 justify-center">
+              <img src={facebook} class="w-6 sm:w-8" />
+              <img src={instagram} class="w-6 sm:w-8" />
+              <img src={twitter} class="w-6 sm:w-8" />
+              <img src={tripadvisor} class="w-6 sm:w-8" />
+            </div>
           </div>
         </div>
         {/* Back to top */}
