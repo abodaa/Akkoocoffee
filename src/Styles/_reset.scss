@@ -181,12 +181,12 @@ body{
             opacity: 0.6;
             z-index: -1;
                 @media (max-width: 352px) {
-                  font-size: 2.5rem;
-                  top: -10%;
+                  font-size: 2rem;
+                  top: 20%;
                 }
                 @media (min-width: 352px) {
-                  font-size: 3.5rem;
-                  top: -19%;
+                  font-size: 3rem;
+                  top: -2%;
                 }
                 @media (min-width: 780px) {
                   font-size: 4rem;
@@ -204,7 +204,7 @@ body{
 
     }
 
-  // Services Title
+  // Menu Title
   .menu-title{
         position: relative;
         z-index: 1;
@@ -239,7 +239,41 @@ body{
             }
 
     }
+  // Gallery Title
+  .gallery-title{
+        position: relative;
+        z-index: 1;
+            &::after{
+            content: "gallery";
+            position: absolute;
+            left:0;
+            text-transform: uppercase;
+            color: $dark-green-transparent;
+            opacity: 0.1;
+            z-index: -1;
+                @media (max-width: 352px) {
+                  font-size: 3rem;
+                  top: 10%;
+                }
+                @media (min-width: 352px) {
+                  font-size: 4rem;
+                  top: -5%
+                }
+                @media (min-width: 780px) {
+                  font-size: 7rem;
+                  top: 8%;
+                }
+                @media (min-width: 1224px) {
+                  font-size: 7rem;
+                  top: 8%;
+                }
+                @media (min-width: 1440px) {
+                  font-size: 7rem;
+                  top: 8%;
+                }
+            }
 
+    }
 .footer-titles{
   position: relative;
   transition: all 0.3s ease-in-out;

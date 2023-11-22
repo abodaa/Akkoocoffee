@@ -369,7 +369,7 @@ export default function Home() {
           {/* Community Section Left */}
           <div class="w-full md:w-1/2">
             <h2 class="community-title text-4xl text-darkGreen font-bold blgxl:text-6xl">
-              Our Community
+              Community
             </h2>
             <h3 class="text-sm lg:text-base">
               Every purchase of coffee at AKKOO positively impacts social and
@@ -519,12 +519,23 @@ export default function Home() {
       {/* Gallery Section */}
       <section
         id="gallery"
-        class="w-11/12 m-auto pt-12 border-t-4 border-otherColor"
+        class="w-11/12 m-auto  py-10  border-t-4 border-otherColor text-darkGreen md:py-24"
       >
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 py-10">
+        <div>
+          <h2 class="gallery-title text-5xl font-extrabold md:text-8xl">
+            Gallery
+          </h2>
+          <p class="w-full text-sm font-bold md:w-3/5 sm:text-base ">
+            Most people visit us expecting only good coffee and are fairly
+            impressed with our ‘Buna Kurs’ (barley flour with butter)
+            accompanying it. We’re known for our excellent coffee in all its
+            forms. Machiatto, Café-latte, Espresso… you name it me make it best!
+          </p>
+        </div>
+        <div class="flex overflow-x-scroll  items-start justify-start gap-3 py-10 md:px-4">
           {[
             {
-              src: "https://source.unsplash.com/collection/582659/1",
+              src: "https://source.unsplash.com/collection/582659/5",
             },
             {
               src: "https://source.unsplash.com/collection/582659/5",
@@ -584,7 +595,12 @@ export default function Home() {
               src: "https://source.unsplash.com/collection/582659/1",
             },
           ].map((img) => {
-            return <img src={img.src} class="w-full rounded-xl hover:scale-105 transition-all" />;
+            return (
+              <img
+                src={img.src}
+                class="w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/4 "
+              />
+            );
           })}
         </div>
       </section>
@@ -642,6 +658,9 @@ export default function Home() {
               </a>
               <a href="#community" class="footer-nav-item">
                 <li>community</li>
+              </a>
+              <a href="#gallery" class="footer-nav-item">
+                <li>gallery</li>
               </a>
             </ul>
           </div>
