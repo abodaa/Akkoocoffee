@@ -19,6 +19,7 @@ module.exports = {
         whiteText: "#ffffff",
         secondaryText: "#2d2d2d",
         otherColor: "#e6efe5",
+        whiteTextTransparent: "#e6efe58a",
       },
       fontFamily: {
         AlfaSlabOne: ["Alfa Slab One"],

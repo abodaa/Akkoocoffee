@@ -104,18 +104,25 @@ export default function Home() {
           <div class="flex items-center justify-center gap-2">
             <a
               href="#menu"
-              class="p-2 px-5 bg-darkGreen text-lightGreen font-bold rounded-md"
+              class="p-2 px-5 bg-darkGreen text-whiteText rounded-md"
+            >
+              {" "}
+              <button>Book</button>
+            </a>
+            <a
+              href="#menu"
+              class="p-2 px-5 bg-darkGreen text-whiteText  rounded-md"
             >
               {" "}
               <button>Akkoo Menu</button>
             </a>
-            <a
+            {/* <a
               href="#menu"
               class="p-2 px-5 bg-whiteText text-darkGreen font-bold rounded-md"
             >
               {" "}
               <button>Book</button>
-            </a>
+            </a> */}
           </div>
         </ul>
       </section>
@@ -138,38 +145,33 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div class="flex flex-col justify-end items-start -space-y-9  text-6xl text-darkGreen font-extrabold px-3 sm:-space-y-16 sm:text-8xl blgxl:text-9xl blgxl:-space-y-24 ">
-            <p class="font-AlfaSlabOne tracking-widest">Akkoo</p>
-            <p class="text-4xl sm:text-6xl  blgxl:text-7xl ">coffee</p>
+          <div class="flex flex-col justify-end items-start   text-darkGreen font-extrabold px-3  ">
+            <div class="-space-y-9 sm:-space-y-16 blgxl:-space-y-20">
+              <p class="bg-otherColor rounded-3xl font-AlfaSlabOne tracking-widest text-6xl  sm:text-7xl md:-ml-80 md:text-9xl blgxl:text-9xl md:px-6 ">
+                Akkoo
+              </p>
+              <p class="text-4xl sm:text-6xl  blgxl:text-7xl text-darkGreen ">
+                coffee
+              </p>
+            </div>
+            <div class="w-full flex flex-col items-start justify-start space-y-4 font-extrabold text-darkGreen sm:w-4/5">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit nemo libero veritatis quasi similique illum
+                voluptate possimus? Incidunt ad facilis reprehenderit
+                temporibus, veniam dolores, quibusdam expedita assumenda saepe
+                fuga aut.
+              </p>
+              <a
+                href="#menu"
+                class="mt-10 p-2 px-5 bg-darkGreen text-whiteText font-bold rounded-md"
+              >
+                {" "}
+                Akkoo Menu
+              </a>
+            </div>
           </div>
           {/* <div class="text-xl bg-darkGreen p-0.5 w-1/6 px-9 text-darkGreenTransparent rounded-full"></div> */}
-          <div class="flex flex-col mt-9 items-center justify-center space-x-0 space-y-5 sm:flex-row sm:space-x-3 sm:space-y-0">
-            <div class="flex w-full h-full items-start space-x-2 text-darkGreen p-3 bg-lightGreen shadow-lg rounded-lg ">
-              <CiCoffeeBean class="text-3xl md:text-4xl" />
-              <div>
-                <p class="text-xl font-extrabold blgxl:text-2xl ">Coffee</p>
-                <p class="text-sm blgxl:text-base ">Fine Ethiopian Coffee</p>
-              </div>
-            </div>
-            <div class="flex w-full h-full items-start space-x-2 text-whiteText p-3 bg-darkGreen shadow-lg rounded-lg ">
-              <PiBowlFoodThin class="text-3xl md:text-4xl" />
-              <div>
-                <p class="text-xl font-extrabold blgxl:text-2xl">Food</p>
-                <p class="text-sm blgxl:text-base ">
-                  Traditional Ethiopian Cusine
-                </p>
-              </div>
-            </div>
-            <div class="flex w-full h-full items-start space-x-2 text-darkGreen  p-3 bg-whiteText shadow-lg rounded-lg">
-              <MdFastfood class="text-3xl md:text-4xl" />
-              <div>
-                <p class="text-xl font-extrabold blgxl:text-2xl">Buna Kurs</p>
-                <p class="text-sm blgxl:text-base ">
-                  Snacks Served With Coffee
-                </p>
-              </div>
-            </div>
-          </div>
           <a
             class="absolute bottom-9 right-6 p-4 rounded-full bg-whiteText"
             href="#unique"
@@ -517,72 +519,72 @@ export default function Home() {
       {/* Gallery Section */}
       <section
         id="gallery"
-        class="gallery-section-main-container w-11/12 m-auto border-t-4 border-otherColor"
+        class="w-11/12 m-auto pt-12 border-t-4 border-otherColor"
       >
-        <div class="grid grid-cols-3 md:grid-cols-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 py-10">
           {[
             {
               src: "https://source.unsplash.com/collection/582659/1",
             },
             {
-              src: "https://source.unsplash.com/collection/582659/2",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/3",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/4",
-            },
-            {
               src: "https://source.unsplash.com/collection/582659/5",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/6",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/7",
             },
             {
               src: "https://source.unsplash.com/collection/582659/8",
             },
             {
-              src: "https://source.unsplash.com/collection/582659/9",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/10",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/11",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/12",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/13",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/14",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/15",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/16",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/17",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/18",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/19",
-            },
-            {
               src: "https://source.unsplash.com/collection/582659/20",
             },
+            {
+              src: "https://source.unsplash.com/collection/582659/5",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
+            {
+              src: "https://source.unsplash.com/collection/582659/1",
+            },
           ].map((img) => {
-            return <img src={img.src} class="w-full" />;
+            return <img src={img.src} class="w-full rounded-xl hover:scale-105 transition-all" />;
           })}
         </div>
       </section>

@@ -34,33 +34,73 @@ export default function BasicModal() {
           }}
         >
           <ModalClose variant="plain" sx={{ m: 1 }} />
-          <div className="more-about-us-container">
-            <h2 className="more-about-us-title">About Akkoo Coffee</h2>
-            <p className="more-about-us-description">
+          <div class="h-96 w-full text-darkGreen overflow-y-scroll">
+            <h2 class="more-about-us-title text-3xl font-extrabold md:text-5xl">
+              Akkoo Story
+            </h2>
+            <p class=" font-bold text-lg">
+              ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
+              spoken languages in Ethiopia) meaning ‘Grandmother’.
+            </p>
+            <p class=" font-bold pt-4">
               {/* <img src={AboutUsImg} alt="" className="more-about-us-img" /> */}
-              Our commitment is to bring you the ultimate coffee experience, one
-              that is responsibly produced from seed to cup. This is not merely
-              an ideology but our everyday practice. It was on May 2019 AKKOO
-              coffee’s founders Dawit Hailu and his wife Wudassie Enquberhan
-              opened their first coffee shop down the street from Churchill
-              road. Upon its opening, Akkoo was welcomed with encouraging
-              responses from the community. It quickly became the meeting place
-              for coffee lovers ranging from university students to retirees.
-              Besides our fine coffee, customers also enjoy our baked goods as
-              well as our healthy and delicious meals. Many also admire the
-              design and overall atmosphere of the place. The main approach of
-              the AKKOO Coffee’s design is to communicate two concepts to the
-              customer: ‘Home in Ethiopia’ and ‘straight from our farm to your
-              cup.’ The first idea in our concept, ‘home in Ethiopia’, is
-              represented by our elegant shop design: representing the
-              birthplace and origins of original Ethiopian coffeehouse culture
-              intended for areas with a more conservative and higher-income
-              customer base. Our cooler and trendier design line ‘straight from
-              our farm to your cup’, is intended for a younger, slightly more
-              progressive crowd. This slogan also represents one of our core
-              principles: to guarantee the highest quality at every step of our
-              value chain through sustainable, trustworthy and respectful
-              partnership with our farmers in the coffee-growing countries.
+              <b class="text-3xl">T</b>he connotation of Akkoo goes beyond the
+              mere word 'grandma'. It resonates with deep love, care,
+              hospitality, and proficiency. I believe sharing the story of my
+              mother, Elisabeth Kitessa Guma, who is lovingly called 'Akkoo' by
+              her 23 grandchildren, would put flesh and bone to these
+              attributes.
+            </p>
+            <p class=" font-bold">
+              <b class="text-3xl">E</b>lisabeth was born on October 8, 1940, in
+              the then province of Wollega, Kelem District, Gidame Woreda, in a
+              specific village called Buri. She lost her parents at an early age
+              and was brought to Addis Ababa by her aunt, who is also a
+              respected mother of multitudes, Yeshemebet Guma. She got her
+              education at the then American Mission School. After completing
+              her education Elisabeth married Hailu Diglu in May 1964 and lived
+              happily married to him for 38 years. They raised eight children:
+              five daughters and three sons. After losing her husband, she
+              persisted resiliently and lived another 17 years. Hers was a
+              fruitful and exemplary life!
+            </p>
+            <p class=" font-bold">
+              <b class="text-3xl">A</b>kkoo’s life is characterized by love. Her
+              home is wide open to receive people. It is a place where many come
+              to eat, fellowship, receive counsel, get encouragement, and
+              experience her graceful generosity. Visitors are graced not only
+              with the words of her blessings and prayer but also with sprays of
+              fragrance from her perfumes. Her presence had an undeniable
+              soothing and comforting strength. People may come to her burdened,
+              saddened, and confused. She would listen with a caring heart and
+              ease their burden. Her special touch would bring encouragement.
+              Her words built up and strengthened the feeble. Her humble
+              approach had healing power to penetrate a broken heart.{" "}
+            </p>
+
+            <p class=" font-bold">
+              <b class="text-3xl">W</b>herever she went, her eyes would always
+              keep a lookout for the needy in all aspects: physically,
+              emotionally, and spiritually. Her hands were ready to stretch to
+              bring solutions. She was ever willing and ready to stand between
+              the gaps in people’s lives. She had a way to conceal her good
+              deeds and would never show it off. Whenever people tried to take
+              advantage of her, she consciously allowed it — for the time being.
+              She had quiet wisdom to put things back in order.
+            </p>
+            <p class=" font-bold">
+              <b class="text-3xl">A</b>kkoo Coffee not only wants to take the
+              name with which her grandchildren called Elisabeth, but also
+              aspires to adopt many of her life principles into our mission,
+              culture, and operation. We want Akkoo Coffee to be a place where
+              people connect, communicate, discuss, fellowship, and have fun!
+              With the proficiency of Akkoo’s culinary experience, we want
+              people to enjoy the best of coffee and our selection of delicious
+              national dishes. We want the warmth and hospitality to be enjoyed
+              by our customers. We are also dedicated to our corporate social
+              responsibility to play a role in addressing holistic human needs.
+              In such ways and more, Akkoo lives to honor Elisabeth Kitessa
+              Guma’s legacy.
             </p>
           </div>
         </Sheet>

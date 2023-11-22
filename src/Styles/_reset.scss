@@ -16,6 +16,7 @@
     }
   ::-webkit-scrollbar-thumb {
         background: transparent;
+        color: #e6efe58a;
     }
 body{
   // background-color: white;
@@ -34,13 +35,13 @@ body{
         position: absolute;
         left: 0;
         bottom: -0.3rem;
-        width: 0%;
+        width: 40%;
         height: 2px;
         background-color: $dark-green;
         transition: all 0.3s ease-in-out;
     }
     &:hover:after{
-      width: 60%;
+      width: 100%;
     }
 }
 .footer-nav-item{
@@ -252,6 +253,22 @@ body{
         background-color: $light-green;
         transition: all 0.3s ease-in-out;
         width: 10%;
+    }
+}
+.more-about-us-title{
+    position: relative;
+    z-index: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 1rem;
+        width: 50%;
+        height: 20px;
+        border-radius: 50px;
+        background-color: $light-green-transparent;
+        opacity: 0.4;
+        z-index: -1;
     }
 }
 .unique-left-container{
