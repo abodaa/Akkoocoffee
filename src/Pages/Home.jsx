@@ -63,17 +63,30 @@ export default function Home() {
     console.log(sliderItem.offsetWidth);
   };
 
+  // Akkoo Menu slider Function
+  const gallerySlideLeft = () => {
+    let slider = document.getElementById("gallery-container");
+    let sliderItem = document.getElementById("gallery-item");
+    slider.scrollLeft = slider.scrollLeft - sliderItem.offsetWidth - 10;
+    console.log(slider.offsetWidth);
+  };
+  const gallerySlideRight = () => {
+    let slider = document.getElementById("gallery-container");
+    let sliderItem = document.getElementById("gallery-item");
+    slider.scrollLeft = slider.scrollLeft + sliderItem.offsetWidth + 10;
+    console.log(sliderItem.offsetWidth);
+  };
 
   // Scroll nav background color change
-  
+
   const [changeColor, setChangeColor] = useState(false);
-  window.addEventListener('scroll', ()=>{
-      if(window.scrollY >= 90){
-        setChangeColor(true)
-      }else{
-        setChangeColor(false)
-      }
-  })
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 90) {
+      setChangeColor(true);
+    } else {
+      setChangeColor(false);
+    }
+  });
 
   return (
     <div class="home-main-container">
@@ -103,7 +116,7 @@ export default function Home() {
             );
           })}
           <div class="flex items-center justify-center gap-2">
-           <BookTable />
+            <BookTable />
             <a
               href="#menu"
               class="p-2 px-5 bg-darkGreen text-whiteText  rounded-md"
@@ -197,9 +210,9 @@ export default function Home() {
             What makes us unique?
           </h2>
           {/* Unique section slider container */}
-          <div class="flex overflow-scroll space-x-2.5" id="unique-container">
+          <div class="scroll-container flex overflow-scroll space-x-2.5" id="unique-container">
             {/* First Description */}
-            <div class="min-w-full" id="unique">
+            <div class="scrolling-items min-w-full" id="unique">
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 We make you feel at home.
               </h3>
@@ -212,7 +225,7 @@ export default function Home() {
               </p>
             </div>
             {/* Second description */}
-            <div class="min-w-full" id="unique">
+            <div class="scrolling-items min-w-full" id="unique">
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 Our space speaks volumes.
               </h3>
@@ -225,7 +238,7 @@ export default function Home() {
               </p>
             </div>
             {/* Third description */}
-            <div class="min-w-full" id="unique">
+            <div class="scrolling-items min-w-full" id="unique">
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 We keep things interesting.
               </h3>
@@ -238,7 +251,7 @@ export default function Home() {
               </p>
             </div>
             {/* Fourth description */}
-            <div class="min-w-full" id="unique">
+            <div class="scrolling-items min-w-full" id="unique">
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 Our Coffee.
               </h3>
@@ -373,7 +386,7 @@ export default function Home() {
               in Oromia region.
             </h3>
             <div
-              class="flex flex-nowrap overflow-scroll space-x-2.5 max-w-full mt-3"
+              class="scroll-container flex flex-nowrap overflow-scroll space-x-2.5 max-w-full mt-3"
               id="community-container"
             >
               {[
@@ -406,7 +419,7 @@ export default function Home() {
                 },
               ].map((eachPerson) => {
                 return (
-                  <div className="min-w-full" id="community">
+                  <div className="scrolling-items min-w-full" id="community">
                     <h3 class="font-bold mb-2">
                       {eachPerson.name} | <em>{eachPerson.title}</em>
                     </h3>
@@ -480,13 +493,13 @@ export default function Home() {
               />
             </div>
             <div
-              class="flex items-center overflow-scroll py-6 justify-start space-x-4 w-full"
+              class="scroll-container flex items-center overflow-scroll py-6 justify-start space-x-4 w-full"
               id="menu-item-container"
             >
               {breakfastMenuData.map((item) => {
                 return (
                   <div
-                    class="relative min-w-full sm:min-w-fit p-6 bg-otherColor rounded-lg"
+                    class="scrolling-items relative min-w-full sm:min-w-fit p-6 bg-otherColor rounded-lg"
                     id="menu-item"
                   >
                     {/* <img src={menuItemImg} alt="" className="menu-item-img" /> */}
@@ -527,76 +540,95 @@ export default function Home() {
             forms. Machiatto, Café-latte, Espresso… you name it me make it best!
           </p>
         </div>
-        <div class="flex overflow-x-scroll  items-start justify-start gap-3 py-10 md:px-4">
-          {[
-            {
-              src: "https://source.unsplash.com/collection/582659/5",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/5",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/8",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/20",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/5",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-            {
-              src: "https://source.unsplash.com/collection/582659/1",
-            },
-          ].map((img) => {
-            return (
-              <img
-                src={img.src}
-                class="w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/4 "
-              />
-            );
-          })}
+
+        <div class="flex items-center space-x-4">
+          <div class="hidden sm:flex">
+            <BsArrowLeft
+              class="p-3 text-4xl bg-otherColor rounded-full"
+              onClick={gallerySlideLeft}
+            />
+          </div>
+          <div
+            class="scroll-container flex overflow-x-scroll items-start justify-start space-x-2.5 py-10 md:px-4"
+            id="gallery-container"
+          >
+            {[
+              {
+                src: "https://source.unsplash.com/collection/582659/5",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/5",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/8",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/20",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/5",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+              {
+                src: "https://source.unsplash.com/collection/582659/1",
+              },
+            ].map((img) => {
+              return (
+                <img
+                  src={img.src}
+                  class="scrolling-items w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/4 "
+                  id="gallery-item"
+                />
+              );
+            })}
+          </div>
+          <div class="hidden sm:flex">
+            <BsArrowLeft
+              class="p-3 text-4xl bg-otherColor rounded-full -rotate-180"
+              onClick={gallerySlideRight}
+            />
+          </div>
         </div>
       </section>
 

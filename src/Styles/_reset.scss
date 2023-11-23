@@ -384,6 +384,15 @@ body{
     margin: auto;
     // padding: 6rem 0rem;
 }
+// Scroll Containers
+.scroll-container{
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+// Scrolling Items
+.scrolling-items{
+    scroll-snap-align: start;
+}
 // Tailwind
 @tailwind base;
 @tailwind components;
