@@ -20,6 +20,7 @@ import tripadvisor from "../images/tripadvisor.png";
 
 import AboutUsMore from "../Components/AboutUsMore";
 import OurStory from "../Components/OurStory";
+import BookTable from "../Components/BookTable";
 
 export default function Home() {
   // Slider functions
@@ -102,13 +103,7 @@ export default function Home() {
             );
           })}
           <div class="flex items-center justify-center gap-2">
-            <a
-              href="#menu"
-              class="p-2 px-5 bg-darkGreen text-whiteText rounded-md"
-            >
-              {" "}
-              <button>Book</button>
-            </a>
+           <BookTable />
             <a
               href="#menu"
               class="p-2 px-5 bg-darkGreen text-whiteText  rounded-md"
