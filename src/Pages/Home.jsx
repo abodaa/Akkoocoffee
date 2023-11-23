@@ -124,13 +124,6 @@ export default function Home() {
               {" "}
               <button>Akkoo Menu</button>
             </a>
-            {/* <a
-              href="#menu"
-              class="p-2 px-5 bg-whiteText text-darkGreen font-bold rounded-md"
-            >
-              {" "}
-              <button>Book</button>
-            </a> */}
           </div>
         </ul>
       </section>
@@ -146,19 +139,21 @@ export default function Home() {
         />
         {/* Hero Right Section */}
         <div class="bg-otherColor flex flex-col items-center justify-center h-screen p-5 relative col-span-1 md:col-span-2 blgxl:col-span-3">
-          <div class="hidden md:flex absolute -left-10 bottom-6 bg-otherColor z-10 rounded-full ">
-            <div class="w-28 h-28 relative">
-              <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex w-20 h-20 bg-darkGreen text-lightGreen  p-5 font-bold items-center justify-center rounded-full">
-                {/* Open 24 / 7 */}
-              </p>
+          <a href="#unique">
+            <div class="hidden md:flex absolute -left-10 bottom-6 bg-otherColor z-10 rounded-full ">
+              <div class="w-20 h-20 relative">
+                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex w-15 h-15 bg-darkGreen text-whiteText  p-5 font-bold items-center justify-center rounded-full">
+                  <BsArrowLeft class="-rotate-90 font-extrabold" />
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="flex flex-col justify-end items-start   text-darkGreen font-extrabold px-3  ">
-            <div class="-space-y-9 sm:-space-y-16 blgxl:-space-y-20">
-              <p class="bg-otherColor rounded-3xl font-AlfaSlabOne tracking-widest text-6xl  sm:text-7xl md:-ml-80 md:text-9xl blgxl:text-9xl md:px-6 ">
+            <div class="-space-y-8 sm:-space-y-10 md:-space-y-20">
+              <p class="bg-otherColor rounded-3xl font-AlfaSlabOne tracking-widest text-6xl  sm:text-7xl md:-ml-80 md:text-9xl md:px-6 ">
                 Akkoo
               </p>
-              <p class="text-4xl sm:text-6xl  blgxl:text-7xl text-darkGreen ">
+              <p class="text-4xl sm:text-6xl  md:text-7xl text-darkGreen ">
                 coffee
               </p>
             </div>
@@ -181,7 +176,7 @@ export default function Home() {
           </div>
           {/* <div class="text-xl bg-darkGreen p-0.5 w-1/6 px-9 text-darkGreenTransparent rounded-full"></div> */}
           <a
-            class="absolute bottom-9 right-6 p-4 rounded-full bg-whiteText"
+            class="md:hidden absolute bottom-9 right-6 p-4 rounded-full bg-darkGreen text-whiteText"
             href="#unique"
           >
             <BsArrowLeft class="-rotate-90 font-extrabold" />
@@ -210,7 +205,10 @@ export default function Home() {
             What makes us unique?
           </h2>
           {/* Unique section slider container */}
-          <div class="scroll-container flex overflow-scroll space-x-2.5" id="unique-container">
+          <div
+            class="scroll-container flex overflow-scroll space-x-2.5"
+            id="unique-container"
+          >
             {/* First Description */}
             <div class="scrolling-items min-w-full" id="unique">
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
