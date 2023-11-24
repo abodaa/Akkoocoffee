@@ -112,6 +112,7 @@ export default function Home() {
             return (
               <a href={nav.link} class="nav-item font-bold">
                 <li>{nav.val}</li>
+                {/* <p>/</p> */}
               </a>
             );
           })}
@@ -138,7 +139,7 @@ export default function Home() {
           class="h-screen w-full object-cover rounded-none hidden md:block md:col-span-1 blgxl:col-span-2"
         />
         {/* Hero Right Section */}
-        <div class="bg-otherColor flex flex-col items-center justify-center h-screen p-5 relative col-span-1 md:col-span-2 blgxl:col-span-3">
+        <div class="bg-otherColor flex flex-col items-start justify-center h-screen p-5 relative col-span-1 md:col-span-2 blgxl:col-span-3">
           <a href="#unique">
             <div class="hidden md:flex absolute -left-10 bottom-6 bg-otherColor z-10 rounded-full ">
               <div class="w-20 h-20 relative">
@@ -148,9 +149,9 @@ export default function Home() {
               </div>
             </div>
           </a>
-          <div class="flex flex-col justify-end items-start   text-darkGreen font-extrabold px-3  ">
-            <div class="-space-y-8 sm:-space-y-10 md:-space-y-20">
-              <p class="bg-otherColor rounded-3xl font-AlfaSlabOne tracking-widest text-6xl  sm:text-7xl md:-ml-80 md:text-9xl md:px-6 ">
+          <div class="flex flex-col justify-start items-start   text-darkGreen font-extrabold px-3  ">
+            <div class="-space-y-6 sm:-space-y-10 md:-space-y-20">
+              <p class="bg-otherColor rounded-3xl font-AlfaSlabOne tracking-widest text-5xl p-0  sm:text-7xl md:-ml-80 md:text-9xl md:px-6 ">
                 Akkoo
               </p>
               <p class="text-4xl sm:text-6xl  md:text-7xl text-darkGreen ">
@@ -158,13 +159,15 @@ export default function Home() {
               </p>
             </div>
             <div class="w-full flex flex-col items-start justify-start space-y-4 font-extrabold text-darkGreen sm:w-4/5">
+              <p class="text-2xl">Your Oasis in the City</p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit nemo libero veritatis quasi similique illum
-                voluptate possimus? Incidunt ad facilis reprehenderit
-                temporibus, veniam dolores, quibusdam expedita assumenda saepe
-                fuga aut.
+                Step into our cozy and inviting space, where modern and cultural
+                aesthetics blend seamlessly with warm, welcoming vibes. Whether
+                you're catching up with friends, or simply want to enjoy a
+                traditional Ethiopian food with fine Ethiopian coffee, Akkoo
+                Coffee is your oasis in the city.
               </p>
+              {/* <p class="text-2xl">We are open 24 / 7</p> */}
               <a
                 href="#menu"
                 class="mt-10 p-2 px-5 bg-darkGreen text-whiteText font-bold rounded-md"
@@ -183,7 +186,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
       {/* What makes Akkoo Unique section */}
       <section
         class="flex flex-col space-x-0 space-y-20 font-extrabold  w-11/12 m-auto items-center justify-center pt-32 md:flex-row md:space-x-20 md:space-y-0"
@@ -210,55 +212,68 @@ export default function Home() {
             id="unique-container"
           >
             {/* First Description */}
-            <div class="scrolling-items min-w-full" id="unique">
+            <div
+              class="bg-otherColor p-6 rounded-xl scrolling-items min-w-full"
+              id="unique"
+            >
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 We make you feel at home.
               </h3>
               <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
-                After tasting our fine coffee and eating our selection of
-                delicious traditional foods, we don’t doubt you’ll come again to
-                become a loyal customer. Whether you order Coffee, Macchiato,
-                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied.
+                Not only will you enjoy our products, but our crew does a great
+                job in giving an excellent service to those who walk through our
+                door. We are also the first restaurant in the country to offer
+                an elderly discount. In such ways and more, we are committed to
+                honoring our culture and your appetite.
               </p>
             </div>
             {/* Second description */}
-            <div class="scrolling-items min-w-full" id="unique">
+            <div
+              class="bg-otherColor p-6 rounded-xl scrolling-items min-w-full"
+              id="unique"
+            >
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 Our space speaks volumes.
               </h3>
               <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
-                After tasting our fine coffee and eating our selection of
-                delicious traditional foods, we don’t doubt you’ll come again to
-                become a loyal customer. Whether you order Coffee, Macchiato,
-                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied.
+                Set up in an elegant fashion, our high-end coffee shop intends
+                to tell the story of the birthplace and origins of the original
+                AKKOO COFFEE’s culture. Our shops are intended for locations
+                with a more conservative and low-average-higher-income customer
+                base.
               </p>
             </div>
             {/* Third description */}
-            <div class="scrolling-items min-w-full" id="unique">
+            <div
+              class="bg-otherColor p-6 rounded-xl scrolling-items min-w-full"
+              id="unique"
+            >
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 We keep things interesting.
               </h3>
               <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
-                After tasting our fine coffee and eating our selection of
-                delicious traditional foods, we don’t doubt you’ll come again to
-                become a loyal customer. Whether you order Coffee, Macchiato,
-                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied.
+                Our menu isn’t prepared to serve for months to come. Our
+                roasters hand pick one single origin and one blend to bring you
+                an exceptional coffee experience each month. We are committed to
+                improving the quality of our drinks and food in alignment with
+                our customer needs. We value feedback to stay attentive and
+                in-tune.
               </p>
             </div>
             {/* Fourth description */}
-            <div class="scrolling-items min-w-full" id="unique">
+            <div
+              class="bg-otherColor p-6 rounded-xl scrolling-items min-w-full"
+              id="unique"
+            >
               <h3 class="text-2xl text-darkGreen font-bold blgxl:text-3xl">
                 Our Coffee.
               </h3>
               <p class="text-sm text-darkGreen w-11/12 blgxl:text-base">
-                After tasting our fine coffee and eating our selection of
-                delicious traditional foods, we don’t doubt you’ll come again to
-                become a loyal customer. Whether you order Coffee, Macchiato,
-                the house Omelette, Chechebsa, Tibs, Tibs Firfer, or Shiro
-                you'll be completely satisfied.
+                Whether you enjoy making your coffee by grinding coffee beans or
+                you prefer having it brewed all the way, AKKOO is here to serve.
+                Try our selection of roasted coffee; the fruity flavored Arabica
+                and the AAA graded robust flavor from Oromia region Gedame
+                wereda.
               </p>
             </div>
           </div>
@@ -277,8 +292,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/*About akkoo coffe section */}
+      ;{/*About akkoo coffe section */}
       <section class="grid md:grid-cols-3 mt-28 blgxl:grid-cols-5 " id="about">
         {/*About Akkoo left */}
         <div class="py-10 px-6 flex flex-col items-start justify-center  bg-darkGreen md:p-20 md:col-span-2 blgxl:col-span-3">
@@ -313,8 +327,7 @@ export default function Home() {
           class="hidden h-screen w-full object-cover rounded-none md:block col-span-1 blgxl:col-span-2"
         />
       </section>
-
-      {/* Services section */}
+      ;{/* Services section */}
       <section
         class="flex flex-col items-start justify-center text-darkGreen font-extrabold w-11/12 m-auto py-32"
         id="services"
@@ -324,8 +337,10 @@ export default function Home() {
             Akkoo services
           </h2>
           <p class="text-darkGreen w-full sm:w-2/3">
-            Akkoo has the best catering service should you choose to have
-            delicious local cusine and Ethiopian coffee at your event.
+            Most people visit us expecting only good coffee and are fairly
+            impressed with our ‘Buna Kurs’ (barley flour with butter)
+            accompanying it. We’re known for our excellent coffee in all its
+            forms. Machiatto, Café-latte, Espresso… you name it me make it best!
           </p>
         </div>
 
@@ -337,9 +352,10 @@ export default function Home() {
             </p>
             <p class="text-sm lg:text-base">
               {" "}
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
-              enim facilis ullam praesentium voluptatibus. Id labore error aut
-              corrupti repellat.{" "}
+              Our menu proudly features Ethiopian single-origin coffees, each
+              carefully selected for its unique character. Whether you're a
+              seasoned enthusiast or a curious newcomer, our Ethiopian offerings
+              promise an authentic and memorable coffee experience.
             </p>
           </div>
           <div class="relative bg-lightGreen shadow-lg rounded-2xl p-8 md:scale-105 blgxl:p-12 md:p-6 md:w-1/3">
@@ -358,15 +374,15 @@ export default function Home() {
             <div class="w-16 h-16 bg-otherColor rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"></div>
             <p class="text-2xl capitalize mb-2 lg:text-3xl">buna kurs</p>
             <p class="text-sm lg:text-base">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
-              enim facilis ullam praesentium voluptatibus. Id labore error aut
-              corrupti repellat.
+              We believe that the perfect coffee experience extends beyond the
+              cup. Elevate your coffee ritual with our exquisite selection of
+              snacks, thoughtfully curated to complement the rich flavors of our
+              brews.
             </p>
           </div>
         </div>
       </section>
-
-      {/* Communities Section */}
+      ;{/* Communities Section */}
       <section
         class=" bg-otherColor text-darkGreen font-extrabold rounded-tr-3xl rounded-bl-3xl"
         id="community"
@@ -417,7 +433,10 @@ export default function Home() {
                 },
               ].map((eachPerson) => {
                 return (
-                  <div className="scrolling-items min-w-full" id="community">
+                  <div
+                    className="bg-whiteText p-6 rounded-xl scrolling-items min-w-full"
+                    id="community"
+                  >
                     <h3 class="font-bold mb-2">
                       {eachPerson.name} | <em>{eachPerson.title}</em>
                     </h3>
@@ -452,8 +471,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* AKKOO MENU SECTION */}
+      ;{/* AKKOO MENU SECTION */}
       <section
         class="w-11/12 font-extrabold m-auto py-32 text-darkGreen"
         id="menu"
@@ -463,11 +481,9 @@ export default function Home() {
           <h2 class="menu-title text-4xl font-extrabold md:text-6xl">
             Akkoo Menu
           </h2>
-          <p class="w-full text-sm md:w-3/5 sm:text-base ">
-            Most people visit us expecting only good coffee and are fairly
-            impressed with our ‘Buna Kurs’ (barley flour with butter)
-            accompanying it. We’re known for our excellent coffee in all its
-            forms. Machiatto, Café-latte, Espresso… you name it me make it best!
+          <p class="w-full text-sm md:w-2/5 sm:text-base ">
+            Akkoo has the best catering service should you choose to have
+            delicious local cusine and Ethiopian coffee at your event.
           </p>
         </div>
 
@@ -521,8 +537,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Gallery Section */}
+      ;{/* Gallery Section */}
       <section
         id="gallery"
         class="w-11/12 m-auto  py-10  border-t-4 border-otherColor text-darkGreen md:py-24"
@@ -532,10 +547,10 @@ export default function Home() {
             Gallery
           </h2>
           <p class="w-full text-sm font-bold md:w-3/5 sm:text-base ">
-            Most people visit us expecting only good coffee and are fairly
-            impressed with our ‘Buna Kurs’ (barley flour with butter)
-            accompanying it. We’re known for our excellent coffee in all its
-            forms. Machiatto, Café-latte, Espresso… you name it me make it best!
+            Join the Visual Story.Experience the spirit of Akkoo coffee through
+            our gallery. Each image tells a story, and we invite you to be a
+            part of it. Whether you're a regular visitor or a first-time guest,
+            our gallery is a window into the soul of our coffee culture.
           </p>
         </div>
 
@@ -615,7 +630,7 @@ export default function Home() {
               return (
                 <img
                   src={img.src}
-                  class="scrolling-items w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/4 "
+                  class="scrolling-items w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/3 lg:w-1/4"
                   id="gallery-item"
                 />
               );
@@ -629,7 +644,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FOOTER SECTION */}
       <section class="relative bg-darkGreen  text-whiteText pt-10 rounded-t-3xl">
         {/* TOP OF FOOTER */}
@@ -640,11 +654,13 @@ export default function Home() {
               About Us
             </h2>
             <p class="text-sm lg:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
-              corrupti, culpa aspernatur eos expedita omnis, saepe optio
-              dignissimos harum facilis sequi ipsam! Dignissimos, in nesciunt?
+              Our commitment is to bring you the ultimate coffee experience, one
+              that is responsibly produced from seed to cup. This is not merely
+              an ideology but our everyday practice. It was on May 2019 AKKOO
+              coffee’s founders Dawit Hailu and his wife Wudassie Enquberhan
+              opened their first coffee shop down the street from Churchill
+              road.
             </p>
-            <h3>We are open 24 hours a day 7 days a week.</h3>
           </div>
           {/* MIDDLE */}
           <div class="p-0 w-full md:w-1/3 lg:p-6 ">
@@ -696,13 +712,14 @@ export default function Home() {
             <div class=" text-sm md:text-base">
               &#169; Akkoo Coffee. All Rights Reserved
             </div>
-
+            {/* BBOTTOM FOOTER MIDDLE */}
+            <h3 class="text-sm md:text-base">We are open 24 hours a day 7 days a week.</h3>
             {/* BOTTOM FOOTER LEFT */}
             <div class="flex items-center gap-3 justify-center">
-              <img src={facebook} class="w-6 sm:w-8" />
-              <img src={instagram} class="w-6 sm:w-8" />
-              <img src={twitter} class="w-6 sm:w-8" />
-              <img src={tripadvisor} class="w-6 sm:w-8" />
+              <img src={facebook} class="w-6 sm:w-6" />
+              <img src={instagram} class="w-6 sm:w-6" />
+              <img src={twitter} class="w-6 sm:w-6" />
+              <img src={tripadvisor} class="w-6 sm:w-6" />
             </div>
           </div>
         </div>
