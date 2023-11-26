@@ -9,7 +9,7 @@ export default function BasicModal() {
     <React.Fragment>
       <button
         onClick={() => setOpen(true)}
-        class="p-2 px-5 bg-darkGreen text-whiteText rounded-md"
+        class="p-2 px-5 bg-lightGreen text-darkGreen font-bold rounded-md"
       >
         Book
       </button>

@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         lightGreen: "#ffaa00",
-        lightGreenTransparent: "#9ee870c7",
+        lightGreenTransparent: "#9ee870",
         darkGreen: "#163300",
         darkGreenTransparent: "#163300c3",
         primaryText: "#000",
@@ -34,7 +34,7 @@ module.exports = {
         "5xl": "3.052rem",
         "6xl": "4rem",
         "7xl": "6rem",
-        "8xl": "7rem",
+        "8xl": "8rem",
         "9xl": "11rem",
       },
     },

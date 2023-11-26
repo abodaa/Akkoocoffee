@@ -4,6 +4,8 @@ import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
 
 import communityPic from "../images/community.jpg";
 import heroImage from "../images/aboutSectionPic.jpg";
+import heroVideo from "../images/hero.mp4";
+
 
 import { CiCoffeeBean, CiLocationOn } from "react-icons/ci";
 import { MdFastfood } from "react-icons/md";
@@ -92,98 +94,119 @@ export default function Home() {
     <div class="home-main-container">
       {/* NAVIGATION */}
       <section
-        class={`fixed  top-0 right-0 left-0 flex items-center justify-between px-3 z-20 ${
-          changeColor ? " bg-otherColor shadow-lg" : "transparent"
+        class={`fixed  top-0 right-0 left-0 flex items-center justify-between z-20 ${
+          changeColor ? " bg-whiteText shadow-lg" : "transparent"
         } transition`}
       >
-        <h1 className="p-4 bg-lightGreen text-xl text-darkGreen font-extrabold">
-          LOGO
-        </h1>
         {/* Menu Items */}
         <CgMenuRight class="flex fixed text-4xl top-4 right-5 z-30 md:hidden" />
-        <ul class="hidden md:flex space-x-6 items-center uppercase">
-          {[
-            { val: "home", link: "#home" },
-            { val: "about", link: "#about" },
-            { val: "services", link: "#services" },
-            { val: "community", link: "#community" },
-            { val: "gallery", link: "#gallery" },
-          ].map((nav) => {
-            return (
-              <a href={nav.link} class="nav-item font-bold">
-                <li>{nav.val}</li>
-                {/* <p>/</p> */}
-              </a>
-            );
-          })}
-          <div class="flex items-center justify-center gap-2">
-            <BookTable />
-            <a
-              href="#menu"
-              class="p-2 px-5 bg-darkGreen text-whiteText  rounded-md"
-            >
-              {" "}
-              <button>Akkoo Menu</button>
-            </a>
-          </div>
-        </ul>
+        <div class="flex">
+          <h1 class="p-4 bg-darkGreen text-xl text-lightGreen font-extrabold">
+            LOGO
+          </h1>
+          <ul class="hidden md:flex space-x-6 items-center  uppercase px-9">
+            {[
+              { val: "home", link: "#home" },
+              { val: "about", link: "#about" },
+              { val: "services", link: "#services" },
+              { val: "community", link: "#community" },
+              { val: "gallery", link: "#gallery" },
+            ].map((nav) => {
+              return (
+                <a href={nav.link} class="nav-item font-bold">
+                  <li>{nav.val}</li>
+                  {/* <p>/</p> */}
+                </a>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div class="hidden md:flex items-center justify-center gap-2 pr-6">
+          <BookTable />
+          <a
+            href="#menu"
+            class="p-2 px-5 bg-otherColor text-darkGreen font-bold  rounded-md"
+          >
+            {" "}
+            <button>Akkoo Menu</button>
+          </a>
+        </div>
       </section>
       {/* HERO Section */}
       <section
         id="home"
-        class="h-screen grid grid-cols-1 md:grid-cols-3 blgxl:grid-cols-5 "
+        class="hero-main h-screen relative grid grid-cols-1 md:grid-cols-3 blgxl:grid-cols-5 "
       >
-        {/* Hero Image */}
-        <img
-          src={heroImage}
-          class="h-screen w-full object-cover rounded-none hidden md:block md:col-span-1 blgxl:col-span-2"
-        />
-        {/* Hero Right Section */}
-        <div class="bg-otherColor flex flex-col items-start justify-center h-screen p-5 relative col-span-1 md:col-span-2 blgxl:col-span-3">
-          <a href="#unique">
-            <div class="hidden md:flex absolute -left-10 bottom-6 bg-otherColor z-10 rounded-full ">
-              <div class="w-20 h-20 relative">
-                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex w-15 h-15 bg-darkGreen text-whiteText  p-5 font-bold items-center justify-center rounded-full">
-                  <BsArrowLeft class="-rotate-90 font-extrabold" />
-                </p>
-              </div>
-            </div>
-          </a>
-          <div class="flex flex-col justify-start items-start   text-darkGreen font-extrabold px-3  ">
+        {/* Hero Left Section */}
+        <div class=" flex flex-col md:pl-12 items-start justify-center h-screen p-5 relative col-span-1 md:col-span-2 blgxl:col-span-3">
+          <div class="flex flex-col justify-start items-start  text-darkGreen font-extrabold pt-16 -space-y-2 ">
             <div class="-space-y-6 sm:-space-y-10 md:-space-y-20">
-              <p class="bg-otherColor rounded-3xl font-AlfaSlabOne tracking-widest text-5xl p-0  sm:text-7xl md:-ml-80 md:text-9xl md:px-6 ">
+              <p class=" font-AlfaSlabOne tracking-widest text-5xl p-0 blgxl:text-9xl  sm:text-7xl md:text-8xl ">
                 Akkoo
               </p>
               <p class="text-4xl sm:text-6xl  md:text-7xl text-darkGreen ">
                 coffee
               </p>
             </div>
-            <div class="w-full flex flex-col items-start justify-start space-y-4 font-extrabold text-darkGreen sm:w-4/5">
-              <p class="text-2xl">Your Oasis in the City</p>
-              <p>
-                Step into our cozy and inviting space, where modern and cultural
-                aesthetics blend seamlessly with warm, welcoming vibes. Whether
-                you're catching up with friends, or simply want to enjoy a
-                traditional Ethiopian food with fine Ethiopian coffee, Akkoo
-                Coffee is your oasis in the city.
+            <div class="w-full flex flex-col items-start justify-start space-y-0 font-extrabold text-darkGreen pb-6 sm:w-4/5">
+              <p class="text-sm sm:text-base">
+                <b class="text-2xl">Y</b>our Oasis in the City.Step into our
+                cozy and inviting space, where modern and cultural aesthetics
+                blend seamlessly with warm, welcoming vibes. Whether you're
+                catching up with friends, or simply want to enjoy a traditional
+                Ethiopian food with fine Ethiopian coffee, Akkoo Coffee is your
+                oasis in the city.
               </p>
               {/* <p class="text-2xl">We are open 24 / 7</p> */}
-              <a
-                href="#menu"
-                class="mt-10 p-2 px-5 bg-darkGreen text-whiteText font-bold rounded-md"
-              >
-                {" "}
-                Akkoo Menu
-              </a>
+              <p class="text-xl sm:text-3xl">#We are open 24 / 7</p>
+              <div class="flex gap-3 items-end justify-center">
+                <a
+                  href="#menu"
+                  class="mt-10 p-2 px-5 bg-darkGreen text-whiteText font-bold rounded-md"
+                >
+                  {" "}
+                  Akkoo Menu
+                </a>
+                <a href="#unique">
+                  <BsArrowLeft class="block -rotate-90 bg-darkGreen text-whiteText  p-3 text-4xl rounded-full font-extrabold md:hidden" />
+                </a>
+              </div>
             </div>
           </div>
           {/* <div class="text-xl bg-darkGreen p-0.5 w-1/6 px-9 text-darkGreenTransparent rounded-full"></div> */}
-          <a
-            class="md:hidden absolute bottom-9 right-6 p-4 rounded-full bg-darkGreen text-whiteText"
-            href="#unique"
-          >
-            <BsArrowLeft class="-rotate-90 font-extrabold" />
-          </a>
+
+          <div class="relative w-full flex flex-col font-bold sm:flex-row items-center p-4  sm:px-12  sm:rounded-r-full justify-between  bottom-0 left-0 right-0 h-40 bg-otherColor">
+            <h2 class="text-2xl md:text-2xl blgxl:text-3xl">Coffee</h2>
+            <div class="w-1/2 my-1 h-1 bg-darkGreen sm:my-0 sm:w-2 sm:h-4"></div>
+            <h2 class="text-2xl md:text-2xl blgxl:text-3xl">
+              Traditional Cusine
+            </h2>
+            <div class="w-1/2 my-1 h-1 bg-darkGreen sm:my-0 sm:w-2 sm:h-4"></div>
+            <h2 class="text-2xl md:text-2xl blgxl:text-3xl">Buna Kurs</h2>
+          </div>
+        </div>
+
+        {/* Hero Right Section */}
+        <div class="h-screen w-full hidden md:block md:col-span-1 blgxl:col-span-2">
+          <video
+            class="w-full h-full object-cover rounded-l-full"
+            src={heroVideo}
+            autoPlay
+            // controls
+            loop
+          ></video>
+        </div>
+        {/* Scroll to Bottom */}
+        <div class="hidden md:flex absolute right-4 bottom-6 bg-otherColor rounded-full ">
+          <div class="w-20 h-20 relative">
+            <a
+              href="#unique"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex w-15 h-15 bg-darkGreen text-whiteText  p-5 font-bold items-center justify-center rounded-full"
+            >
+              <BsArrowLeft class="-rotate-90 font-extrabold" />
+            </a>
+          </div>
         </div>
       </section>
       {/* What makes Akkoo Unique section */}
@@ -293,7 +316,10 @@ export default function Home() {
         </div>
       </section>
       ;{/*About akkoo coffe section */}
-      <section class="grid md:grid-cols-3 mt-28 blgxl:grid-cols-5 " id="about">
+      <section
+        class="grid bg-darkGreen md:grid-cols-3 mt-28 blgxl:grid-cols-5 "
+        id="about"
+      >
         {/*About Akkoo left */}
         <div class="py-10 px-6 flex flex-col items-start justify-center  bg-darkGreen md:p-20 md:col-span-2 blgxl:col-span-3">
           <h2 class="about-title text-4xl font-extrabold text-whiteText md:text-6xl">
@@ -324,7 +350,7 @@ export default function Home() {
         {/* About Akkoo right */}
         <img
           src={heroImage}
-          class="hidden h-screen w-full object-cover rounded-none md:block col-span-1 blgxl:col-span-2"
+          class="hidden border-l-2 border-whiteText rounded-l-full h-screen w-full object-cover  md:block col-span-1 blgxl:col-span-2"
         />
       </section>
       ;{/* Services section */}
@@ -336,7 +362,7 @@ export default function Home() {
           <h2 class="services-title text-4xl font-extrabold md:text-6xl">
             Akkoo services
           </h2>
-          <p class="text-darkGreen w-full sm:w-2/3">
+          <p class="text-darkGreen text-sm w-full sm:text-base md:w-4/5">
             Most people visit us expecting only good coffee and are fairly
             impressed with our ‘Buna Kurs’ (barley flour with butter)
             accompanying it. We’re known for our excellent coffee in all its
@@ -393,7 +419,7 @@ export default function Home() {
             <h2 class="community-title text-4xl text-darkGreen font-bold blgxl:text-6xl">
               Community
             </h2>
-            <h3 class="text-sm lg:text-base">
+            <h3 class="text-sm sm:text-base">
               Every purchase of coffee at AKKOO positively impacts social and
               environmental conditions at the source.AKKOO sources its coffee
               from west Ethiopia, specifically from Wellega zone Gedame wereda
@@ -630,7 +656,7 @@ export default function Home() {
               return (
                 <img
                   src={img.src}
-                  class="scrolling-items w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/3 lg:w-1/4"
+                  class="scrolling-items w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/3 lg:w-2/5"
                   id="gallery-item"
                 />
               );
@@ -713,7 +739,9 @@ export default function Home() {
               &#169; Akkoo Coffee. All Rights Reserved
             </div>
             {/* BBOTTOM FOOTER MIDDLE */}
-            <h3 class="text-sm md:text-base">We are open 24 hours a day 7 days a week.</h3>
+            <h3 class="text-sm md:text-base">
+              We are open 24 hours a day 7 days a week.
+            </h3>
             {/* BOTTOM FOOTER LEFT */}
             <div class="flex items-center gap-3 justify-center">
               <img src={facebook} class="w-6 sm:w-6" />
