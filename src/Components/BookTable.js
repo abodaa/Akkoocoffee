@@ -1,43 +1,66 @@
 import * as React from "react";
-import Modal from "@mui/joy/Modal";
-import ModalClose from "@mui/joy/ModalClose";
-import Sheet from "@mui/joy/Sheet";
-
-export default function BasicModal() {
+import { motion, AnimatePresence } from "framer-motion";
+import { CgClose } from "react-icons/cg";
+export default function BookTableModal() {
   const [open, setOpen] = React.useState(false);
+
+  // Framer Motion Varients
+  const variants = {
+    open: { opacity: 1 },
+    closed: { opacity: 0 },
+  };
   return (
-    <React.Fragment>
+    <div>
       <button
         onClick={() => setOpen(true)}
         class="p-2 px-5 bg-lightGreen text-darkGreen font-bold rounded-md"
       >
         Book
       </button>
-      <Modal
-        aria-labelledby="modal-title"
-        aria-describedby="modal-desc"
-        open={open}
-        onClose={() => setOpen(false)}
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
-        <Sheet
-          variant="outlined"
-          sx={{
-            maxWidth: 700,
-            borderRadius: "lg",
-            p: 4,
-            boxShadow: "lg",
-          }}
-        >
-          <ModalClose variant="plain" sx={{ m: 1 }} />
-          <div class="h-96 w-full text-darkGreen overflow-y-scroll">
-            <h2 class="more-about-us-title text-3xl font-extrabold md:text-5xl">
-              Book A Table
-            </h2>
-            <p class=" font-bold">Book a table implementation coming soon</p>
-          </div>
-        </Sheet>
-      </Modal>
-    </React.Fragment>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              type: "tween",
+              // damping: 25,
+              // stiffness: 500,
+              duration: 0.5,
+            }}
+            class="fixed left-0 bottom-0 top-0 right-0 bg-overlayTransparent p-6"
+          >
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{
+                type: "tween",
+                // damping: 25,
+                // stiffness: 500,
+                duration: 0.5,
+              }}
+              class="fixed left-0 top-0 bottom-0 w-1/4 p-6  bg-whiteText"
+            >
+              <div
+                onClick={() => setOpen(false)}
+                class="absolute top-2 right-2 p-2 cursor-pointer rounded-full bg-otherColor"
+              >
+                <CgClose />
+              </div>
+              <div class=" text-darkGreen pt-8">
+                <h2 class="more-about-us-title text-3xl font-extrabold md:text-5xl">
+                  Book A Table
+                </h2>
+                <p class=" font-bold">
+                  Book a table implementation coming soon
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

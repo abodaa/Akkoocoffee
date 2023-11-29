@@ -1,30 +1,26 @@
 import {React, useState} from "react";
 import "../Styles/home.scss";
 import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
-
 import communityPic from "../images/community.jpg";
 import heroImage from "../images/aboutSectionPic.jpg";
 import heroVideo from "../images/hero.mp4";
-
-
-import { CiCoffeeBean, CiLocationOn } from "react-icons/ci";
-import { MdFastfood } from "react-icons/md";
-
-import { PiBowlFoodThin } from "react-icons/pi";
-import { CgMenuRight } from "react-icons/cg";
-
+import { CiLocationOn } from "react-icons/ci";
 import { BsArrowLeft } from "react-icons/bs";
+import { CgMenuRight } from "react-icons/cg";
 import breakfastMenuData from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
 import twitter from "../images/twitter.png";
 import tripadvisor from "../images/tripadvisor.png";
-
 import AboutUsMore from "../Components/AboutUsMore";
 import OurStory from "../Components/OurStory";
 import BookTable from "../Components/BookTable";
 
+// Framermotion
+import { motion } from "framer-motion";
+
 export default function Home() {
+  
   // Slider functions
   // What make akkoo unique slider Function
 
@@ -95,12 +91,12 @@ export default function Home() {
       {/* NAVIGATION */}
       <section
         class={`fixed  top-0 right-0 left-0 flex items-center justify-between z-20 ${
-          changeColor ? " bg-whiteText shadow-lg" : "transparent"
+          changeColor ? " bg-whiteText shadow-sm" : "transparent"
         } transition`}
       >
         {/* Menu Items */}
         <CgMenuRight class="flex fixed text-4xl top-4 right-5 z-30 md:hidden" />
-        <div class="flex">
+        <div class="flex gap-6">
           <h1 class="p-4 bg-darkGreen text-xl text-lightGreen font-extrabold">
             LOGO
           </h1>
@@ -120,8 +116,20 @@ export default function Home() {
               );
             })}
           </ul>
+
+          {/* <div class="hidden md:flex items-center justify-center gap-2 pr-6">
+            <BookTable />
+            <a
+              href="#menu"
+              class="p-2 px-5 bg-otherColor text-darkGreen font-bold  rounded-md"
+            >
+              {" "}
+              <button>Akkoo Menu</button>
+            </a>
+          </div> */}
         </div>
 
+        {/* Navbar Buttons */}
         <div class="hidden md:flex items-center justify-center gap-2 pr-6">
           <BookTable />
           <a
@@ -142,25 +150,54 @@ export default function Home() {
         <div class=" flex flex-col md:pl-12 items-start justify-center h-screen p-5 relative col-span-1 md:col-span-2 blgxl:col-span-3">
           <div class="flex flex-col justify-start items-start  text-darkGreen font-extrabold pt-16 -space-y-2 ">
             <div class="-space-y-6 sm:-space-y-10 md:-space-y-20">
-              <p class=" font-AlfaSlabOne tracking-widest text-5xl p-0 blgxl:text-9xl  sm:text-7xl md:text-8xl ">
+              <motion.p
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: "tween", duration: 0.5 }}
+                class=" font-AlfaSlabOne  tracking-widest text-5xl p-0 blgxl:text-9xl  sm:text-7xl md:text-8xl "
+              >
                 Akkoo
-              </p>
-              <p class="text-4xl sm:text-6xl  md:text-7xl text-darkGreen ">
+              </motion.p>
+              <motion.p
+                // drag
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: "tween", duration: 0.5 }}
+                // whileDrag={{scale: 2}}
+                class="text-4xl sm:text-6xl  md:text-7xl text-darkGreen "
+              >
                 coffee
-              </p>
+              </motion.p>
             </div>
-            <div class="w-full flex flex-col items-start justify-start space-y-0 font-extrabold text-darkGreen pb-6 sm:w-4/5">
-              <p class="text-sm sm:text-base">
+            <motion.div class="w-full flex flex-col items-start justify-start space-y-0 font-extrabold text-darkGreen pb-6 sm:w-4/5">
+              <motion.p
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: "tween", duration: 1 }}
+                class="text-sm sm:text-base"
+              >
                 <b class="text-2xl">Y</b>our Oasis in the City.Step into our
                 cozy and inviting space, where modern and cultural aesthetics
                 blend seamlessly with warm, welcoming vibes. Whether you're
                 catching up with friends, or simply want to enjoy a traditional
                 Ethiopian food with fine Ethiopian coffee, Akkoo Coffee is your
                 oasis in the city.
-              </p>
+              </motion.p>
               {/* <p class="text-2xl">We are open 24 / 7</p> */}
-              <p class="text-xl sm:text-3xl">#We are open 24 / 7</p>
-              <div class="flex gap-3 items-end justify-center">
+              <motion.p
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: "tween", duration: 1.5 }}
+                class="text-xl sm:text-3xl"
+              >
+                #We are open 24 / 7
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: "tween", duration: 0.5 }}
+                class="flex gap-3 items-end justify-center"
+              >
                 <a
                   href="#menu"
                   class="mt-10 p-2 px-5 bg-darkGreen text-whiteText font-bold rounded-md"
@@ -171,24 +208,58 @@ export default function Home() {
                 <a href="#unique">
                   <BsArrowLeft class="block -rotate-90 bg-darkGreen text-whiteText  p-3 text-4xl rounded-full font-extrabold md:hidden" />
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-          {/* <div class="text-xl bg-darkGreen p-0.5 w-1/6 px-9 text-darkGreenTransparent rounded-full"></div> */}
+          <div class="text-xl bg-darkGreen p-0.5 w-1/6 px-9 text-darkGreenTransparent rounded-full"></div>
 
-          <div class="relative w-full flex flex-col font-bold sm:flex-row items-center p-4  sm:px-12  sm:rounded-r-full justify-between  bottom-0 left-0 right-0 h-40 bg-otherColor">
-            <h2 class="text-2xl md:text-2xl blgxl:text-3xl">Coffee</h2>
-            <div class="w-1/2 my-1 h-1 bg-darkGreen sm:my-0 sm:w-2 sm:h-4"></div>
-            <h2 class="text-2xl md:text-2xl blgxl:text-3xl">
+          <motion.div class="relative w-full flex flex-col font-bold sm:flex-row items-center p-4  sm:px-12  sm:rounded-r-full justify-between  bottom-0 left-0 right-0 h-40 bg-otherColor">
+            <motion.h2
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "tween", duration: 2.5 }}
+              class="text-2xl md:text-2xl blgxl:text-3xl"
+            >
+              Coffee
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "tween", duration: 2 }}
+              class="w-1/2 my-1 h-1 bg-darkGreen sm:my-0 sm:w-2 sm:h-4"
+            ></motion.div>
+            <motion.h2
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "tween", duration: 1.5 }}
+              class="text-2xl md:text-2xl blgxl:text-3xl"
+            >
               Traditional Cusine
-            </h2>
-            <div class="w-1/2 my-1 h-1 bg-darkGreen sm:my-0 sm:w-2 sm:h-4"></div>
-            <h2 class="text-2xl md:text-2xl blgxl:text-3xl">Buna Kurs</h2>
-          </div>
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "tween", duration: 1 }}
+              class="w-1/2 my-1 h-1 bg-darkGreen sm:my-0 sm:w-2 sm:h-4"
+            ></motion.div>
+            <motion.h2
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "tween", duration: 1.5 }}
+              class="text-2xl md:text-2xl blgxl:text-3xl"
+            >
+              Buna Kurs
+            </motion.h2>
+          </motion.div>
         </div>
 
         {/* Hero Right Section */}
-        <div class="h-screen w-full hidden md:block md:col-span-1 blgxl:col-span-2">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ type: "tween", duration: 1 }}
+          class="h-screen w-full hidden md:block md:col-span-1 blgxl:col-span-2"
+        >
           <video
             class="w-full h-full object-cover rounded-l-full"
             src={heroVideo}
@@ -196,9 +267,14 @@ export default function Home() {
             // controls
             loop
           ></video>
-        </div>
+        </motion.div>
         {/* Scroll to Bottom */}
-        <div class="hidden md:flex absolute right-4 bottom-6 bg-otherColor rounded-full ">
+        <motion.div
+          initial={{}}
+          animate={{ y: [0, -5, 0] }}
+          transition={{ type: "tweet", repeat: Infinity, duration: 1 }}
+          class="hidden md:flex absolute right-4 bottom-6 bg-otherColor rounded-full "
+        >
           <div class="w-20 h-20 relative">
             <a
               href="#unique"
@@ -207,16 +283,23 @@ export default function Home() {
               <BsArrowLeft class="-rotate-90 font-extrabold" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
       {/* What makes Akkoo Unique section */}
       <section
-        class="flex flex-col space-x-0 space-y-20 font-extrabold  w-11/12 m-auto items-center justify-center pt-32 md:flex-row md:space-x-20 md:space-y-0"
+        class="flex flex-col space-x-0 space-y-20 font-extrabold h-screen  container m-auto items-center justify-center pt-32 md:flex-row md:space-x-20 md:space-y-0"
         id="unique"
       >
         {/* Left */}
         <div class="unique-left-container w-5/6 md:w-1/2 ">
-          <img
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              type: "spring",
+              damping: 15,
+              stiffness: 500,
+            }}
             class="w-full rounded-2xl shadow-xl border-4 border-solid border-whiteText md:w-full"
             src={uniqueSectionPic}
             alt=""
@@ -226,11 +309,27 @@ export default function Home() {
         {/* right */}
         <div class="w-full md:w-1/2 z-10">
           {/* Unique section Title */}
-          <h2 class="unique-title text-3xl text-darkGreen font-bold blgxl:text-5xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 15,
+              stiffness: 500,
+            }}
+            class="unique-title text-3xl text-darkGreen font-bold blgxl:text-5xl"
+          >
             What makes us unique?
-          </h2>
+          </motion.h2>
           {/* Unique section slider container */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              type: "spring",
+              damping: 15,
+              stiffness: 500,
+            }}
             class="scroll-container flex overflow-scroll space-x-2.5"
             id="unique-container"
           >
@@ -299,38 +398,85 @@ export default function Home() {
                 wereda.
               </p>
             </div>
-          </div>
+          </motion.div>
           {/* Unique section slider arrows container */}
           <div class="flex items-center mt-8 space-x-6">
             {/* Arrow left */}
-            <BsArrowLeft
-              class="p-3 text-4xl bg-otherColor rounded-full"
-              onClick={uniqueSlideLeft}
-            />
+            <motion.div
+              initial={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                damping: 10,
+                stiffness: 500,
+              }}
+              class="p-3 text-xl bg-otherColor rounded-full"
+            >
+              <BsArrowLeft onClick={uniqueSlideLeft} />
+            </motion.div>
             {/* Arrow right */}
-            <BsArrowLeft
-              class="p-3 text-4xl bg-otherColor rounded-full -rotate-180"
-              onClick={uniqueSlideRight}
-            />
+            <motion.div
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                damping: 10,
+                stiffness: 500,
+              }}
+              class="p-3 text-xl bg-otherColor rounded-full -rotate-180"
+            >
+              <BsArrowLeft onClick={uniqueSlideRight} class=" -rotate-180" />
+            </motion.div>
           </div>
         </div>
       </section>
-      ;{/*About akkoo coffe section */}
+      {/*About akkoo coffe section */}
       <section
-        class="grid bg-darkGreen md:grid-cols-3 mt-28 blgxl:grid-cols-5 "
+        class="grid bg-darkGreen h-screen md:grid-cols-3 mt-28 blgxl:grid-cols-5 "
         id="about"
       >
         {/*About Akkoo left */}
         <div class="py-10 px-6 flex flex-col items-start justify-center  bg-darkGreen md:p-20 md:col-span-2 blgxl:col-span-3">
-          <h2 class="about-title text-4xl font-extrabold text-whiteText md:text-6xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 15,
+              stiffness: 500,
+              duration: 20,
+            }}
+            class="about-title text-4xl font-extrabold text-whiteText md:text-6xl"
+          >
             About Akkoo
-          </h2>
+          </motion.h2>
           <div>
-            <h3 class="text-lg font-bold text-lightGreen blgxl:text-2xl ">
+            <motion.h3
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 15,
+                stiffness: 500,
+                duration: 20,
+              }}
+              class="text-lg font-bold text-lightGreen blgxl:text-2xl "
+            >
               ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
               spoken languages in Ethiopia) meaning ‘Grandmother’
-            </h3>
-            <p class="text-sm text-whiteText pt-6 blgxl:text-base">
+            </motion.h3>
+
+            <motion.p
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 15,
+                stiffness: 500,
+                duration: 0,
+              }}
+              class="text-sm text-whiteText pt-6 blgxl:text-base"
+            >
               Our commitment is to bring you the ultimate coffee experience, one
               that is responsibly produced from seed to cup. This is not merely
               an ideology but our everyday practice. It was on May 2019 AKKOO
@@ -339,40 +485,109 @@ export default function Home() {
               road. Upon its opening, Akkoo was welcomed with encouraging
               responses from the community. It quickly became the meeting place
               for coffee lovers ranging from university students to retirees.
-            </p>
+            </motion.p>
           </div>
           <div class="space-y-4 space-x-0 mt-20 flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0">
-            <AboutUsMore />
-            <OurStory />
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 500,
+                duration: 20,
+              }}
+            >
+              <AboutUsMore />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 500,
+                duration: 20,
+              }}
+            >
+              <OurStory />
+            </motion.div>
           </div>
         </div>
 
         {/* About Akkoo right */}
-        <img
+        <motion.img
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            type: "tween",
+            duration: 1,
+          }}
           src={heroImage}
           class="hidden border-l-2 border-whiteText rounded-l-full h-screen w-full object-cover  md:block col-span-1 blgxl:col-span-2"
         />
       </section>
-      ;{/* Services section */}
+      {/* Services section */}
       <section
         class="flex flex-col items-start justify-center text-darkGreen font-extrabold w-11/12 m-auto py-32"
         id="services"
       >
         <div>
-          <h2 class="services-title text-4xl font-extrabold md:text-6xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 20,
+              stiffness: 500,
+              duration: 0,
+            }}
+            class="services-title text-4xl font-extrabold md:text-6xl"
+          >
             Akkoo services
-          </h2>
-          <p class="text-darkGreen text-sm w-full sm:text-base md:w-4/5">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 15,
+              stiffness: 500,
+              duration: 0,
+            }}
+            class="text-darkGreen text-sm w-full sm:text-base md:w-4/5"
+          >
             Most people visit us expecting only good coffee and are fairly
             impressed with our ‘Buna Kurs’ (barley flour with butter)
             accompanying it. We’re known for our excellent coffee in all its
             forms. Machiatto, Café-latte, Espresso… you name it me make it best!
-          </p>
+          </motion.p>
         </div>
 
         <div class="flex flex-col space-x-0 space-y-20 mt-14 md:flex-row md:space-x-6 md:space-y-0">
-          <div class="relative bg-otherColor p-8 shadow-lg rounded-2xl blgxl:p-12 md:p-6 md:w-1/3">
-            <div class="w-16 h-16 bg-otherColor rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"></div>
+          {/* First Service */}
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 20,
+              stiffness: 500,
+              delay: 0.1,
+            }}
+            class="relative bg-otherColor p-8 shadow-lg rounded-2xl blgxl:p-12 md:p-6 md:w-1/3"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 500,
+                delay: 0.5,
+              }}
+              class="w-16 h-16 bg-otherColor rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"
+            ></motion.div>
             <p class="text-2xl capitalize mb-2 lg:text-3xl ">
               Ethiopian Coffee
             </p>
@@ -383,9 +598,30 @@ export default function Home() {
               seasoned enthusiast or a curious newcomer, our Ethiopian offerings
               promise an authentic and memorable coffee experience.
             </p>
-          </div>
-          <div class="relative bg-lightGreen shadow-lg rounded-2xl p-8 md:scale-105 blgxl:p-12 md:p-6 md:w-1/3">
-            <div class="w-16 h-16 bg-lightGreen rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"></div>
+          </motion.div>
+          {/* Second Service */}
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 20,
+              stiffness: 500,
+              delay: 0.3,
+            }}
+            class="relative bg-lightGreen shadow-lg rounded-2xl p-8 md:scale-105 blgxl:p-12 md:p-6 md:w-1/3"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 500,
+                delay: 0.5,
+              }}
+              class="w-16 h-16 bg-lightGreen rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"
+            ></motion.div>
             <p class="text-2xl capitalize mb-2 lg:text-3xl">
               traditional cuisine
             </p>
@@ -395,9 +631,31 @@ export default function Home() {
               beautiful Mesob, we have options suitable for your guest size
               starting from 10 people.
             </p>
-          </div>{" "}
-          <div class="relative bg-otherColor p-8 shadow-lg rounded-2xl blgxl:p-12 md:p-6 md:w-1/3">
-            <div class="w-16 h-16 bg-otherColor rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"></div>
+          </motion.div>
+
+          {/* Third Service */}
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 20,
+              stiffness: 500,
+              delay: 0.6,
+            }}
+            class="relative bg-otherColor p-8 shadow-lg rounded-2xl blgxl:p-12 md:p-6 md:w-1/3"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 500,
+                delay: 0.7,
+              }}
+              class="w-16 h-16 bg-otherColor rounded-full absolute -top-10 left-1/2 border-whiteText border-4 -translate-x-1/2"
+            ></motion.div>
             <p class="text-2xl capitalize mb-2 lg:text-3xl">buna kurs</p>
             <p class="text-sm lg:text-base">
               We believe that the perfect coffee experience extends beyond the
@@ -405,10 +663,10 @@ export default function Home() {
               snacks, thoughtfully curated to complement the rich flavors of our
               brews.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
-      ;{/* Communities Section */}
+      {/* Communities Section */}
       <section
         class=" bg-otherColor text-darkGreen font-extrabold rounded-tr-3xl rounded-bl-3xl"
         id="community"
@@ -416,16 +674,42 @@ export default function Home() {
         <div class="flex flex-col-reverse items-center justify-center w-11/12 m-auto gap-20 py-12 md:py-32 md:flex-row">
           {/* Community Section Left */}
           <div class="w-full md:w-1/2">
-            <h2 class="community-title text-4xl text-darkGreen font-bold blgxl:text-6xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 15,
+                stiffness: 500,
+              }}
+              class="community-title text-4xl text-darkGreen font-bold blgxl:text-6xl"
+            >
               Community
-            </h2>
-            <h3 class="text-sm sm:text-base">
+            </motion.h2>
+            <motion.h3
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 15,
+                stiffness: 500,
+                delay: 0.2,
+              }}
+              class="text-sm sm:text-base"
+            >
               Every purchase of coffee at AKKOO positively impacts social and
               environmental conditions at the source.AKKOO sources its coffee
               from west Ethiopia, specifically from Wellega zone Gedame wereda
               in Oromia region.
-            </h3>
-            <div
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                damping: 15,
+                stiffness: 500,
+              }}
               class="scroll-container flex flex-nowrap overflow-scroll space-x-2.5 max-w-full mt-3"
               id="community-container"
             >
@@ -472,32 +756,60 @@ export default function Home() {
                   </div>
                 );
               })}
-            </div>
+            </motion.div>
             {/* Community slider arrows container */}
             <div class="flex items-center mt-8 space-x-6">
               {/* Arrow left */}
-              <BsArrowLeft
-                class="p-3 text-4xl bg-whiteText rounded-full"
-                onClick={communitySlideLeft}
-              />
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  type: "spring",
+                  damping: 10,
+                  stiffness: 500,
+                }}
+                class="p-3 text-xl bg-whiteText rounded-full"
+              >
+                <BsArrowLeft onClick={communitySlideLeft} />
+              </motion.div>
               {/* Arrow right */}
-              <BsArrowLeft
-                class="p-3 text-4xl bg-whiteText rounded-full -rotate-180"
-                onClick={communitySlideRight}
-              />
+              <motion.div
+                initial={{ opacity: 0, x: 200 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  type: "spring",
+                  damping: 10,
+                  stiffness: 500,
+                }}
+                class="p-3 text-xl bg-whiteText rounded-full -rotate-180"
+              >
+                <BsArrowLeft
+                  onClick={communitySlideRight}
+                  class=" -rotate-180"
+                />
+              </motion.div>
             </div>
           </div>
           {/* right */}
-          <div class="community-right-container w-5/6 md:w-1/2 ">
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              type: "spring",
+              damping: 15,
+              stiffness: 500,
+            }}
+            class="community-right-container w-5/6 md:w-1/2 "
+          >
             <img
               src={communityPic}
               alt=""
               class="w-full rounded-2xl shadow-xl border-4 border-solid border-whiteText md:w-full"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
-      ;{/* AKKOO MENU SECTION */}
+      {/* AKKOO MENU SECTION */}
       <section
         class="w-11/12 font-extrabold m-auto py-32 text-darkGreen"
         id="menu"
@@ -656,7 +968,7 @@ export default function Home() {
               return (
                 <img
                   src={img.src}
-                  class="scrolling-items w-full  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/3 lg:w-2/5"
+                  class="scrolling-items w-11/12  aspect-video object-cover rounded-xl hover:scale-105 transition-all sm:w-1/2 md:w-1/3 lg:w-2/5"
                   id="gallery-item"
                 />
               );
