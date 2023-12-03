@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Josefin Slab', serif;
+  // font-family: 'Zilla Slab', serif;
   scroll-behavior: smooth;
   // outline: 1px solid red !important;
   // color: red !important;
@@ -21,6 +22,8 @@
     }
 body{
   // background-color: white;
+  // max-width: 1500px;
+  // margin: auto;
 }
 .scrolled{
   background-color: white;
@@ -31,6 +34,12 @@ body{
 .gallery-slider{
  min-width: 33.5%;
 }
+.hero-akkoo-txt{
+   color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $dark-green;
+}
+
 .nav-item{
     position: relative;
     transition: all 0.3s ease-in-out;
@@ -50,7 +59,6 @@ body{
 }
 .footer-nav-item{
     position: relative;
-    transition: all 0.3s ease-in-out;
     width: 50%;
     &::after{
         content: "";
@@ -70,20 +78,24 @@ body{
 .unique-title{
         position: relative;
         z-index: 1;
+        
             &::after{
             content: "unique";
             position: absolute;
             left:0;
             text-transform: uppercase;
-            color: $dark-green-transparent;
             opacity: 0.1;
             z-index: -1;
+            font-family: 'Alfa Slab One';
+            color: transparent !important;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: $dark-green;
                 @media (max-width: 352px) {
                  display: none;
                 }
                 @media (min-width: 352px) {
-                  font-size: 5rem;
-                  top: -80%;
+                  font-size: 4rem;
+                  top: -55%;
                 }
                 @media (min-width: 780px) {
                   font-size: 5rem;
@@ -112,9 +124,13 @@ body{
             color: $other-color;
             opacity: 0.1;
             z-index: -1;
+            font-family: 'Alfa Slab One';
+            color: transparent !important;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: $light-green;
                 @media (max-width: 352px) {
-                  font-size: 4rem;
-                  top: -30%;
+                  font-size: 3rem;
+                  top: -10%;
                 }
                 @media (min-width: 352px) {
                   font-size: 5rem;
@@ -148,13 +164,17 @@ body{
             color: $dark-green-transparent;
             opacity: 0.1;
             z-index: -1;
+            font-family: 'Alfa Slab One';
+            color: transparent !important;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: $dark-green;
                 @media (max-width: 352px) {
-                  font-size: 4rem;
-                  top: -30%;
+                  font-size: 3rem;
+                  top: -8%;
                 }
                 @media (min-width: 352px) {
-                  font-size: 5rem;
-                  top: -50%;
+                  font-size: 4rem;
+                  top: -30%;
                 }
                 @media (min-width: 780px) {
                   font-size: 7rem;
@@ -184,17 +204,21 @@ body{
             color: $white-text;
             opacity: 0.6;
             z-index: -1;
+            font-family: 'Alfa Slab One';
+            color: transparent !important;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: $white-text;
                 @media (max-width: 352px) {
                   font-size: 2rem;
-                  top: 20%;
+                  top: 15%;
                 }
                 @media (min-width: 352px) {
-                  font-size: 3rem;
+                  font-size: 2.5rem;
                   top: -2%;
                 }
                 @media (min-width: 780px) {
                   font-size: 4rem;
-                  top: -30%;
+                  top: -35%;
                 }
                 @media (min-width: 1224px) {
                   font-size: 6rem;
@@ -220,6 +244,10 @@ body{
             color: $dark-green-transparent;
             opacity: 0.1;
             z-index: -1;
+            font-family: 'Alfa Slab One';
+            color: transparent !important;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: $dark-green;
                 @media (max-width: 352px) {
                   font-size: 4rem;
                   top: -30%;
@@ -280,7 +308,6 @@ body{
     }
 .footer-titles{
   position: relative;
-  transition: all 0.3s ease-in-out;
   &::after{
         content: "";
         position: absolute;

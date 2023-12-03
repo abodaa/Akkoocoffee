@@ -13,7 +13,7 @@ export default function BasicModal() {
       </Button> */}
       <button
         onClick={() => setOpen(true)}
-        class="py-2 border-solid font-extrabold border-2 px-6 rounded-full bg-lightGreen text-darkGreen border-darkGreen"
+        class="py-2 border-solid font-extrabold border-2 px-6 rounded-full bg-lightGreen text-darkGreen border-darkGreen hover:text-darkGreen hover:bg-whiteText hover:font-bold transition-all"
       >
         More about us
       </button>

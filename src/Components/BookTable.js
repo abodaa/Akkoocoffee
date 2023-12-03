@@ -13,7 +13,7 @@ export default function BookTableModal() {
     <div>
       <button
         onClick={() => setOpen(true)}
-        class="p-2 px-5 bg-lightGreen text-darkGreen font-bold rounded-md"
+        class="p-2 px-5 bg-lightGreen text-darkGreen font-bold rounded-md hover:text-whiteText hover:bg-darkGreen transition-all"
       >
         Book
       </button>
