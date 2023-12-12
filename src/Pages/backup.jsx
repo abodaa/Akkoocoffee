@@ -1599,3 +1599,52 @@ export default function Home() {
          </div>
        </div>
      </div>;
+
+
+// ABOUT US
+  {
+    /* Contents container */
+  }
+  <div class="w-11/12 m-auto  grid  items-center justify-center gap-12 blgxl:grid-cols-2 xxl:container ">
+    {/* About us section left */}
+    <div class="grid gap-3 sm:grid-cols-2 ">
+      <div class="w-full h-full grid gap-3">
+        <img
+          src={GS2}
+          alt=""
+          class="w-full aspect-video object-cover rounded-3xl shadow-xl sm:h-full"
+        />
+        <img
+          src={GS5}
+          alt=""
+          class="w-full aspect-video object-cover rounded-3xl shadow-xl sm:h-full "
+        />
+      </div>
+      <img src={GL2} alt="" class="w-full h-full rounded-3xl shadow-xl" />
+    </div>
+    {/* About us section right */}
+    <div>
+      <button class="text-sm text-gray-600  sm:text-base">About</button>
+      <h2 class="text-2xl md:text-3xl font-bold">About Akkoo Coffee</h2>
+      <div>
+        <p class="text-2xl">
+          {" "}
+          ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
+          spoken languages in Ethiopia) meaning ‘Grandmother’
+        </p>
+        <p class="text-gray-600">
+          Our commitment is to bring you the ultimate coffee experience, one
+          that is responsibly produced from seed to cup. This is not merely an
+          ideology but our everyday practice. It was on May 2019 AKKOO coffee’s
+          founders Dawit Hailu and his wife Wudassie Enquberhan opened their
+          first coffee shop down the street from Churchill road. Upon its
+          opening, Akkoo was welcomed with encouraging responses from the
+          community. It quickly became the meeting place for coffee lovers
+          ranging from university students to retirees.
+        </p>
+        <button class="p-2 px-6 mt-6 rounded-full bg-lightGreen">
+          Find out more
+        </button>
+      </div>
+    </div>
+  </div>;

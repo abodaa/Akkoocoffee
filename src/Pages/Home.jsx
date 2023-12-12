@@ -483,49 +483,78 @@ export default function Home() {
       </section>
 
       {/* About us Section */}
-      <section class="py-32 mt-32 bg-otherColor" id="about">
-        {/* Contents container */}
-        <div class="w-11/12 m-auto  grid  items-center justify-center gap-12 blgxl:grid-cols-2 xxl:container ">
-          {/* About us section left */}
-          <div class="grid gap-3 sm:grid-cols-2 ">
-            <div class="w-full h-full grid gap-3">
+      <section
+        class="py-20 mt-20 bg-otherColorTransparent m-auto rounded-tr-full xxl:container xxl:px-10"
+        id="about"
+      >
+        <div class=" m-auto w-10/12  xxl:container">
+          <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-whiteText  rounded-lg">
+            About
+          </button>
+          <p class=" font-bold text-2xl sm:text-3xl">About AKKOO Coffee</p>
+          <p class="text-gray-600 text-sm mt-1 md:w-1/2 sm:text-lg">
+            ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
+            spoken languages in Ethiopia) meaning ‘Grandmother’
+          </p>
+        </div>
+        <div class="grid  gap-5 mt-5 m-auto w-10/12 xxl:container blgxl:grid-cols-2">
+          {/* Unique left */}
+          <div class="flex flex-col gap-5 w-full h-full  md:flex-row blgxl:flex-col">
+            <div class="flex flex-col items-center gap-5 h-full blgxl:flex-row">
               <img
-                src={GS2}
+                src={uniqueOne}
                 alt=""
-                class="w-full aspect-video object-cover rounded-3xl shadow-xl sm:h-full"
+                class="aspect-video object-cover rounded-3xl  blgxl:w-1/2 "
               />
-              <img
-                src={GS5}
-                alt=""
-                class="w-full aspect-video object-cover rounded-3xl shadow-xl sm:h-full "
-              />
+              <div>
+                <h3 class="text-xl md:text-xl font-bold">Who we are</h3>
+                <p class=" text-sm text-gray-600 sm:text-md">
+                  Our commitment is to bring you the ultimate coffee experience,
+                  one that is responsibly produced from seed to cup
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <button>Learn more</button>
+                  <CgArrowRight />
+                </div>
+              </div>
             </div>
-            <img src={GL2} alt="" class="w-full h-full rounded-3xl shadow-xl" />
+            <div class="flex flex-col items-center t gap-5 h-full   rounded-3xl  blgxl:flex-row">
+              <img
+                src={uniqueTwo}
+                alt=""
+                class="aspect-video object-cover rounded-2xl  blgxl:w-1/2"
+              />
+              <div class="">
+                <h3 class="text-xl md:text-xl font-bold">How we started</h3>
+                <p class="text-sm text-gray-600 sm:text-md">
+                  It was on May 2019 AKKOO coffee’s founders Dawit Hailu and his
+                  wife Wudassie Enquberhan opened their first coffee shop
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <button>Learn more</button>
+                  <CgArrowRight />
+                </div>
+              </div>
+            </div>
           </div>
-          {/* About us section right */}
-          <div>
-            <button class="text-sm text-gray-600  sm:text-base">About</button>
-            <h2 class="text-2xl md:text-3xl font-bold">About Akkoo Coffee</h2>
+          {/* Unique right */}
+          <div class="flex flex-col gap-6 h-full bg-otherColor rounded-3xl p-5 md:p-10  ">
+            <img
+              src={uniqueThree}
+              alt=""
+              class="w-full aspect-video object-cover rounded-2xl "
+            />
             <div>
-              <p class="text-2xl">
-                {" "}
-                ‘Akkoo’ is a word in the Afaan Oromoo language (one of the
-                widely spoken languages in Ethiopia) meaning ‘Grandmother’
+              <h3 class="text-xl md:text-2xl font-bold">Our Story</h3>
+              <p class="text-sm text-gray-600 sm:text-md">
+                Upon its opening, Akkoo was welcomed with encouraging responses
+                from the community. It quickly became the meeting place for
+                coffee lovers ranging from university students to retirees
               </p>
-              <p class="text-gray-600">
-                Our commitment is to bring you the ultimate coffee experience,
-                one that is responsibly produced from seed to cup. This is not
-                merely an ideology but our everyday practice. It was on May 2019
-                AKKOO coffee’s founders Dawit Hailu and his wife Wudassie
-                Enquberhan opened their first coffee shop down the street from
-                Churchill road. Upon its opening, Akkoo was welcomed with
-                encouraging responses from the community. It quickly became the
-                meeting place for coffee lovers ranging from university students
-                to retirees.
-              </p>
-              <button class="p-2 px-6 mt-6 rounded-full bg-lightGreen">
-                Find out more
-              </button>
+              <div class="flex items-center gap-2 mt-2">
+                <button>Learn more</button>
+                <CgArrowRight />
+              </div>
             </div>
           </div>
         </div>
