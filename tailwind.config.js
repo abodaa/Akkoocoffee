@@ -8,7 +8,7 @@ module.exports = {
       lg: "1024px",
       blgxl: "1224px",
       xl: "1440px",
-      xxl: "1600px"
+      xxl: "1600px",
     },
     extend: {
       colors: {
@@ -20,8 +20,8 @@ module.exports = {
         whiteText: "#ffffff",
         secondaryText: "#2d2d2d",
         otherColor: "#e6efe5",
-        whiteTextTransparent: "#e6efe58a",
-        overlayTransparent: "#000000e1",
+        otherColorTransparent: "#e6efe58a",
+        whiteTransparent: "#ffffff63",
       },
       fontFamily: {
         AlfaSlabOne: ["Alfa Slab One"],
@@ -29,6 +29,7 @@ module.exports = {
       fontSize: {
         sm: "0.8rem",
         base: "1rem",
+        md: "0.9rem",
         xl: "1.25rem",
         "2xl": "1.4rem",
         "3xl": "1.953rem",

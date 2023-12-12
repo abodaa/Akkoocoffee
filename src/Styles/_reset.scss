@@ -1,15 +1,19 @@
 @import './variables';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Josefin Slab', serif;
+  // font-family: 'Josefin Slab', serif;
   // font-family: 'Zilla Slab', serif;
+  font-family: Gabarito, serif;
   scroll-behavior: smooth;
   // outline: 1px solid red !important;
   // color: red !important;
+  // color: #26636e;
 }
  ::-webkit-scrollbar {
         width: 0px;
@@ -21,10 +25,18 @@
         color: #e6efe58a;
     }
 body{
-  // background-color: white;
+  // background-color: #e6efe58a;
   // max-width: 1500px;
   // margin: auto;
 }
+.unique-container{
+  background: url('../images/uniqueBg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
 .scrolled{
   background-color: white;
 }
@@ -35,9 +47,9 @@ body{
  min-width: 33.5%;
 }
 .hero-akkoo-txt{
-   color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: $dark-green;
+  //  color: transparent;
+  // -webkit-text-stroke-width: 2px;
+  // -webkit-text-stroke-color: $dark-green;
 }
 
 .nav-item{
