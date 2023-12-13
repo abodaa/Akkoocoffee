@@ -5,7 +5,10 @@ import uniqueHome from "../images/uniqueHome.png";
 import uniqueOurSpace from "../images/uniqueOurSpace.png";
 import uniqueKeepThingsInteresting from "../images/uniqueKeepThingsInteresting.png";
 import uniqueCoffee from "../images/uniqueCoffee.png";
-
+import food from "../images/food.png";
+import drink from "../images/drink.png";
+import bunaKurs from "../images/bunaKurs.png";
+import coffee from "../images/coffee.png";
 import uniqueOne from "../images/uniqueOne.jpg";
 import uniqueTwo from "../images/uniqueTwo.jpg";
 import uniqueThree from "../images/uniqueThree.jpg";
@@ -24,9 +27,9 @@ import GS1 from "../images/gallery/GS1.jpg";
 import GS2 from "../images/gallery/GS2.jpg";
 import GS3 from "../images/gallery/GS3.jpg";
 import GS4 from "../images/gallery/GS4.jpg";
-import GS5 from "../images/gallery/GS5.jpg";
+// import GS5 from "../images/gallery/GS5.jpg";
 
-import food from "../images/food.png";
+// import food from "../images/food.png";
 import heroVideo from "../images/hero.mp4";
 import { CiLocationOn } from "react-icons/ci";
 import {
@@ -183,7 +186,7 @@ export default function Home() {
               href="#menu"
               class="p-2 px-5 bg-otherColor text-darkGreen font-bold  rounded-md hover:bg-darkGreen hover:text-whiteText"
             >
-              Akkoo Menu
+              ##### Menu
             </motion.a>
           </div>
         </div>
@@ -326,7 +329,7 @@ export default function Home() {
         </div>
       </section>
       {/* What makes us Unique section */}
-      <section class="unique-container mt-20  ">
+      <section class="unique-container py-20 mt-10  ">
         {/* Unique Left section */}
         {/* <div class="absolute -top-20 -skew-y-6 py-10 h-44 bg-otherColor m-auto w-full rounded-t-3xl"></div> */}
         <div class=" m-auto w-11/12 text-center  xxl:container">
@@ -367,7 +370,6 @@ export default function Home() {
             class="scroll-container  text-center py-10 flex overflow-scroll space-x-2.5"
             id="unique-container"
           >
-            {/* First Description */}
             {[
               {
                 title: "We make you feel at home",
@@ -484,7 +486,7 @@ export default function Home() {
 
       {/* About us Section */}
       <section
-        class="py-20 mt-20 bg-otherColorTransparent m-auto rounded-tr-full xxl:container xxl:px-10"
+        class="py-20 mt-10 bg-otherColorTransparent m-auto rounded-tr-full xxl:container xxl:px-10"
         id="about"
       >
         <div class=" m-auto w-10/12  xxl:container">
@@ -492,13 +494,13 @@ export default function Home() {
             About
           </button>
           <p class=" font-bold text-2xl sm:text-3xl">About AKKOO Coffee</p>
-          <p class="text-gray-600 text-sm mt-1 md:w-1/2 sm:text-lg">
+          <p class="text-gray-600 text-sm mt-1 md:w-1/2 sm:text-base">
             ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
             spoken languages in Ethiopia) meaning ‘Grandmother’
           </p>
         </div>
         <div class="grid  gap-5 mt-5 m-auto w-10/12 xxl:container blgxl:grid-cols-2">
-          {/* Unique left */}
+          {/* About left */}
           <div class="flex flex-col gap-5 w-full h-full  md:flex-row blgxl:flex-col">
             <div class="flex flex-col items-center gap-5 h-full blgxl:flex-row">
               <img
@@ -513,8 +515,7 @@ export default function Home() {
                   one that is responsibly produced from seed to cup
                 </p>
                 <div class="flex items-center gap-2 mt-2">
-                  <button>Learn more</button>
-                  <CgArrowRight />
+                  <button class="about-button">Learn more</button>
                 </div>
               </div>
             </div>
@@ -531,13 +532,12 @@ export default function Home() {
                   wife Wudassie Enquberhan opened their first coffee shop
                 </p>
                 <div class="flex items-center gap-2 mt-2">
-                  <button>Learn more</button>
-                  <CgArrowRight />
+                  <button class="about-button">Learn more</button>
                 </div>
               </div>
             </div>
           </div>
-          {/* Unique right */}
+          {/* About right */}
           <div class="flex flex-col gap-6 h-full bg-otherColor rounded-3xl p-5 md:p-10  ">
             <img
               src={uniqueThree}
@@ -552,11 +552,68 @@ export default function Home() {
                 coffee lovers ranging from university students to retirees
               </p>
               <div class="flex items-center gap-2 mt-2">
-                <button>Learn more</button>
-                <CgArrowRight />
+                <button class="about-button">Learn more</button>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Services section */}
+      <section
+        class="service-container mt-10 py-20 m-auto xxl:container"
+        id="services"
+      >
+        {/* Services section title */}
+        <div class=" w-10/12 m-auto mb-12  xxl:container">
+          <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-otherColorTransparent  rounded-lg">
+            Services
+          </button>
+          <p class=" font-bold text-2xl sm:text-3xl">AKKOO services</p>
+          <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
+            Most people visit us expecting only good coffee and are fairly
+            impressed with our ‘Buna Kurs’ (barley flour with butter)
+            accompanying it. We’re known for our excellent coffee in all its
+            forms. Machiatto, Café-latte, Espresso… you name it me make it best!
+          </p>
+        </div>
+
+        {/* Services section contents */}
+        <div class=" w-10/12 m-auto grid grid-cols-1 gap-3 sm:grid-cols-2 blgxl:grid-cols-4 blgxl:gap-5">
+          {[
+            {
+              icon: food,
+              title: "Food",
+              content: `Agelgil, our renowned order, offers fasting and non-fasting options, delivered in a Mesob for groups of 10+ people`,
+            },
+            {
+              icon: drink,
+              title: "Drinks",
+              content: `Enhance your refreshing moment with our premium selection of soft drinks and juices, perfectly curated to amplify vibrant flavors`,
+            },
+            {
+              icon: coffee,
+              title: "Coffee",
+              content: `Explore our Ethiopian single-origin coffees carefully selected for a unique and memorable experience, perfect for enthusiasts`,
+            },
+            {
+              icon: bunaKurs,
+              title: "Buna Kurs",
+              content: `Elevate your coffee ritual with our exquisite snacks, thoughtfully curated to complement the rich flavors of our brews`,
+            },
+          ].map((service) => {
+            return (
+              <div class="flex flex-col items-center  px-6 py-10 bg-otherColor rounded-3xl">
+                <img src={service.icon} alt="" class="w-1/3" />
+                <div class="text-center mt-3">
+                  <p class="text-2xl font-bold md:text-3xl">{service.title}</p>
+                  <p class="text-sm text-gray-600 md:text-md">
+                    {service.content}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
