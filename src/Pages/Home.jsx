@@ -5,6 +5,14 @@ import uniqueHome from "../images/uniqueHome.png";
 import uniqueOurSpace from "../images/uniqueOurSpace.png";
 import uniqueKeepThingsInteresting from "../images/uniqueKeepThingsInteresting.png";
 import uniqueCoffee from "../images/uniqueCoffee.png";
+
+import breakFast from "../images/breakFast.png";
+import lunch from "../images/lunch.png";
+import drinks from "../images/drinkMenu.png";
+import cake from "../images/cake.png";
+import specialOrder from "../images/special.png";
+
+
 import food from "../images/food.png";
 import drink from "../images/drink.png";
 import bunaKurs from "../images/bunaKurs.png";
@@ -614,6 +622,81 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Akkoo menu section */}
+      <section class="mt-0 py-20 m-auto xxl:container" id="menu">
+        {/* Services section title */}
+        <div class=" m-auto  text-center  xxl:container">
+          <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-otherColorTransparent  rounded-lg">
+            Menu
+          </button>
+          <p class=" font-bold text-2xl sm:text-3xl">##### Menu</p>
+          <p class="text-gray-600 text-sm mt-1 sm:text-base">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div class="bg-otherColor p-10 w-11/12 m-auto rounded-3xl md:w-3/4 ">
+          {/* Menu selection container*/}
+          <ul class="flex items-center flex-wrap gap-1 justify-center m-auto my-5 w-full text-sm md:text-base sm:gap-2">
+            {[
+              { title: "Break Fast", icon: breakFast },
+              { title: "Lunch", icon: lunch },
+              { title: "Cake", icon: cake },
+              { title: "Drinks", icon: drinks },
+              { title: "Special", icon: specialOrder },
+            ].map((menu) => {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: -100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.5,
+                    delay: 0.1,
+                  }}
+                  class="flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4"
+                >
+                  <img src={menu.icon} alt="" class="w-6 " />
+                  <p>{menu.title}</p>
+                </motion.div>
+              );
+            })}
+          </ul>
+          {/* Menu Items */}
+          <div class="flex items-center gap-4 ">
+            <div
+              class="grid grid-cols-1 gap-10 md:grid-cols-2 w-full   blgxl:grid-cols-3"
+              id="menu-item-container"
+            >
+              {breakfastMenuData.map((item, index) => {
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "tween",
+                      duration: 0.5,
+                      delay: 0.5,
+                    }}
+                    key={item.name}
+                    class={`flex items-center justify-between gap-3 py-6 px-4 border-b-2 border-whiteText`}
+                    id="menu-item"
+                  >
+                    <img src={food} alt="" class="w-1/6" />
+                    <div class="flex items-center justify-between">
+                      <div class="">
+                        <p class="text-base font-bold">{item.name}</p>
+                        <p class="text-sm text-gray-600">{item.description}</p>
+                      </div>
+                    </div>
+                    <p class="menu-price top-0 text-base font-bold ">120</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
     </div>
