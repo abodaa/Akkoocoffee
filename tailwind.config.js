@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     screens: {
       sm: "480px",
+      bsmmd: "600px",
       md: "780px",
       lg: "1024px",
       blgxl: "1224px",
@@ -14,7 +15,7 @@ module.exports = {
       colors: {
         lightGreen: "#ffaa00",
         lightGreenTransparent: "#9ee870",
-        darkGreen: "#163300",
+        darkGreen: "#02231c",
         darkGreenTransparent: "#163300c3",
         primaryText: "#000",
         whiteText: "#ffffff",

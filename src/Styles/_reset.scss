@@ -115,10 +115,11 @@ body{
     transition: all 0.3s ease-in-out;
     &::after{
         content: "Birr";
+        padding: 0.55rem;
         position: absolute;
         left: 0;
-        top: -0.4rem;
-        left: 1.5rem;
+        bottom: -0.5rem;
+        left: 0rem;
         font-size: 0.6rem;
     }
 }

@@ -11,7 +11,7 @@ import lunch from "../images/lunch.png";
 import drinks from "../images/drinkMenu.png";
 import cake from "../images/cake.png";
 import specialOrder from "../images/special.png";
-
+import promotionPic from "../images/propmotion.png";
 
 import food from "../images/food.png";
 import drink from "../images/drink.png";
@@ -627,17 +627,17 @@ export default function Home() {
 
       {/* Akkoo menu section */}
       <section class="mt-0 py-20 m-auto xxl:container" id="menu">
-        {/* Services section title */}
-        <div class=" m-auto  text-center  xxl:container">
+        {/* Menu section title */}
+        <div class=" m-auto  text-center w-3/4 sm:w-11/12 xxl:container">
           <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-otherColorTransparent  rounded-lg">
             Menu
           </button>
-          <p class=" font-bold text-2xl sm:text-3xl">##### Menu</p>
+          <p class=" font-bold text-2xl sm:text-3xl">Akkoo Menu</p>
           <p class="text-gray-600 text-sm mt-1 sm:text-base">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
         </div>
-        <div class="bg-otherColor p-10 w-11/12 m-auto rounded-3xl md:w-3/4 ">
+        <div class="bg-otherColorTransparent px-2 py-10 mt-6 m-auto sm:rounded-3xl md:w-11/12  sm:w-11/12 sm:py-10 sm:px-10 ">
           {/* Menu selection container*/}
           <ul class="flex items-center flex-wrap gap-1 justify-center m-auto my-5 w-full text-sm md:text-base sm:gap-2">
             {[
@@ -656,7 +656,7 @@ export default function Home() {
                     duration: 0.5,
                     delay: 0.1,
                   }}
-                  class="flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4"
+                  class="flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md bg-otherColor cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4"
                 >
                   <img src={menu.icon} alt="" class="w-6 " />
                   <p>{menu.title}</p>
@@ -667,7 +667,7 @@ export default function Home() {
           {/* Menu Items */}
           <div class="flex items-center gap-4 ">
             <div
-              class="grid grid-cols-1 gap-10 md:grid-cols-2 w-full   blgxl:grid-cols-3"
+              class="grid grid-cols-1 gap-6 bsmmd:grid-cols-2 w-11/12 m-auto sm:w-full lg:grid-cols-3 blgxl:grid-cols-4"
               id="menu-item-container"
             >
               {breakfastMenuData.map((item, index) => {
@@ -681,17 +681,20 @@ export default function Home() {
                       delay: 0.5,
                     }}
                     key={item.name}
-                    class={`flex items-center justify-between gap-3 py-6 px-4 border-b-2 border-whiteText`}
-                    id="menu-item"
+                    class={`relative flex flex-col justify-center items-center text-center gap-3 p-6 shadow-sm bg-otherColor rounded-2xl`}
                   >
-                    <img src={food} alt="" class="w-1/6" />
+                    <img src={food} alt="" class="w-1/5" />
                     <div class="flex items-center justify-between">
                       <div class="">
-                        <p class="text-base font-bold">{item.name}</p>
+                        <div class="">
+                          <p class="text-base  font-bold">{item.name} </p>
+                        </div>
                         <p class="text-sm text-gray-600">{item.description}</p>
                       </div>
                     </div>
-                    <p class="menu-price top-0 text-base font-bold ">120</p>
+                    <p class="absolute menu-price -bottom-4 rounded-lg bg-otherColor p-2 text-base font-bold ">
+                      120
+                    </p>
                   </motion.div>
                 );
               })}
@@ -699,6 +702,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Promotion section */}
+      <section class="bg-darkGreen mt-20  m-auto sm:rounded-3xl sm:w-11/12 xxl:container">
+        <div class=" flex flex-col items-center justify-center gap-11 w-5/6  m-auto md:w-2/3 md:flex-row">
+          <img src={promotionPic} alt="" class="hidden w-36 -mt-24  md:block" />
+          <div class="flex flex-col text-lightGreen py-6  md:py-10">
+            <p>Hungry?</p>
+            <div>
+              <p class="text-xl text-whiteText items-start lg:text-3xl blgxl:text-5xl">
+                We will home deliver !
+              </p>
+              <p class="w-full text-sm text-gray-400 blgxl:w-11/12 lg:text-md">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consequatur, quia libero mollitia.
+              </p>
+              <button class="py-2 px-4 rounded-full bg-lightGreen text-darkGreen mt-4">
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </div>
   );
 }
