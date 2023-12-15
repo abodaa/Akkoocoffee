@@ -20,10 +20,17 @@ import coffee from "../images/coffee.png";
 import uniqueOne from "../images/uniqueOne.jpg";
 import uniqueTwo from "../images/uniqueTwo.jpg";
 import uniqueThree from "../images/uniqueThree.jpg";
+
+import pOne from "../images/pOne.jpg";
+import pTwo from "../images/pTwo.jpg";
+import pThree from "../images/pThree.jpg";
+import pFour from "../images/pFour.jpg";
+import quote from "../images/quote.png";
+
 import heroImage from "../images/aboutSectionPic.jpg";
 import unique from "../images/unique.jpg";
-import pTwo from "../images/pTwo.png";
-import pThree from "../images/pThree.png";
+// import pTwo from "../images/pTwo.png";
+// import pThree from "../images/pThree.png";
 
 // Gallery Images
 import GL1 from "../images/gallery/GL1.jpg";
@@ -637,7 +644,7 @@ export default function Home() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
         </div>
-        <div class="bg-otherColorTransparent px-2 py-10 mt-6 m-auto sm:rounded-3xl md:w-11/12  sm:w-11/12 sm:py-10 sm:px-10 ">
+        <div class="bg-otherColorTransparent px-2 py-10 mt-6 m-auto sm:rounded-3xl md:w-11/12  sm:w-11/12 sm:py-12 sm:px-10 ">
           {/* Menu selection container*/}
           <ul class="flex items-center flex-wrap gap-1 justify-center m-auto my-5 w-full text-sm md:text-base sm:gap-2">
             {[
@@ -723,7 +730,114 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
+      {/* Community section */}
+      <section class="w-11/12 py-20 mt-10 m-auto xxl:container">
+        {/* Community section title */}
+        <div class="mb-12">
+          <button class="text-sm text-lightGreen sm:text-base">
+            Community
+          </button>
+          <p class=" font-bold text-2xl sm:text-3xl">Our Community</p>
+          <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
+            Every purchase of coffee at AKKOO positively impacts social and
+            environmental conditions at the source.AKKOO sources its coffee from
+            west Ethiopia, specifically from Wellega zone Gedame wereda in
+            Oromia region.
+          </p>
+        </div>
+        {/* Community section contents */}
+        <div class="grid grid-cols-1 gap-2 place-items-center bsmmd:grid-cols-2 lg:grid-col-2 blgxl:grid-cols-4">
+          {/* first community */}
+          <img
+            src={pThree}
+            alt=""
+            class="w-full aspect-square object-cover rounded-3xl"
+          />
+          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 top-4 right-6"
+            />
+            <p class="text-sm text-gray-600 mt-2 md:text-md">
+              I savor coffee for its diverse aromas and flavors, influenced by
+              my choice of beans and brewing method. Beyond personal enjoyment,
+              I appreciate its power to unite people and impact lives.
+            </p>
+            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Abi</p>
+            <p class="text-sm text-gray-600 md:text-xl lg:text-sm">Baresta</p>
+          </div>
+          {/* Second Community */}
+          <div class="relative p-10 bg-lightGreen flex flex-col justify-center aspect-square rounded-3xl">
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 top-4 right-6"
+            />
+            <p class="text-sm text-gray-800 mt-2 md:text-md">
+              Joined Dawit and Wudassie in 2004 at Wudassie Souvenirs, took on
+              various roles. Now AKKOO's Operations Manager, I handle café
+              management with a 'Keep calm and let TG handle it!' mindset.
+            </p>
+            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Tigist</p>
+            <p class="text-sm text-gray-800 md:text-xl lg:text-sm">
+              Operations Manager
+            </p>
+          </div>
+          <img
+            src={pTwo}
+            alt=""
+            class="w-full aspect-square object-cover rounded-3xl"
+          />
+          {/* Third Community */}
+          <div class="relative p-10 bg-darkGreen flex flex-col justify-center aspect-square rounded-3xl">
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 top-4 right-6"
+            />
+            <p class="text-sm text-gray-300 mt-2 md:text-md">
+              Before AKKOO, I settled for subpar coffee in other shops. Now,
+              thanks to AKKOO Coffee, I'm back to enjoying excellent black
+              coffee and occasional macchiatos. The quality is truly remarkable!
+            </p>
+            <p class="text-xl font-bold text-whiteText md:text-2xl lg:text-2xl">
+              Fitsum
+            </p>
+            <p class="text-sm text-gray-300 md:text-xl lg:text-sm">
+              Administrative & Finance Head
+            </p>
+          </div>
+          <img
+            src={pOne}
+            alt=""
+            class="w-full aspect-square object-cover rounded-3xl"
+          />
+          {/* Fourth community */}
+          <img
+            src={pFour}
+            alt=""
+            class="w-full aspect-square object-cover rounded-3xl"
+          />
+          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 top-4 right-6"
+            />
+            <p class="text-sm text-gray-600 mt-2 md:text-md">
+              I love tea – especially with cinnamon. Here at Akkoo we know how
+              to make great tea, cinnamon spiced, lemon squeezed or a simple
+              black tea, I have no doubt you’ll enjoy it.
+            </p>
+            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Kidi</p>
+            <p class="text-sm text-gray-600 md:text-xl lg:text-sm">
+              Purchasing{" "}
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
