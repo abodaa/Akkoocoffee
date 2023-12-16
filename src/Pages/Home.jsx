@@ -216,7 +216,7 @@ export default function Home() {
           {/* Hero above left */}
           <div class="col-span-2 flex flex-col justify-between">
             <div class="">
-              <div class="text-3xl sm:text-4xl -space-y-3 lg:text-5xl blgxl:text-6xl sm:-space-y-5">
+              <div class="text-3xl sm:text-4xl -space-y-3 lg:text-5xl font-bold blgxl:text-6xl sm:-space-y-5">
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -344,13 +344,11 @@ export default function Home() {
         </div>
       </section>
       {/* What makes us Unique section */}
-      <section class="unique-container py-20 mt-10  ">
+      <section class="unique-container m-auto py-20 mt-10 xxl:container ">
         {/* Unique Left section */}
         {/* <div class="absolute -top-20 -skew-y-6 py-10 h-44 bg-otherColor m-auto w-full rounded-t-3xl"></div> */}
         <div class=" m-auto w-11/12 text-center  xxl:container">
-          <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-otherColorTransparent  rounded-lg">
-            Unique
-          </button>
+          <button class="text-sm text-lightGreen sm:text-base ">Unique</button>
           <p class=" font-bold text-2xl sm:text-3xl">What makes AKKOO Unique</p>
           <p class="text-gray-600 text-sm mt-1 sm:text-lg">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -505,9 +503,7 @@ export default function Home() {
         id="about"
       >
         <div class=" m-auto w-10/12  xxl:container">
-          <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-whiteText  rounded-lg">
-            About
-          </button>
+          <button class="text-sm text-lightGreen sm:text-base">About</button>
           <p class=" font-bold text-2xl sm:text-3xl">About AKKOO Coffee</p>
           <p class="text-gray-600 text-sm mt-1 md:w-1/2 sm:text-base">
             ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
@@ -581,9 +577,7 @@ export default function Home() {
       >
         {/* Services section title */}
         <div class=" w-10/12 m-auto mb-12  xxl:container">
-          <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-otherColorTransparent  rounded-lg">
-            Services
-          </button>
+          <button class="text-sm text-lightGreen sm:text-base">Services</button>
           <p class=" font-bold text-2xl sm:text-3xl">AKKOO services</p>
           <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
             Most people visit us expecting only good coffee and are fairly
@@ -636,9 +630,7 @@ export default function Home() {
       <section class="mt-0 py-20 m-auto xxl:container" id="menu">
         {/* Menu section title */}
         <div class=" m-auto  text-center w-3/4 sm:w-11/12 xxl:container">
-          <button class="text-sm text-gray-600 sm:text-base py-1 px-6 bg-otherColorTransparent  rounded-lg">
-            Menu
-          </button>
+          <button class="text-sm text-lightGreen sm:text-base ">Menu</button>
           <p class=" font-bold text-2xl sm:text-3xl">Akkoo Menu</p>
           <p class="text-gray-600 text-sm mt-1 sm:text-base">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -709,6 +701,127 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Community section */}
+      <section class="w-11/12 py-20 mt-10 m-auto xxl:container" id="community">
+        {/* Community section title */}
+        <div class="mb-12">
+          <button class="text-sm text-lightGreen sm:text-base">
+            Community
+          </button>
+          <p class=" font-bold text-2xl sm:text-3xl">Our Community</p>
+          <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
+            Every purchase of coffee at AKKOO positively impacts social and
+            environmental conditions at the source.AKKOO sources its coffee from
+            west Ethiopia, specifically from Wellega zone Gedame wereda in
+            Oromia region.
+          </p>
+        </div>
+        {/* Community section contents */}
+        <div class="grid grid-cols-1 gap-2 place-items-center bsmmd:grid-cols-2 lg:grid-col-2 blgxl:grid-cols-4">
+          {/* Second Community */}
+          <div class="relative p-10 bg-lightGreen flex flex-col justify-center aspect-square rounded-3xl">
+            {/* Quote Img */}
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 bottom-4 right-6"
+            />
+            {/* Person Img */}
+            <img
+              src={pTwo}
+              alt=""
+              class="absolute -top-10 right-1/2 translate-x-1/2 w-1/4 border-4 border-whiteText aspect-square object-cover rounded-full"
+            />
+
+            <p class="text-sm text-gray-800 mt-2 md:text-md">
+              Joined Dawit and Wudassie in 2004 at Wudassie Souvenirs, took on
+              various roles. Now AKKOO's Operations Manager, I handle café
+              management with a 'Keep calm and let TG handle it!' mindset.
+            </p>
+            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Tigist</p>
+            <p class="text-sm text-gray-800 md:text-xl lg:text-sm">
+              Operations Manager
+            </p>
+          </div>
+          {/* first community */}
+          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
+            {/* Quote Img */}
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 bottom-4 right-6"
+            />
+            {/* Person Img */}
+            <img
+              src={pThree}
+              alt=""
+              class="absolute -top-10 right-1/2 translate-x-1/2 w-1/4 border-4 border-whiteText aspect-square object-cover rounded-full"
+            />
+            <p class="text-sm text-gray-600 mt-2 md:text-md">
+              I savor coffee for its diverse aromas and flavors, influenced by
+              my choice of beans and brewing method. Beyond personal enjoyment,
+              I appreciate its power to unite people and impact lives.
+            </p>
+            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Abi</p>
+            <p class="text-sm text-gray-600 md:text-xl lg:text-sm">Baresta</p>
+          </div>
+
+          {/* Third Community */}
+          <div class="relative p-10 bg-darkGreen flex flex-col justify-center aspect-square rounded-3xl">
+            {/* Quote Img */}
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 bottom-4 right-6"
+            />
+            {/* Person Img */}
+            <img
+              src={pOne}
+              alt=""
+              class="absolute -top-10 right-1/2 translate-x-1/2 w-1/4 border-4 border-whiteText aspect-square object-cover rounded-full"
+            />
+            <p class="text-sm text-gray-300 mt-2 md:text-md">
+              Before AKKOO, I settled for subpar coffee in other shops. Now,
+              thanks to AKKOO Coffee, I'm back to enjoying excellent black
+              coffee and occasional macchiatos. The quality is truly remarkable!
+            </p>
+            <p class="text-xl font-bold text-whiteText md:text-2xl lg:text-2xl">
+              Fitsum
+            </p>
+            <p class="text-sm text-gray-300 md:text-xl lg:text-sm">
+              Administrative & Finance Head
+            </p>
+          </div>
+
+          {/* Fourth community */}
+
+          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
+            {/* Quote Img */}
+            <img
+              src={quote}
+              alt=""
+              class="absolute w-20 opacity-20 bottom-4 right-6"
+            />
+            {/* Person Img */}
+            <img
+              src={pFour}
+              alt=""
+              class="absolute -top-10 right-1/2 translate-x-1/2 w-1/4 border-4 border-whiteText aspect-square object-cover rounded-full"
+            />
+            <p class="text-sm text-gray-600 mt-2 md:text-md">
+              I love tea – especially with cinnamon. Here at Akkoo we know how
+              to make great tea, cinnamon spiced, lemon squeezed or a simple
+              black tea, I have no doubt you’ll enjoy it.
+            </p>
+            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Kidi</p>
+            <p class="text-sm text-gray-600 md:text-xl lg:text-sm">
+              Purchasing{" "}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Promotion section */}
       <section class="bg-darkGreen mt-20  m-auto sm:rounded-3xl sm:w-11/12 xxl:container">
         <div class=" flex flex-col items-center justify-center gap-11 w-5/6  m-auto md:w-2/3 md:flex-row">
@@ -731,111 +844,208 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Community section */}
-      <section class="w-11/12 py-20 mt-10 m-auto xxl:container">
-        {/* Community section title */}
+      {/* Gallery Sectio */}
+
+      <section
+        id="gallery"
+        class="w-11/12 py-5  text-darkGreen md:py-20  xxl:container m-auto"
+      >
+        {/* Gallery section title */}
         <div class="mb-12">
-          <button class="text-sm text-lightGreen sm:text-base">
-            Community
-          </button>
-          <p class=" font-bold text-2xl sm:text-3xl">Our Community</p>
+          <p class="text-sm text-lightGreen sm:text-base">Gallery</p>
+          <p class=" font-bold text-2xl sm:text-3xl">Explore Our Gallery</p>
           <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
-            Every purchase of coffee at AKKOO positively impacts social and
-            environmental conditions at the source.AKKOO sources its coffee from
-            west Ethiopia, specifically from Wellega zone Gedame wereda in
-            Oromia region.
+            Visual Feast, dive into our Culinary Gallery for a taste of flavor,
+            passion, and culinary excellence. Let each image tell you the
+            delicious story behind our dishes.
           </p>
+          <button
+            // initial={{ opacity: 0, y: 100 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{
+            //   type: "tween",
+            //   duration: 0.5,
+            //   delay: 0.8,
+            // }}
+            class="flex gap-3 bg-lightGreen text-sm py-2 px-4 mt-6 rounded-full items-center justify-start sm:text-md"
+          >
+            <h2>Find us on Instagram</h2>
+            <img src={instagram} class="w-6" />
+          </button>
         </div>
-        {/* Community section contents */}
-        <div class="grid grid-cols-1 gap-2 place-items-center bsmmd:grid-cols-2 lg:grid-col-2 blgxl:grid-cols-4">
-          {/* first community */}
-          <img
-            src={pThree}
-            alt=""
-            class="w-full aspect-square object-cover rounded-3xl"
-          />
-          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
-            <img
-              src={quote}
-              alt=""
-              class="absolute w-20 opacity-20 top-4 right-6"
-            />
-            <p class="text-sm text-gray-600 mt-2 md:text-md">
-              I savor coffee for its diverse aromas and flavors, influenced by
-              my choice of beans and brewing method. Beyond personal enjoyment,
-              I appreciate its power to unite people and impact lives.
-            </p>
-            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Abi</p>
-            <p class="text-sm text-gray-600 md:text-xl lg:text-sm">Baresta</p>
+
+        {/* Gallery Section Mobile */}
+        <section
+          id="gallery-mobile"
+          class="  pb-10  text-darkGreen m-auto md:hidden"
+        >
+          {/* Gallery buttons */}
+          <div class="flex gap-5 items-center mb-6">
+            <div class="">
+              <BsArrowLeft
+                class="p-3 text-4xl bg-otherColor rounded-full"
+                onClick={gallerySlideLeft}
+              />
+            </div>
+            <div class="">
+              <BsArrowLeft
+                class="p-3 text-4xl bg-otherColor rounded-full -rotate-180"
+                onClick={gallerySlideRight}
+              />
+            </div>
           </div>
-          {/* Second Community */}
-          <div class="relative p-10 bg-lightGreen flex flex-col justify-center aspect-square rounded-3xl">
-            <img
-              src={quote}
-              alt=""
-              class="absolute w-20 opacity-20 top-4 right-6"
-            />
-            <p class="text-sm text-gray-800 mt-2 md:text-md">
-              Joined Dawit and Wudassie in 2004 at Wudassie Souvenirs, took on
-              various roles. Now AKKOO's Operations Manager, I handle café
-              management with a 'Keep calm and let TG handle it!' mindset.
-            </p>
-            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Tigist</p>
-            <p class="text-sm text-gray-800 md:text-xl lg:text-sm">
-              Operations Manager
-            </p>
+          <div class="">
+            <div
+              class="scroll-container flex overflow-x-scroll items-start justify-start space-x-2.5"
+              id="gallery-container"
+            >
+              {[
+                {
+                  src: GL1,
+                },
+                {
+                  src: GS1,
+                },
+                {
+                  src: GL2,
+                },
+                {
+                  src: GS2,
+                },
+                {
+                  src: GL3,
+                },
+                {
+                  src: GS3,
+                },
+                {
+                  src: GL4,
+                },
+                {
+                  src: GS4,
+                },
+                {
+                  src: GL5,
+                },
+              ].map((img) => {
+                return (
+                  <motion.img
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                      type: "tween",
+                      duration: 0.5,
+                      delay: 0.2,
+                    }}
+                    src={img.src}
+                    class="scrolling-items w-full aspect-video  object-cover rounded-xl bsmmd:w-1/3 sm:w-1/2  sm:aspect-square"
+                    id="gallery-item"
+                  />
+                );
+              })}
+            </div>
           </div>
-          <img
-            src={pTwo}
-            alt=""
-            class="w-full aspect-square object-cover rounded-3xl"
+        </section>
+
+        {/* Gallery Section Large Screen */}
+        <div class="hidden gap-4 grid-cols-4 lg:grid-cols-4 md:grid">
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            src={GL1}
+            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3 "
+          />{" "}
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            src={GS1}
+            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1"
+          />{" "}
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.3,
+            }}
+            src={GL2}
+            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3"
           />
-          {/* Third Community */}
-          <div class="relative p-10 bg-darkGreen flex flex-col justify-center aspect-square rounded-3xl">
-            <img
-              src={quote}
-              alt=""
-              class="absolute w-20 opacity-20 top-4 right-6"
-            />
-            <p class="text-sm text-gray-300 mt-2 md:text-md">
-              Before AKKOO, I settled for subpar coffee in other shops. Now,
-              thanks to AKKOO Coffee, I'm back to enjoying excellent black
-              coffee and occasional macchiatos. The quality is truly remarkable!
-            </p>
-            <p class="text-xl font-bold text-whiteText md:text-2xl lg:text-2xl">
-              Fitsum
-            </p>
-            <p class="text-sm text-gray-300 md:text-xl lg:text-sm">
-              Administrative & Finance Head
-            </p>
-          </div>
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.4,
+            }}
+            src={GS2}
+            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1"
+          />{" "}
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.5,
+            }}
+            src={GL3}
+            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4"
+          />{" "}
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.6,
+            }}
+            src={GS3}
+            class="w-full h-full  object-cover rounded-xl"
+          />{" "}
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.7,
+            }}
+            src={GL4}
+            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4"
+          />{" "}
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.8,
+            }}
+            src={GS4}
+            class="w-full h-full  object-cover rounded-xl  "
+          />{" "}
+          {/* <img
+            src={GL5}
+            class="w-full h-full  object-cover rounded-xl transition-all col-start-1 col-end-3 "
+          />{" "}
           <img
-            src={pOne}
-            alt=""
-            class="w-full aspect-square object-cover rounded-3xl"
-          />
-          {/* Fourth community */}
-          <img
-            src={pFour}
-            alt=""
-            class="w-full aspect-square object-cover rounded-3xl"
-          />
-          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
-            <img
-              src={quote}
-              alt=""
-              class="absolute w-20 opacity-20 top-4 right-6"
-            />
-            <p class="text-sm text-gray-600 mt-2 md:text-md">
-              I love tea – especially with cinnamon. Here at Akkoo we know how
-              to make great tea, cinnamon spiced, lemon squeezed or a simple
-              black tea, I have no doubt you’ll enjoy it.
-            </p>
-            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Kidi</p>
-            <p class="text-sm text-gray-600 md:text-xl lg:text-sm">
-              Purchasing{" "}
-            </p>
-          </div>
+            src={GS5}
+            class="w-full h-full  object-cover rounded-xl transition-all col-start-3 col-end-5"
+            id="gallery-item"
+          /> */}
         </div>
       </section>
     </div>
