@@ -572,7 +572,7 @@ export default function Home() {
 
       {/* Services section */}
       <section
-        class="service-container mt-10 py-20 m-auto xxl:container"
+        class="service-container  m-auto mt-5 py-10 md:mt-10 md:py-20 xxl:container"
         id="services"
       >
         {/* Services section title */}
@@ -627,7 +627,7 @@ export default function Home() {
       </section>
 
       {/* Akkoo menu section */}
-      <section class="mt-0 py-20 m-auto xxl:container" id="menu">
+      <section class="py-10  m-auto md:py-20 xxl:container" id="menu">
         {/* Menu section title */}
         <div class=" m-auto  text-center w-3/4 sm:w-11/12 xxl:container">
           <button class="text-sm text-lightGreen sm:text-base ">Menu</button>
@@ -703,7 +703,10 @@ export default function Home() {
       </section>
 
       {/* Community section */}
-      <section class="w-11/12 py-20 mt-10 m-auto xxl:container" id="community">
+      <section
+        class="w-11/12 py-10 mt-5  m-auto md:py-20 md:mt-10 xxl:container"
+        id="community"
+      >
         {/* Community section title */}
         <div class="mb-12">
           <button class="text-sm text-lightGreen sm:text-base">
@@ -823,7 +826,7 @@ export default function Home() {
       </section>
 
       {/* Promotion section */}
-      <section class="bg-darkGreen mt-20  m-auto sm:rounded-3xl sm:w-11/12 xxl:container">
+      <section class="bg-darkGreen mt-10  m-auto sm:rounded-3xl sm:w-11/12 md:mt-20  xxl:container">
         <div class=" flex flex-col items-center justify-center gap-11 w-5/6  m-auto md:w-2/3 md:flex-row">
           <img src={promotionPic} alt="" class="hidden w-36 -mt-24  md:block" />
           <div class="flex flex-col text-lightGreen py-6  md:py-10">
@@ -844,11 +847,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Sectio */}
+      {/* Gallery Section */}
 
       <section
         id="gallery"
-        class="w-11/12 py-5  text-darkGreen md:py-20  xxl:container m-auto"
+        class="w-11/12 py-10 mt-10 text-darkGreen  m-auto md:py-20  xxl:container"
       >
         {/* Gallery section title */}
         <div class="mb-12">
