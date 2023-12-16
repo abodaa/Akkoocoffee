@@ -647,7 +647,7 @@ export default function Home() {
               { title: "Special", icon: specialOrder },
             ].map((menu) => {
               return (
-                <motion.div
+                <motion.button
                   initial={{ opacity: 0, y: -100 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
@@ -659,7 +659,7 @@ export default function Home() {
                 >
                   <img src={menu.icon} alt="" class="w-6 " />
                   <p>{menu.title}</p>
-                </motion.div>
+                </motion.button>
               );
             })}
           </ul>
