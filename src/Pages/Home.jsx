@@ -1,5 +1,6 @@
 import {React, useState} from "react";
 import "../Styles/home.scss";
+import MobileMenu from '../Components/MobileMenu.jsx'
 import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
 import uniqueHome from "../images/uniqueHome.png";
 import uniqueOurSpace from "../images/uniqueOurSpace.png";
@@ -59,6 +60,7 @@ import {
   BsArrowDown,
   BsArrowLeft,
   BsArrowRightShort,
+  BsDot,
   BsPhone,
   BsPlay,
   BsPlayBtn,
@@ -156,9 +158,9 @@ export default function Home() {
           changeColor ? " bg-whiteText shadow-sm" : "transparent"
         } transition  m-auto xxl:container `}
       >
-        <div class="w-11/12 m-auto  flex items-center justify-between xxl:container">
+        <div class="w-11/12 m-auto   items-center justify-between md:flex xxl:container">
           {/* Menu Items */}
-          <div class="flex gap-2 items-center">
+          <div class="flex gap-2 items-center justify-between">
             <motion.h1
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -172,6 +174,8 @@ export default function Home() {
             >
               Logo
             </motion.h1>
+            {/* Mobile navigation */}
+            <MobileMenu />
           </div>
           <div class="flex gap-6">
             <ul class="hidden md:flex space-x-6 items-center capitalize px-9">
@@ -452,7 +456,7 @@ export default function Home() {
                 wereda`,
                 icon: uniqueCoffee,
               },
-            ].map((unique) => {
+            ].map((unique, index) => {
               return (
                 <div
                   class="relative  bg-otherColorTransparent p-5 py-10 rounded-xl scrolling-items min-w-full md:p-10"
