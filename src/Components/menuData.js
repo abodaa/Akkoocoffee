@@ -1,63 +1,70 @@
 const menuData = [
   {
-    pic: "",
+    price: " 75.00 | 40.00",
     name: "Chechebsa",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description:
+      "Fresh flat bread made from Teff or Wheat, broken into small pieces whith spiced butter and red pepper",
   },
   {
-    pic: "",
+    price: "95.00",
     name: "Akkoo Chechebsa",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description:
+      "Fresh flat bread made from Teff or Wheat, broken into small pieces whith spiced butter and red pepper",
   },
   {
-    pic: "",
+    price: "145.00",
     name: "Dulet",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "Stomach, liver, onion, garlic and butter",
   },
   {
-    pic: "",
+    price: "205.00",
     name: "Fish Dulet",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "Fish, onion, garlic with Injera",
   },
   {
-    pic: "",
-    name: "Egg Sandwitch",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    price: "120.00 | 70.00",
+    name: "Fasting Firfir",
+    description:
+      "Fresh Injera soaked in red pepper sauce prepared with onion and garlic",
   },
   {
-    pic: "",
+    price: "140.00 | 90.00",
+    name: "Firfir Bekibe Key",
+    description:
+      "Fresh Injera soaked in red pepper sauce prepared with onion and garlic and butter",
+  },
+  {
+    price: "65.00",
+    name: "Scrambled Eggs",
+    description: "Scrambled egg with onion, oil and tomato",
+  },
+  {
+    price: "80.00",
+    name: "Egg Sandwich",
+    description: "Fried egg with onion, oil, mayonnaise, ketchup tomato",
+  },
+  {
+    price: "90.00",
     name: "Omelet",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "Egg with onion, oil and tomato",
   },
   {
-    pic: "",
-    name: "Firfir With Butter",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    price: "140.00 | 90.00",
+    name: "Firfir Bekibe Alicha",
+    description:
+      "Fresh Injera soaked in red pepper sauce prepared with onion and garlic and butter",
   },
   {
-    pic: "",
-    name: "Derkosh Firfir",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    price: "170.00 | 110.00",
+    name: "Dirkosh Firfir",
+    description:
+      "Dried Injera soaked in red pepper sauce prepared with onion and garlic",
   },
   {
-    pic: "",
-    name: "Derkosh Firfir With Butter",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    pic: "",
-    name: "Chechebsa",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    pic: "",
-    name: "Chechebsa",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    pic: "",
-    name: "Chechebsa",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    price: "210.00 | 130.00",
+    name: "Dirkosh Firfir Bekibe Key",
+    description:
+      "Dried Injera soaked in red pepper sauce prepared with onion, garlic and butter",
   },
 ];
 

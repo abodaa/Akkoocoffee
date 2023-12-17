@@ -27,7 +27,7 @@ import pThree from "../images/pThree.jpg";
 import pFour from "../images/pFour.jpg";
 import quote from "../images/quote.png";
 
-import heroImage from "../images/aboutSectionPic.jpg";
+import arrowDoodle from "../images/arrow.png";
 import unique from "../images/unique.jpg";
 // import pTwo from "../images/pTwo.png";
 // import pThree from "../images/pThree.png";
@@ -46,16 +46,30 @@ import GS4 from "../images/gallery/GS4.jpg";
 
 // import food from "../images/food.png";
 import heroVideo from "../images/hero.mp4";
-import { CiLocationOn } from "react-icons/ci";
+import {
+  CiLocationOn,
+  CiMobile1,
+  CiMobile2,
+  CiMobile3,
+  CiMobile4,
+  CiPhone,
+} from "react-icons/ci";
 import {
   BsArrowBarRight,
+  BsArrowDown,
   BsArrowLeft,
   BsArrowRightShort,
+  BsPhone,
   BsPlay,
   BsPlayBtn,
   BsPlayFill,
 } from "react-icons/bs";
-import { CgArrowLongRight, CgArrowRight, CgMenuRight } from "react-icons/cg";
+import {
+  CgArrowLongRight,
+  CgArrowRight,
+  CgMenuRight,
+  CgPhone,
+} from "react-icons/cg";
 import breakfastMenuData from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
@@ -154,7 +168,7 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.5,
               }}
-              class="p-3 text-3xl  text-lightGreen "
+              class="p-3 text-3xl font-bold "
             >
               Logo
             </motion.h1>
@@ -169,7 +183,7 @@ export default function Home() {
                 { val: "gallery", link: "#gallery" },
               ].map((nav) => {
                 return (
-                  <a href={nav.link} class="nav-item font-bold">
+                  <a href={nav.link} class="nav-item">
                     <li>{nav.val}</li>
                   </a>
                 );
@@ -201,7 +215,7 @@ export default function Home() {
               href="#menu"
               class="p-2 px-5 bg-otherColor text-darkGreen font-bold  rounded-md hover:bg-darkGreen hover:text-whiteText"
             >
-              ##### Menu
+              Akkoo Menu
             </motion.a>
           </div>
         </div>
@@ -214,7 +228,8 @@ export default function Home() {
         {/* Hero Above */}
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Hero above left */}
-          <div class="col-span-2 flex flex-col justify-between">
+          <div class="relative col-span-2 flex flex-col justify-between">
+            {/* <img src={arrowDoodle} alt="" class="absolute left-32 bottom-5 -z-10 opacity-10"/> */}
             <div class="">
               <div class="text-3xl sm:text-4xl -space-y-3 lg:text-5xl font-bold blgxl:text-6xl sm:-space-y-5">
                 <motion.p
@@ -252,16 +267,20 @@ export default function Home() {
                 </motion.p>
               </div>
               <p class="text-sm text-gray-500 sm:text-base">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis consequuntur facilis repellat ullam magni reiciendis
-                blanditiis aspernatur sapiente.
+                Immerse yourself in the rich tapestry of flavors, where each
+                dish tells a story of tradition and authenticity. Welcome to our
+                vibrant haven, where the warmth of Ethiopian hospitality meets
+                the boldness of our spices
               </p>
             </div>
             {/* <div class="flex  items-center justify-between "> */}
             <div class="mt-6 flex flex-wrap gap-2 text-sm sm:text-base sm:flex-nowrap md:mt-4">
-              <button class="px-5 py-3 bg-darkGreen text-whiteText rounded-xl  sm:px-10">
+              <a
+                href="#menu"
+                class="px-5 py-3 bg-darkGreen text-whiteText rounded-xl  sm:px-10"
+              >
                 Menu
-              </button>
+              </a>
               <button class="flex items-center gap-2 px-5 py-3 rounded-xl bg-otherColorTransparent  sm:px-10">
                 <div class="text-darkGreen ">
                   <BsPlayFill />
@@ -312,9 +331,18 @@ export default function Home() {
               Accusantium ipsam dolores dolore fuga.
             </p>
             <div class="flex gap-3 mt-9">
-              <div class="w-20 h-10 bg-otherColor rounded-full sm:w-40 sm:h-16"></div>
-              <div class="w-10 h-10 bg-otherColor rounded-full sm:w-16 sm:h-16"></div>
-              <div class="w-10 h-10 bg-lightGreen rounded-full sm:w-16 sm:h-16"></div>
+              <div class="relative w-36 h-10 bg-otherColor rounded-full sm:w-48 sm:h-16">
+                <p class="absolute font-bold text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:text-lg">
+                  Open 24 | 7
+                </p>
+              </div>
+              {/* <div class="w-10 h-10 bg-otherColor rounded-full sm:w-16 sm:h-16"></div> */}
+              <a
+                href="#unique"
+                class="relative w-10 h-10 bg-lightGreen rounded-full sm:w-16 sm:h-16"
+              >
+                <BsArrowDown class="absolute text-2xl d top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+              </a>
             </div>
           </div>
           <motion.img
@@ -344,7 +372,10 @@ export default function Home() {
         </div>
       </section>
       {/* What makes us Unique section */}
-      <section class="unique-container m-auto py-20 mt-10 xxl:container ">
+      <section
+        class="unique-container m-auto py-20 mt-10 xxl:container "
+        id="unique"
+      >
         {/* Unique Left section */}
         {/* <div class="absolute -top-20 -skew-y-6 py-10 h-44 bg-otherColor m-auto w-full rounded-t-3xl"></div> */}
         <div class=" m-auto w-11/12 text-center  xxl:container">
@@ -666,7 +697,7 @@ export default function Home() {
           {/* Menu Items */}
           <div class="flex items-center gap-4 ">
             <div
-              class="grid grid-cols-1 gap-6 bsmmd:grid-cols-2 w-11/12 m-auto sm:w-full lg:grid-cols-3 blgxl:grid-cols-4"
+              class="grid grid-cols-1 gap-8 bsmmd:grid-cols-2 w-11/12 m-auto sm:w-full lg:grid-cols-3 blgxl:grid-cols-4"
               id="menu-item-container"
             >
               {breakfastMenuData.map((item, index) => {
@@ -680,23 +711,39 @@ export default function Home() {
                       delay: 0.5,
                     }}
                     key={item.name}
-                    class={`relative flex flex-col justify-center items-center text-center gap-3 p-6 shadow-sm bg-otherColor rounded-2xl`}
+                    class={`relative flex flex-col justify-start items-center text-center gap-1 p-8 shadow-sm bg-otherColor rounded-2xl`}
                   >
-                    <img src={food} alt="" class="w-1/5" />
-                    <div class="flex items-center justify-between">
-                      <div class="">
-                        <div class="">
-                          <p class="text-base  font-bold">{item.name} </p>
-                        </div>
-                        <p class="text-sm text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                    <p class="absolute menu-price -bottom-4 rounded-lg bg-otherColor p-2 text-base font-bold ">
-                      120
+                    {/* <img src={food} alt="" class="w-1/5" /> */}
+                    <p class="text-base  font-bold">{item.name} </p>
+                    <p class="text-sm text-gray-600">{item.description}</p>
+                    <p class="absolute -bottom-6 rounded-lg bg-otherColor p-2 text-lg font-bold ">
+                      {item.price} <b class="text-sm">Birr</b>
                     </p>
                   </motion.div>
                 );
               })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Promotion section */}
+      <section class="bg-darkGreen mt-10  m-auto sm:rounded-3xl sm:w-11/12 md:mt-20  xxl:container">
+        <div class=" flex flex-col items-center justify-center gap-11 w-5/6  m-auto md:w-2/3 md:flex-row">
+          <img src={promotionPic} alt="" class="hidden w-36 -mt-24  md:block" />
+          <div class="flex flex-col text-lightGreen py-6  md:py-10">
+            <p>Hungry?</p>
+            <div>
+              <p class="text-xl text-whiteText items-start lg:text-3xl blgxl:text-5xl">
+                We will home deliver !
+              </p>
+              <p class="w-full text-sm text-gray-400 blgxl:w-11/12 lg:text-md">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consequatur, quia libero mollitia.
+              </p>
+              <button class="py-2 px-4 rounded-full bg-lightGreen text-darkGreen mt-4">
+                Order Now
+              </button>
             </div>
           </div>
         </div>
@@ -821,28 +868,6 @@ export default function Home() {
             <p class="text-sm text-gray-600 md:text-xl lg:text-sm">
               Purchasing{" "}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Promotion section */}
-      <section class="bg-darkGreen mt-10  m-auto sm:rounded-3xl sm:w-11/12 md:mt-20  xxl:container">
-        <div class=" flex flex-col items-center justify-center gap-11 w-5/6  m-auto md:w-2/3 md:flex-row">
-          <img src={promotionPic} alt="" class="hidden w-36 -mt-24  md:block" />
-          <div class="flex flex-col text-lightGreen py-6  md:py-10">
-            <p>Hungry?</p>
-            <div>
-              <p class="text-xl text-whiteText items-start lg:text-3xl blgxl:text-5xl">
-                We will home deliver !
-              </p>
-              <p class="w-full text-sm text-gray-400 blgxl:w-11/12 lg:text-md">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, quia libero mollitia.
-              </p>
-              <button class="py-2 px-4 rounded-full bg-lightGreen text-darkGreen mt-4">
-                Order Now
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -1050,6 +1075,223 @@ export default function Home() {
             id="gallery-item"
           /> */}
         </div>
+      </section>
+      {/* FOOTER SECTION */}
+      <section class="relative bg-otherColorTransparent pt-10 rounded-t-3xl xxl:container m-auto">
+        {/* TOP OF FOOTER */}
+        <div class="flex flex-col items-start justify-between w-11/12 gap-6 m-auto md:flex-row ">
+          {/* LEFT */}
+          <div class="p-0 w-full md:w-1/3 lg:p-6">
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              class="text-xl  mb-5 md:text-2xl"
+            >
+              Logo
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.2,
+              }}
+              class="text-sm text-gray-600 lg:text-md"
+            >
+              Committed to an exceptional, responsibly sourced coffee
+              experience. Founded by Dawit Hailu and Wudassie Enquberhan in May
+              2019 near Churchill Road.
+            </motion.p>
+            <div class="flex items-center gap-3 mt-6 ">
+              <img
+                src={facebook}
+                class="transition-all cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+              />
+              <img
+                src={instagram}
+                class="transition-all cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+              />
+              <img
+                src={tripadvisor}
+                class="transition-all cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+              />
+            </div>
+          </div>
+          {/* MIDDLE */}
+          <div class="p-0 w-full md:w-1/3 lg:p-6 ">
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.3,
+              }}
+              class="footer-titles text-xl mb-5 md:text-2xl"
+            >
+              Where we are
+            </motion.button>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.4,
+              }}
+            >
+              {/* <CiLocationOn className="footer-middle-location-icon" /> */}
+              <p class="text-sm pl-4 border-l-4 border-gray-600 text-gray-600 lg:text-md">
+                Addis Ababa, Ethiopia Churchill Road, Pass Tedros Square, Hibret
+                Insurance Building, Ground Floor, Addis Ababa.{" "}
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.5,
+              }}
+              class="flex items-center gap-5 mt-5"
+            >
+              <CiMobile2 class="text-3xl text-gray-600 lg:text-5xl" />
+              <div class="text-sm text-gray-600 lg:text-base">
+                <p>+251 -905-828282</p>
+                <p>+251 -905-828282</p>
+              </div>
+            </motion.div>
+          </div>
+          {/* RIGHT */}
+          <div class="p-0 w-full md:w-1/3 lg:p-6">
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.6,
+              }}
+              class="footer-titles text-xl mb-5 md:text-2xl "
+            >
+              Quick Menu
+            </motion.button>
+            <ul class="capitalize text-gray-600 flex flex-col space-y-4 text-sm lg:text-md">
+              <motion.a
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.7,
+                }}
+                href="#home"
+                class="footer-nav-item hover:text-black"
+              >
+                <li>home</li>
+                {/* <BsArrowRightShort /> */}
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.8,
+                }}
+                href="#about"
+                class="footer-nav-item hover:text-black"
+              >
+                <li>about akkoo</li>
+                {/* <BsArrowRightShort /> */}
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.9,
+                }}
+                href="#services"
+                class="footer-nav-item hover:text-black"
+              >
+                <li>services</li>
+                {/* <BsArrowRightShort /> */}
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 1,
+                }}
+                href="#community"
+                class="footer-nav-item hover:text-black"
+              >
+                <li>community</li>
+                {/* <BsArrowRightShort /> */}
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 1.1,
+                }}
+                href="#gallery"
+                class="footer-nav-item hover:text-black"
+              >
+                <li>gallery</li>
+                {/* <BsArrowRightShort /> */}
+              </motion.a>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t-2 border-gray-300  py-6  mt-5 ">
+          <div class="flex flex-col gap-5 items-center  justify-between md:items-center w-11/12 m-auto sm:text-center  sm:flex-row sm:items-start">
+            {/* BOTTOM FOOTER LEFT */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.2,
+              }}
+              class=" text-sm text-gray-600 md:text-md"
+            >
+              Akkoo Coffee. All Rights Reserved
+            </motion.div>
+            {/* BBOTTOM FOOTER MIDDLE */}
+            <motion.h3
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.3,
+              }}
+              class="text-sm text-gray-600 md:text-md"
+            >
+              We are open 24 hrs a week.
+            </motion.h3>
+            {/* BOTTOM FOOTER LEFT */}
+          </div>
+        </div>
+        {/* Back to top */}
+        <a href="#home">
+          <BsArrowLeft class="absolute -top-6 left-1/2 -translate-x-1/2 text-4xl rounded-full bg-whiteText w-12 h-12 p-4 rotate-90 transition-all hover:scale-110" />
+        </a>
       </section>
     </div>
   );
