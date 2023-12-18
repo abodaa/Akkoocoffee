@@ -71,15 +71,10 @@ body{
 .gallery-slider{
  min-width: 33.5%;
 }
-.hero-akkoo-txt{
-  //  color: transparent;
-  // -webkit-text-stroke-width: 2px;
-  // -webkit-text-stroke-color: $dark-green;
-}
+
 
 .nav-item{
     position: relative;
-    transition: all 0.3s ease-in-out;
     &::after{
         content: "";
         position: absolute;
@@ -107,6 +102,7 @@ body{
         font-size: 0.6rem;
     }
 }
+
 .footer-nav-item{
     position: relative;
     width: 50%;

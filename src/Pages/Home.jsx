@@ -87,7 +87,6 @@ import { motion } from "framer-motion";
 export default function Home() {
   // Slider functions
   // What make akkoo unique slider Function
-
   const uniqueSlideLeft = () => {
     let slider = document.getElementById("unique-container");
     let sliderItem = document.getElementById("unique");
@@ -97,32 +96,6 @@ export default function Home() {
     let slider = document.getElementById("unique-container");
     let sliderItem = document.getElementById("unique");
     slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 10;
-  };
-
-  // community slider Function
-  const communitySlideLeft = () => {
-    let slider = document.getElementById("community-container");
-    let sliderItem = document.getElementById("community");
-    slider.scrollLeft = slider.scrollLeft - slider.offsetWidth - 10;
-  };
-  const communitySlideRight = () => {
-    let slider = document.getElementById("community-container");
-    let sliderItem = document.getElementById("community");
-    slider.scrollLeft = slider.scrollLeft + slider.offsetWidth + 10;
-  };
-
-  // Akkoo Menu slider Function
-  const menuSlideLeft = () => {
-    let slider = document.getElementById("menu-item-container");
-    let sliderItem = document.getElementById("menu-item");
-    slider.scrollLeft = slider.scrollLeft - sliderItem.offsetWidth - 16;
-    console.log(slider.offsetWidth);
-  };
-  const menuSlideRight = () => {
-    let slider = document.getElementById("menu-item-container");
-    let sliderItem = document.getElementById("menu-item");
-    slider.scrollLeft = slider.scrollLeft + sliderItem.offsetWidth + 16;
-    console.log(sliderItem.offsetWidth);
   };
 
   // Akkoo Menu slider Function
@@ -140,7 +113,6 @@ export default function Home() {
   };
 
   // Scroll nav background color change
-
   const [changeColor, setChangeColor] = useState(false);
   window.addEventListener("scroll", () => {
     if (window.scrollY >= 90) {
@@ -154,11 +126,11 @@ export default function Home() {
     <div class="home-main-container">
       {/* NAVIGATION */}
       <section
-        class={`fixed top-0  right-0 left-0  z-20 ${
-          changeColor ? " bg-whiteText shadow-sm" : "transparent"
+        class={`fixed top-0  right-0 left-0  z-30 ${
+          changeColor ? " bg-otherColor shadow-md" : "transparent"
         } transition  m-auto xxl:container `}
       >
-        <div class="w-11/12 m-auto   items-center justify-between md:flex xxl:container">
+        <div class="w-11/12 m-auto items-center justify-between md:flex xxl:container">
           {/* Menu Items */}
           <div class="flex gap-2 items-center justify-between">
             <motion.h1
@@ -166,9 +138,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 type: "tween",
-                // damping: 20,
                 duration: 0.5,
-                delay: 0.5,
+                delay: 0,
               }}
               class="p-3 text-3xl font-bold "
             >
@@ -179,19 +150,71 @@ export default function Home() {
           </div>
           <div class="flex gap-6">
             <ul class="hidden md:flex space-x-6 items-center capitalize px-9">
-              {[
-                { val: "home", link: "#home" },
-                { val: "about", link: "#about" },
-                { val: "services", link: "#services" },
-                { val: "community", link: "#community" },
-                { val: "gallery", link: "#gallery" },
-              ].map((nav) => {
-                return (
-                  <a href={nav.link} class="nav-item">
-                    <li>{nav.val}</li>
-                  </a>
-                );
-              })}
+              <motion.a
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.1,
+                }}
+                href="#home"
+                class="nav-item"
+              >
+                <li>home</li>
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.2,
+                }}
+                href="#about"
+                class="nav-item"
+              >
+                <li>about</li>
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.3,
+                }}
+                href="#services"
+                class="nav-item"
+              >
+                <li>services</li>
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.4,
+                }}
+                href="#community"
+                class="nav-item"
+              >
+                <li>community</li>
+              </motion.a>{" "}
+              <motion.a
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.5,
+                }}
+                href="#gallery"
+                class="nav-item"
+              >
+                <li>gallery</li>
+              </motion.a>
             </ul>
           </div>
 
@@ -203,7 +226,7 @@ export default function Home() {
               transition={{
                 type: "tween",
                 duration: 0.5,
-                delay: 0.8,
+                delay: 0.6,
               }}
             >
               <BookTable />
@@ -214,10 +237,10 @@ export default function Home() {
               transition={{
                 type: "tween",
                 duration: 0.5,
-                delay: 0.8,
+                delay: 0.7,
               }}
               href="#menu"
-              class="p-2 px-5 bg-otherColor text-darkGreen font-bold  rounded-md hover:bg-darkGreen hover:text-whiteText"
+              class="p-2 px-5 bg-darkGreen text-lightGreen rounded-md hover:bg-darkGreen hover:text-whiteText"
             >
               Akkoo Menu
             </motion.a>
@@ -226,19 +249,19 @@ export default function Home() {
       </section>
       {/* HERO Section */}
       <section
-        class="m-auto h-full flex flex-col gap-5 pt-28 w-11/12 xxl:container"
+        class="relative m-auto h-full flex flex-col gap-5 z-20 pt-28 w-11/12 xxl:container"
         id="home"
       >
         {/* Hero Above */}
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Hero above left */}
-          <div class="relative col-span-2 flex flex-col justify-between">
+          <div class="col-span-2 flex flex-col justify-between">
             {/* <img src={arrowDoodle} alt="" class="absolute left-32 bottom-5 -z-10 opacity-10"/> */}
             <div class="">
               <div class="text-3xl sm:text-4xl -space-y-3 lg:text-5xl font-bold blgxl:text-6xl sm:-space-y-5">
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{
                     type: "tween",
                     duration: 0.5,
@@ -248,8 +271,8 @@ export default function Home() {
                   Indulge in our
                 </motion.p>
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{
                     type: "tween",
                     duration: 0.5,
@@ -259,8 +282,8 @@ export default function Home() {
                   irresistable cusine
                 </motion.p>
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{
                     type: "tween",
                     duration: 0.5,
@@ -270,38 +293,63 @@ export default function Home() {
                   available just for you
                 </motion.p>
               </div>
-              <p class="text-sm text-gray-500 sm:text-base">
+              <motion.p
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.4,
+                }}
+                class="text-sm text-gray-500 sm:text-base"
+              >
                 Immerse yourself in the rich tapestry of flavors, where each
                 dish tells a story of tradition and authenticity. Welcome to our
                 vibrant haven, where the warmth of Ethiopian hospitality meets
                 the boldness of our spices
-              </p>
+              </motion.p>
             </div>
             {/* <div class="flex  items-center justify-between "> */}
             <div class="mt-6 flex flex-wrap gap-2 text-sm sm:text-base sm:flex-nowrap md:mt-4">
-              <a
+              <motion.a
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.5,
+                }}
                 href="#menu"
                 class="px-5 py-3 bg-darkGreen text-whiteText rounded-xl  sm:px-10"
               >
                 Menu
-              </a>
-              <button class="flex items-center gap-2 px-5 py-3 rounded-xl bg-otherColorTransparent  sm:px-10">
+              </motion.a>
+              <motion.button
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+                class="flex items-center gap-2 px-5 py-3 rounded-xl bg-otherColorTransparent  sm:px-10"
+              >
                 <div class="text-darkGreen ">
                   <BsPlayFill />
                 </div>
                 Book a seat
-              </button>
+              </motion.button>
               {/* </div> */}
             </div>
           </div>
           {/* Hero above right */}
           <div class="relative col-span-2">
             <motion.video
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 type: "tween",
-                duration: 0.5,
+                duration: 0.7,
                 delay: 0.6,
               }}
               src={heroVideo}
@@ -312,62 +360,84 @@ export default function Home() {
               alt=""
               class="aspect-square object-cover w-full h-44 rounded-3xl shadow-xl sm:h-64 md:h-72 blgxl:h-96"
             />
-            {/* <div class="absolute top-4 -left-32 w-60 h-20 bg-otherColor  font-extrabold text-2xl rounded-3xl">
-              <p class="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2">
-                Open 24 / 7
-              </p>
-            </div> */}
           </div>
-          {/* <div class="col-span-1">
-            <img
-              src={GL4}
-              alt=""
-              class="aspect-square object-cover w-full h-96  rounded-3xl"
-            />
-          </div> */}
         </div>
         {/* Hero Below */}
-        <div class="grid  gap-3 items-center md:grid-cols-5">
+        <div class="grid  gap-3 items-start md:grid-cols-5">
           {/* Hero below left */}
           <div class="col-span-2">
-            <p class=" text-gray-600 text-sm blgxl:w-2/3 sm:text-base">
+            <motion.p
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.7,
+              }}
+              class=" text-gray-600 text-sm blgxl:w-2/3 sm:text-base"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium ipsam dolores dolore fuga.
-            </p>
-            <div class="flex gap-3 mt-9">
-              <div class="relative w-36 h-10 bg-otherColor rounded-full sm:w-48 sm:h-16">
-                <p class="absolute font-bold text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:text-lg">
+            </motion.p>
+            <div class="flex gap-3 mt-4">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.8,
+                }}
+                class="relative w-36 h-10 bg-otherColor rounded-full sm:w-48 sm:h-16"
+              >
+                <p
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.5,
+                    delay: 0.7,
+                  }}
+                  class="absolute font-bold text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:text-lg"
+                >
                   Open 24 | 7
                 </p>
-              </div>
+              </motion.div>
               {/* <div class="w-10 h-10 bg-otherColor rounded-full sm:w-16 sm:h-16"></div> */}
-              <a
+              <motion.a
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.7,
+                }}
                 href="#unique"
                 class="relative w-10 h-10 bg-lightGreen rounded-full sm:w-16 sm:h-16"
               >
                 <BsArrowDown class="absolute text-2xl d top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-              </a>
+              </motion.a>
             </div>
           </div>
           <motion.img
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
-              duration: 0.5,
-              delay: 0.7,
+              duration: 0.7,
+              delay: 0.8,
             }}
             src={GL3}
             alt=""
             class="grid aspect-video h-60 w-full object-cover shadow-xl  rounded-3xl  md:col-span-1"
           />
           <motion.img
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
-              duration: 0.5,
-              delay: 0.8,
+              duration: 0.7,
+              delay: 0.9,
             }}
             src={GS1}
             alt=""
@@ -376,18 +446,50 @@ export default function Home() {
         </div>
       </section>
       {/* What makes us Unique section */}
+      {/* HERO BG */}
+      <div class="absolute -top-20 right-0 left-0 -skew-y-6 py-10 h-72  bg-otherColorTransparent w-full m-auto xxl:container"></div>
       <section
         class="unique-container m-auto py-20 mt-10 xxl:container "
         id="unique"
       >
         {/* Unique Left section */}
-        {/* <div class="absolute -top-20 -skew-y-6 py-10 h-44 bg-otherColor m-auto w-full rounded-t-3xl"></div> */}
         <div class=" m-auto w-11/12 text-center  xxl:container">
-          <button class="text-sm text-lightGreen sm:text-base ">Unique</button>
-          <p class=" font-bold text-2xl sm:text-3xl">What makes AKKOO Unique</p>
-          <p class="text-gray-600 text-sm mt-1 sm:text-lg">
+          <motion.button
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0,
+            }}
+            class="text-sm text-lightGreen sm:text-base"
+          >
+            Unique
+          </motion.button>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            class=" font-bold text-2xl sm:text-3xl"
+          >
+            What makes AKKOO Unique
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            class="text-gray-600 text-sm mt-1 sm:text-lg"
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          </p>
+          </motion.p>
         </div>
         {/* Unique section slider container */}
 
@@ -458,7 +560,14 @@ export default function Home() {
               },
             ].map((unique, index) => {
               return (
-                <div
+                <motion.div
+                  // initial={{ opacity: 0, y: 100 }}
+                  // whileInView={{ opacity: 1, y: 0 }}
+                  // transition={{
+                  //   type: "tween",
+                  //   duration: 0.5,
+                  //   delay: 0,
+                  // }}
                   class="relative  bg-otherColorTransparent p-5 py-10 rounded-xl scrolling-items min-w-full md:p-10"
                   id="unique"
                 >
@@ -479,7 +588,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </motion.div>
@@ -538,23 +647,69 @@ export default function Home() {
         id="about"
       >
         <div class=" m-auto w-10/12  xxl:container">
-          <button class="text-sm text-lightGreen sm:text-base">About</button>
-          <p class=" font-bold text-2xl sm:text-3xl">About AKKOO Coffee</p>
-          <p class="text-gray-600 text-sm mt-1 md:w-1/2 sm:text-base">
+          <motion.button
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0,
+            }}
+            class="text-sm text-lightGreen sm:text-base"
+          >
+            About
+          </motion.button>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            class=" font-bold text-2xl sm:text-3xl"
+          >
+            About AKKOO Coffee
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            class="text-gray-600 text-sm mt-1 md:w-1/2 sm:text-base"
+          >
             ‘Akkoo’ is a word in the Afaan Oromoo language (one of the widely
             spoken languages in Ethiopia) meaning ‘Grandmother’
-          </p>
+          </motion.p>
         </div>
         <div class="grid  gap-5 mt-5 m-auto w-10/12 xxl:container blgxl:grid-cols-2">
           {/* About left */}
           <div class="flex flex-col gap-5 w-full h-full  md:flex-row blgxl:flex-col">
             <div class="flex flex-col items-center gap-5 h-full blgxl:flex-row">
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: -15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.5,
+                }}
                 src={uniqueOne}
                 alt=""
                 class="aspect-video object-cover rounded-3xl  blgxl:w-1/2 "
               />
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+              >
                 <h3 class="text-xl md:text-xl font-bold">Who we are</h3>
                 <p class=" text-sm text-gray-600 sm:text-md">
                   Our commitment is to bring you the ultimate coffee experience,
@@ -563,15 +718,31 @@ export default function Home() {
                 <div class="flex items-center gap-2 mt-2">
                   <button class="about-button">Learn more</button>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div class="flex flex-col items-center t gap-5 h-full   rounded-3xl  blgxl:flex-row">
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: -15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
                 src={uniqueTwo}
                 alt=""
                 class="aspect-video object-cover rounded-2xl  blgxl:w-1/2"
               />
-              <div class="">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.7,
+                }}
+                class=""
+              >
                 <h3 class="text-xl md:text-xl font-bold">How we started</h3>
                 <p class="text-sm text-gray-600 sm:text-md">
                   It was on May 2019 AKKOO coffee’s founders Dawit Hailu and his
@@ -580,17 +751,32 @@ export default function Home() {
                 <div class="flex items-center gap-2 mt-2">
                   <button class="about-button">Learn more</button>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
           {/* About right */}
           <div class="flex flex-col gap-6 h-full bg-otherColor rounded-3xl p-5 md:p-10  ">
-            <img
+            <motion.img
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.7,
+              }}
               src={uniqueThree}
               alt=""
               class="w-full aspect-video object-cover rounded-2xl "
             />
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: -15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.6,
+              }}
+            >
               <h3 class="text-xl md:text-2xl font-bold">Our Story</h3>
               <p class="text-sm text-gray-600 sm:text-md">
                 Upon its opening, Akkoo was welcomed with encouraging responses
@@ -600,7 +786,7 @@ export default function Home() {
               <div class="flex items-center gap-2 mt-2">
                 <button class="about-button">Learn more</button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -612,14 +798,45 @@ export default function Home() {
       >
         {/* Services section title */}
         <div class=" w-10/12 m-auto mb-12  xxl:container">
-          <button class="text-sm text-lightGreen sm:text-base">Services</button>
-          <p class=" font-bold text-2xl sm:text-3xl">AKKOO services</p>
-          <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
+          <motion.button
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0,
+            }}
+            class="text-sm text-lightGreen sm:text-base"
+          >
+            Services
+          </motion.button>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            class=" font-bold text-2xl sm:text-3xl"
+          >
+            AKKOO services
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base"
+          >
             Most people visit us expecting only good coffee and are fairly
             impressed with our ‘Buna Kurs’ (barley flour with butter)
             accompanying it. We’re known for our excellent coffee in all its
             forms. Machiatto, Café-latte, Espresso… you name it me make it best!
-          </p>
+          </motion.p>
         </div>
 
         {/* Services section contents */}
@@ -647,15 +864,44 @@ export default function Home() {
             },
           ].map((service) => {
             return (
-              <div class="flex flex-col items-center  px-6 py-10 bg-otherColor rounded-3xl">
-                <img src={service.icon} alt="" class="w-1/3" />
-                <div class="text-center mt-3">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.2,
+                }}
+                class="flex flex-col items-center  px-6 py-10 bg-otherColor rounded-3xl"
+              >
+                <motion.img
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.7,
+                    delay: 0.3,
+                  }}
+                  src={service.icon}
+                  alt=""
+                  class="w-1/3"
+                />
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.7,
+                    delay: 0.4,
+                  }}
+                  class="text-center mt-3"
+                >
                   <p class="text-2xl font-bold md:text-3xl">{service.title}</p>
                   <p class="text-sm text-gray-600 md:text-md">
                     {service.content}
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             );
           })}
         </div>
@@ -665,11 +911,42 @@ export default function Home() {
       <section class="py-10  m-auto md:py-20 xxl:container" id="menu">
         {/* Menu section title */}
         <div class=" m-auto  text-center w-3/4 sm:w-11/12 xxl:container">
-          <button class="text-sm text-lightGreen sm:text-base ">Menu</button>
-          <p class=" font-bold text-2xl sm:text-3xl">Akkoo Menu</p>
-          <p class="text-gray-600 text-sm mt-1 sm:text-base">
+          <motion.button
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0,
+            }}
+            class="text-sm text-lightGreen sm:text-base "
+          >
+            Menu
+          </motion.button>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            class=" font-bold text-2xl sm:text-3xl"
+          >
+            Akkoo Menu
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            class="text-gray-600 text-sm mt-1 sm:text-base"
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          </p>
+          </motion.p>
         </div>
         <div class="bg-otherColorTransparent px-2 py-10 mt-6 m-auto sm:rounded-3xl md:w-11/12  sm:w-11/12 sm:py-12 sm:px-10 ">
           {/* Menu selection container*/}
@@ -683,11 +960,11 @@ export default function Home() {
             ].map((menu) => {
               return (
                 <motion.button
-                  initial={{ opacity: 0, y: -100 }}
+                  initial={{ opacity: 0, y: -40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
                     type: "tween",
-                    duration: 0.5,
+                    duration: 0.7,
                     delay: 0.1,
                   }}
                   class="flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md bg-otherColor cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4"
@@ -707,12 +984,12 @@ export default function Home() {
               {breakfastMenuData.map((item, index) => {
                 return (
                   <motion.div
-                    initial={{ opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                       type: "tween",
-                      duration: 0.5,
-                      delay: 0.5,
+                      duration: 0.7,
+                      delay: 0.4,
                     }}
                     key={item.name}
                     class={`relative flex flex-col justify-start items-center text-center gap-1 p-8 shadow-sm bg-otherColor rounded-2xl`}
@@ -734,20 +1011,68 @@ export default function Home() {
       {/* Promotion section */}
       <section class="bg-darkGreen mt-10  m-auto sm:rounded-3xl sm:w-11/12 md:mt-20  xxl:container">
         <div class=" flex flex-col items-center justify-center gap-11 w-5/6  m-auto md:w-2/3 md:flex-row">
-          <img src={promotionPic} alt="" class="hidden w-36 -mt-24  md:block" />
+          <motion.img
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.7,
+              delay: 0.6,
+            }}
+            src={promotionPic}
+            alt=""
+            class="hidden w-36 -mt-24  md:block"
+          />
           <div class="flex flex-col text-lightGreen py-6  md:py-10">
-            <p>Hungry?</p>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.7,
+                delay: 0.2,
+              }}
+            >
+              Hungry?
+            </motion.p>
             <div>
-              <p class="text-xl text-whiteText items-start lg:text-3xl blgxl:text-5xl">
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.7,
+                  delay: 0.3,
+                }}
+                class="text-xl text-whiteText items-start lg:text-3xl blgxl:text-5xl"
+              >
                 We will home deliver !
-              </p>
-              <p class="w-full text-sm text-gray-400 blgxl:w-11/12 lg:text-md">
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.7,
+                  delay: 0.4,
+                }}
+                class="w-full text-sm text-gray-400 blgxl:w-11/12 lg:text-md"
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Consequatur, quia libero mollitia.
-              </p>
-              <button class="py-2 px-4 rounded-full bg-lightGreen text-darkGreen mt-4">
+              </motion.p>
+              <motion.button
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.7,
+                  delay: 0.5,
+                }}
+                class="py-2 px-4 rounded-full bg-lightGreen text-darkGreen mt-4"
+              >
                 Order Now
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -760,21 +1085,59 @@ export default function Home() {
       >
         {/* Community section title */}
         <div class="mb-12">
-          <button class="text-sm text-lightGreen sm:text-base">
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0,
+            }}
+            class="text-sm text-lightGreen sm:text-base"
+          >
             Community
-          </button>
-          <p class=" font-bold text-2xl sm:text-3xl">Our Community</p>
-          <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
+          </motion.button>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            class=" font-bold text-2xl sm:text-3xl"
+          >
+            Our Community
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base"
+          >
             Every purchase of coffee at AKKOO positively impacts social and
             environmental conditions at the source.AKKOO sources its coffee from
             west Ethiopia, specifically from Wellega zone Gedame wereda in
             Oromia region.
-          </p>
+          </motion.p>
         </div>
         {/* Community section contents */}
         <div class="grid grid-cols-1 gap-2 place-items-center bsmmd:grid-cols-2 lg:grid-col-2 blgxl:grid-cols-4">
           {/* Second Community */}
-          <div class="relative p-10 bg-lightGreen flex flex-col justify-center aspect-square rounded-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.7,
+              delay: 0.3,
+            }}
+            class="relative p-10 bg-lightGreen flex flex-col justify-center aspect-square rounded-3xl"
+          >
             {/* Quote Img */}
             <img
               src={quote}
@@ -797,9 +1160,18 @@ export default function Home() {
             <p class="text-sm text-gray-800 md:text-xl lg:text-sm">
               Operations Manager
             </p>
-          </div>
+          </motion.div>
           {/* first community */}
-          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.7,
+              delay: 0.4,
+            }}
+            class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl"
+          >
             {/* Quote Img */}
             <img
               src={quote}
@@ -819,10 +1191,19 @@ export default function Home() {
             </p>
             <p class="text-xl font-bold md:text-2xl lg:text-2xl">Abi</p>
             <p class="text-sm text-gray-600 md:text-xl lg:text-sm">Baresta</p>
-          </div>
+          </motion.div>
 
           {/* Third Community */}
-          <div class="relative p-10 bg-darkGreen flex flex-col justify-center aspect-square rounded-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.7,
+              delay: 0.5,
+            }}
+            class="relative p-10 bg-darkGreen flex flex-col justify-center aspect-square rounded-3xl"
+          >
             {/* Quote Img */}
             <img
               src={quote}
@@ -846,11 +1227,20 @@ export default function Home() {
             <p class="text-sm text-gray-300 md:text-xl lg:text-sm">
               Administrative & Finance Head
             </p>
-          </div>
+          </motion.div>
 
           {/* Fourth community */}
 
-          <div class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.7,
+              delay: 0.6,
+            }}
+            class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl"
+          >
             {/* Quote Img */}
             <img
               src={quote}
@@ -872,7 +1262,7 @@ export default function Home() {
             <p class="text-sm text-gray-600 md:text-xl lg:text-sm">
               Purchasing{" "}
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -884,26 +1274,57 @@ export default function Home() {
       >
         {/* Gallery section title */}
         <div class="mb-12">
-          <p class="text-sm text-lightGreen sm:text-base">Gallery</p>
-          <p class=" font-bold text-2xl sm:text-3xl">Explore Our Gallery</p>
-          <p class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base">
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0,
+            }}
+            class="text-sm text-lightGreen sm:text-base"
+          >
+            Gallery
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            class=" font-bold text-2xl sm:text-3xl"
+          >
+            Explore Our Gallery
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            class="text-gray-600 text-sm mt-1 blgxl:w-1/2 sm:text-base"
+          >
             Visual Feast, dive into our Culinary Gallery for a taste of flavor,
             passion, and culinary excellence. Let each image tell you the
             delicious story behind our dishes.
-          </p>
-          <button
-            // initial={{ opacity: 0, y: 100 }}
-            // whileInView={{ opacity: 1, y: 0 }}
-            // transition={{
-            //   type: "tween",
-            //   duration: 0.5,
-            //   delay: 0.8,
-            // }}
-            class="flex gap-3 bg-lightGreen text-sm py-2 px-4 mt-6 rounded-full items-center justify-start sm:text-md"
+          </motion.p>
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "tween",
+              duration: 0.7,
+              delay: 0.3,
+            }}
+            class="flex gap-3 bg-otherColor text-sm py-2 px-4 mt-6 rounded-full items-center justify-start sm:text-md"
           >
             <h2>Find us on Instagram</h2>
             <img src={instagram} class="w-6" />
-          </button>
+          </motion.button>
         </div>
 
         {/* Gallery Section Mobile */}
@@ -913,18 +1334,36 @@ export default function Home() {
         >
           {/* Gallery buttons */}
           <div class="flex gap-5 items-center mb-6">
-            <div class="">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0,
+              }}
+              class=""
+            >
               <BsArrowLeft
                 class="p-3 text-4xl bg-otherColor rounded-full"
                 onClick={gallerySlideLeft}
               />
-            </div>
-            <div class="">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              class=""
+            >
               <BsArrowLeft
                 class="p-3 text-4xl bg-otherColor rounded-full -rotate-180"
                 onClick={gallerySlideRight}
               />
-            </div>
+            </motion.div>
           </div>
           <div class="">
             <div
@@ -961,13 +1400,13 @@ export default function Home() {
                 },
               ].map((img) => {
                 return (
-                  <img
+                  <motion.img
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{
                       type: "tween",
                       duration: 0.5,
-                      delay: 0.2,
+                      delay: 0,
                     }}
                     src={img.src}
                     class="scrolling-items w-full aspect-video  object-cover rounded-xl bsmmd:w-1/3 sm:w-1/2  sm:aspect-square"
@@ -982,7 +1421,7 @@ export default function Home() {
         {/* Gallery Section Large Screen */}
         <div class="hidden gap-4 grid-cols-4 lg:grid-cols-4 md:grid">
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -993,7 +1432,7 @@ export default function Home() {
             class="w-full h-full object-cover rounded-xl row-start-1 row-end-3 "
           />{" "}
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -1004,7 +1443,7 @@ export default function Home() {
             class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1"
           />{" "}
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -1015,7 +1454,7 @@ export default function Home() {
             class="w-full h-full object-cover rounded-xl row-start-1 row-end-3"
           />
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -1026,7 +1465,7 @@ export default function Home() {
             class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1"
           />{" "}
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -1037,7 +1476,7 @@ export default function Home() {
             class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4"
           />{" "}
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -1048,7 +1487,7 @@ export default function Home() {
             class="w-full h-full  object-cover rounded-xl"
           />{" "}
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -1059,7 +1498,7 @@ export default function Home() {
             class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4"
           />{" "}
           <motion.img
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
@@ -1068,16 +1507,7 @@ export default function Home() {
             }}
             src={GS4}
             class="w-full h-full  object-cover rounded-xl  "
-          />{" "}
-          {/* <img
-            src={GL5}
-            class="w-full h-full  object-cover rounded-xl transition-all col-start-1 col-end-3 "
-          />{" "}
-          <img
-            src={GS5}
-            class="w-full h-full  object-cover rounded-xl transition-all col-start-3 col-end-5"
-            id="gallery-item"
-          /> */}
+          />
         </div>
       </section>
       {/* FOOTER SECTION */}
@@ -1113,17 +1543,38 @@ export default function Home() {
               2019 near Churchill Road.
             </motion.p>
             <div class="flex items-center gap-3 mt-6 ">
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0,
+                }}
                 src={facebook}
-                class="transition-all cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+                class="cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
               />
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.1,
+                }}
                 src={instagram}
-                class="transition-all cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+                class="cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
               />
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.2,
+                }}
                 src={tripadvisor}
-                class="transition-all cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+                class="cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
               />
             </div>
           </div>
