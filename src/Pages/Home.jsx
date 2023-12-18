@@ -60,7 +60,12 @@ import {
   BsArrowDown,
   BsArrowLeft,
   BsArrowRightShort,
+  BsBook,
+  BsBookmarkStar,
+  BsCheck,
+  BsCheckAll,
   BsDot,
+  BsMarkdownFill,
   BsPhone,
   BsPlay,
   BsPlayBtn,
@@ -69,6 +74,7 @@ import {
 import {
   CgArrowLongRight,
   CgArrowRight,
+  CgCheckO,
   CgMenuRight,
   CgPhone,
 } from "react-icons/cg";
@@ -240,7 +246,7 @@ export default function Home() {
                 delay: 0.7,
               }}
               href="#menu"
-              class="p-2 px-5 bg-darkGreen text-lightGreen rounded-md hover:bg-darkGreen hover:text-whiteText"
+              class="p-2 px-5 bg-whiteText rounded-md transition-colors hover:text-whiteText hover:bg-darkGreen"
             >
               Akkoo Menu
             </motion.a>
@@ -320,7 +326,7 @@ export default function Home() {
                   delay: 0.5,
                 }}
                 href="#menu"
-                class="px-5 py-3 bg-darkGreen text-whiteText rounded-xl  sm:px-10"
+                class="px-5 py-3 bg-darkGreen text-whiteText rounded-xl hover:bg-lightGreen hover:text-black transition-colors sm:px-10"
               >
                 Menu
               </motion.a>
@@ -332,10 +338,10 @@ export default function Home() {
                   duration: 0.5,
                   delay: 0.6,
                 }}
-                class="flex items-center gap-2 px-5 py-3 rounded-xl bg-otherColorTransparent  sm:px-10"
+                class="flex items-center gap-2 px-5 py-3 rounded-xl bg-otherColor transition-colors hover:bg-lightGreen sm:px-10"
               >
-                <div class="text-darkGreen ">
-                  <BsPlayFill />
+                <div class=" ">
+                  <CgCheckO />
                 </div>
                 Book a seat
               </motion.button>
