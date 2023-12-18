@@ -455,7 +455,7 @@ export default function Home() {
       {/* HERO BG */}
       <div class="absolute -top-20 right-0 left-0 -skew-y-6 py-10 h-72  bg-otherColorTransparent w-full m-auto xxl:container"></div>
       <section
-        class="unique-container m-auto py-20 mt-10 xxl:container "
+        class="unique-container m-auto py-32 mt-10 xxl:container "
         id="unique"
       >
         {/* Unique Left section */}
@@ -799,7 +799,7 @@ export default function Home() {
 
       {/* Services section */}
       <section
-        class="service-container  m-auto mt-5 py-10 md:mt-10 md:py-20 xxl:container"
+        class="service-container mt-10 py-20 xxl:container"
         id="services"
       >
         {/* Services section title */}
@@ -914,7 +914,7 @@ export default function Home() {
       </section>
 
       {/* Akkoo menu section */}
-      <section class="py-10  m-auto md:py-20 xxl:container" id="menu">
+      <section class=" m-auto mt-10 py-20 xxl:container" id="menu">
         {/* Menu section title */}
         <div class=" m-auto  text-center w-3/4 sm:w-11/12 xxl:container">
           <motion.button
@@ -1085,10 +1085,7 @@ export default function Home() {
       </section>
 
       {/* Community section */}
-      <section
-        class="w-11/12 py-10 mt-5  m-auto md:py-20 md:mt-10 xxl:container"
-        id="community"
-      >
+      <section class="w-11/12  m-auto py-20 mt-10 xxl:container" id="community">
         {/* Community section title */}
         <div class="mb-12">
           <motion.button
@@ -1276,7 +1273,7 @@ export default function Home() {
 
       <section
         id="gallery"
-        class="w-11/12 py-10 mt-10 text-darkGreen  m-auto md:py-20  xxl:container"
+        class="w-11/12 py-20 mt-10 text-darkGreen  m-auto  xxl:container"
       >
         {/* Gallery section title */}
         <div class="mb-12">
