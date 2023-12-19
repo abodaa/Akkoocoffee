@@ -83,11 +83,24 @@ body{
         bottom: -0.3rem;
         width: 0%;
         height: 2px;
-        background-color: $dark-green;
+        background-color: black;
         transition: all 0.3s ease-in-out;
     }
     &:hover:after{
       width: 60%;
+    }
+}
+.nav-item-active{
+  position: relative;
+  &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.3rem;
+        width: 60%;
+        height: 2px;
+        background-color: black;
+        transition: all 0.3s ease-in-out;
     }
 }
 .menu-price{

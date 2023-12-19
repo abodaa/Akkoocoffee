@@ -78,7 +78,13 @@ import {
   CgMenuRight,
   CgPhone,
 } from "react-icons/cg";
-import breakfastMenuData from "../Components/menuData.js";
+import {
+  breakfastMenuData,
+  lunchtMenuData,
+  cakeMenuData,
+  drinksMenuData,
+  specialMenuData,
+} from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
 import twitter from "../images/twitter.png";
@@ -91,6 +97,10 @@ import BookTable from "../Components/BookTable";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const [menuData, setMenuData] = useState(breakfastMenuData);
+  const [activeMenu, setActiveMenu] = useState("1");
+  const [activeNav, setActiveNav] = useState("1");
+
   // Slider functions
   // What make akkoo unique slider Function
   const uniqueSlideLeft = () => {
@@ -156,71 +166,32 @@ export default function Home() {
           </div>
           <div class="flex gap-6">
             <ul class="hidden md:flex space-x-6 items-center capitalize px-9">
-              <motion.a
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.1,
-                }}
-                href="#home"
-                class="nav-item"
-              >
-                <li>home</li>
-              </motion.a>
-              <motion.a
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.2,
-                }}
-                href="#about"
-                class="nav-item"
-              >
-                <li>about</li>
-              </motion.a>
-              <motion.a
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.3,
-                }}
-                href="#services"
-                class="nav-item"
-              >
-                <li>services</li>
-              </motion.a>
-              <motion.a
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.4,
-                }}
-                href="#community"
-                class="nav-item"
-              >
-                <li>community</li>
-              </motion.a>{" "}
-              <motion.a
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.5,
-                }}
-                href="#gallery"
-                class="nav-item"
-              >
-                <li>gallery</li>
-              </motion.a>
+              {[
+                { id: "1", title: "home", value: "#home" },
+                { id: "2", title: "about", value: "#about" },
+                { id: "3", title: "services", value: "#services" },
+                { id: "4", title: "community", value: "#community" },
+                { id: "5", title: "gallery", value: "#gallery" },
+              ].map((nav) => {
+                return (
+                  <motion.a
+                    initial={{ opacity: 0, y: -30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "tween",
+                      duration: 0.5,
+                      delay: 0.1,
+                    }}
+                    href={nav.value}
+                    onClick={()=>{
+                      setActiveNav(() => nav.id);
+                    }}
+                    class={activeNav === nav.id ? `nav-item-active` : `nav-item`}
+                  >
+                    <li>{nav.title}</li>
+                  </motion.a>
+                );
+              })}
             </ul>
           </div>
 
@@ -959,11 +930,21 @@ export default function Home() {
           {/* Menu selection container*/}
           <ul class="flex items-center flex-wrap gap-1 justify-center m-auto my-5 w-full text-sm md:text-base sm:gap-2">
             {[
-              { title: "Break Fast", icon: breakFast },
-              { title: "Lunch", icon: lunch },
-              { title: "Cake", icon: cake },
-              { title: "Drinks", icon: drinks },
-              { title: "Special", icon: specialOrder },
+              {
+                id: "1",
+                title: "Break Fast",
+                icon: breakFast,
+                data: breakfastMenuData,
+              },
+              { id: "2", title: "Lunch", icon: lunch, data: lunchtMenuData },
+              { id: "3", title: "Cake", icon: cake, data: cakeMenuData },
+              { id: "4", title: "Drinks", icon: drinks, data: drinksMenuData },
+              {
+                id: "5",
+                title: "Special",
+                icon: specialOrder,
+                data: specialMenuData,
+              },
             ].map((menu) => {
               return (
                 <motion.button
@@ -974,7 +955,13 @@ export default function Home() {
                     duration: 0.7,
                     delay: 0.1,
                   }}
-                  class="flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md bg-otherColor cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4"
+                  class={`flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md ${
+                    activeMenu === menu.id ? "bg-lightGreen" : "bg-otherColor"
+                  } cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4`}
+                  onClick={() => {
+                    setMenuData(() => menu.data);
+                    setActiveMenu(() => menu.id);
+                  }}
                 >
                   <img src={menu.icon} alt="" class="w-6 " />
                   <p>{menu.title}</p>
@@ -988,7 +975,7 @@ export default function Home() {
               class="grid grid-cols-1 gap-8 bsmmd:grid-cols-2 w-11/12 m-auto sm:w-full lg:grid-cols-3 blgxl:grid-cols-4"
               id="menu-item-container"
             >
-              {breakfastMenuData.map((item, index) => {
+              {menuData.map((item, index) => {
                 return (
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
