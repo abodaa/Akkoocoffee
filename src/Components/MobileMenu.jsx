@@ -24,11 +24,13 @@ export default function BookTableModal() {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
             transition={{
-              type: "tween",
+              type: "spring",
+              damping: 25,
+              stiffness: 500,
               duration: 0.5,
             }}
             class="fixed left-0 bottom-0 top-0 right-0 bg-darkTransparent p-6"
@@ -38,10 +40,12 @@ export default function BookTableModal() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{
-                type: "tween",
+                type: "spring",
+                damping: 25,
+                stiffness: 500,
                 duration: 0.5,
               }}
-              class="fixed left-0 top-0 bottom-0 w-3/4 p-6  bg-whiteText"
+              class="absolute left-0 top-0 bottom-0 w-3/4 sm:w-3/5 bsmmd:w-2/5 p-6 z-30 bg-whiteText"
             >
               <div
                 onClick={() => setOpen(() => false)}
@@ -50,10 +54,10 @@ export default function BookTableModal() {
                 <CgClose />
               </div>
               <div class="pt-8">
-                <h2 class="text-3xl font-extrabold  md:text-5xl border-b-2 ">
-                  Menu
+                <h2 class="text-xl font-extrabold  sm:text-2xl border-b-2 ">
+                  Navigation
                 </h2>
-                <div class="flex flex-col gap-4 py-12 text-md border-b-2  sm:text-xl">
+                <div class="flex flex-col gap-4 py-12 text-md border-b-2 text-gray-600 sm:text-base">
                   <a
                     href="#home"
                     class="mobile-nav-item"
@@ -90,13 +94,15 @@ export default function BookTableModal() {
                     Gallery
                   </a>
                 </div>
-                <div class="mt-12 text-md flex flex-col gap-5 sm:text-lg">
-                  <button class=" bg-otherColor p-2 rounded-full">
-                    Book a Table
-                  </button>
-                  <button href="#menu" class=" bg-otherColor p-2 rounded-full">
-                    Akkoo Menu
-                  </button>
+                <div class="mt-12 text-md flex gap-5 sm:text-lg">
+                  <BookTable onClick={() => setOpen(() => false)} />
+                  <a
+                    href="#menu"
+                    class=" bg-otherColor py-2 px-5 text-sm rounded sm:text-md"
+                    onClick={() => setOpen(() => false)}
+                  >
+                    Menu
+                  </a>
                 </div>
               </div>
             </motion.div>

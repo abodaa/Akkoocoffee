@@ -129,14 +129,14 @@ export default function Home() {
   });
 
   return (
-    <div class="home-main-container">
+    <div class="">
       {/* NAVIGATION */}
       <section
         class={`fixed top-0  right-0 left-0  z-30 ${
           changeColor ? " bg-otherColor shadow-md" : "transparent"
         } transition  m-auto xxl:container `}
       >
-        <div class="w-11/12 m-auto items-center justify-between md:flex xxl:container">
+        <div class="w-11/12 m-auto items-center justify-between md:flex xxl:px-6 xxl:container">
           {/* Menu Items */}
           <div class="flex gap-2 items-center justify-between">
             <motion.h1
@@ -255,7 +255,7 @@ export default function Home() {
       </section>
       {/* HERO Section */}
       <section
-        class="relative m-auto h-full flex flex-col gap-5 z-20 pt-28 w-11/12 xxl:container"
+        class="relative m-auto h-full flex flex-col gap-5 z-20 pt-28 w-11/12  xxl:px-6 xxl:container"
         id="home"
       >
         {/* Hero Above */}
@@ -330,7 +330,7 @@ export default function Home() {
               >
                 Menu
               </motion.a>
-              <motion.button
+              <motion.a
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -338,13 +338,14 @@ export default function Home() {
                   duration: 0.5,
                   delay: 0.6,
                 }}
+                href="#about"
                 class="flex items-center gap-2 px-5 py-3 rounded-xl bg-otherColor transition-colors hover:bg-lightGreen sm:px-10"
               >
                 <div class=" ">
                   <CgCheckO />
                 </div>
-                Book a seat
-              </motion.button>
+                Learn More
+              </motion.a>
               {/* </div> */}
             </div>
           </div>
@@ -799,7 +800,7 @@ export default function Home() {
 
       {/* Services section */}
       <section
-        class="service-container mt-10 py-20 xxl:container"
+        class="service-container mt-10 py-20 m-auto xxl:container"
         id="services"
       >
         {/* Services section title */}

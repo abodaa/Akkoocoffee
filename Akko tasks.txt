@@ -1,7 +1,8 @@
-- scroll animations
-- book table 
+- scroll animations -Done
+- book table - Done
 - menu filter
 - order page
 - gallery 
 - final touch
-- mobile menu
+- mobile menu - Done
+
