@@ -15,6 +15,9 @@ import specialOrder from "../images/special.png";
 import promotionPic from "../images/propmotion.png";
 
 import lunchMenu from '../images/lunchMenu.png'
+import bfMenu from "../images/bfMenu.png";
+import cakeMenu from "../images/cakeMenu.png";
+import drinksMenu from "../images/drinksMenu.png";
 
 import food from "../images/food.png";
 import drink from "../images/drink.png";
@@ -185,10 +188,12 @@ export default function Home() {
                       delay: 0.1,
                     }}
                     href={nav.value}
-                    onClick={()=>{
+                    onClick={() => {
                       setActiveNav(() => nav.id);
                     }}
-                    class={activeNav === nav.id ? `nav-item-active` : `nav-item`}
+                    class={
+                      activeNav === nav.id ? `nav-item-active` : `nav-item`
+                    }
                   >
                     <li>{nav.title}</li>
                   </motion.a>
@@ -991,7 +996,19 @@ export default function Home() {
                     class={`relative mt-8 flex flex-col justify-center items-center text-center gap-1 p-10 shadow-sm bg-otherColor rounded-2xl`}
                   >
                     <img
-                      src={lunchMenu}
+                      src={
+                        activeMenu === "1"
+                          ? bfMenu
+                          : activeMenu === "2"
+                          ? lunchMenu
+                          : activeMenu === "3"
+                          ? cakeMenu
+                          : activeMenu === "4"
+                          ? drinksMenu
+                          : activeMenu === "5"
+                          ? lunchMenu
+                          : null
+                      }
                       alt=""
                       class="w-14 absolute -top-6 "
                     />
