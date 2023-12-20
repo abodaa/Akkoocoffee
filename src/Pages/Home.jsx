@@ -14,6 +14,8 @@ import cake from "../images/cake.png";
 import specialOrder from "../images/special.png";
 import promotionPic from "../images/propmotion.png";
 
+import lunchMenu from '../images/lunchMenu.png'
+
 import food from "../images/food.png";
 import drink from "../images/drink.png";
 import bunaKurs from "../images/bunaKurs.png";
@@ -986,13 +988,18 @@ export default function Home() {
                       delay: 0.4,
                     }}
                     key={item.name}
-                    class={`relative flex flex-col justify-start items-center text-center gap-1 p-8 shadow-sm bg-otherColor rounded-2xl`}
+                    class={`relative mt-8 flex flex-col justify-center items-center text-center gap-1 p-10 shadow-sm bg-otherColor rounded-2xl`}
                   >
-                    {/* <img src={food} alt="" class="w-1/5" /> */}
+                    <img
+                      src={lunchMenu}
+                      alt=""
+                      class="w-14 absolute -top-6 "
+                    />
                     <p class="text-base  font-bold">{item.name} </p>
                     <p class="text-sm text-gray-600">{item.description}</p>
                     <p class="absolute -bottom-6 rounded-lg bg-otherColor p-2 text-lg font-bold ">
-                      {item.price} <b class="text-sm">Birr</b>
+                      {item.price}{" "}
+                      {activeMenu !== "5" ? <b class="text-sm">Birr</b> : null}
                     </p>
                   </motion.div>
                 );
