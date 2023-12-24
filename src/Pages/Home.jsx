@@ -54,6 +54,7 @@ import GS4 from "../images/gallery/GS4.jpg";
 // import food from "../images/food.png";
 import heroVideo from "../images/hero.mp4";
 import {
+  CiImageOn,
   CiLocationOn,
   CiMobile1,
   CiMobile2,
@@ -71,18 +72,26 @@ import {
   BsCheck,
   BsCheckAll,
   BsDot,
+  BsFillMegaphoneFill,
+  BsImage,
+  BsImages,
   BsMarkdownFill,
   BsPhone,
   BsPlay,
   BsPlayBtn,
   BsPlayFill,
+  BsViewList,
+  BsZoomIn,
+  BsZoomOut,
 } from "react-icons/bs";
 import {
   CgArrowLongRight,
   CgArrowRight,
   CgCheckO,
+  CgImage,
   CgMenuRight,
   CgPhone,
+  CgZoomIn,
 } from "react-icons/cg";
 import {
   breakfastMenuData,
@@ -107,7 +116,7 @@ export default function Home() {
   const [activeMenu, setActiveMenu] = useState("1");
   const [activeNav, setActiveNav] = useState("1");
   const [galleryOpen, setGalleryOpen] = useState(false);
-  const [imageData, setImageData] = useState()
+  const [imageData, setImageData] = useState();
 
   // Slider functions
   // What make akkoo unique slider Function
@@ -689,22 +698,25 @@ export default function Home() {
                 alt=""
                 class="aspect-video object-cover rounded-3xl  blgxl:w-1/2 "
               />
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.6,
-                }}
-              >
-                <h3 class="text-xl md:text-xl font-bold">Who we are</h3>
-                <p class=" text-sm text-gray-600 sm:text-md">
-                  Our commitment is to bring you the ultimate coffee experience,
-                  one that is responsibly produced from seed to cup
-                </p>
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.5,
+                    delay: 0.6,
+                  }}
+                >
+                  <h3 class="text-xl md:text-xl font-bold">Who we are</h3>
+                  <p class=" text-sm text-gray-600 sm:text-md">
+                    Our commitment is to bring you the ultimate coffee
+                    experience, one that is responsibly produced from seed to
+                    cup
+                  </p>
+                </motion.div>
                 <AboutUsMore />
-              </motion.div>
+              </div>
             </div>
             <div class="flex flex-col items-center t gap-5 h-full   rounded-3xl  blgxl:flex-row">
               <motion.img
@@ -964,7 +976,7 @@ export default function Home() {
                     delay: 0.1,
                   }}
                   class={`flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md ${
-                    activeMenu === menu.id ? "bg-lightGreen" : "bg-otherColor"
+                    activeMenu === menu.id ? "bg-lightGreen" : "bg-whiteText"
                   } cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4`}
                   onClick={() => {
                     setMenuData(() => menu.data);
@@ -978,24 +990,24 @@ export default function Home() {
             })}
           </ul>
           {/* Menu Items */}
-          <div class="flex items-center gap-4 ">
-            <div
-              class="grid grid-cols-1 gap-8 bsmmd:grid-cols-2 w-11/12 m-auto sm:w-full lg:grid-cols-3 blgxl:grid-cols-4"
-              id="menu-item-container"
-            >
-              {menuData.map((item, index) => {
-                return (
-                  <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      type: "tween",
-                      duration: 0.7,
-                      delay: 0.4,
-                    }}
-                    key={item.name}
-                    class={`relative mt-8 flex flex-col justify-center items-center text-center gap-1 p-10 shadow-sm bg-otherColor rounded-2xl`}
-                  >
+          <div
+            class="grid grid-cols-1 gap-4 bsmmd:grid-cols-2 w-11/12 m-auto sm:w-full lg:grid-cols-3 blgxl:grid-cols-4"
+            id="menu-item-container"
+          >
+            {menuData.map((item, index) => {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.7,
+                    delay: 0.4,
+                  }}
+                  key={item.name}
+                  class={`p-2 shadow-sm bg-whiteText rounded-2xl`}
+                >
+                  <div class="flex items-center  gap-4">
                     <img
                       src={
                         activeMenu === "1"
@@ -1011,18 +1023,47 @@ export default function Home() {
                           : null
                       }
                       alt=""
-                      class="w-14 absolute -top-6 "
+                      class="w-20 "
                     />
-                    <p class="text-base  font-bold">{item.name} </p>
-                    <p class="text-sm text-gray-600">{item.description}</p>
-                    <p class="absolute -bottom-6 rounded-lg bg-otherColor p-2 text-lg font-bold ">
-                      {item.price}{" "}
-                      {activeMenu !== "5" ? <b class="text-sm">Birr</b> : null}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
+                    <div class="w-full">
+                      <p class="text-base  font-bold pb-1 border-b-[1px] border-otherColor">
+                        {item.name}{" "}
+                      </p>
+                      <p class="text-sm pt-1 text-gray-600">
+                        {item.price}{" "}
+                        {activeMenu !== "5" ? (
+                          <span class="text-sm">Birr</span>
+                        ) : null}
+                      </p>
+                      {/* <p class="text-sm text-gray-600">{item.description}</p> */}
+                      <button
+                        class="menu-detail-button text-xs mt-1"
+                        onClick={() => {
+                          setImageData(
+                            activeMenu === "1"
+                              ? bfMenu
+                              : activeMenu === "2"
+                              ? lunchMenu
+                              : activeMenu === "3"
+                              ? cakeMenu
+                              : activeMenu === "4"
+                              ? drinksMenu
+                              : activeMenu === "5"
+                              ? lunchMenu
+                              : null
+                          );
+                          setGalleryOpen(true);
+                        }}
+                      >
+                        <p class="text-xs text-gray-600 hover:text-lightGreen">
+                          Detail
+                        </p>
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1427,6 +1468,10 @@ export default function Home() {
                     src={img.src}
                     class="scrolling-items w-full aspect-video  object-cover rounded-xl bsmmd:w-1/3 sm:w-1/2  sm:aspect-square"
                     id="gallery-item"
+                    onClick={() => {
+                      setImageData(img.src);
+                      setGalleryOpen(true);
+                    }}
                   />
                 );
               })}

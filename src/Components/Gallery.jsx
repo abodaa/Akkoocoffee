@@ -16,7 +16,7 @@ export default function ImageGalleryModal(props) {
               type: "tween",
               duration: 0.5,
             }}
-            class=""
+            class=" p-6"
           >
             <motion.div
               initial={{ opacity: 0, y: -100 }}
@@ -28,7 +28,7 @@ export default function ImageGalleryModal(props) {
                 stiffness: 500,
                 duration: 0.5,
               }}
-              class="relative left-1/4 md:w-1/2 lg:w-1/2 xxl:container"
+              class="relative w-full bsmmdTwo:w-2/3  md:w-1/2 md:left-[25%] bsmmdTwo:left-[20%] xxl:container"
             >
               <motion.img class="rounded-2xl" src={props.imageData} alt="" />
               <div

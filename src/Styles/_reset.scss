@@ -62,6 +62,19 @@ body{
     color: $light-green;
   }
 }
+.menu-detail-button{
+  @extend .about-button;
+   &::after{
+    position: absolute;
+    content: "→";
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 900;
+    bottom: 0;
+    right: -1.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
 
 .scrolled{
   background-color: white;

@@ -29,7 +29,7 @@ export default function BookTableModal() {
               // stiffness: 500,
               duration: 0.5,
             }}
-            class="fixed left-0 bottom-0 top-0 right-0 m-auto bg-darkTransparent p-6 xxl:container"
+            class="fixed inset-0 m-auto bg-darkTransparent p-6 xxl:container"
           >
             <motion.div
               initial={{ opacity: 0, x: -100 }}
