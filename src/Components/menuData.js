@@ -372,8 +372,8 @@ const drinksMenuData = [
     description: "",
   },
   {
-    price: "Soft Drinks",
-    name: "20.00",
+    price: "20.00",
+    name: "Soft Drinks",
     description: "",
   },
   {
@@ -391,7 +391,6 @@ const drinksMenuData = [
     name: "Water (1/2L)",
     description: "",
   },
-  
 ];
 // Special Data
 const specialMenuData = [

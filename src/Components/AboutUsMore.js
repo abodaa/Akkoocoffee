@@ -2,7 +2,9 @@ import * as React from "react";
 import Modal from "@mui/joy/Modal";
 import ModalClose from "@mui/joy/ModalClose";
 import Sheet from "@mui/joy/Sheet";
-import AboutUsImg from '../images/moreAboutAkkoo.jpg'
+import AboutUsImgOne from "../images/gallery/GL1.jpg";
+import AboutUsImgTwo from "../images/gallery/GS1.jpg";
+import AboutUsImgThree from "../images/gallery/GL2.jpg";
 
 export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
@@ -11,12 +13,9 @@ export default function BasicModal() {
       {/* <Button variant="outlined" color="neutral" onClick={() => setOpen(true)}>
         Open modal
       </Button> */}
-      <button
-        onClick={() => setOpen(true)}
-        class="py-2 border-solid font-extrabold border-2 px-6 rounded-full bg-lightGreen text-darkGreen border-darkGreen hover:text-darkGreen hover:bg-whiteText hover:font-bold transition-all"
-      >
-        More about us
-      </button>
+      <div class="flex items-center gap-2 mt-2" onClick={() => setOpen(true)}>
+        <button class="about-button">Learn more</button>
+      </div>
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-desc"
@@ -29,17 +28,35 @@ export default function BasicModal() {
           sx={{
             maxWidth: 700,
             borderRadius: "lg",
-            p: 4,
+            p: 0,
             boxShadow: "lg",
           }}
         >
           <ModalClose variant="plain" sx={{ m: 1 }} />
-          <div class="h-96 w-full text-darkGreen overflow-y-scroll">
-            <h2 class="more-about-us-title text-3xl font-extrabold md:text-5xl">
+          <div class="h-screen w-full overflow-y-scroll p-6 sm:p-8 md:p-12">
+            <h2 class="more-about-us-title text-black font-bold text-2xl md:text-3xl">
               About Akkoo Coffee
             </h2>
-            <p class=" font-bold">
-              {/* <img src={AboutUsImg} alt="" className="more-about-us-img" /> */}
+            <p class="text-gray-700 text-sm md:text-md">
+              {/* <div class="grid grid-cols-2 gap-3  mt-8 h-full">
+                <div>
+                  <img
+                    src={AboutUsImgTwo}
+                    alt=""
+                    className="w-full object-cover rounded-3xl"
+                  />
+                  <img
+                    src={AboutUsImgOne}
+                    alt=""
+                    className="w-full aspect-video object-cover rounded-3xl"
+                  />
+                </div>
+                <img
+                  src={AboutUsImgThree}
+                  alt=""
+                  className="w-full row-span-2 object-cover rounded-3xl"
+                />
+              </div> */}
               <b class="text-3xl">O</b>ur commitment is to bring you the
               ultimate coffee experience, one that is responsibly produced from
               seed to cup. This is not merely an ideology but our everyday
@@ -52,7 +69,7 @@ export default function BasicModal() {
               enjoy our baked goods as well as our healthy and delicious meals.
               Many also admire the design and overall atmosphere of the place.
             </p>
-            <p class=" font-bold pt-4">
+            <p class="pt-4 text-gray-700 text-sm md:text-md">
               <b class="text-3xl">T</b>he main approach of the AKKOO Coffee’s
               design is to communicate two concepts to the customer: ‘Home in
               Ethiopia’ and ‘straight from our farm to your cup.’ The first idea

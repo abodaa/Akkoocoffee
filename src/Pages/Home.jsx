@@ -1,6 +1,7 @@
 import {React, useState} from "react";
 import "../Styles/home.scss";
 import MobileMenu from '../Components/MobileMenu.jsx'
+import ImageGallery from "../Components/Gallery.jsx";
 import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
 import uniqueHome from "../images/uniqueHome.png";
 import uniqueOurSpace from "../images/uniqueOurSpace.png";
@@ -105,6 +106,8 @@ export default function Home() {
   const [menuData, setMenuData] = useState(breakfastMenuData);
   const [activeMenu, setActiveMenu] = useState("1");
   const [activeNav, setActiveNav] = useState("1");
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [imageData, setImageData] = useState()
 
   // Slider functions
   // What make akkoo unique slider Function
@@ -700,9 +703,7 @@ export default function Home() {
                   Our commitment is to bring you the ultimate coffee experience,
                   one that is responsibly produced from seed to cup
                 </p>
-                <div class="flex items-center gap-2 mt-2">
-                  <button class="about-button">Learn more</button>
-                </div>
+                <AboutUsMore />
               </motion.div>
             </div>
             <div class="flex flex-col items-center t gap-5 h-full   rounded-3xl  blgxl:flex-row">
@@ -1434,7 +1435,7 @@ export default function Home() {
         </section>
 
         {/* Gallery Section Large Screen */}
-        <div class="hidden gap-4 grid-cols-4 lg:grid-cols-4 md:grid">
+        <div class="hidden gap-4 grid-cols-4 lg:grid-cols-4 md:grid ">
           <motion.img
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1444,8 +1445,12 @@ export default function Home() {
               delay: 0.1,
             }}
             src={GL1}
-            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3 "
-          />{" "}
+            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3 cursor-pointer "
+            onClick={() => {
+              setImageData(GL1);
+              setGalleryOpen(true);
+            }}
+          />
           <motion.img
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1455,7 +1460,11 @@ export default function Home() {
               delay: 0.2,
             }}
             src={GS1}
-            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1"
+            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1 cursor-pointer"
+            onClick={() => {
+              setImageData(GS1);
+              setGalleryOpen(true);
+            }}
           />{" "}
           <motion.img
             initial={{ opacity: 0, y: 50 }}
@@ -1466,7 +1475,11 @@ export default function Home() {
               delay: 0.3,
             }}
             src={GL2}
-            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3"
+            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3 cursor-pointer"
+            onClick={() => {
+              setImageData(GL2);
+              setGalleryOpen(true);
+            }}
           />
           <motion.img
             initial={{ opacity: 0, y: 50 }}
@@ -1477,7 +1490,11 @@ export default function Home() {
               delay: 0.4,
             }}
             src={GS2}
-            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1"
+            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1 cursor-pointer"
+            onClick={() => {
+              setImageData(GS2);
+              setGalleryOpen(true);
+            }}
           />{" "}
           <motion.img
             initial={{ opacity: 0, y: 50 }}
@@ -1488,7 +1505,11 @@ export default function Home() {
               delay: 0.5,
             }}
             src={GL3}
-            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4"
+            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4 cursor-pointer"
+            onClick={() => {
+              setImageData(GL3);
+              setGalleryOpen(true);
+            }}
           />{" "}
           <motion.img
             initial={{ opacity: 0, y: 50 }}
@@ -1499,7 +1520,11 @@ export default function Home() {
               delay: 0.6,
             }}
             src={GS3}
-            class="w-full h-full  object-cover rounded-xl"
+            class="w-full h-full  object-cover rounded-xl cursor-pointer"
+            onClick={() => {
+              setImageData(GS3);
+              setGalleryOpen(true);
+            }}
           />{" "}
           <motion.img
             initial={{ opacity: 0, y: 50 }}
@@ -1510,7 +1535,11 @@ export default function Home() {
               delay: 0.7,
             }}
             src={GL4}
-            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4"
+            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4  cursor-pointer"
+            onClick={() => {
+              setImageData(GL4);
+              setGalleryOpen(true);
+            }}
           />{" "}
           <motion.img
             initial={{ opacity: 0, y: 50 }}
@@ -1521,9 +1550,19 @@ export default function Home() {
               delay: 0.8,
             }}
             src={GS4}
-            class="w-full h-full  object-cover rounded-xl  "
+            class="w-full h-full  object-cover rounded-xl cursor-pointer"
+            onClick={() => {
+              setImageData(GS4);
+              setGalleryOpen(true);
+            }}
           />
         </div>
+        {/* Image Gallery Modal */}
+        <ImageGallery
+          imageData={imageData}
+          galleryOpen={galleryOpen}
+          setGalleryOpen={setGalleryOpen}
+        />
       </section>
       {/* FOOTER SECTION */}
       <section class="relative bg-otherColorTransparent pt-10 rounded-t-3xl xxl:container m-auto">
