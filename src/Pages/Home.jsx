@@ -20,6 +20,8 @@ import bfMenu from "../images/bfMenu.png";
 import cakeMenu from "../images/cakeMenu.png";
 import drinksMenu from "../images/drinksMenu.png";
 
+
+
 import food from "../images/food.png";
 import drink from "../images/drink.png";
 import bunaKurs from "../images/bunaKurs.png";
@@ -65,6 +67,9 @@ import {
 import {
   BsArrowBarRight,
   BsArrowDown,
+  BsArrowDownRight,
+  BsArrowDownShort,
+  BsArrowDownSquare,
   BsArrowLeft,
   BsArrowRightShort,
   BsBook,
@@ -73,6 +78,7 @@ import {
   BsCheckAll,
   BsDot,
   BsFillMegaphoneFill,
+  BsGlobe,
   BsImage,
   BsImages,
   BsMarkdownFill,
@@ -174,10 +180,15 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0,
               }}
-              class="p-3 text-3xl font-bold "
+              class="p-3 text-2xl font-bold "
             >
-              Logo
+              Akkoo Coffee
             </motion.h1>
+            <div class="flex items-center gap-2">
+              <BsGlobe />
+              <p>En</p>
+              <BsArrowDownShort />
+            </div>
             {/* Mobile navigation */}
             <MobileMenu />
           </div>
@@ -557,14 +568,7 @@ export default function Home() {
               },
             ].map((unique, index) => {
               return (
-                <motion.div
-                  // initial={{ opacity: 0, y: 100 }}
-                  // whileInView={{ opacity: 1, y: 0 }}
-                  // transition={{
-                  //   type: "tween",
-                  //   duration: 0.5,
-                  //   delay: 0,
-                  // }}
+                <div
                   class="relative  bg-otherColorTransparent p-5 py-10 rounded-xl scrolling-items min-w-full md:p-10"
                   id="unique"
                 >
@@ -575,7 +579,7 @@ export default function Home() {
                     <p class="text-sm  text-gray-600 blgxl:text-md">
                       {unique.content}
                     </p>
-                    <div class="absolute w-16 h-16 -top-10 right-6  bg-otherColor rounded-full border-2 border-whiteText md:w-20 md:h-20">
+                    <div class="absolute w-16 h-16 -top-10 left-1/2 -translate-x-1/2  bg-otherColor rounded-full border-2 border-whiteText md:w-20 md:h-20">
                       <div class="relative">
                         <img
                           src={unique.icon}
@@ -585,7 +589,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </motion.div>
@@ -731,25 +735,25 @@ export default function Home() {
                 alt=""
                 class="aspect-video object-cover rounded-2xl  blgxl:w-1/2"
               />
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.7,
-                }}
-                class=""
-              >
-                <h3 class="text-xl md:text-xl font-bold">How we started</h3>
-                <p class="text-sm text-gray-600 sm:text-md">
-                  It was on May 2019 AKKOO coffee’s founders Dawit Hailu and his
-                  wife Wudassie Enquberhan opened their first coffee shop
-                </p>
-                <div class="flex items-center gap-2 mt-2">
-                  <button class="about-button">Learn more</button>
-                </div>
-              </motion.div>
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.5,
+                    delay: 0.7,
+                  }}
+                  class=""
+                >
+                  <h3 class="text-xl md:text-xl font-bold">How we started</h3>
+                  <p class="text-sm text-gray-600 sm:text-md">
+                    It was on May 2019 AKKOO coffee’s founders Dawit Hailu and
+                    his wife Wudassie Enquberhan opened their first coffee shop
+                  </p>
+                </motion.div>
+                <AboutUsMore />
+              </div>
             </div>
           </div>
           {/* About right */}
@@ -766,25 +770,26 @@ export default function Home() {
               alt=""
               class="w-full aspect-video object-cover rounded-2xl "
             />
-            <motion.div
-              initial={{ opacity: 0, y: -15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.5,
-                delay: 0.6,
-              }}
-            >
-              <h3 class="text-xl md:text-2xl font-bold">Our Story</h3>
-              <p class="text-sm text-gray-600 sm:text-md">
-                Upon its opening, Akkoo was welcomed with encouraging responses
-                from the community. It quickly became the meeting place for
-                coffee lovers ranging from university students to retirees
-              </p>
-              <div class="flex items-center gap-2 mt-2">
-                <button class="about-button">Learn more</button>
-              </div>
-            </motion.div>
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: -15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+              >
+                <h3 class="text-xl md:text-2xl font-bold">Our Story</h3>
+                <p class="text-sm text-gray-600 sm:text-md">
+                  Upon its opening, Akkoo was welcomed with encouraging
+                  responses from the community. It quickly became the meeting
+                  place for coffee lovers ranging from university students to
+                  retirees
+                </p>
+              </motion.div>
+              <AboutUsMore />
+            </div>
           </div>
         </div>
       </section>
@@ -1623,9 +1628,9 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.1,
               }}
-              class="text-xl  mb-5 md:text-2xl"
+              class="text-xl font-bold mb-5 md:text-2xl"
             >
-              Logo
+              Akkoo Coffee
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
