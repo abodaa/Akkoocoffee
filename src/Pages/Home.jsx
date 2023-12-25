@@ -2,6 +2,8 @@ import {React, useState} from "react";
 import "../Styles/home.scss";
 import MobileMenu from '../Components/MobileMenu.jsx'
 import ImageGallery from "../Components/Gallery.jsx";
+import MenuDetails from "../Components/MenuDetails.jsx";
+
 import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
 import uniqueHome from "../images/uniqueHome.png";
 import uniqueOurSpace from "../images/uniqueOurSpace.png";
@@ -15,12 +17,10 @@ import cake from "../images/cake.png";
 import specialOrder from "../images/special.png";
 import promotionPic from "../images/propmotion.png";
 
-import lunchMenu from '../images/lunchMenu.png'
+import lunchMenu from "../images/lunchMenu.png";
 import bfMenu from "../images/bfMenu.png";
 import cakeMenu from "../images/cakeMenu.png";
 import drinksMenu from "../images/drinksMenu.png";
-
-
 
 import food from "../images/food.png";
 import drink from "../images/drink.png";
@@ -123,7 +123,8 @@ export default function Home() {
   const [activeNav, setActiveNav] = useState("1");
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [imageData, setImageData] = useState();
-
+  const [menuDetailOpen, setMenuDetailOpen] = useState(false);
+  const [menuDetailData, setMenuDetailData] = useState();
   // Slider functions
   // What make akkoo unique slider Function
   const uniqueSlideLeft = () => {
@@ -182,7 +183,7 @@ export default function Home() {
               }}
               class="p-3 text-2xl font-bold "
             >
-              Akkoo Coffee
+              LOGO
             </motion.h1>
             <div class="flex items-center gap-2">
               <BsGlobe />
@@ -1044,20 +1045,8 @@ export default function Home() {
                       <button
                         class="menu-detail-button text-xs mt-1"
                         onClick={() => {
-                          setImageData(
-                            activeMenu === "1"
-                              ? bfMenu
-                              : activeMenu === "2"
-                              ? lunchMenu
-                              : activeMenu === "3"
-                              ? cakeMenu
-                              : activeMenu === "4"
-                              ? drinksMenu
-                              : activeMenu === "5"
-                              ? lunchMenu
-                              : null
-                          );
-                          setGalleryOpen(true);
+                          setMenuDetailData(item);
+                          setMenuDetailOpen(true);
                         }}
                       >
                         <p class="text-xs text-gray-600 hover:text-lightGreen">
@@ -1071,6 +1060,11 @@ export default function Home() {
             })}
           </div>
         </div>
+        <MenuDetails
+          menuDetailData={menuDetailData}
+          menuDetailOpen={menuDetailOpen}
+          setMenuDetailOpen={setMenuDetailOpen}
+        />
       </section>
 
       {/* Promotion section */}

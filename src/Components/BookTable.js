@@ -50,7 +50,7 @@ export default function BookTableModal() {
                 <CgClose />
               </div>
               <div class=" text-darkGreen pt-8">
-                <h2 class="more-about-us-title  font-bold text-xl sm:text-2xl md:text-3xl">
+                <h2 class="more-about-us-title mt-3 border-t-2 font-bold text-2xl">
                   Book a Table
                 </h2>
                 <p class=" text-gray-500 text-sm sm:text-md mt-2 md:text-base">

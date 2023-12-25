@@ -1,8 +1,10 @@
 - scroll animations -Done
 - book table - Done
-- menu filter
+- menu filter - done
 - order page
 - gallery 
 - final touch
 - mobile menu - Done
+- image lazy loading
+- menu details card
 
