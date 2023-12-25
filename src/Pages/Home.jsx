@@ -1,4 +1,6 @@
 import {React, useState} from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "../Styles/home.scss";
 import MobileMenu from '../Components/MobileMenu.jsx'
 import ImageGallery from "../Components/Gallery.jsx";
@@ -45,6 +47,8 @@ import unique from "../images/unique.jpg";
 import GL1 from "../images/gallery/GL1.jpg";
 import GL2 from "../images/gallery/GL2.jpg";
 import GL3 from "../images/gallery/GL3.jpg";
+import GL3Loading from "../images/gallery/GL3-Loading.jpg";
+
 import GL4 from "../images/gallery/GL4.jpg";
 import GL5 from "../images/gallery/GL5.jpg";
 import GS1 from "../images/gallery/GS1.jpg";
@@ -428,7 +432,7 @@ export default function Home() {
               </motion.a>
             </div>
           </div>
-          <motion.img
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -436,10 +440,16 @@ export default function Home() {
               duration: 0.7,
               delay: 0.8,
             }}
-            src={GL3}
-            alt=""
-            class="grid aspect-video h-60 w-full object-cover shadow-xl  rounded-3xl  md:col-span-1"
-          />
+            class="overflow-hidden rounded-3xl"
+          >
+            <LazyLoadImage
+              src={GL3}
+              placeholderSrc={GL3Loading}
+              effect="blur"
+              alt=""
+              class="grid overflow-hidden aspect-video h-60 w-full object-cover shadow-xl  rounded-3xl  md:col-span-1"
+            />
+          </motion.div>
           <motion.img
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
