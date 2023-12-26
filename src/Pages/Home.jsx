@@ -1,16 +1,18 @@
 import {React, useState} from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { motion } from "framer-motion"; // Framermotion
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "../Styles/home.scss";
-import MobileMenu from '../Components/MobileMenu.jsx'
+import MobileMenu from "../Components/MobileMenu.jsx";
 import ImageGallery from "../Components/Gallery.jsx";
 import MenuDetails from "../Components/MenuDetails.jsx";
-
-import uniqueSectionPic from "../images/UniqueSectionPic.jpg";
+import AboutUsMore from "../Components/AboutUsMore";
+import BookTable from "../Components/BookTable";
 import uniqueHome from "../images/uniqueHome.png";
 import uniqueOurSpace from "../images/uniqueOurSpace.png";
 import uniqueKeepThingsInteresting from "../images/uniqueKeepThingsInteresting.png";
 import uniqueCoffee from "../images/uniqueCoffee.png";
+import heroVideo from "../images/hero.mp4";
 
 import breakFast from "../images/breakFast.png";
 import lunch from "../images/lunch.png";
@@ -38,71 +40,35 @@ import pThree from "../images/pThree.jpg";
 import pFour from "../images/pFour.jpg";
 import quote from "../images/quote.png";
 
-import arrowDoodle from "../images/arrow.png";
-import unique from "../images/unique.jpg";
-// import pTwo from "../images/pTwo.png";
-// import pThree from "../images/pThree.png";
-
 // Gallery Images
 import GL1 from "../images/gallery/GL1.jpg";
 import GL2 from "../images/gallery/GL2.jpg";
 import GL3 from "../images/gallery/GL3.jpg";
-import GL3Loading from "../images/gallery/GL3-Loading.jpg";
-
 import GL4 from "../images/gallery/GL4.jpg";
 import GL5 from "../images/gallery/GL5.jpg";
 import GS1 from "../images/gallery/GS1.jpg";
 import GS2 from "../images/gallery/GS2.jpg";
 import GS3 from "../images/gallery/GS3.jpg";
 import GS4 from "../images/gallery/GS4.jpg";
-// import GS5 from "../images/gallery/GS5.jpg";
-
-// import food from "../images/food.png";
-import heroVideo from "../images/hero.mp4";
+// Thumbnails
+import GL1Thumb from "../images/tumbnails/GL1-tumb.jpg";
+import GL2Thumb from "../images/tumbnails/GL2-tumb.jpg";
+import GL3Thumb from "../images/tumbnails/GL3-tumb.jpg";
+import GL4Thumb from "../images/tumbnails/GL4-tumb.jpg";
+import GL5Thumb from "../images/tumbnails/GL5-tumb.jpg";
+import GS1Thumb from "../images/tumbnails/GS1-tumb.jpg";
+import GS2Thumb from "../images/tumbnails/GS2-tumb.jpg";
+import GS3Thumb from "../images/tumbnails/GS3-tumb.jpg";
+import GS4Thumb from "../images/tumbnails/GS4-tumb.jpg";
+import GS5Thumb from "../images/tumbnails/GS5-tumb.jpg";
+import { CiMobile2 } from "react-icons/ci";
 import {
-  CiImageOn,
-  CiLocationOn,
-  CiMobile1,
-  CiMobile2,
-  CiMobile3,
-  CiMobile4,
-  CiPhone,
-} from "react-icons/ci";
-import {
-  BsArrowBarRight,
   BsArrowDown,
-  BsArrowDownRight,
   BsArrowDownShort,
-  BsArrowDownSquare,
   BsArrowLeft,
-  BsArrowRightShort,
-  BsBook,
-  BsBookmarkStar,
-  BsCheck,
-  BsCheckAll,
-  BsDot,
-  BsFillMegaphoneFill,
   BsGlobe,
-  BsImage,
-  BsImages,
-  BsMarkdownFill,
-  BsPhone,
-  BsPlay,
-  BsPlayBtn,
-  BsPlayFill,
-  BsViewList,
-  BsZoomIn,
-  BsZoomOut,
 } from "react-icons/bs";
-import {
-  CgArrowLongRight,
-  CgArrowRight,
-  CgCheckO,
-  CgImage,
-  CgMenuRight,
-  CgPhone,
-  CgZoomIn,
-} from "react-icons/cg";
+import { CgCheckO } from "react-icons/cg";
 import {
   breakfastMenuData,
   lunchtMenuData,
@@ -112,14 +78,7 @@ import {
 } from "../Components/menuData.js";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
-import twitter from "../images/twitter.png";
 import tripadvisor from "../images/tripadvisor.png";
-import AboutUsMore from "../Components/AboutUsMore";
-import OurStory from "../Components/OurStory";
-import BookTable from "../Components/BookTable";
-
-// Framermotion
-import { motion } from "framer-motion";
 
 export default function Home() {
   const [menuData, setMenuData] = useState(breakfastMenuData);
@@ -129,6 +88,12 @@ export default function Home() {
   const [imageData, setImageData] = useState();
   const [menuDetailOpen, setMenuDetailOpen] = useState(false);
   const [menuDetailData, setMenuDetailData] = useState();
+
+  const [imageOneLoaded, setImageOneLoaded] = useState(false);
+  const [imageTwoLoaded, setImageTwoLoaded] = useState(false);
+
+
+
   // Slider functions
   // What make akkoo unique slider Function
   const uniqueSlideLeft = () => {
@@ -376,9 +341,9 @@ export default function Home() {
           </div>
         </div>
         {/* Hero Below */}
-        <div class="grid  gap-3 items-start md:grid-cols-5">
+        <div class="grid  gap-3 items-start grid-cols-4 md:grid-cols-6">
           {/* Hero below left */}
-          <div class="col-span-2">
+          <div class="col-span-4 md:col-span-2 w-full h-full">
             <motion.p
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -387,7 +352,7 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.7,
               }}
-              class=" text-gray-600 text-sm blgxl:w-2/3 sm:text-base"
+              class=" text-gray-600 text-sm  blgxl:text-md"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium ipsam dolores dolore fuga.
@@ -401,7 +366,7 @@ export default function Home() {
                   duration: 0.5,
                   delay: 0.8,
                 }}
-                class="relative w-36 h-10 bg-otherColor rounded-full sm:w-48 sm:h-16"
+                class="relative w-36 h-10 bg-otherColor rounded-full sm:w-42 sm:h-16"
               >
                 <p
                   initial={{ opacity: 0, y: 100 }}
@@ -411,7 +376,7 @@ export default function Home() {
                     duration: 0.5,
                     delay: 0.7,
                   }}
-                  class="absolute font-bold text-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:text-lg"
+                  class="absolute font-bold text-xs top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:text-md"
                 >
                   Open 24 | 7
                 </p>
@@ -432,36 +397,62 @@ export default function Home() {
               </motion.a>
             </div>
           </div>
+          {/* IMAGE ONE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
               duration: 0.7,
-              delay: 0.8,
+              delay: 0.6,
             }}
-            class="overflow-hidden rounded-3xl"
+            onLoad={() => setImageOneLoaded(true)}
+            style={{
+              background: `${!imageOneLoaded ? `url(${GS2Thumb})` : ""}`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: `${!imageOneLoaded ? "blur(5px)" : ""}`,
+              overflow: "hidden",
+            }}
+            class={`${
+              !imageOneLoaded ? "reveal-loaded" : "reveal-before-loaded"
+            } overflow-hidden aspect-video h-full shadow-xl rounded-3xl col-span-4  sm:col-span-2`}
           >
             <LazyLoadImage
-              src={GL3}
-              placeholderSrc={GL3Loading}
-              effect="blur"
+              src={GS2}
               alt=""
-              class="grid overflow-hidden aspect-video h-60 w-full object-cover shadow-xl  rounded-3xl  md:col-span-1"
+              class="col-span-1 h-full w-full object-cover "
             />
           </motion.div>
-          <motion.img
+          {/* IMAGE TWO */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "tween",
               duration: 0.7,
-              delay: 0.9,
+              delay: 0.6,
             }}
-            src={GS1}
-            alt=""
-            class="grid aspect-video h-60 w-full object-cover shadow-xl  rounded-3xl  md:col-span-2"
-          />
+            onLoad={() => setImageTwoLoaded(true)}
+            style={{
+              background: `${!imageTwoLoaded ? `url(${GS1Thumb})` : ""}`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: `${!imageTwoLoaded ? "blur(5px)" : ""}`,
+              overflow: "hidden",
+            }}
+            class={`${
+              !imageTwoLoaded ? "reveal-loaded" : "reveal-before-loaded"
+            } overflow-hidden aspect-video h-full shadow-xl rounded-3xl col-span-4  sm:col-span-2`}
+          >
+            <LazyLoadImage
+              src={GS1}
+              alt=""
+              class="col-span-1 h-full w-full object-cover "
+            />
+          </motion.div>
         </div>
       </section>
       {/* What makes us Unique section */}
