@@ -17,7 +17,7 @@
   // color: #26636e;
 }
 .reveal-before-loaded{
-  opacity: 0;
+  // opacity: 1;
   transition: all 0.5s ease-in-out;
 }
 .reveal-loaded{
@@ -40,12 +40,12 @@ body{
 }
 
 .unique-container{
-  background: url('../images/unique.png');
+  background: url('../images/bg-pics/unique.png');
   background-repeat: no-repeat;
   background-size:contain;
 }
 .service-container{
-  background: url('../images/services.png');
+  background: url('../images/bg-pics/services.png');
   background-repeat: no-repeat;
   background-size: contain;
 }

@@ -8,48 +8,61 @@ import ImageGallery from "../Components/Gallery.jsx";
 import MenuDetails from "../Components/MenuDetails.jsx";
 import AboutUsMore from "../Components/AboutUsMore";
 import BookTable from "../Components/BookTable";
-import uniqueHome from "../images/uniqueHome.png";
-import uniqueOurSpace from "../images/uniqueOurSpace.png";
-import uniqueKeepThingsInteresting from "../images/uniqueKeepThingsInteresting.png";
-import uniqueCoffee from "../images/uniqueCoffee.png";
+import {
+  breakfastMenuData,
+  lunchtMenuData,
+  cakeMenuData,
+  drinksMenuData,
+  specialMenuData,
+} from "../Components/menuData.js";
+// Hero imgs
 import heroVideo from "../images/hero.mp4";
+// Unique Icon Imgs
+import uniqueHome from "../images/unique-pics/uniqueHome.png";
+import uniqueOurSpace from "../images/unique-pics/uniqueOurSpace.png";
+import uniqueKeepThingsInteresting from "../images/unique-pics/uniqueKeepThingsInteresting.png";
+import uniqueCoffee from "../images/unique-pics/uniqueCoffee.png";
+// About us Imgs
+import aboutUsFour from "../images/about-us-pics/About4.jpg";
+import aboutUsFive from "../images/about-us-pics/About5.jpg";
+import aboutUsSeven from "../images/about-us-pics/About7.jpg";
+// Menu imgs
+import lunchMenu from "../images/menu-pics/lunchMenu.png";
+import bfMenu from "../images/menu-pics/bfMenu.png";
+import cakeMenu from "../images/menu-pics/cakeMenu.png";
+import drinksMenu from "../images/menu-pics/drinksMenu.png";
+import food from "../images/menu-pics/food.png";
+import drink from "../images/menu-pics/drink.png";
+import bunaKurs from "../images/menu-pics/bunaKurs.png";
+import coffee from "../images/menu-pics/coffee.png";
+import breakFast from "../images/menu-pics/breakFast.png";
+import lunch from "../images/menu-pics/lunch.png";
+import drinks from "../images/menu-pics/drinkMenu.png";
+import cake from "../images/menu-pics/cake.png";
+import specialOrder from "../images/menu-pics/special.png";
+import promotionPic from "../images/other-icon-pics/promotion.png";
 
-import breakFast from "../images/breakFast.png";
-import lunch from "../images/lunch.png";
-import drinks from "../images/drinkMenu.png";
-import cake from "../images/cake.png";
-import specialOrder from "../images/special.png";
-import promotionPic from "../images/propmotion.png";
-
-import lunchMenu from "../images/lunchMenu.png";
-import bfMenu from "../images/bfMenu.png";
-import cakeMenu from "../images/cakeMenu.png";
-import drinksMenu from "../images/drinksMenu.png";
-
-import food from "../images/food.png";
-import drink from "../images/drink.png";
-import bunaKurs from "../images/bunaKurs.png";
-import coffee from "../images/coffee.png";
-import uniqueOne from "../images/uniqueOne.jpg";
-import uniqueTwo from "../images/uniqueTwo.jpg";
-import uniqueThree from "../images/uniqueThree.jpg";
-
-import pOne from "../images/pOne.jpg";
-import pTwo from "../images/pTwo.jpg";
-import pThree from "../images/pThree.jpg";
-import pFour from "../images/pFour.jpg";
-import quote from "../images/quote.png";
-
+// Community imgs
+import pOne from "../images/community-pics/pOne.jpg";
+import pTwo from "../images/community-pics/pTwo.jpg";
+import pThree from "../images/community-pics/pThree.jpg";
+import pFour from "../images/community-pics/pFour.jpg";
+import quote from "../images/community-pics/quote.png";
 // Gallery Images
-import GL1 from "../images/gallery/GL1.jpg";
-import GL2 from "../images/gallery/GL2.jpg";
-import GL3 from "../images/gallery/GL3.jpg";
-import GL4 from "../images/gallery/GL4.jpg";
-import GL5 from "../images/gallery/GL5.jpg";
-import GS1 from "../images/gallery/GS1.jpg";
-import GS2 from "../images/gallery/GS2.jpg";
-import GS3 from "../images/gallery/GS3.jpg";
-import GS4 from "../images/gallery/GS4.jpg";
+import GL1 from "../images/gallery-pics/GL1.jpg";
+import GL2 from "../images/gallery-pics/GL2.jpg";
+import GL3 from "../images/gallery-pics/GL3.jpg";
+import GL4 from "../images/gallery-pics/GL4.jpg";
+import GL5 from "../images/gallery-pics/GL5.jpg";
+import GS1 from "../images/gallery-pics/GS1.jpg";
+import GS2 from "../images/gallery-pics/GS2.jpg";
+import GS3 from "../images/gallery-pics/GS3.jpg";
+import GS4 from "../images/gallery-pics/GS4.jpg";
+import GS5 from "../images/gallery-pics/GS5.jpg";
+// Footer Social Icons
+import facebook from "../images/other-icon-pics/facebook.png";
+import instagram from "../images/other-icon-pics/instagram.png";
+import tripadvisor from "../images/other-icon-pics/tripadvisor.png";
 // Thumbnails
 import GL1Thumb from "../images/tumbnails/GL1-tumb.jpg";
 import GL2Thumb from "../images/tumbnails/GL2-tumb.jpg";
@@ -69,16 +82,6 @@ import {
   BsGlobe,
 } from "react-icons/bs";
 import { CgCheckO } from "react-icons/cg";
-import {
-  breakfastMenuData,
-  lunchtMenuData,
-  cakeMenuData,
-  drinksMenuData,
-  specialMenuData,
-} from "../Components/menuData.js";
-import facebook from "../images/facebook.png";
-import instagram from "../images/instagram.png";
-import tripadvisor from "../images/tripadvisor.png";
 
 export default function Home() {
   const [menuData, setMenuData] = useState(breakfastMenuData);
@@ -91,7 +94,15 @@ export default function Home() {
 
   const [imageOneLoaded, setImageOneLoaded] = useState(false);
   const [imageTwoLoaded, setImageTwoLoaded] = useState(false);
-
+  const [galleryImageLoaded, setGalleryImageLoaded] = useState(false);
+  const handleImageLoad = (itemId) => {
+    // Set the loading state for the specific item
+    setGalleryImageLoaded((prevStates) => ({
+      ...prevStates,
+      [itemId]: true,
+    }));
+  };
+  // const [loadingImageIndex, setLoadingImageIndex] = useState();
 
 
   // Slider functions
@@ -341,7 +352,7 @@ export default function Home() {
           </div>
         </div>
         {/* Hero Below */}
-        <div class="grid  gap-3 items-start grid-cols-4 md:grid-cols-6">
+        <div class="grid  gap-3 grid-cols-4 md:grid-cols-6">
           {/* Hero below left */}
           <div class="col-span-4 md:col-span-2 w-full h-full">
             <motion.p
@@ -422,7 +433,7 @@ export default function Home() {
             <LazyLoadImage
               src={GS2}
               alt=""
-              class="col-span-1 h-full w-full object-cover "
+              class="h-full w-full object-cover "
             />
           </motion.div>
           {/* IMAGE TWO */}
@@ -450,7 +461,7 @@ export default function Home() {
             <LazyLoadImage
               src={GS1}
               alt=""
-              class="col-span-1 h-full w-full object-cover "
+              class="h-full w-full object-cover "
             />
           </motion.div>
         </div>
@@ -700,7 +711,7 @@ export default function Home() {
                   duration: 0.5,
                   delay: 0.5,
                 }}
-                src={uniqueOne}
+                src={aboutUsFour}
                 alt=""
                 class="aspect-video object-cover rounded-3xl  blgxl:w-1/2 "
               />
@@ -733,7 +744,7 @@ export default function Home() {
                   duration: 0.5,
                   delay: 0.6,
                 }}
-                src={uniqueTwo}
+                src={aboutUsSeven}
                 alt=""
                 class="aspect-video object-cover rounded-2xl  blgxl:w-1/2"
               />
@@ -768,7 +779,7 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.7,
               }}
-              src={uniqueThree}
+              src={aboutUsFive}
               alt=""
               class="w-full aspect-video object-cover rounded-2xl "
             />
@@ -1429,50 +1440,99 @@ export default function Home() {
             >
               {[
                 {
-                  src: GL1,
-                },
-                {
+                  id: 1,
                   src: GS1,
+                  thumb: GS1Thumb,
                 },
                 {
-                  src: GL2,
-                },
-                {
+                  id: 2,
                   src: GS2,
+                  thumb: GS2Thumb,
                 },
                 {
-                  src: GL3,
-                },
-                {
+                  id: 3,
                   src: GS3,
+                  thumb: GS3Thumb,
                 },
                 {
-                  src: GL4,
-                },
-                {
+                  id: 4,
                   src: GS4,
+                  thumb: GS4Thumb,
                 },
                 {
-                  src: GL5,
+                  id: 5,
+                  src: GS5,
+                  thumb: GS5Thumb,
                 },
-              ].map((img) => {
+                {
+                  id: 6,
+                  src: GL1,
+                  thumb: GL1Thumb,
+                },
+                {
+                  id: 7,
+                  src: GL2,
+                  thumb: GL2Thumb,
+                },
+                {
+                  id: 8,
+                  src: GL3,
+                  thumb: GL3Thumb,
+                },
+
+                {
+                  id: 9,
+                  src: GL4,
+                  thumb: GL4Thumb,
+                },
+                {
+                  id: 10,
+                  src: GL5,
+                  thumb: GL5Thumb,
+                },
+              ].map((item) => {
                 return (
-                  <motion.img
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                  <div
+                    id="gallery-item"
+                    key={item.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                       type: "tween",
-                      duration: 0.5,
+                      duration: 0.7,
                       delay: 0,
                     }}
-                    src={img.src}
-                    class="scrolling-items w-full aspect-video  object-cover rounded-xl bsmmd:w-1/3 sm:w-1/2  sm:aspect-square"
-                    id="gallery-item"
+                    onLoad={() => {
+                      handleImageLoad(item.id);
+                    }}
                     onClick={() => {
-                      setImageData(img.src);
+                      setImageData(item.src);
                       setGalleryOpen(true);
                     }}
-                  />
+                    style={{
+                      background: `${
+                        !galleryImageLoaded[item.id] ? `url(${item.thumb})` : ""
+                      }`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: `${
+                        !galleryImageLoaded[item.id] ? "blur(5px)" : ""
+                      }`,
+                      overflow: "hidden",
+                    }}
+                    class={`${
+                      !galleryImageLoaded[item.id]
+                        ? "reveal-loaded"
+                        : "reveal-before-loaded"
+                    } scrolling-items overflow-hidden w-full aspect-video object-cover rounded-3xl cursor-pointer min-w-full  bsmmd:min-w-[32%] sm:min-w-[49%] sm:aspect-square`}
+                  >
+                    <LazyLoadImage
+                      src={item.src}
+                      alt=""
+                      class="h-full w-full object-cover overflow-hidden"
+                    />
+                  </div>
                 );
               })}
             </div>
@@ -1480,127 +1540,101 @@ export default function Home() {
         </section>
 
         {/* Gallery Section Large Screen */}
-        <div class="hidden gap-4 grid-cols-4 lg:grid-cols-4 md:grid ">
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.1,
-            }}
-            src={GL1}
-            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3 cursor-pointer "
-            onClick={() => {
-              setImageData(GL1);
-              setGalleryOpen(true);
-            }}
-          />
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.2,
-            }}
-            src={GS1}
-            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1 cursor-pointer"
-            onClick={() => {
-              setImageData(GS1);
-              setGalleryOpen(true);
-            }}
-          />{" "}
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.3,
-            }}
-            src={GL2}
-            class="w-full h-full object-cover rounded-xl row-start-1 row-end-3 cursor-pointer"
-            onClick={() => {
-              setImageData(GL2);
-              setGalleryOpen(true);
-            }}
-          />
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.4,
-            }}
-            src={GS2}
-            class="w-full h-full  object-cover rounded-xl row-start-1 row-end-1 cursor-pointer"
-            onClick={() => {
-              setImageData(GS2);
-              setGalleryOpen(true);
-            }}
-          />{" "}
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.5,
-            }}
-            src={GL3}
-            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4 cursor-pointer"
-            onClick={() => {
-              setImageData(GL3);
-              setGalleryOpen(true);
-            }}
-          />{" "}
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.6,
-            }}
-            src={GS3}
-            class="w-full h-full  object-cover rounded-xl cursor-pointer"
-            onClick={() => {
-              setImageData(GS3);
-              setGalleryOpen(true);
-            }}
-          />{" "}
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.7,
-            }}
-            src={GL4}
-            class="w-full h-full  object-cover rounded-xl row-start-2 row-end-4  cursor-pointer"
-            onClick={() => {
-              setImageData(GL4);
-              setGalleryOpen(true);
-            }}
-          />{" "}
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "tween",
-              duration: 0.5,
-              delay: 0.8,
-            }}
-            src={GS4}
-            class="w-full h-full  object-cover rounded-xl cursor-pointer"
-            onClick={() => {
-              setImageData(GS4);
-              setGalleryOpen(true);
-            }}
-          />
+        <div class="hidden gap-4 grid-cols-3 lg:grid-cols-5 md:grid ">
+          {[
+            {
+              id: 1,
+              src: GS1,
+              thumb: GS1Thumb,
+            },
+            {
+              id: 2,
+              src: GS2,
+              thumb: GS2Thumb,
+            },
+            {
+              id: 3,
+              src: GS3,
+              thumb: GS3Thumb,
+            },
+            {
+              id: 4,
+              src: GS4,
+              thumb: GS4Thumb,
+            },
+            {
+              id: 5,
+              src: GS5,
+              thumb: GS5Thumb,
+            },
+            {
+              id: 6,
+              src: GL1,
+              thumb: GL1Thumb,
+            },
+            {
+              id: 7,
+              src: GL2,
+              thumb: GL2Thumb,
+            },
+            {
+              id: 8,
+              src: GL3,
+              thumb: GL3Thumb,
+            },
+
+            {
+              id: 9,
+              src: GL4,
+              thumb: GL4Thumb,
+            },
+            {
+              id: 10,
+              src: GL5,
+              thumb: GL5Thumb,
+            },
+          ].map((item, index) => {
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.7,
+                  delay: 0,
+                }}
+                onLoad={() => {
+                  handleImageLoad(item.id);
+                }}
+                onClick={() => {
+                  setImageData(item.src);
+                  setGalleryOpen(true);
+                }}
+                style={{
+                  background: `${
+                    !galleryImageLoaded[item.id] ? `url(${item.thumb})` : ""
+                  }`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: `${!galleryImageLoaded[item.id] ? "blur(5px)" : ""}`,
+                  overflow: "hidden",
+                }}
+                class={`${
+                  !galleryImageLoaded[item.id]
+                    ? "reveal-loaded"
+                    : "reveal-before-loaded"
+                } overflow-hidden w-full aspect-square shadow-xl object-cover rounded-xl cursor-pointer`}
+              >
+                <LazyLoadImage
+                  src={item.src}
+                  alt=""
+                  class="h-full w-full object-cover "
+                />
+              </motion.div>
+            );
+          })}
         </div>
         {/* Image Gallery Modal */}
         <ImageGallery

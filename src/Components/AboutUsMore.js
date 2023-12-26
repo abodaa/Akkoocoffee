@@ -3,10 +3,10 @@ import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 
-import aboutOne from "../images/About1.jpg";
-import aboutTwo from "../images/About2.jpg";
-import aboutThree from "../images/About3.jpg";
-import aboutFour from "../images/uniqueThree1.jpg";
+import aboutOne from "../images/about-us-pics/About1.jpg";
+import aboutTwo from "../images/about-us-pics/About2.jpg";
+import aboutThree from "../images/about-us-pics/About3.jpg";
+import aboutFour from "../images/about-us-pics/About6.jpg";
 
 export default function BookTableModal() {
   const [open, setOpen] = React.useState(false);

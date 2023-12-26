@@ -1,7 +1,7 @@
-import lunchImage from "../images/lu.png";
-import breakfastImage from "../images/bf.png";
-import coffeeImage from "../images/co.png";
-import cakeImage from "../images/ca.png";
+import lunchImage from "../images/menu-pics/lu.png";
+import breakfastImage from "../images/menu-pics/bf.png";
+import coffeeImage from "../images/menu-pics/co.png";
+import cakeImage from "../images/menu-pics/ca.png";
 
 // Breakfast menu data
 const breakfastMenuData = [
