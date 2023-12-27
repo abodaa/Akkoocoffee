@@ -1,13 +1,14 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CgClose } from "react-icons/cg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function ImageGalleryModal(props) {
   const [open, setOpen] = React.useState(false);
 
   return (
     <AnimatePresence initial={false}>
       {props.galleryOpen && (
-        <div class="fixed inset-0 flex items-center justify-center z-30 bg-darkTransparent xxl:container">
+        <div class="fixed inset-0 flex items-center justify-center z-30 bg-darkTransparent  m-auto xxl:container">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -28,9 +29,15 @@ export default function ImageGalleryModal(props) {
                 stiffness: 500,
                 duration: 0.5,
               }}
-              class="relative w-full bsmmdTwo:w-2/3  md:w-1/2 md:left-[25%] bsmmdTwo:left-[20%] xxl:container"
+              class="relative w-full m-auto  bsmmdTwo:w-2/3  md:w-1/2 md:left-[25%] bsmmdTwo:left-[20%] xxl:container"
             >
-              <motion.img class="rounded-2xl" src={props.imageData} alt="" />
+              <LazyLoadImage
+                src={props.imageData}
+                placeholderSrc=""
+                alt=""
+                class="rounded-2xl object-cover "
+              />
+
               <div
                 onClick={() => props.setGalleryOpen(false)}
                 class="absolute -top-3 -right-3 p-2 cursor-pointer rounded-full bg-otherColor"

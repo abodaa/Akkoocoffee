@@ -5,7 +5,7 @@
 - gallery - Done 
 - final touch
 - mobile menu - Done
-- image lazy loading
+- image lazy loading - DONE except for the gallery pop up
 - menu details card - Done
 - Multi lang
 

@@ -1574,17 +1574,17 @@ export default function Home() {
         </section>
 
         {/* Gallery Section Large Screen */}
-        <div class="hidden gap-4 grid-cols-3 lg:grid-cols-5 md:grid ">
+        <div class="hidden gap-4 grid-cols-4 lg:grid-cols-4 md:grid ">
           {[
             {
               id: 1,
-              src: GS1,
-              thumb: GS1Thumb,
+              src: GL3,
+              thumb: GL3Thumb,
             },
             {
               id: 2,
-              src: GS2,
-              thumb: GS2Thumb,
+              src: GS1,
+              thumb: GS1Thumb,
             },
             {
               id: 3,
@@ -1613,8 +1613,8 @@ export default function Home() {
             },
             {
               id: 8,
-              src: GL3,
-              thumb: GL3Thumb,
+              src: GS2,
+              thumb: GS2Thumb,
             },
 
             {
@@ -1622,11 +1622,11 @@ export default function Home() {
               src: GL4,
               thumb: GL4Thumb,
             },
-            {
-              id: 10,
-              src: GL5,
-              thumb: GL5Thumb,
-            },
+            // {
+            //   id: 10,
+            //   src: GL5,
+            //   thumb: GL5Thumb,
+            // },
           ].map((item, index) => {
             return (
               <motion.div
@@ -1659,7 +1659,21 @@ export default function Home() {
                   !galleryImageLoaded[item.id]
                     ? "reveal-loaded"
                     : "reveal-before-loaded"
-                } overflow-hidden w-full aspect-square shadow-xl object-cover rounded-xl cursor-pointer`}
+                } overflow-scroll w-full aspect-square h-full shadow-xl object-cover rounded-xl cursor-pointer ${
+                  item.id === 1
+                    ? "row-start-1 row-end-3"
+                    : item.id === 2
+                    ? "row-start-1 row-end-1"
+                    : item.id === 3
+                    ? "row-start-2 row-end-3"
+                    : item.id === 6
+                    ? "row-start-2 row-end-4"
+                    : item.id === 8
+                    ? "row-start-3 row-end-4 column-start-3 column-end-5"
+                    : item.id === 7
+                    ? "row-start-1 row-end-3"
+                    : ""
+                }`}
               >
                 <LazyLoadImage
                   src={item.src}
