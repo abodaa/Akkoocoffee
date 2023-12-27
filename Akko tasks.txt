@@ -2,9 +2,10 @@
 - book table - Done
 - menu filter - done
 - order page
-- gallery 
+- gallery - Done 
 - final touch
 - mobile menu - Done
 - image lazy loading
-- menu details card
+- menu details card - Done
+- Multi lang
 

@@ -1,15 +1,30 @@
 
 import * as React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 
 import aboutOne from "../images/about-us-pics/About1.jpg";
 import aboutTwo from "../images/about-us-pics/About2.jpg";
 import aboutThree from "../images/about-us-pics/About3.jpg";
-import aboutFour from "../images/about-us-pics/About6.jpg";
+import aboutSix from "../images/about-us-pics/About6.jpg";
+import aboutUsOneThumb from "../images/tumbnails/About1-tumb.jpg";
+import aboutUsTwoThumb from "../images/tumbnails/About2-tumb.jpg";
+import aboutUsThreeThumb from "../images/tumbnails/About3-tumb.jpg";
+import aboutUsFourThumb from "../images/tumbnails/About4-tumb.jpg";
+import aboutUsFiveThumb from "../images/tumbnails/About5-tumb.jpg";
+import aboutUsSixThumb from "../images/tumbnails/About6-tumb.jpg";
+import aboutUsSevenThumb from "../images/tumbnails/About7-tumb.jpg";
+
 
 export default function BookTableModal() {
   const [open, setOpen] = React.useState(false);
+  // About us images loading states
+  const [aboutUsImageOneLoaded, setAboutUsImageOneLoaded] = useState(false);
+  const [aboutUsImageTwoLoaded, setAboutUsImageTwoLoaded] = useState(false);
+  const [aboutUsImageThreeLoaded, setAboutUsImageThreeLoaded] = useState(false);
+  const [aboutUsImageFourLoaded, setAboutUsImageFourLoaded] = useState(false);
 
   return (
     <div>
@@ -85,32 +100,57 @@ export default function BookTableModal() {
                   duration: 0.5,
                   delay: 0.2,
                 }}
-                class="grid grid-cols-2 mt-4 gap-1 sm:gap-2"
+                class="grid  sm:grid-cols-2 mt-4 gap-1 sm:gap-2"
               >
-                <motion.img
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    type: "tween",
-                    duration: 0.5,
-                    delay: 0.3,
+                <div
+                  onLoad={() => setAboutUsImageOneLoaded(true)}
+                  style={{
+                    background: `${
+                      !aboutUsImageOneLoaded ? `url(${aboutUsThreeThumb})` : ""
+                    }`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    filter: `${!aboutUsImageOneLoaded ? "blur(10px)" : ""}`,
+                    overflow: "hidden",
                   }}
-                  src={aboutThree}
-                  alt=""
-                  class="rounded-lg"
-                />
-                <motion.img
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    type: "tween",
-                    duration: 0.5,
-                    delay: 0.4,
+                  class={`${
+                    !aboutUsImageOneLoaded
+                      ? "reveal-loaded"
+                      : "reveal-before-loaded"
+                  } aspect-video object-cover rounded-2xl  blgxl:w-full`}
+                >
+                  <LazyLoadImage
+                    src={aboutThree}
+                    alt=""
+                    class="w-full object-cover h-full"
+                  />
+                </div>
+
+                <div
+                  onLoad={() => setAboutUsImageTwoLoaded(true)}
+                  style={{
+                    background: `${
+                      !aboutUsImageTwoLoaded ? `url(${aboutUsFourThumb})` : ""
+                    }`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    filter: `${!aboutUsImageTwoLoaded ? "blur(10px)" : ""}`,
+                    overflow: "hidden",
                   }}
-                  src={aboutFour}
-                  alt=""
-                  class="rounded-lg"
-                />
+                  class={`${
+                    !aboutUsImageTwoLoaded
+                      ? "reveal-loaded"
+                      : "reveal-before-loaded"
+                  } aspect-video object-cover rounded-2xl  blgxl:w-full`}
+                >
+                  <LazyLoadImage
+                    src={aboutSix}
+                    alt=""
+                    class="w-full object-cover h-full"
+                  />
+                </div>
               </motion.div>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
@@ -178,32 +218,56 @@ export default function BookTableModal() {
                   duration: 0.5,
                   delay: 0,
                 }}
-                class="grid grid-cols-2 mt-4 gap-1 sm:gap-2"
+                class="grid  sm:grid-cols-2 mt-4 gap-1 sm:gap-2"
               >
-                <motion.img
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    type: "tween",
-                    duration: 0.5,
-                    delay: 0.1,
+                <div
+                  onLoad={() => setAboutUsImageThreeLoaded(true)}
+                  style={{
+                    background: `${
+                      !aboutUsImageThreeLoaded ? `url(${aboutUsOneThumb})` : ""
+                    }`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    filter: `${!aboutUsImageThreeLoaded ? "blur(10px)" : ""}`,
+                    overflow: "hidden",
                   }}
-                  src={aboutOne}
-                  alt=""
-                  class="rounded-lg"
-                />
-                <motion.img
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    type: "tween",
-                    duration: 0.5,
-                    delay: 0.2,
+                  class={`${
+                    !aboutUsImageThreeLoaded
+                      ? "reveal-loaded"
+                      : "reveal-before-loaded"
+                  } aspect-video rounded-2xl  blgxl:w-full`}
+                >
+                  <LazyLoadImage
+                    src={aboutOne}
+                    alt=""
+                    class="w-full object-cover h-full"
+                  />
+                </div>
+                <div
+                  onLoad={() => setAboutUsImageFourLoaded(true)}
+                  style={{
+                    background: `${
+                      !aboutUsImageFourLoaded ? `url(${aboutUsTwoThumb})` : ""
+                    }`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    filter: `${!aboutUsImageFourLoaded ? "blur(10px)" : ""}`,
+                    overflow: "hidden",
                   }}
-                  src={aboutTwo}
-                  alt=""
-                  class="rounded-lg"
-                />
+                  class={`${
+                    !aboutUsImageFourLoaded
+                      ? "reveal-loaded"
+                      : "reveal-before-loaded"
+                  } aspect-video rounded-2xl  blgxl:w-full`}
+                >
+                  <LazyLoadImage
+                    src={aboutTwo}
+                    alt=""
+                    class="w-full object-cover h-full"
+                  />
+                </div>
               </motion.div>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}

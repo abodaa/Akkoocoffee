@@ -30,14 +30,12 @@ import aboutUsSeven from "../images/about-us-pics/About7.jpg";
 import lunchMenu from "../images/menu-pics/lunchMenu.png";
 import bfMenu from "../images/menu-pics/bfMenu.png";
 import cakeMenu from "../images/menu-pics/cakeMenu.png";
-import drinksMenu from "../images/menu-pics/drinksMenu.png";
-import food from "../images/menu-pics/food.png";
+import drinksMenu from "../images/menu-pics/drink.png";
 import drink from "../images/menu-pics/drink.png";
 import bunaKurs from "../images/menu-pics/bunaKurs.png";
 import coffee from "../images/menu-pics/coffee.png";
 import breakFast from "../images/menu-pics/breakFast.png";
 import lunch from "../images/menu-pics/lunch.png";
-import drinks from "../images/menu-pics/drinkMenu.png";
 import cake from "../images/menu-pics/cake.png";
 import specialOrder from "../images/menu-pics/special.png";
 import promotionPic from "../images/other-icon-pics/promotion.png";
@@ -74,6 +72,15 @@ import GS2Thumb from "../images/tumbnails/GS2-tumb.jpg";
 import GS3Thumb from "../images/tumbnails/GS3-tumb.jpg";
 import GS4Thumb from "../images/tumbnails/GS4-tumb.jpg";
 import GS5Thumb from "../images/tumbnails/GS5-tumb.jpg";
+import aboutUsOneThumb from "../images/tumbnails/About1-tumb.jpg";
+import aboutUsTwoThumb from "../images/tumbnails/About2-tumb.jpg";
+import aboutUsThreeThumb from "../images/tumbnails/About3-tumb.jpg";
+import aboutUsFourThumb from "../images/tumbnails/About4-tumb.jpg";
+import aboutUsFiveThumb from "../images/tumbnails/About5-tumb.jpg";
+import aboutUsSixThumb from "../images/tumbnails/About6-tumb.jpg";
+import aboutUsSevenThumb from "../images/tumbnails/About7-tumb.jpg";
+
+// Icons
 import { CiMobile2 } from "react-icons/ci";
 import {
   BsArrowDown,
@@ -92,8 +99,14 @@ export default function Home() {
   const [menuDetailOpen, setMenuDetailOpen] = useState(false);
   const [menuDetailData, setMenuDetailData] = useState();
 
+  // Hero section images loading states
   const [imageOneLoaded, setImageOneLoaded] = useState(false);
   const [imageTwoLoaded, setImageTwoLoaded] = useState(false);
+  // About us images loading states
+  const [aboutUsImageOneLoaded, setAboutUsImageOneLoaded] = useState(false);
+  const [aboutUsImageTwoLoaded, setAboutUsImageTwoLoaded] = useState(false);
+  const [aboutUsImageThreeLoaded, setAboutUsImageThreeLoaded] = useState(false);
+
   const [galleryImageLoaded, setGalleryImageLoaded] = useState(false);
   const handleImageLoad = (itemId) => {
     // Set the loading state for the specific item
@@ -103,7 +116,6 @@ export default function Home() {
     }));
   };
   // const [loadingImageIndex, setLoadingImageIndex] = useState();
-
 
   // Slider functions
   // What make akkoo unique slider Function
@@ -701,20 +713,32 @@ export default function Home() {
         </div>
         <div class="grid  gap-5 mt-5 m-auto w-10/12 xxl:container blgxl:grid-cols-2">
           {/* About left */}
-          <div class="flex flex-col gap-5 w-full h-full  md:flex-row blgxl:flex-col">
-            <div class="flex flex-col items-center gap-5 h-full blgxl:flex-row">
-              <motion.img
-                initial={{ opacity: 0, y: -15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.5,
+          <div class="grid  gap-5 w-full h-full  md:grid-cols-2 blgxl:grid-cols-1">
+            <div class="grid items-center gap-5 h-full blgxl:grid-cols-2">
+              <div
+                onLoad={() => setAboutUsImageOneLoaded(true)}
+                style={{
+                  background: `${
+                    !aboutUsImageOneLoaded ? `url(${aboutUsFourThumb})` : ""
+                  }`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: `${!aboutUsImageOneLoaded ? "blur(10px)" : ""}`,
+                  overflow: "hidden",
                 }}
-                src={aboutUsFour}
-                alt=""
-                class="aspect-video object-cover rounded-3xl  blgxl:w-1/2 "
-              />
+                class={`${
+                  !aboutUsImageOneLoaded
+                    ? "reveal-loaded"
+                    : "reveal-before-loaded"
+                } aspect-video object-cover rounded-2xl  blgxl:w-full`}
+              >
+                <LazyLoadImage
+                  src={aboutUsFour}
+                  alt=""
+                  class="w-full object-cover h-full"
+                />
+              </div>
               <div>
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
@@ -735,19 +759,31 @@ export default function Home() {
                 <AboutUsMore />
               </div>
             </div>
-            <div class="flex flex-col items-center t gap-5 h-full   rounded-3xl  blgxl:flex-row">
-              <motion.img
-                initial={{ opacity: 0, y: -15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "tween",
-                  duration: 0.5,
-                  delay: 0.6,
+            <div class="grid items-center gap-5 h-full blgxl:grid-cols-2">
+              <div
+                onLoad={() => setAboutUsImageTwoLoaded(true)}
+                style={{
+                  background: `${
+                    !aboutUsImageTwoLoaded ? `url(${aboutUsSevenThumb})` : ""
+                  }`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: `${!aboutUsImageTwoLoaded ? "blur(10px)" : ""}`,
+                  overflow: "hidden",
                 }}
-                src={aboutUsSeven}
-                alt=""
-                class="aspect-video object-cover rounded-2xl  blgxl:w-1/2"
-              />
+                class={`${
+                  !aboutUsImageTwoLoaded
+                    ? "reveal-loaded"
+                    : "reveal-before-loaded"
+                } aspect-video object-cover rounded-2xl  blgxl:w-full`}
+              >
+                <LazyLoadImage
+                  src={aboutUsSeven}
+                  alt=""
+                  class="w-full h-full object-cover "
+                />
+              </div>
               <div>
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
@@ -771,18 +807,31 @@ export default function Home() {
           </div>
           {/* About right */}
           <div class="flex flex-col gap-6 h-full bg-otherColor rounded-3xl p-5 md:p-10  ">
-            <motion.img
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.5,
-                delay: 0.7,
+            <div
+              onLoad={() => setAboutUsImageThreeLoaded(true)}
+              style={{
+                background: `${
+                  !aboutUsImageThreeLoaded ? `url(${aboutUsFiveThumb})` : ""
+                }`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: `${!aboutUsImageThreeLoaded ? "blur(10px)" : ""}`,
+                overflow: "hidden",
               }}
-              src={aboutUsFive}
-              alt=""
-              class="w-full aspect-video object-cover rounded-2xl "
-            />
+              class={`${
+                !aboutUsImageThreeLoaded
+                  ? "reveal-loaded"
+                  : "reveal-before-loaded"
+              } w-full aspect-video object-cover rounded-2xl`}
+            >
+              <LazyLoadImage
+                src={aboutUsFive}
+                alt=""
+                class="w-full h-full object-cover "
+              />
+            </div>
+
             <div>
               <motion.div
                 initial={{ opacity: 0, y: -15 }}
@@ -859,7 +908,7 @@ export default function Home() {
         <div class=" w-10/12 m-auto grid grid-cols-1 gap-3 sm:grid-cols-2 blgxl:grid-cols-4 blgxl:gap-5">
           {[
             {
-              icon: food,
+              icon: specialOrder,
               title: "Food",
               content: `Agelgil, our renowned order, offers fasting and non-fasting options, delivered in a Mesob for groups of 10+ people`,
             },
@@ -976,7 +1025,7 @@ export default function Home() {
               },
               { id: "2", title: "Lunch", icon: lunch, data: lunchtMenuData },
               { id: "3", title: "Cake", icon: cake, data: cakeMenuData },
-              { id: "4", title: "Drinks", icon: drinks, data: drinksMenuData },
+              { id: "4", title: "Drinks", icon: drink, data: drinksMenuData },
               {
                 id: "5",
                 title: "Special",
@@ -1026,23 +1075,7 @@ export default function Home() {
                   class={`p-2 shadow-sm bg-whiteText rounded-2xl`}
                 >
                   <div class="flex items-center  gap-4">
-                    <img
-                      src={
-                        activeMenu === "1"
-                          ? bfMenu
-                          : activeMenu === "2"
-                          ? lunchMenu
-                          : activeMenu === "3"
-                          ? cakeMenu
-                          : activeMenu === "4"
-                          ? drinksMenu
-                          : activeMenu === "5"
-                          ? lunchMenu
-                          : null
-                      }
-                      alt=""
-                      class="w-20 "
-                    />
+                    <img src={item.img} alt="" class="w-20 " />
                     <div class="w-full">
                       <p class="text-base  font-bold pb-1 border-b-[1px] border-otherColor">
                         {item.name}{" "}
