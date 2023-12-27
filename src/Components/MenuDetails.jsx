@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { CgClose } from "react-icons/cg";
 export default function MenuDetails(props) {
   const [open, setOpen] = React.useState(false);
@@ -31,7 +32,13 @@ export default function MenuDetails(props) {
               class="relative w-full bsmmdTwo:w-2/3  md:w-1/2 xxl:container"
             >
               <div class="relative text-center rounded-3xl shadow-2xl bg-whiteText w-full flex flex-col items-center justify-center p-6 aspect-square sm:w-96 ">
-                <img class="" src={props.menuDetailData.img} alt="" />
+              
+                  <LazyLoadImage
+                    src={props.menuDetailData.img}
+                    placeholderSrc=""
+                    alt=""
+                    class="w-full aspect-square object-cover bg-otherColor rounded-full "
+                  />
                 <p class="text-base font-bold sm:text-xl">
                   {props.menuDetailData.name}
                 </p>

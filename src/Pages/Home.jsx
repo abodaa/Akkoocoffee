@@ -27,10 +27,6 @@ import aboutUsFour from "../images/about-us-pics/About4.jpg";
 import aboutUsFive from "../images/about-us-pics/About5.jpg";
 import aboutUsSeven from "../images/about-us-pics/About7.jpg";
 // Menu imgs
-import lunchMenu from "../images/menu-pics/lunchMenu.png";
-import bfMenu from "../images/menu-pics/bfMenu.png";
-import cakeMenu from "../images/menu-pics/cakeMenu.png";
-import drinksMenu from "../images/menu-pics/drink.png";
 import drink from "../images/menu-pics/drink.png";
 import bunaKurs from "../images/menu-pics/bunaKurs.png";
 import coffee from "../images/menu-pics/coffee.png";
@@ -1075,7 +1071,12 @@ export default function Home() {
                   class={`p-2 shadow-sm bg-whiteText rounded-2xl`}
                 >
                   <div class="flex items-center  gap-4">
-                    <img src={item.img} alt="" class="w-20 " />
+                    <LazyLoadImage
+                      src={item.img}
+                      placeholderSrc=""
+                      alt=""
+                      class="w-20 aspect-square object-cover bg-otherColor rounded-full "
+                    />
                     <div class="w-full">
                       <p class="text-base  font-bold pb-1 border-b-[1px] border-otherColor">
                         {item.name}{" "}
