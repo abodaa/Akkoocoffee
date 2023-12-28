@@ -13,7 +13,7 @@ export default function BookTableModal() {
     <div>
       <button
         onClick={() => setOpen(true)}
-        class=" bg-lightGreen py-2 px-5 text-sm rounded sm:text-md hover:text-whiteText hover:bg-darkGreen transition-all"
+        class=" bg-lightGreen py-2 px-8 rounded-full md:rounded w-full text-base hover:text-whiteText hover:bg-darkGreen transition-all"
       >
         Book
       </button>
@@ -41,25 +41,72 @@ export default function BookTableModal() {
                 stiffness: 500,
                 duration: 0.5,
               }}
-              class="absolute left-0 top-0 bottom-0 p-6 m-auto bg-whiteText md:w-1/2  lg:w-1/3 xxl:container"
+              class="absolute top-0 left-0 bottom-0 sm:rounded-3xl sm:left-4 sm:top-4 sm:bottom-4 p-6 m-auto bg-whiteText md:w-1/2  lg:w-1/3 xxl:container"
             >
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.3,
+                }}
                 onClick={() => setOpen(false)}
                 class="absolute top-2 right-2 p-2 cursor-pointer rounded-full bg-otherColor"
               >
                 <CgClose />
-              </div>
+              </motion.div>
               <div class=" text-darkGreen pt-8">
-                <h2 class="more-about-us-title mt-3 border-t-2 font-bold text-2xl">
+                <motion.h1
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.5,
+                    delay: 0.3,
+                  }}
+                  class="font-bold text-xs md:text-md text-lightGreen"
+                >
+                  Book
+                </motion.h1>
+                <motion.h1
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.5,
+                    delay: 0.3,
+                  }}
+                  class="font-bold text-2xl md:text-3xl"
+                >
                   Book a Table
-                </h2>
-                <p class=" text-gray-500 text-sm sm:text-md mt-2 md:text-base">
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.5,
+                    delay: 0.4,
+                  }}
+                  cl
+                  class=" text-gray-500 text-sm sm:text-md mt-2 md:text-base"
+                >
                   Embark on a Culinary Adventure with Us!
-                </p>
+                </motion.p>
                 <form action="" class="mt-8">
                   {/* Name section */}
                   <div class="grid grid-cols-2 gap-2">
-                    <div class="w-full">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "tween",
+                        duration: 0.5,
+                        delay: 0.1,
+                      }}
+                      class="w-full"
+                    >
                       <label
                         class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                         for="grid-first-name"
@@ -67,12 +114,21 @@ export default function BookTableModal() {
                         First Name
                       </label>
                       <input
-                        class="appearance-none  w-full bg-otherColor text-gray-500  border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none focus:bg-white bsmmd:text-md"
+                        class="appearance-none  w-full bg-otherColor text-gray-500  border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none  bsmmd:text-md"
                         type="text"
                         placeholder="Enter first name"
                       />
-                    </div>
-                    <div class="w-full">
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "tween",
+                        duration: 0.5,
+                        delay: 0.2,
+                      }}
+                      class="w-full"
+                    >
                       <label
                         class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                         for="grid-first-name"
@@ -80,15 +136,24 @@ export default function BookTableModal() {
                         Last Name
                       </label>
                       <input
-                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none focus:bg-white bsmmd:text-md"
+                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none  bsmmd:text-md"
                         type="text"
                         placeholder="Enter last name"
                       />
-                    </div>
+                    </motion.div>
                   </div>
                   {/* Email and phone section */}
                   <div class="grid grid-cols-2 gap-2">
-                    <div class="w-full">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "tween",
+                        duration: 0.5,
+                        delay: 0.3,
+                      }}
+                      class="w-full"
+                    >
                       <label
                         class="block uppercase tracking-wide text-gray-500  text-xs font-bold mb-2"
                         for="grid-first-name"
@@ -96,12 +161,21 @@ export default function BookTableModal() {
                         Phone Number
                       </label>
                       <input
-                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none focus:bg-white bsmmd:text-md"
+                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none  bsmmd:text-md"
                         type="text"
                         placeholder="Enter phone number"
                       />
-                    </div>
-                    <div class="w-full">
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "tween",
+                        duration: 0.5,
+                        delay: 0.4,
+                      }}
+                      class="w-full"
+                    >
                       <label
                         class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                         for="grid-first-name"
@@ -109,15 +183,24 @@ export default function BookTableModal() {
                         Email
                       </label>
                       <input
-                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none focus:bg-white bsmmd:text-md"
+                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none  bsmmd:text-md"
                         type="text"
                         placeholder="Enter email"
                       />
-                    </div>
+                    </motion.div>
                   </div>
                   {/* Date and time section */}
                   <div class="grid grid-cols-2 gap-2">
-                    <div class="w-full">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "tween",
+                        duration: 0.5,
+                        delay: 0.5,
+                      }}
+                      class="w-full"
+                    >
                       <label
                         class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                         for="grid-first-name"
@@ -125,12 +208,21 @@ export default function BookTableModal() {
                         Date
                       </label>
                       <input
-                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none focus:bg-white bsmmd:text-md"
+                        class="appearance-none  w-full bg-otherColor text-gray-500 border  rounded py-3 px-4 mb-3 text-sm leading-tight  bsmmd:text-md"
                         type="date"
                         placeholder="Choose date"
                       />
-                    </div>
-                    <div class="w-full">
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "tween",
+                        duration: 0.5,
+                        delay: 0.6,
+                      }}
+                      class="w-full"
+                    >
                       <label
                         class="block uppercase tracking-wide text-gray-500  text-xs font-bold mb-2"
                         for="grid-first-name"
@@ -138,15 +230,24 @@ export default function BookTableModal() {
                         Time
                       </label>
                       <input
-                        class="appearance-none  w-full bg-otherColor text-gray-500  border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none focus:bg-white bsmmd:text-md"
+                        class="appearance-none  w-full bg-otherColor text-gray-500  border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none  bsmmd:text-md"
                         type="time"
                         placeholder="Enter email"
                       />
-                    </div>
+                    </motion.div>
                   </div>
                   {/* Number of guests section */}
 
-                  <div class="relative mb-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "tween",
+                      duration: 0.5,
+                      delay: 0.7,
+                    }}
+                    class="relative mb-6"
+                  >
                     <label
                       for="labels-range-input"
                       class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
@@ -161,10 +262,19 @@ export default function BookTableModal() {
                       max=""
                       class="w-full h-2 bg-otherColor rounded-lg appearance-none cursor-pointer"
                     />
-                  </div>
+                  </motion.div>
 
                   {/* Additional request section */}
-                  <div class="w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "tween",
+                      duration: 0.5,
+                      delay: 0.8,
+                    }}
+                    class="w-full"
+                  >
                     <label
                       class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                       for="grid-first-name"
@@ -172,18 +282,25 @@ export default function BookTableModal() {
                       Additional request
                     </label>
                     <textarea
-                      class="appearance-none  w-full bg-otherColor text-gray-500  border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none focus:bg-white bsmmd:text-md"
+                      class="appearance-none  w-full bg-otherColor text-gray-500  border  rounded py-3 px-4 mb-3 text-sm leading-tight focus:outline-none bsmmd:text-md"
                       type="text"
                       placeholder="Any additional request you have"
                     />
-                  </div>
+                  </motion.div>
                   {/* Book button */}
-                  <button
+                  <motion.button
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "tween",
+                      duration: 0.5,
+                      delay: 0.9,
+                    }}
                     type="submit"
                     class="bg-lightGreen text-md rounded px-10 py-2"
                   >
                     Book
-                  </button>
+                  </motion.button>
                 </form>
               </div>
             </motion.div>

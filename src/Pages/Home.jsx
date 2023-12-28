@@ -238,7 +238,7 @@ export default function Home() {
               href="#menu"
               class="p-2 px-5 bg-whiteText rounded-md transition-colors hover:text-whiteText hover:bg-darkGreen"
             >
-              Akkoo Menu
+              Menu
             </motion.a>
           </div>
         </div>
@@ -711,7 +711,14 @@ export default function Home() {
           {/* About left */}
           <div class="grid  gap-5 w-full h-full  md:grid-cols-2 blgxl:grid-cols-1">
             <div class="grid items-center gap-5 h-full blgxl:grid-cols-2">
-              <div
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.5,
+                }}
                 onLoad={() => setAboutUsImageOneLoaded(true)}
                 style={{
                   background: `${
@@ -734,7 +741,7 @@ export default function Home() {
                   alt=""
                   class="w-full object-cover h-full"
                 />
-              </div>
+              </motion.div>
               <div>
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
@@ -756,7 +763,14 @@ export default function Home() {
               </div>
             </div>
             <div class="grid items-center gap-5 h-full blgxl:grid-cols-2">
-              <div
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
                 onLoad={() => setAboutUsImageTwoLoaded(true)}
                 style={{
                   background: `${
@@ -779,7 +793,7 @@ export default function Home() {
                   alt=""
                   class="w-full h-full object-cover "
                 />
-              </div>
+              </motion.div>
               <div>
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
@@ -803,7 +817,14 @@ export default function Home() {
           </div>
           {/* About right */}
           <div class="flex flex-col gap-6 h-full bg-otherColor rounded-3xl p-5 md:p-10  ">
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.6,
+              }}
               onLoad={() => setAboutUsImageThreeLoaded(true)}
               style={{
                 background: `${
@@ -826,7 +847,7 @@ export default function Home() {
                 alt=""
                 class="w-full h-full object-cover "
               />
-            </div>
+            </motion.div>
 
             <div>
               <motion.div

@@ -29,7 +29,7 @@ export default function ImageGalleryModal(props) {
                 stiffness: 500,
                 duration: 0.5,
               }}
-              class="relative w-full m-auto  bsmmdTwo:w-2/3  md:w-1/2 md:left-[25%] bsmmdTwo:left-[20%] xxl:container"
+              class="relative w-full m-auto  bsmmdTwo:w-2/3  md:w-1/2  xxl:container"
             >
               <LazyLoadImage
                 src={props.imageData}

@@ -28,9 +28,19 @@ export default function BookTableModal() {
 
   return (
     <div>
-      <div class="flex items-center gap-2 mt-2" onClick={() => setOpen(true)}>
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          type: "tween",
+          duration: 0.5,
+          delay: 0.7,
+        }}
+        class="flex items-center gap-2 mt-2"
+        onClick={() => setOpen(true)}
+      >
         <button class="about-button">Learn more</button>
-      </div>
+      </motion.div>
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
@@ -39,8 +49,6 @@ export default function BookTableModal() {
             exit={{ opacity: 0 }}
             transition={{
               type: "tween",
-              // damping: 25,
-              // stiffness: 500,
               duration: 0.5,
             }}
             class="fixed inset-0 m-auto z-30 bg-darkTransparent p-6 xxl:container"
@@ -55,14 +63,21 @@ export default function BookTableModal() {
                 stiffness: 500,
                 duration: 0.5,
               }}
-              class="absolute left-0 top-0 bottom-0 p-6 py-10 m-auto bg-whiteText md:w-1/2 shadow-2xl overflow-scroll  lg:w-1/3 xxl:container"
+              class="absolute top-4 bottom-0 left-0 sm:left-4 sm:bottom-4 sm:top-4 sm:rounded-3xl p-6 py-10 m-auto bg-whiteText md:w-1/2 shadow-2xl overflow-scroll  lg:w-1/3 xxl:container"
             >
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.3,
+                }}
                 onClick={() => setOpen(false)}
                 class="absolute top-2 right-3 p-2 z-50 cursor-pointer rounded-full bg-otherColor"
               >
                 <CgClose />
-              </div>
+              </motion.div>
               {/* Who we are */}
               <motion.h1
                 initial={{ opacity: 0, y: 10 }}
@@ -70,28 +85,25 @@ export default function BookTableModal() {
                 transition={{
                   type: "tween",
                   duration: 0.5,
-                  delay: 0,
+                  delay: 0.3,
                 }}
-                class="more-about-us-title mt-3 border-t-2 font-bold text-2xl"
+                class="font-bold mt-6 text-xs md:text-md text-lightGreen"
               >
-                Who we are
+                More about Akkoo
               </motion.h1>
-              <motion.p
+              <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   type: "tween",
                   duration: 0.5,
-                  delay: 0.1,
+                  delay: 0.4,
                 }}
-                class="p-4 mt-3 text-gray-200 bg-gray-700 rounded-xl text-xs sm:text-sm md:text-md"
+                class="font-bold text-2xl md:text-3xl"
               >
-                The connotation of Akkoo goes beyond the mere word 'grandma'. It
-                resonates with deep love, care, hospitality, and proficiency. I
-                believe sharing the story of my mother, Elisabeth Kitessa Guma,
-                who is lovingly called 'Akkoo' by her 23 grandchildren, would
-                put flesh and bone to these attributes.
-              </motion.p>
+                Who we are
+              </motion.h1>
+
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -152,6 +164,23 @@ export default function BookTableModal() {
                   />
                 </div>
               </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.1,
+                }}
+                class=" mt-3 text-gray-900 font-bold  rounded-xl text-xs sm:text-sm md:text-md"
+              >
+                The connotation of Akkoo goes beyond the mere word 'grandma'. It
+                resonates with deep love, care, hospitality, and proficiency. I
+                believe sharing the story of my mother, Elisabeth Kitessa Guma,
+                who is lovingly called 'Akkoo' by her 23 grandchildren, would
+                put flesh and bone to these attributes.
+              </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -160,7 +189,7 @@ export default function BookTableModal() {
                   duration: 0.5,
                   delay: 0.5,
                 }}
-                class="pt-4  mt-3 text-gray-700 text-xs rounded-2xl sm:text-sm md:text-md"
+                class="py-4  mt-3 text-gray-700 text-xs rounded-2xl sm:text-sm md:text-md"
               >
                 Akkoo’s life is characterized by love. Her home is wide open to
                 receive people. It is a place where many come to eat,
@@ -184,7 +213,7 @@ export default function BookTableModal() {
                   duration: 0.5,
                   delay: 0.6,
                 }}
-                class="more-about-us-title mt-3 border-t-2 font-bold text-2xl"
+                class="font-bold text-2xl md:text-3xl"
               >
                 How we started
               </motion.h1>
@@ -196,7 +225,7 @@ export default function BookTableModal() {
                   duration: 0.5,
                   delay: 0.7,
                 }}
-                class="p-4 mt-3 text-gray-700 bg-otherColor rounded-xl text-xs sm:text-sm md:text-md"
+                class="  text-gray-700 text-xs sm:text-sm md:text-md"
               >
                 Elisabeth was born on October 8, 1940, in the then province of
                 Wollega, Kelem District, Gidame Woreda, in a specific village
