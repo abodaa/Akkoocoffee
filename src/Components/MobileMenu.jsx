@@ -57,7 +57,7 @@ export default function BookTableModal() {
                   delay: 0.3,
                 }}
                 onClick={() => setOpen(() => false)}
-                class="absolute top-5 right-2 p-2 cursor-pointer rounded-full bg-lightGreen"
+                class="absolute -top-2 -right-2 p-2 cursor-pointer rounded-full bg-lightGreen"
               >
                 <CgClose />
               </motion.div>
@@ -160,7 +160,7 @@ export default function BookTableModal() {
                 <BookTable onClick={() => setOpen(() => false)} />
                 <a
                   href="#menu"
-                  class="w-full flex items-center gap-2 py-2 px-5 bg-otherColor rounded-full text-base"
+                  class="w-full flex items-center gap-2 py-2 px-5 bg-whiteText rounded-full text-base"
                   onClick={() => setOpen(() => false)}
                 >
                   <GrCafeteria />
