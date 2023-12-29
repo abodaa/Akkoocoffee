@@ -4,14 +4,26 @@ import BookTable from "../Components/BookTable";
 import { motion, AnimatePresence } from "framer-motion";
 import { CgClose, CgFormatBold } from "react-icons/cg";
 import { GrCafeteria } from "react-icons/gr";
+import { useRef } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 export default function BookTableModal() {
   const [open, setOpen] = React.useState(false);
+  const [openBookTable, setOpenBookTable] = useState(false);
 
-  // Framer Motion Varients
-  const variants = {
-    open: { opacity: 1 },
-    closed: { opacity: 0 },
-  };
+  const mobileMenu = useRef(); // Ref and function for closing the opened Search results dropdown
+  useEffect(() => {
+    let closeMobileMenuHandler = (event) => {
+      if (mobileMenu.current && !mobileMenu.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", closeMobileMenuHandler);
+    return () => {
+      document.removeEventListener("mousedown", closeMobileMenuHandler);
+    };
+  }, []);
+
   return (
     <div class="md:hidden">
       <nav
@@ -47,6 +59,7 @@ export default function BookTableModal() {
                 duration: 0.5,
               }}
               class="absolute p-6 z-30 bg-otherColor shadow-2xl m-auto flex flex-col items-start justify-between left-4 top-4 bottom-4 rounded-3xl w-11/12 sm:w-3/5 bsmmd:w-2/5  "
+              ref={mobileMenu}
             >
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -157,7 +170,10 @@ export default function BookTableModal() {
                 }}
                 class="mt-12 flex gap-2 "
               >
-                <BookTable onClick={() => setOpen(() => false)} />
+                <BookTable
+                  openBookTable={openBookTable}
+                  setOpenBookTable={setOpenBookTable}
+                />
                 <a
                   href="#menu"
                   class="w-full flex items-center gap-2 py-2 px-5 bg-whiteText rounded-full text-base"

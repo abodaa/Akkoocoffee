@@ -2,8 +2,24 @@ import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useEffect } from "react";
+import { useRef } from "react";
 export default function ImageGalleryModal(props) {
-  const [open, setOpen] = React.useState(false);
+  const galleryModal = useRef(); // Ref and function for closing the opened Search results dropdown
+  useEffect(() => {
+    let closeGalleryModalModalHandler = (event) => {
+      if (
+        galleryModal.current &&
+        !galleryModal.current.contains(event.target)
+      ) {
+        props.setGalleryOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", closeGalleryModalModalHandler);
+    return () => {
+      document.removeEventListener("mousedown", closeGalleryModalModalHandler);
+    };
+  }, []);
 
   return (
     <AnimatePresence initial={false}>
@@ -30,6 +46,7 @@ export default function ImageGalleryModal(props) {
                 duration: 0.5,
               }}
               class="relative w-full m-auto  bsmmdTwo:w-2/3  md:w-1/2  xxl:container"
+              ref={galleryModal}
             >
               <LazyLoadImage
                 src={props.imageData}

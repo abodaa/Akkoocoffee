@@ -1,32 +1,44 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CgClose } from "react-icons/cg";
-export default function BookTableModal() {
-  const [open, setOpen] = React.useState(false);
+import { useEffect } from "react";
+import { useRef } from "react";
+export default function BookTableModal(props) {
+  const bookTableModal = useRef(); // Ref and function for closing the opened Search results dropdown
+  useEffect(() => {
+    let closeBookTableModalModalHandler = (event) => {
+      if (
+        bookTableModal.current &&
+        !bookTableModal.current.contains(event.target)
+      ) {
+        props.setOpenBookTable(false);
+      }
+    };
+    document.addEventListener("mousedown", closeBookTableModalModalHandler);
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        closeBookTableModalModalHandler
+      );
+    };
+  }, []);
 
-  // Framer Motion Varients
-  const variants = {
-    open: { opacity: 1 },
-    closed: { opacity: 0 },
-  };
   return (
     <div>
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => props.setOpenBookTable(true)}
         class=" bg-lightGreen py-2 px-8 rounded-full md:rounded w-full text-base hover:text-whiteText hover:bg-darkGreen transition-all"
       >
         Book
       </button>
       <AnimatePresence initial={false}>
-        {open && (
+        {props.openBookTable && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{
               type: "tween",
-              // damping: 25,
-              // stiffness: 500,
               duration: 0.5,
             }}
             class="fixed inset-0 m-auto bg-darkTransparent p-6 xxl:container"
@@ -42,6 +54,7 @@ export default function BookTableModal() {
                 duration: 0.5,
               }}
               class="absolute top-0 left-0 bottom-0 sm:rounded-3xl sm:left-4 sm:top-4 sm:bottom-4 p-6 m-auto bg-whiteText md:w-1/2  lg:w-1/3 xxl:container"
+              ref={bookTableModal}
             >
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -51,7 +64,7 @@ export default function BookTableModal() {
                   duration: 0.5,
                   delay: 0.3,
                 }}
-                onClick={() => setOpen(false)}
+                onClick={() => props.setOpenBookTable(false)}
                 class="absolute top-2 right-2 p-2 cursor-pointer rounded-full bg-otherColor"
               >
                 <CgClose />

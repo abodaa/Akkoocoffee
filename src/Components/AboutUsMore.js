@@ -16,15 +16,37 @@ import aboutUsFourThumb from "../images/tumbnails/About4-tumb.jpg";
 import aboutUsFiveThumb from "../images/tumbnails/About5-tumb.jpg";
 import aboutUsSixThumb from "../images/tumbnails/About6-tumb.jpg";
 import aboutUsSevenThumb from "../images/tumbnails/About7-tumb.jpg";
+import { useEffect } from "react";
+import { useRef } from "react";
 
-
-export default function BookTableModal() {
-  const [open, setOpen] = React.useState(false);
+export default function BookTableModal(props) {
   // About us images loading states
+  const [open, setOpen] = React.useState(false);
+
   const [aboutUsImageOneLoaded, setAboutUsImageOneLoaded] = useState(false);
   const [aboutUsImageTwoLoaded, setAboutUsImageTwoLoaded] = useState(false);
   const [aboutUsImageThreeLoaded, setAboutUsImageThreeLoaded] = useState(false);
   const [aboutUsImageFourLoaded, setAboutUsImageFourLoaded] = useState(false);
+
+  // Close Popup Modal
+  const moreAboutUsModal = useRef(); // Ref and function for closing the opened Search results dropdown
+  useEffect(() => {
+    let closeMoreAboutUsModalModalHandler = (event) => {
+      if (
+        moreAboutUsModal.current &&
+        !moreAboutUsModal.current.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", closeMoreAboutUsModalModalHandler);
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        closeMoreAboutUsModalModalHandler
+      );
+    };
+  }, []);
 
   return (
     <div>
@@ -64,6 +86,7 @@ export default function BookTableModal() {
                 duration: 0.5,
               }}
               class="absolute top-4 bottom-0 left-0 sm:left-4 sm:bottom-4 sm:top-4 sm:rounded-3xl p-6 py-10 m-auto bg-whiteText md:w-1/2 shadow-2xl overflow-scroll  lg:w-1/3 xxl:container"
+              ref={moreAboutUsModal}
             >
               <motion.div
                 initial={{ opacity: 0, y: 15 }}

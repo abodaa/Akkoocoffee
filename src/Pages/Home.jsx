@@ -97,8 +97,8 @@ export default function Home() {
   const [imageData, setImageData] = useState();
   const [menuDetailOpen, setMenuDetailOpen] = useState(false);
   const [menuDetailData, setMenuDetailData] = useState();
-
   const [heroVideoOpen, setHeroVideoOpen] = useState(false);
+  const [openBookTable, setOpenBookTable] = useState(false);
 
   // Hero section images loading states
   const [imageOneLoaded, setImageOneLoaded] = useState(false);
@@ -231,7 +231,10 @@ export default function Home() {
                 delay: 0.6,
               }}
             >
-              <BookTable />
+              <BookTable
+                openBookTable={openBookTable}
+                setOpenBookTable={setOpenBookTable}
+              />
             </motion.div>
             <motion.a
               initial={{ opacity: 0, y: 20 }}

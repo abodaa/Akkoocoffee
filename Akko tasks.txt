@@ -8,6 +8,6 @@
 - image lazy loading - DONE
 - menu details card - Done
 - Multi lang
-- some hoverings
-- Play video pop up with icon on hero
+- some hoverings and close modals on outside the container click
+- Play video pop up with icon on hero - DONE
 - Icon, name, metadata ....

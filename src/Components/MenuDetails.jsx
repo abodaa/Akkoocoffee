@@ -2,8 +2,24 @@ import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { CgClose } from "react-icons/cg";
+import { useRef } from "react";
+import { useEffect } from "react";
 export default function MenuDetails(props) {
-  const [open, setOpen] = React.useState(false);
+  const menuDetailModal = useRef(); // Ref and function for closing the opened Search results dropdown
+  useEffect(() => {
+    let closeMenuDetailModalHandler = (event) => {
+      if (
+        menuDetailModal.current &&
+        !menuDetailModal.current.contains(event.target)
+      ) {
+        props.setMenuDetailOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", closeMenuDetailModalHandler);
+    return () => {
+      document.removeEventListener("mousedown", closeMenuDetailModalHandler);
+    };
+  }, []);
 
   return (
     <AnimatePresence initial={false}>
@@ -30,15 +46,15 @@ export default function MenuDetails(props) {
                 duration: 0.5,
               }}
               class="relative w-full bsmmdTwo:w-2/3  md:w-1/2 xxl:container"
+              ref={menuDetailModal}
             >
               <div class="relative text-center rounded-3xl shadow-2xl bg-whiteText w-full flex flex-col items-center justify-center p-6 aspect-square sm:w-96 ">
-              
-                  <LazyLoadImage
-                    src={props.menuDetailData.img}
-                    placeholderSrc=""
-                    alt=""
-                    class="w-full aspect-square object-cover bg-otherColor rounded-full "
-                  />
+                <LazyLoadImage
+                  src={props.menuDetailData.img}
+                  placeholderSrc=""
+                  alt=""
+                  class="w-full aspect-square object-cover bg-otherColor rounded-full "
+                />
                 <p class="text-base font-bold sm:text-xl">
                   {props.menuDetailData.name}
                 </p>

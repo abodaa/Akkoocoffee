@@ -1,8 +1,24 @@
 import * as React from "react";
+import { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { CgClose } from "react-icons/cg";
 export default function MenuDetails(props) {
+  const heroVideoModal = useRef(); // Ref and function for closing the opened Search results dropdown
+  useEffect(() => {
+    let closeHeroVideoModalHandler = (event) => {
+      if (
+        heroVideoModal.current &&
+        !heroVideoModal.current.contains(event.target)
+      ) {
+        props.setHeroVideoOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", closeHeroVideoModalHandler);
+    return () => {
+      document.removeEventListener("mousedown", closeHeroVideoModalHandler);
+    };
+  }, []);
   return (
     <AnimatePresence initial={false}>
       {props.heroVideoOpen && (
@@ -29,14 +45,17 @@ export default function MenuDetails(props) {
               }}
               class="relative w-full bsmmdTwo:w-2/3  md:w-1/2 "
             >
-              <div class="relative rounded-3xl shadow-2xl bg-otherColor w-full sm:w-[29rem] md:w-[40rem] blgxl:w-[50rem] aspect-square sm:aspect-video ">
+              <div
+                class="relative rounded-3xl shadow-2xl bg-otherColor w-full sm:w-[29rem] md:w-[40rem] blgxl:w-[50rem] aspect-square sm:aspect-video "
+                ref={heroVideoModal}
+              >
                 <iframe
                   title="Embedded YouTube Video"
                   src={`https://www.youtube.com/embed/vy06E0Y-YxA?autoplay=1`}
-                //   frameBorder="0"
+                  //   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
-                   class="rounded-3xl w-full min-h-full object-cover"
+                  class="rounded-3xl w-full min-h-full object-cover"
                 />
                 <div
                   onClick={() => props.setHeroVideoOpen(false)}
