@@ -97,6 +97,7 @@ body{
 
 .nav-item{
     position: relative;
+    color: rgb(92, 92, 92);
     &::after{
         content: "";
         position: absolute;
@@ -109,6 +110,10 @@ body{
     }
     &:hover:after{
       width: 60%;
+   
+    }
+    &:hover{
+         color: black;
     }
 }
 .nav-item-active{

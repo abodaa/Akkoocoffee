@@ -375,7 +375,7 @@ export default function Home() {
             />
             <p
               onClick={() => setHeroVideoOpen(true)}
-              class="absolute text-4xl text-otherColor top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer sm:text-6xl"
+              class="absolute text-4xl text-otherColor top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:text-whiteText transition-colors sm:text-6xl"
             >
               <BsPlayCircleFill />
             </p>
@@ -437,7 +437,7 @@ export default function Home() {
                   delay: 0.7,
                 }}
                 href="#unique"
-                class="relative w-10 h-10 bg-lightGreen rounded-full sm:w-16 sm:h-16"
+                class="relative w-10 h-10 bg-lightGreen rounded-full hover:bg-darkGreen transition-colors hover:text-whiteText sm:w-16 sm:h-16"
               >
                 <BsArrowDown class="absolute text-2xl d top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
               </motion.a>
@@ -560,7 +560,7 @@ export default function Home() {
               delay: 0.4,
             }}
             onClick={uniqueSlideLeft}
-            class="hidden p-3 text-xl bg-otherColor rounded-full cursor-pointer hover:text-whiteText hover:bg-lightGreen md:block"
+            class="hidden p-3 text-xl bg-otherColor rounded-full cursor-pointer hover:text-whiteText hover:bg-darkGreen transition-colors md:block"
           >
             <BsArrowLeft />
           </motion.div>
@@ -652,7 +652,7 @@ export default function Home() {
               delay: 0.5,
             }}
             onClick={uniqueSlideRight}
-            class="hidden p-3 text-xl bg-otherColor rounded-full cursor-pointer -rotate-180 hover:text-whiteText hover:bg-lightGreen md:block"
+            class="hidden p-3 text-xl bg-otherColor rounded-full cursor-pointer -rotate-180 hover:text-whiteText hover:bg-darkGreen transition-colors md:block"
           >
             <BsArrowLeft class=" -rotate-180" />
           </motion.div>
@@ -669,7 +669,7 @@ export default function Home() {
               delay: 0.4,
             }}
             onClick={uniqueSlideLeft}
-            class="p-3 text-xl bg-otherColor rounded-full cursor-pointer hover:text-whiteText hover:bg-lightGreen"
+            class="p-3 text-xl bg-otherColor rounded-full cursor-pointer hover:text-whiteText hover:bg-darkGreen transition-colors"
           >
             <BsArrowLeft />
           </motion.div>
@@ -683,7 +683,7 @@ export default function Home() {
               delay: 0.5,
             }}
             onClick={uniqueSlideRight}
-            class="p-3 text-xl bg-otherColor rounded-full cursor-pointer -rotate-180 hover:text-whiteText hover:bg-lightGreen"
+            class="p-3 text-xl bg-otherColor rounded-full cursor-pointer -rotate-180 hover:text-whiteText hover:bg-darkGreen transition-colors"
           >
             <BsArrowLeft class=" -rotate-180" />
           </motion.div>
@@ -981,7 +981,7 @@ export default function Home() {
                   duration: 0.5,
                   delay: 0.2,
                 }}
-                class="flex flex-col items-center  px-6 py-10 bg-otherColor rounded-3xl"
+                class="flex flex-col items-center  px-6 py-10 bg-otherColor rounded-3xl  transition-shadow hover:bg-whiteText hover:shadow-2xl hover:cursor-default"
               >
                 <motion.img
                   initial={{ opacity: 0, y: -40 }}
@@ -1088,7 +1088,7 @@ export default function Home() {
                   }}
                   class={`flex flex-col items-center justify-center py-2 px-2 text-sm rounded-md ${
                     activeMenu === menu.id ? "bg-lightGreen" : "bg-whiteText"
-                  } cursor-pointer hover:bg-lightGreen md:text-md  sm:px-4`}
+                  } cursor-pointer hover:bg-lightGreen transition-colors md:text-md  sm:px-4`}
                   onClick={() => {
                     setMenuData(() => menu.data);
                     setActiveMenu(() => menu.id);
@@ -1222,7 +1222,7 @@ export default function Home() {
                   duration: 0.7,
                   delay: 0.5,
                 }}
-                class="py-2 px-4 rounded-full bg-lightGreen text-darkGreen mt-4"
+                class="py-2 px-4 rounded-full bg-lightGreen text-darkGreen mt-4 transition-colors hover:bg-otherColor "
               >
                 Order Now
               </motion.button>
@@ -1286,7 +1286,7 @@ export default function Home() {
               duration: 0.7,
               delay: 0.3,
             }}
-            class="relative p-10 bg-lightGreen flex flex-col justify-center aspect-square rounded-3xl"
+            class="relative p-10 bg-lightGreen flex flex-col justify-center aspect-square rounded-3xl transition-colors  cursor-default hover:bg-whiteText hover:shadow-2xl"
           >
             {/* Quote Img */}
             <img
@@ -1320,7 +1320,7 @@ export default function Home() {
               duration: 0.7,
               delay: 0.4,
             }}
-            class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl"
+            class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl transition-colors  cursor-default hover:bg-whiteText hover:shadow-2xl"
           >
             {/* Quote Img */}
             <img
@@ -1352,7 +1352,7 @@ export default function Home() {
               duration: 0.7,
               delay: 0.5,
             }}
-            class="relative p-10 bg-darkGreen flex flex-col justify-center aspect-square rounded-3xl"
+            class="relative p-10 bg-darkGreen flex flex-col justify-center aspect-square rounded-3xl text-gray-300 transition-colors  cursor-default hover:bg-whiteText hover:shadow-2xl hover:text-gray-700"
           >
             {/* Quote Img */}
             <img
@@ -1366,15 +1366,13 @@ export default function Home() {
               alt=""
               class="absolute -top-10 right-1/2 translate-x-1/2 w-1/4 border-4 border-whiteText aspect-square object-cover rounded-full"
             />
-            <p class="text-sm text-gray-300 mt-2 md:text-md">
+            <p class="text-sm  mt-2 md:text-md">
               Before AKKOO, I settled for subpar coffee in other shops. Now,
               thanks to AKKOO Coffee, I'm back to enjoying excellent black
               coffee and occasional macchiatos. The quality is truly remarkable!
             </p>
-            <p class="text-xl font-bold text-whiteText md:text-2xl lg:text-2xl">
-              Fitsum
-            </p>
-            <p class="text-sm text-gray-300 md:text-xl lg:text-sm">
+            <p class="text-xl font-bold md:text-2xl lg:text-2xl">Fitsum</p>
+            <p class="text-sm md:text-xl lg:text-sm">
               Administrative & Finance Head
             </p>
           </motion.div>
@@ -1389,7 +1387,7 @@ export default function Home() {
               duration: 0.7,
               delay: 0.6,
             }}
-            class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl"
+            class="relative p-10 bg-otherColorTransparent flex flex-col justify-center aspect-square rounded-3xl  cursor-default hover:bg-whiteText hover:shadow-2xl"
           >
             {/* Quote Img */}
             <img
@@ -1470,7 +1468,7 @@ export default function Home() {
               duration: 0.7,
               delay: 0.3,
             }}
-            class="flex gap-3 bg-otherColor text-sm py-2 px-4 mt-6 rounded-full items-center justify-start sm:text-md"
+            class="flex gap-3 bg-otherColor text-sm py-2 px-4 mt-6 rounded-full items-center justify-start transition-colors hover:bg-lightGreen hover:shadow-2xl sm:text-md"
           >
             <h2>Find us on Instagram</h2>
             <img src={instagram} class="w-6" />
@@ -1781,7 +1779,7 @@ export default function Home() {
                   delay: 0,
                 }}
                 src={facebook}
-                class="cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+                class="cursor-pointer w-8"
               />
               <motion.img
                 initial={{ opacity: 0, y: 50 }}
@@ -1792,7 +1790,7 @@ export default function Home() {
                   delay: 0.1,
                 }}
                 src={instagram}
-                class="cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+                class="cursor-pointer w-8"
               />
               <motion.img
                 initial={{ opacity: 0, y: 50 }}
@@ -1803,7 +1801,7 @@ export default function Home() {
                   delay: 0.2,
                 }}
                 src={tripadvisor}
-                class="cursor-pointer opacity-80  w-8 hover:scale-105 hover:opacity-100"
+                class="cursor-pointer w-8"
               />
             </div>
           </div>
@@ -1817,7 +1815,7 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.3,
               }}
-              class="footer-titles text-xl mb-5 md:text-2xl"
+              class="footer-titles text-xl cursor-default mb-5 md:text-2xl"
             >
               Where we are
             </motion.button>
@@ -1863,7 +1861,7 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.6,
               }}
-              class="footer-titles text-xl mb-5 md:text-2xl "
+              class="footer-titles text-xl cursor-default mb-5 md:text-2xl "
             >
               Quick Menu
             </motion.button>
@@ -1952,9 +1950,14 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.2,
               }}
-              class=" text-sm text-gray-600 md:text-md"
+              class="flex items-center gap-1 text-sm text-gray-600 md:text-md"
             >
-              Akkoo Coffee. All Rights Reserved
+              <button class="relative text-sm w-4 h-4 rounded-full border-2 border-gray-600 p-1">
+                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  C
+                </p>
+              </button>
+              <p>Akkoo Coffee. All Rights Reserved</p>
             </motion.div>
             {/* BBOTTOM FOOTER MIDDLE */}
             <motion.h3
@@ -1965,7 +1968,7 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.3,
               }}
-              class="text-sm text-gray-600 md:text-md"
+              class="text-sm bg-whiteText shadow-sm py-1 px-4 text-gray-700 rounded-full md:text-md"
             >
               We are open 24 hrs a week.
             </motion.h3>
