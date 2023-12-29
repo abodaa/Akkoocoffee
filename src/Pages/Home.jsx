@@ -3,11 +3,12 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { motion } from "framer-motion"; // Framermotion
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "../Styles/home.scss";
-import MobileMenu from "../Components/MobileMenu.jsx";
-import ImageGallery from "../Components/Gallery.jsx";
-import MenuDetails from "../Components/MenuDetails.jsx";
+import MobileMenu from "../Components/MobileMenu";
+import ImageGallery from "../Components/Gallery";
+import MenuDetails from "../Components/MenuDetails";
 import AboutUsMore from "../Components/AboutUsMore";
 import BookTable from "../Components/BookTable";
+import HeroVideo from "../Components/HeroVideo";
 import {
   breakfastMenuData,
   lunchtMenuData,
@@ -15,8 +16,6 @@ import {
   drinksMenuData,
   specialMenuData,
 } from "../Components/menuData.js";
-// Hero imgs
-import heroVideo from "../images/hero.mp4";
 // Unique Icon Imgs
 import uniqueHome from "../images/unique-pics/uniqueHome.png";
 import uniqueOurSpace from "../images/unique-pics/uniqueOurSpace.png";
@@ -53,6 +52,7 @@ import GS2 from "../images/gallery-pics/GS2.jpg";
 import GS3 from "../images/gallery-pics/GS3.jpg";
 import GS4 from "../images/gallery-pics/GS4.jpg";
 import GS5 from "../images/gallery-pics/GS5.jpg";
+import GS6 from "../images/gallery-pics/GS6.jpg";
 // Footer Social Icons
 import facebook from "../images/other-icon-pics/facebook.png";
 import instagram from "../images/other-icon-pics/instagram.png";
@@ -68,6 +68,7 @@ import GS2Thumb from "../images/tumbnails/GS2-tumb.jpg";
 import GS3Thumb from "../images/tumbnails/GS3-tumb.jpg";
 import GS4Thumb from "../images/tumbnails/GS4-tumb.jpg";
 import GS5Thumb from "../images/tumbnails/GS5-tumb.jpg";
+import GS6Thumb from "../images/tumbnails/GS6-tumb.jpg";
 import aboutUsOneThumb from "../images/tumbnails/About1-tumb.jpg";
 import aboutUsTwoThumb from "../images/tumbnails/About2-tumb.jpg";
 import aboutUsThreeThumb from "../images/tumbnails/About3-tumb.jpg";
@@ -83,6 +84,8 @@ import {
   BsArrowDownShort,
   BsArrowLeft,
   BsGlobe,
+  BsPlayBtnFill,
+  BsPlayCircleFill,
 } from "react-icons/bs";
 import { CgCheckO } from "react-icons/cg";
 
@@ -95,9 +98,12 @@ export default function Home() {
   const [menuDetailOpen, setMenuDetailOpen] = useState(false);
   const [menuDetailData, setMenuDetailData] = useState();
 
+  const [heroVideoOpen, setHeroVideoOpen] = useState(false);
+
   // Hero section images loading states
   const [imageOneLoaded, setImageOneLoaded] = useState(false);
   const [imageTwoLoaded, setImageTwoLoaded] = useState(false);
+  const [imageThreeLoaded, setImageThreeLoaded] = useState(false);
   // About us images loading states
   const [aboutUsImageOneLoaded, setAboutUsImageOneLoaded] = useState(false);
   const [aboutUsImageTwoLoaded, setAboutUsImageTwoLoaded] = useState(false);
@@ -305,7 +311,6 @@ export default function Home() {
                 the boldness of our spices
               </motion.p>
             </div>
-            {/* <div class="flex  items-center justify-between "> */}
             <div class="mt-6 flex flex-wrap gap-2 text-sm sm:text-base sm:flex-nowrap md:mt-4">
               <motion.a
                 initial={{ opacity: 0, y: 100 }}
@@ -336,29 +341,48 @@ export default function Home() {
                 </div>
                 Learn More
               </motion.a>
-              {/* </div> */}
             </div>
           </div>
           {/* Hero above right */}
-          <div class="relative col-span-2">
-            <motion.video
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.7,
-                delay: 0.6,
-              }}
-              src={heroVideo}
-              autoPlay
-              controls
-              scr
-              loop
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              type: "tween",
+              duration: 0.7,
+              delay: 0.6,
+            }}
+            onLoad={() => setImageThreeLoaded(true)}
+            style={{
+              background: `${!imageThreeLoaded ? `url(${GS6Thumb})` : ""}`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: `${!imageThreeLoaded ? "blur(5px)" : ""}`,
+              overflow: "hidden",
+            }}
+            class={` relative ${
+              !imageThreeLoaded ? "reveal-loaded" : "reveal-before-loaded"
+            } overflow-hidden  w-full aspect-video h-full shadow-xl rounded-3xl col-span-4  sm:col-span-2`}
+          >
+            <LazyLoadImage
+              src={GS6}
               alt=""
-              class="aspect-square object-cover w-full h-44 rounded-3xl shadow-xl sm:h-64 md:h-72 blgxl:h-96"
+              class="h-full w-full object-cover "
             />
-          </div>
+            <p
+              onClick={() => setHeroVideoOpen(true)}
+              class="absolute text-4xl text-otherColor top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer sm:text-6xl"
+            >
+              <BsPlayCircleFill />
+            </p>
+          </motion.div>
         </div>
+        {/* Hero Video Modal */}
+        <HeroVideo
+          heroVideoOpen={heroVideoOpen}
+          setHeroVideoOpen={setHeroVideoOpen}
+        />
         {/* Hero Below */}
         <div class="grid  gap-3 grid-cols-4 md:grid-cols-6">
           {/* Hero below left */}
@@ -418,8 +442,8 @@ export default function Home() {
           </div>
           {/* IMAGE ONE */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{
               type: "tween",
               duration: 0.7,
@@ -446,8 +470,8 @@ export default function Home() {
           </motion.div>
           {/* IMAGE TWO */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{
               type: "tween",
               duration: 0.7,

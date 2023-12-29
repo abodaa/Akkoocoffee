@@ -5,7 +5,9 @@
 - gallery - Done 
 - final touch
 - mobile menu - Done
-- image lazy loading - DONE except for the gallery pop up
+- image lazy loading - DONE
 - menu details card - Done
 - Multi lang
-
+- some hoverings
+- Play video pop up with icon on hero
+- Icon, name, metadata ....
