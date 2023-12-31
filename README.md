@@ -69,10 +69,12 @@ The project uses Tailwind CSS for styling. Customize styles in the styles folder
 Update content by modifying the React components in the components and pages folders. Replace placeholder text and images with your own.
 
 ## Deployment
-To deploy the website, build the project and deploy the generated files to your hosting provider of choice. Use the following command to build the project:
+To deploy the website, build the project and deploy the generated files to your hosting provider of choice. 
+
+1. Use the following command to build the project:
 
     ```bash
-   npm start
+   npm run build
 
 ## Contributing
 Contributions are welcome! Fork the repository, create a branch, make your changes, and submit a pull request.
