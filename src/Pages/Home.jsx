@@ -1797,7 +1797,7 @@ export default function Home() {
         <div class="flex flex-col items-start justify-between w-11/12 gap-6 m-auto md:flex-row ">
           {/* LEFT */}
           <div class="p-0 w-full md:w-1/3 lg:p-6">
-            <motion.h2
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -1805,10 +1805,16 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.1,
               }}
-              class="text-xl font-bold mb-5 md:text-2xl"
+              class="flex items-center gap-4 mb-4 font-bold text-2xl"
             >
-              Akkoo Coffee
-            </motion.h2>
+              <a href="#home" class="-space-y-3">
+                <p>Akkoo</p>
+                <p class="text-gray-600 text-base">Coffee</p>
+              </a>
+              <a href="#home">
+                <img src={logo} alt="" class="w-10 sm:w-12" />
+              </a>
+            </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1889,46 +1895,73 @@ export default function Home() {
             >
               Where we are
             </motion.button>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.5,
-                delay: 0.4,
-              }}
-              class="flex flex-col gap-2"
-            >
+            <div class="flex flex-col gap-2">
               {/* <CiLocationOn className="footer-middle-location-icon" /> */}
-              <div class="text-sm p-4 border-l-4 border-gray-600 rounded-r-2xl bg-otherColor text-gray-600 lg:text-md">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.4,
+                }}
+                class="text-sm p-4 border-l-4 border-gray-600 rounded-r-2xl bg-otherColor text-gray-600 lg:text-md"
+              >
                 <h1 class="text-black text-2xl">Hibret Branch</h1>
                 <p>
                   Churchill Road, Pass Tedros Square, Hibret Insurance Building,
                   Ground Floor, Addis Ababa.
                 </p>
-              </div>
-              <div class="text-sm p-4 border-r-4 border-gray-600 rounded-l-2xl bg-otherColor text-gray-600 lg:text-md">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.5,
+                }}
+                class="text-sm p-4 border-r-4 border-gray-600 rounded-l-2xl bg-otherColor text-gray-600 lg:text-md"
+              >
                 <h1 class="text-black text-2xl">Post Branch</h1>
                 <p>
                   Churchill Road, General Post Office Building, Ground Floor,
                   Addis Ababa.
                 </p>
-              </div>
-              <div class="text-sm p-4 border-l-4 border-gray-600 rounded-r-2xl bg-otherColor text-gray-600 lg:text-md">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+                class="text-sm p-4 border-l-4 border-gray-600 rounded-r-2xl bg-otherColor text-gray-600 lg:text-md"
+              >
                 <h1 class="text-black text-2xl">Milkomi Branch</h1>
                 <p>
                   In front of Bole Medhanialem Church, pass Berhane Adere
                   Building, on Ground Floor of Milkomi Building, Addis Ababa.
                 </p>
-              </div>{" "}
-              <div class="text-sm p-4 border-r-4 border-gray-600 rounded-l-2xl bg-otherColor text-gray-600 lg:text-md">
+              </motion.div>{" "}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.5,
+                  delay: 0.7,
+                }}
+                class="text-sm p-4 border-r-4 border-gray-600 rounded-l-2xl bg-otherColor text-gray-600 lg:text-md"
+              >
                 <h1 class="text-black text-2xl">Bishoftu Branch</h1>
                 <p>
                   Bishoftu City, Sushine area, behind Ethio America Medical
                   Factory.
                 </p>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
           {/* RIGHT */}
           <div class="p-0 w-full md:w-1/3 lg:p-6">
