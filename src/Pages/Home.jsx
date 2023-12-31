@@ -1823,6 +1823,22 @@ export default function Home() {
               experience. Founded by Dawit Hailu and Wudassie Enquberhan in May
               2019 near Churchill Road.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.5,
+                delay: 0.5,
+              }}
+              class="flex items-center gap-5 mt-5"
+            >
+              <CiMobile2 class="text-3xl text-gray-600 lg:text-5xl" />
+              <div class="text-sm text-gray-600 lg:text-base">
+                <p>+251 -905-828282</p>
+                <p>+251 -905-828282</p>
+              </div>
+            </motion.div>
             <div class="flex items-center gap-3 mt-6 ">
               <motion.img
                 initial={{ opacity: 0, y: 50 }}
@@ -1881,27 +1897,36 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0.4,
               }}
+              class="flex flex-col gap-2"
             >
               {/* <CiLocationOn className="footer-middle-location-icon" /> */}
-              <p class="text-sm pl-4 border-l-4 border-gray-600 text-gray-600 lg:text-md">
-                Addis Ababa, Ethiopia Churchill Road, Pass Tedros Square, Hibret
-                Insurance Building, Ground Floor, Addis Ababa.{" "}
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.5,
-                delay: 0.5,
-              }}
-              class="flex items-center gap-5 mt-5"
-            >
-              <CiMobile2 class="text-3xl text-gray-600 lg:text-5xl" />
-              <div class="text-sm text-gray-600 lg:text-base">
-                <p>+251 -905-828282</p>
-                <p>+251 -905-828282</p>
+              <div class="text-sm p-4 border-l-4 border-gray-600 rounded-r-2xl bg-otherColor text-gray-600 lg:text-md">
+                <h1 class="text-black text-2xl">Hibret Branch</h1>
+                <p>
+                  Churchill Road, Pass Tedros Square, Hibret Insurance Building,
+                  Ground Floor, Addis Ababa.
+                </p>
+              </div>
+              <div class="text-sm p-4 border-r-4 border-gray-600 rounded-l-2xl bg-otherColor text-gray-600 lg:text-md">
+                <h1 class="text-black text-2xl">Post Branch</h1>
+                <p>
+                  Churchill Road, General Post Office Building, Ground Floor,
+                  Addis Ababa.
+                </p>
+              </div>
+              <div class="text-sm p-4 border-l-4 border-gray-600 rounded-r-2xl bg-otherColor text-gray-600 lg:text-md">
+                <h1 class="text-black text-2xl">Milkomi Branch</h1>
+                <p>
+                  In front of Bole Medhanialem Church, pass Berhane Adere
+                  Building, on Ground Floor of Milkomi Building, Addis Ababa.
+                </p>
+              </div>{" "}
+              <div class="text-sm p-4 border-r-4 border-gray-600 rounded-l-2xl bg-otherColor text-gray-600 lg:text-md">
+                <h1 class="text-black text-2xl">Bishoftu Branch</h1>
+                <p>
+                  Bishoftu City, Sushine area, behind Ethio America Medical
+                  Factory.
+                </p>
               </div>
             </motion.div>
           </div>
