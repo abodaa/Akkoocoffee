@@ -1,6 +1,6 @@
-import {React, useState} from "react";
+import {React, useEffect, useRef, useState} from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { motion } from "framer-motion"; // Framermotion
+import { AnimatePresence, motion } from "framer-motion"; // Framermotion
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "../Styles/home.scss";
 import MobileMenu from "../Components/MobileMenu";
@@ -99,6 +99,7 @@ export default function Home() {
   const [menuDetailData, setMenuDetailData] = useState();
   const [heroVideoOpen, setHeroVideoOpen] = useState(false);
   const [openBookTable, setOpenBookTable] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
   // Hero section images loading states
   const [imageOneLoaded, setImageOneLoaded] = useState(false);
@@ -156,6 +157,30 @@ export default function Home() {
     }
   });
 
+  // Close the language modal when clicking outside the container
+    const languageOpen = useRef(); // Ref and function for closing the opened Search results dropdown
+    useEffect(() => {
+      let closeLanguageSelectionlModalHandler = (event) => {
+        if (
+          languageOpen.current &&
+          !languageOpen.current.contains(event.target)
+        ) {
+          setIsLanguageOpen(false);
+        }
+      };
+      document.addEventListener(
+        "mousedown",
+        closeLanguageSelectionlModalHandler
+      );
+      return () => {
+        document.removeEventListener(
+          "mousedown",
+          closeLanguageSelectionlModalHandler
+        );
+      };
+    }, []);
+
+
   return (
     <div class="">
       {/* NAVIGATION */}
@@ -175,15 +200,49 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0,
               }}
-              class="p-3 text-2xl font-bold "
+              class="flex items-center gap-3 p-3 text-2xl font-bold "
             >
               LOGO
+              <div class="relative flex items-center gap-2 text-md">
+                <div
+                  onClick={() => {
+                    setIsLanguageOpen((prevState) => !prevState);
+                  }}
+                  class="flex items-center gap-2 p-1 rounded hover:bg-whiteText cursor-pointer transition-colors"
+                >
+                  <BsGlobe />
+                  <p>En</p>
+                  <BsArrowDownShort />
+                </div>
+                <AnimatePresence initial={false}>
+                  {isLanguageOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -100 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -100 }}
+                      transition={{
+                        type: "spring",
+                        damping: 25,
+                        stiffness: 500,
+                        duration: 0.5,
+                      }}
+                      class="absolute w-36 top-8 left-0 right-0 bg-whiteText shadow-2xl py-4 px-2 rounded-lg"
+                      ref={languageOpen}
+                    >
+                      <motion.p class="p-2 hover:bg-otherColor cursor-pointer transition-colors rounded">
+                        English(En)
+                      </motion.p>
+                      <p class="p-2 hover:bg-otherColor cursor-pointer transition-colors rounded">
+                        Amharic(Am)
+                      </p>
+                      <p class="p-2 hover:bg-otherColor cursor-pointer transition-colors rounded">
+                        Afaan Oromo(Or)
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </motion.h1>
-            <div class="flex items-center gap-2">
-              <BsGlobe />
-              <p>En</p>
-              <BsArrowDownShort />
-            </div>
             {/* Mobile navigation */}
             <MobileMenu />
           </div>
