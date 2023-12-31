@@ -4,6 +4,8 @@
 
 This project is developed using React for the front-end and Tailwind CSS for styling. This README.md file provides information on how to set up the project, customize it, and deploy it.
 
+See the website live on 👉🏾 https://akkoocoffee.netlify.app
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -69,9 +71,8 @@ Update content by modifying the React components in the components and pages fol
 ## Deployment
 To deploy the website, build the project and deploy the generated files to your hosting provider of choice. Use the following command to build the project:
 
-
-   ```bash
-   npm run build
+    ```bash
+   npm start
 
 ## Contributing
 Contributions are welcome! Fork the repository, create a branch, make your changes, and submit a pull request.
