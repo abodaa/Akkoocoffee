@@ -7,7 +7,7 @@
 - mobile menu - Done
 - image lazy loading - DONE
 - menu details card - Done
-- Multi lang
+- Multi lang - DONE
 - some hoverings and close modals on outside the container click - DONE
 - Play video pop up with icon on hero - DONE
-- Icon, name, metadata ....
+- Icon, name, metadata .... - DONE

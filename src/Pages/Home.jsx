@@ -34,7 +34,7 @@ import lunch from "../images/menu-pics/lunch.png";
 import cake from "../images/menu-pics/cake.png";
 import specialOrder from "../images/menu-pics/special.png";
 import promotionPic from "../images/other-icon-pics/promotion.png";
-
+import logo from '../images/logo.png'
 // Community imgs
 import pOne from "../images/community-pics/pOne.jpg";
 import pTwo from "../images/community-pics/pTwo.jpg";
@@ -200,9 +200,15 @@ export default function Home() {
                 duration: 0.5,
                 delay: 0,
               }}
-              class="flex items-center gap-3 p-3 text-2xl font-bold "
+              class="flex items-center gap-3 p-1 text-2xl font-bold "
             >
-              LOGO
+              <a href="#home" class="-space-y-3">
+                <p>Akkoo</p>
+                <p class="text-gray-600 text-base">Coffee</p>
+              </a>
+              <a href="#home">
+                <img src={logo} alt="" class="w-10 sm:w-16" />
+              </a>
               <div class="relative flex items-center gap-2 text-md">
                 <div
                   onClick={() => {
@@ -1727,17 +1733,12 @@ export default function Home() {
               src: GL4,
               thumb: GL4Thumb,
             },
-            // {
-            //   id: 10,
-            //   src: GL5,
-            //   thumb: GL5Thumb,
-            // },
           ].map((item, index) => {
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 transition={{
                   type: "tween",
                   duration: 0.7,

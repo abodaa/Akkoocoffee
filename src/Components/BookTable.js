@@ -78,7 +78,7 @@ export default function BookTableModal(props) {
                     duration: 0.5,
                     delay: 0.3,
                   }}
-                  class="font-bold text-xs md:text-md text-lightGreen"
+                  class="font-bold text-xs md:text-md text-lightGreen "
                 >
                   Book
                 </motion.h1>
@@ -310,7 +310,7 @@ export default function BookTableModal(props) {
                       delay: 0.9,
                     }}
                     type="submit"
-                    class="bg-lightGreen text-md rounded px-10 py-2"
+                    class="bg-lightGreen text-md rounded px-10 py-2 hover:text-whiteText hover:bg-darkGreen transition-colors"
                   >
                     Book
                   </motion.button>
