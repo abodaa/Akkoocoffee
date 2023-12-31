@@ -22,7 +22,7 @@ export default function MenuDetails(props) {
   return (
     <AnimatePresence initial={false}>
       {props.heroVideoOpen && (
-        <div class="fixed inset-0 flex items-center justify-center z-30 bg-darkTransparent m-auto xxl:container">
+        <div class="fixed inset-0 flex items-center justify-center z-30 bg-darkTransparent xxl:container">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -31,7 +31,7 @@ export default function MenuDetails(props) {
               type: "tween",
               duration: 0.5,
             }}
-            class=" p-6"
+            class="p-6"
           >
             <motion.div
               initial={{ opacity: 0, y: -100 }}

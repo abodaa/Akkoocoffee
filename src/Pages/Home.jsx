@@ -69,12 +69,8 @@ import GS3Thumb from "../images/tumbnails/GS3-tumb.jpg";
 import GS4Thumb from "../images/tumbnails/GS4-tumb.jpg";
 import GS5Thumb from "../images/tumbnails/GS5-tumb.jpg";
 import GS6Thumb from "../images/tumbnails/GS6-tumb.jpg";
-import aboutUsOneThumb from "../images/tumbnails/About1-tumb.jpg";
-import aboutUsTwoThumb from "../images/tumbnails/About2-tumb.jpg";
-import aboutUsThreeThumb from "../images/tumbnails/About3-tumb.jpg";
 import aboutUsFourThumb from "../images/tumbnails/About4-tumb.jpg";
 import aboutUsFiveThumb from "../images/tumbnails/About5-tumb.jpg";
-import aboutUsSixThumb from "../images/tumbnails/About6-tumb.jpg";
 import aboutUsSevenThumb from "../images/tumbnails/About7-tumb.jpg";
 
 // Icons
@@ -84,7 +80,6 @@ import {
   BsArrowDownShort,
   BsArrowLeft,
   BsGlobe,
-  BsPlayBtnFill,
   BsPlayCircleFill,
 } from "react-icons/bs";
 import { CgCheckO } from "react-icons/cg";
@@ -118,7 +113,6 @@ export default function Home() {
       [itemId]: true,
     }));
   };
-  // const [loadingImageIndex, setLoadingImageIndex] = useState();
 
   // Slider functions
   // What make akkoo unique slider Function
@@ -185,7 +179,7 @@ export default function Home() {
     <div class="">
       {/* NAVIGATION */}
       <section
-        class={`fixed top-0  right-0 left-0  z-30 ${
+        class={`fixed top-0  right-0 left-0  z-20 ${
           changeColor ? " bg-otherColor shadow-md" : "transparent"
         } transition  m-auto xxl:container `}
       >
@@ -319,7 +313,7 @@ export default function Home() {
       </section>
       {/* HERO Section */}
       <section
-        class="relative m-auto h-full flex flex-col gap-5 z-20 pt-28 w-11/12  xxl:px-6 xxl:container"
+        class="relative m-auto h-full flex flex-col gap-5  pt-28 w-11/12  xxl:px-6 xxl:container"
         id="home"
       >
         {/* Hero Above */}
@@ -568,7 +562,7 @@ export default function Home() {
       </section>
       {/* What makes us Unique section */}
       {/* HERO BG */}
-      <div class="absolute -top-20 right-0 left-0 -skew-y-6 py-10 h-72  bg-otherColorTransparent w-full m-auto xxl:container"></div>
+      <div class="absolute -top-20 right-0 left-0 -skew-y-6 py-10 h-72 -z-10 bg-otherColorTransparent w-full m-auto xxl:container"></div>
       <section
         class="unique-container m-auto py-32 mt-10 xxl:container "
         id="unique"
